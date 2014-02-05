@@ -1,5 +1,5 @@
 """
-Django settings for gateway project.
+Django settings for project316 project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i=9frpgsk2lxwp6=4j*7_q&)gw5b!eg6)q&!)k9m3@p^9os7sv'
+SECRET_KEY = '8510tc3uzde_3d_4(*97f73*(za7&&7@&%137-@eg2%+*2=3b4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'gateway.urls'
+ROOT_URLCONF = 'project316.urls'
 
-WSGI_APPLICATION = 'gateway.wsgi.application'
+WSGI_APPLICATION = 'project316.wsgi.application'
 
 
 # Database
@@ -57,8 +57,15 @@ WSGI_APPLICATION = 'gateway.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gateway',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {
+            #'init_command' : 'SET storage_engine=MyISAM',
+        }
     }
 }
 
@@ -67,7 +74,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Phoenix'
 
 USE_I18N = True
 
