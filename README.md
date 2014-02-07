@@ -1,4 +1,4 @@
-Gateway Game
+Gateway Game [![Build Status](https://travis-ci.org/ChristianMurphy/gateway.png?branch=jenkins-integration)](https://travis-ci.org/ChristianMurphy/gateway)
 =======
 
 contribute
