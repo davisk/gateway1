@@ -9,5 +9,5 @@ sudo pip install -r requirements.txt
 echo "create database gateway" | mysql --user=root --password=root
 
 #set up django
-cd ../gateway
+cd ..
 python manage.py syncdb
