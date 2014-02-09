@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% set user_is_logged_in = false %}
+{% import 'bootstrap.html' as bootstrap %}
+
+{% block main %}
+	<div class="row">
+		<section class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Welcome to Gateway</h3>
+				</div>
+				<div class="panel-body">
+					Learn about the stages of the entrepreneurship process, access resources to build your own business plans, and compete to be the best start up!
+					<br>
+					<aside>
+						Are you a teacher, group leader, or instructor?<br>
+						Click <button type="button" class="btn btn-default">Here</button> to request a leader page.
+					</aside>
+				</div>
+			<div>
+		</section>
+
+		<section class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Sign Up</h3>
+				</div>
+				<div class="panel-body">
+					<form role="form">
+						{{ bootstrap.input("first-name", "text", "John", "First Name") }}
+						{{ bootstrap.input("last-name", "text", "Smith", "Last Name") }}
+						{{ bootstrap.input("email", "email", "John.Smith@email.com", "Email") }}
+						{{ bootstrap.input("password", "Password", "Password", "Password") }}
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}

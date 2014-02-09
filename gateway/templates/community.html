@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{# import macros #}
+{% import 'bootstrap.html' as bootstrap %}
+
+{# test values #}
+{% set user_is_logged_in = true %}
+{% set community_page = true %}
+
+{# page content #}
+{% block title %}Community{% endblock %}
+{% block description %}People do community stuff here{% endblock %}
+
+{% block main %}
+	<div class="row">
+		<div class="col-md-4">
+			{{ bootstrap.panel("My Ventures", "Start a new venture today!") }}
+		</div>
+
+		<div class="col-md-4">
+			{{ bootstrap.panel("My Groups's Ventures", "You do not yet have any groups. Start a venture to become part of a group.") }}
+		</div>
+
+		<div class="col-md-4">
+			{{
+				bootstrap.panel(
+					"Community Ventures",
+					"John Smith just published his first survey!
+					Gateway helped Planet Express start their own business.
+					Read the story and see how their company is doing now.
+					You too, could be running your own business someday!"
+				)
+			}}
+		</div>
+	</div>
+{% endblock %}
