@@ -6,10 +6,10 @@ from profile import profile_view
 from ventures import ventures_view
 
 __all__ = [
-	"home_view",
-	"community_view",
-	"members_view",
-	"minigames_view",
-	"profile_view",
-	"ventures_view"
+    "home_view",
+    "community_view",
+    "members_view",
+    "minigames_view",
+    "profile_view",
+    "ventures_view"
 ]
