@@ -1,0 +1,16 @@
+{% comment %}
+	this is a bootstrap media element
+	@param title		header for media
+	@param glyphicon	icon to be used with media
+	@param description	text that describes media
+{% endcomment %}
+
+<div class="media">
+	<h2 class="pull-left" href="#">
+		<span class="glyphicon {{ glyphicon }}"></span>
+	</h2>
+	<div class="media-body">
+		<h4 class="media-heading">{{ title }}</h4>
+		{{ description }}
+	</div>
+</div>
