@@ -1,17 +1,4 @@
 {% extends "base.html" %}
-{% import 'bootstrap.html' as bootstrap %}
-
-{% set user_is_logged_in = true %}
-{% set members_page = true %}
-{% set news = [
-	{"title": "Happy New Year!", "date": "1.1.2014"},
-	{"title": "Planet Express has made their first delivery!", "date": "21.12.2013"},
-	{"title": "Today in 1982 Bill Gates made his first dollar!", "date": "14.12.2013"}
-]
-%}
-{% set currentVenture = {"image": "glyphicon-briefcase", "title": "Current Venture", "description": "You're doing good! Keep it up!"} %}
-{% set randomSampleUser = "John Smith" %}
-{% set famousSampleUser = "Planet Express" %}
 
 {% block title %}Member's Home{% endblock %}
 {% block description %}This is the home page for members{% endblock %}
@@ -36,18 +23,10 @@
 
 		<div class="col-md-6">
 			<section class="well">
-				{{ bootstrap.media("Current Venture", "glyphicon-briefcase", "You're doing good! Keep it up!") }}
+				{% include "bootstrap/media.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
 			</section>
 
-			{{
-				bootstrap.panel(
-					"Community Ventures",
-					"John Smith just published his first survey!
-					Gateway helped Planet Express start their own business.
-					Read the story and see how their company is doing now.
-					You too, could be running your own business someday!"
-				)
-			}}
+			 {% include "bootstrap/panel.html" with title="Community Ventures" content="John Smith just published his first survey! Gateway helped Planet Express start their own business. Read the story and see how their company is doing now.\nYou too, could be running your own business someday!" %}
 		</div>
 	</div>
 {% endblock %}
