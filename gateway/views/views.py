@@ -49,7 +49,11 @@ def minigames_view(request):
     	return render(request, 'minigames.html', dict(minigame=minigame) )
 
 def profile_view(request):
-    return render(request, 'profile.html')
+	user = {
+		"name": "John Smith",
+		"email": "John.Smith@email.com"
+	}
+    	return render(request, 'profile.html', dict(user=user))
 
 def ventures_view(request):
     return render(request, 'ventures.html')
