@@ -1,8 +1,4 @@
 {% extends "base.html" %}
-{% import 'bootstrap.html' as bootstrap %}
-
-{% set user_is_logged_in = true %}
-{% set ventures_page = true %}
 
 {% block title %}Minigames{% endblock %}
 {% block description %}Play minigames to grow your venture{% endblock %}
@@ -22,7 +18,7 @@
 		</div>
 
 		<div class="col-md-10">
-			{{ bootstrap.jumbotron("Minigames", "Coming Soon!") }}
+			{% include "bootstrap/jumbotron.html" with title=minigame.title subtitle=minigame.subtitle %}
 		</div>
 	</div>
 {% endblock %}

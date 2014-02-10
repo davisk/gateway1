@@ -23,7 +23,7 @@
 
 		<div class="col-md-6">
 			<section class="well">
-				{% include "bootstrap/media.html" with title="Current Venture" glyphicon="glyphicon-briefcase" description="You're doing good! Keep it up!" %}
+				{% include "bootstrap/media.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
 			</section>
 
 			 {% include "bootstrap/panel.html" with title="Community Ventures" content="John Smith just published his first survey! Gateway helped Planet Express start their own business. Read the story and see how their company is doing now.\nYou too, could be running your own business someday!" %}

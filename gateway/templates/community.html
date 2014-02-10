@@ -7,15 +7,15 @@
 {% block main %}
     <div class="row">
         <div class="col-md-4">
-            {% include "bootstrap/panel.html" with title="My Ventures" content="Start a new venture today!" %}
+            {% include "bootstrap/panel.html" with title=myVenture.title content=myVenture.content %}
         </div>
 
         <div class="col-md-4">
-            {% include "bootstrap/panel.html" with title="My Groups's Ventures" content="You do not yet have any groups. Start a venture to become part of a group." %}
+            {% include "bootstrap/panel.html" with title=groupVenture.title content=groupVenture.content %}
         </div>
 
         <div class="col-md-4">
-             {% include "bootstrap/panel.html" with title="Community Ventures" content="John Smith just published his first survey! Gateway helped Planet Express start their own business. Read the story and see how their company is doing now.\nYou too, could be running your own business someday!" %}
+             {% include "bootstrap/panel.html" with title=communityVenture.title content=communityVenture.content %}
         </div>
     </div>
 {% endblock %}
