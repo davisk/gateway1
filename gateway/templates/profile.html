@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import 'bootstrap.html' as bootstrap %}
+
+{% set user_is_logged_in = true %}
+{% set profile_page = true %}
+
+{% block title %}Profile{% endblock %}
+{% block description %}View and Edit your profile here{% endblock %}
+
+{% block main %}
+	{{ bootstrap.jumbotron("John Smith", "John.Smith@email.com") }}
+{% endblock %}

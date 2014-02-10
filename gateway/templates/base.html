@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block description %}CST316 Entrepreneurship Web App{% endblock %}">
+        <meta name="author" content="">
+
+        <title>{% block title %}CST316 Entrepreneurship{% endblock %}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js" defer></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" defer></script>
+    </head>
+
+    <body>
+
+        <header class="navbar navbar-default navbar-static-top" role="navigation">
+            <nav class="container">
+                {% block navigation %}
+                    <section class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/index.php">316 Gateway</a>
+                    </section>
+
+                    <section class="collapse navbar-collapse">
+
+                    {% if user.is_authenticated  %}
+
+                        <ul class="nav navbar-nav">
+                            <li {% if members_page %}class="active"{% endif %}>
+                                <a href="/index.php/members">Home</a>
+                            </li>
+                            <li {% if ventures_page %}class="active"{% endif %}>
+                                <a href="/index.php/ventures">Ventures</a>
+                            </li>
+                            <li {% if community_page %}class="active"{% endif %}>
+                                <a href="/index.php/community">Community</a>
+                            </li>
+                            <li {% if profile_page %}class="active"{% endif %}>
+                                <a href="/index.php/profile">Profile</a>
+                            </li>
+                        </ul>
+
+                        <form class="navbar-form navbar-right" role="logout">
+                            <button type="submit" class="btn btn-default">Exit Venture</button>
+                        </form>
+
+                    {% else %}
+
+                        <form class="navbar-form navbar-right" role="login">
+                            {% include "bootstrap/input.html" with id="email" type="email" placeholder="email" %}
+                            {% include "bootstrap/input.html" with id="password" type="password" placeholder="password" %}
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </form>
+
+                    {% endif %}
+
+                    </section>
+
+                {% endblock %}
+            </nav>
+        </header>
+
+        <main class="container">
+            {% block main %}
+
+            {% endblock %}
+        </main>
+    </body>
+</html>

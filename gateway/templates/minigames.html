@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import 'bootstrap.html' as bootstrap %}
+
+{% set user_is_logged_in = true %}
+{% set ventures_page = true %}
+
+{% block title %}Minigames{% endblock %}
+{% block description %}Play minigames to grow your venture{% endblock %}
+
+{% block main %}
+	<div class="row">
+		<div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">Start</a></li>
+				<li><a href="#">Aha</a></li>
+				<li><a href="#">Gap</a></li>
+				<li><a href="#">Survey</a></li>
+				<li><a href="#">Interest</a></li>
+				<li><a href="#">Elevator</a></li>
+				<li><a href="#">End</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-10">
+			{{ bootstrap.jumbotron("Minigames", "Coming Soon!") }}
+		</div>
+	</div>
+{% endblock %}

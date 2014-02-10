@@ -1,0 +1,54 @@
+{% macro alert(text, type = "default") %}
+	<div class="alert alert-{{ type }}">{{ text }}</div>
+{% endmacro %}
+
+{% macro button(text, type = "default", size) %}
+	<button type="button" class="btn btn-{{ type }} {% if size is not null %}btn-{{ size }}{% endif %}">{{ text }}</button>
+{% endmacro %}
+
+{% macro input(id, type, placeholder, label) %}
+	<div class="form-group">
+		{% if label is not null %}
+			<label for="{{ id }}">{{ label }}</label>
+		{% endif %}
+		<input type="{{ type }}" class="form-control" id="{{ id }}" placeholder="{{ placeholder }}">
+	</div>
+{% endmacro %}
+
+{% macro jumbotron(title, subtitle) %}
+	<section class="jumbotron">
+		<h1>{{ title }}</h1>
+		<h2>{{ subtitle }}</h2>
+	</section>
+{% endmacro %}
+
+{% macro media(title, glyphicon, description) %}
+	<div class="media">
+		<h2 class="pull-left" href="#">
+			<span class="glyphicon {{ glyphicon }}"></span>
+		</h2>
+		<div class="media-body">
+			<h4 class="media-heading">{{ title }}</h4>
+			{{ description }}
+		</div>
+	</div>
+{% endmacro %}
+
+{% macro panel(title, content) %}
+	<section class="panel panel-default">
+		<div class="panel-heading">
+			{{ title }}
+		</div>
+		<div class="panel-body">
+			{{ content }}
+		</div>
+	</section>
+{% endmacro %}
+
+{% macro progress(value, type = "default", min = 0, max = 0) %}
+	<div class="progress">
+		<div class="progress-bar progress-bar-{{ type }}" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="{{ min }}" aria-valuemax="{{ max }}" style="width: {{ value }}%">
+    		<span class="sr-only">{{ value }}% Complete (success)</span>
+  		</div>
+	</div>
+{% endmacro %}
