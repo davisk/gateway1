@@ -1,0 +1,14 @@
+{% comment %}
+	this is a bootstrap input element
+	@param id			identifies the input
+	@param type			describes to django what is expected
+	@param placeholder	sample text to display
+	@param label		describes input to user
+{% endcomment %}
+
+<div class="form-group">
+	{% if label and label.strip  %}
+		<label for="{{ id }}">{{ label }}</label>
+	{% endif %}
+	<input type="{{ type }}" class="form-control" id="{{ id }}" placeholder="{{ placeholder }}">
+</div>
