@@ -21,7 +21,7 @@ git remote add upstream https://github.com/ChristianMurphy/gateway
 
 ###update content with lastest from develop branch
 ```
-git pull upstream
+git pull upstream develop
 ```
 
 ###add changes to the repository
