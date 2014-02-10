@@ -1,36 +1,15 @@
 {% extends "base.html" %}
-{% import 'bootstrap.html' as bootstrap %}
-
-{% set user_is_logged_in = true %}
-{% set ventures_page = true %}
-{% set ventures =
-	[
-		{"image": "glyphicon-book", "title": "Book Store", "description": "Your chain of bookstores Borders isn't doing so well."},
-
-		{"image": "glyphicon-phone-alt", "title": "Call Center", "description": "Your help office has collapsed, killing all the workers. But you have collected 200% with insurance fraud! You're a real tycoon!"},
-		
-		{"image": "glyphicon-music", "title": "Music Business", "description": "Your website Napster has been shutdown by U.S. authorities. Better luck next time."}
-	]
-%}
 
 {% block title %}Ventures{% endblock %}
 {% block description %}Manage your ventures here{% endblock %}
 
 {% block main %}
 	<div class="well">
-		{{ bootstrap.media("Current Venture", "glyphicon-briefcase", "You're doing good! Keep it up!") }}
+		{% include "bootstrap/media.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
 	</div>
 
 	{% for business in ventures %}
-		<div class="media">
-			<h2 class="pull-left" href="#">
-				<span class="glyphicon {{business.image}}"></span>
-			</h2>
-			<div class="media-body">
-				<h4 class="media-heading">{{business.title}}</h4>
-				{{business.description}}
-			</div>
-		</div>
+		{% include "bootstrap/media.html" with title=business.title glyphicon=business.image description=business.description %}
 	{% endfor %}
 
 {% endblock %}
