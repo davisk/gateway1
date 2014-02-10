@@ -26,6 +26,9 @@
                 <div class="panel-body">
                     <form role="form">
                         {% include "bootstrap/input.html" with id="first-name" type="text" placeholder="John" label="First Name" %}
+                        {% include "bootstrap/input.html" with id="last-name" type="text" placeholder="Smith" label="Last Name" %}
+                        {% include "bootstrap/input.html" with id="email" type="email" placeholder="John.Smith@email.com" label="Email" %}
+                        {% include "bootstrap/input.html" with id="password" type="Password" placeholder="Password" label="Password" %}
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
 
