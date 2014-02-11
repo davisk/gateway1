@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Ventures{% endblock %}
+{% block description %}Manage your ventures here{% endblock %}
+
+{% block main %}
+	<div class="well">
+		{% include "bootstrap/media.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
+	</div>
+
+	{% for business in ventures %}
+		{% include "bootstrap/media.html" with title=business.title glyphicon=business.image description=business.description %}
+	{% endfor %}
+
+{% endblock %}

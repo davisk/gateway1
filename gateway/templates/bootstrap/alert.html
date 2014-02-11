@@ -1,0 +1,8 @@
+{% comment %}
+	this is a bootstrap alert element
+	@param text			what alert will say
+	@param type			describes how alert will be styled
+{% endcomment %}
+<div class="alert alert-{% if type and type.strip  %}{{ type }}{% else %}default{% endif %}">{{ text }}</div>
+
+

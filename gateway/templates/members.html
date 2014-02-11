@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Member's Home{% endblock %}
+{% block description %}This is the home page for members{% endblock %}
+
+{% block main %}
+	<div class="row">
+		<div class="col-md-6">
+			<section class="panel panel-default">
+				<div class="panel-heading">
+					Announcements
+				</div>
+	
+				<ul class="list-group">
+					{% for story in news%}
+						<li class="list-group-item">
+							 {{story.title}} <span class="badge">{{story.date}}</span>
+						</li>
+					{% endfor %}
+				</ul>
+			</section>
+		</div>
+
+		<div class="col-md-6">
+			<section class="well">
+				{% include "bootstrap/media.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
+			</section>
+
+			 {% include "bootstrap/panel.html" with title=currentVenture.title content=currentVenture.description %}
+		</div>
+	</div>
+{% endblock %}
