@@ -23,7 +23,7 @@
 
 		<div class="col-md-6">
 			<section class="well">
-				{% include "bootstrap/media-glyphicon.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
+				{% include "bootstrap/media-glyphicon.html" with heading=currentVenture.title glyphicon=currentVenture.image body=currentVenture.description %}
 			</section>
 
 			 {% include "bootstrap/panel.html" with header=currentVenture.title body=currentVenture.description %}
