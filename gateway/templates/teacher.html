@@ -5,9 +5,21 @@
 {% block description %}Manage and view the status of your student entrepreneurs{% endblock %}
 
 {% block main %}
-    <div class="row">
-        <div class="col-md-4">
-            {% include "bootstrap/nav.html" with id=profileTeacher.id left_title=profileTeacher.left_title middle_title=profileTeacher.middle_title right_title=profileTeacher.right_title dd1_title=profileTeacher.dd1_title dd2_title=profileTeacher.dd2_title %}
+
+    <div class="well" style="height: 400px">
+        <ul class="nav nav-tabs nav-justified" id="navi-content" data-tabs="tabs">
+            {% include "bootstrap/teacher_nav.html" with items=subnav %}
+        </ul>
+
+        <div class="tab-content" id="tabi-templates">
+            {% for key in subnav %}
+
+                <div class="tab-pane fade {% if key.active %}in active{% endif %}" id="{{ key.id }}">
+                    {{ key.content }}
+                </div>
+
+            {% endfor %}
         </div>
     </div>
+
 {% endblock %}
