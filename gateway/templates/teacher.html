@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{# page content #}
+{% block title %}Teacher Admin{% endblock %}
+{% block description %}Manage and view the status of your student entrepreneurs{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-4">
+            {% include "bootstrap/nav.html" with id=profileTeacher.id left_title=profileTeacher.left_title middle_title=profileTeacher.middle_title right_title=profileTeacher.right_title dd1_title=profileTeacher.dd1_title dd2_title=profileTeacher.dd2_title %}
+        </div>
+    </div>
+{% endblock %}

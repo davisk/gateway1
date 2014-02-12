@@ -10,4 +10,5 @@ urlpatterns = patterns(
     (r'^minigames/?$', views.minigames_view),
     (r'^profile/?$', views.profile_view),
     (r'^ventures/?$', views.ventures_view),
+    (r'^teacher/?$', views.teacher_view),
 )
