@@ -19,3 +19,4 @@ def teacher_view(request):
             profileTeacher=profileTeacher
         )
     )
+
