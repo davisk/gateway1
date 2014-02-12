@@ -4,8 +4,7 @@
 <script src="vendor/three.js/examples/js/Detector.js"></script>
 <script src="vendor/threex.windowresize.js"></script>
 <body style='margin: 0px; background-color: #bbbbbb; overflow: hidden;'><script>
-require([ 'bower_components/threex.nyancat/package.require.js'
-	], function(){
+require([ ], function(){
 	// detect WebGL
 	if( !Detector.webgl ){
 		Detector.addGetWebGLMessage();
