@@ -1,0 +1,48 @@
+{% comment %}
+	this is a bootstrap content nav element
+	it is currently configured to work for 3 tabs and 2 dropdown tabs
+	it will eventually bring in content from other templates
+	@param id 				identifies the nav
+	@param left_title		first tab on the left
+	@param middle_title		second tab in the middle
+	@param right_title		third tab on the right
+	@param dd1_title		first dropdown tab
+	@param dd2_title 		second dropdown tab
+{% endcomment %}
+
+<div class="row" id="{{ id }}">
+	<ul class="nav nav-tabs nav-justified" id="content-nav" data-tabs="tabs">
+		<li class=active>
+			<a href="#tab-left" data-toggle="tab">{{ left_title }}</a>
+		</li>
+  		<li>
+  			<a href="#tab-middle" data-toggle="tab">{{ middle_title }}</a>
+  		</li>
+  		<li class="dropdown">
+  			<a href="#tab-right" class="dropdown-toggle" data-toggle="dropdown">{{ right_title }} <b class="caret"></b></a>
+  			<ul class="dropdown-menu">
+  				<li>
+  					<a href="#tab-dd1" data-toggle="tab">{{ dd1_title }}</a>
+  				</li>
+  				<li>
+  					<a href="#tab-dd2" data-toggle="tab">{{ dd2_title }}</a>
+  				</li>
+  			</ul>
+  		</li>
+	</ul>
+
+	<div class="tab-content" id="tab-templates">
+		<div class="tab-pane fade in active well-border" id="tab-left">
+			<p>content-left</p>
+		</div>
+		<div class="tab-pane fade" id="tab-middle">
+			<p>content-middle</p>
+		</div>
+		<div class="tab-pane fade" id="tab-dd1">
+			<p>content-dd1</p>
+		</div>
+		<div class="tab-pane fade" id="tab-dd2">
+			<p>content-dd2</p>
+		</div>
+	</div>
+</div>
