@@ -9,7 +9,7 @@ develop [![Build Status](https://travis-ci.org/ChristianMurphy/gateway.png?branc
 
 
 
-contribute
+git flow
 ====
 ###make a fork of the repository
 [instructions](https://help.github.com/articles/fork-a-repo)
@@ -45,3 +45,7 @@ the change what you want, if you want to commit the changes follow add changes a
 ```
 git push origin branch-name
 ``` 
+
+styleguide
+====
+[PEP 8](http://www.python.org/dev/peps/pep-0008/)
