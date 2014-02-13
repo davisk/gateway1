@@ -1,0 +1,39 @@
+{% comment %}
+	this is a bootstrap content nav element for the teacher page
+	it is currently configured to work for 3 tabs and 2 dropdown tabs (dropdown on right)
+	@param title 			header for nav
+	@param glyphicon		glyphicon for header
+	@param content			content for nav tab
+{% endcomment %}
+
+
+{% for item in items|slice:":2" %}
+
+	<li {% if item.active %}class="active"{% endif %}>
+		<a href="#{{ item.id }}" data-toggle="tab"><span class="glyphicon {{ item.icon }}"></span>&nbsp;&nbsp;{{ item.title }}</a>
+	</li>
+
+{% endfor %}
+
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		<span class="glyphicon {{ items.2.icon }}"></span>&nbsp;
+		{{ items.2.title }}
+		<b class="caret"></b>
+	</a>
+
+	<ul class="dropdown-menu">
+
+		{% for item in items|slice:"3:" %}
+
+			<li>
+				<a href="#{{ item.id }}" data-toggle="tab" style="line-height: 25px">
+					<span class="glyphicon {{ item.icon }}"></span>&nbsp;
+					{{ item.title }}
+				</a>
+			</li>
+
+		{% endfor %}
+
+	</ul>
+</li>
