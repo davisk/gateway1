@@ -3,14 +3,14 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 
 
-def minigames_view(request):
+def aha_view(request):
     minigame = {
-        "title": "Survey - Game 3",
+        "title": "Aha!- Minigame 1",
         "subtitle": "Coming Soon!"
     }
 
     return render(
         request,
-        'minigame3.html',
+        'aha.html',
         dict(minigame=minigame)
     )
