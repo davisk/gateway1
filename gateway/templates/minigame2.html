@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Gap - Game 2{% endblock %}
+{% block description %}Play game 2 and get your takehome{% endblock %}
+
+{% block main %}
+	<div class="row">
+		<div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">Start</a></li>
+				<li><a href="#">Aha</a></li>
+				<li><a href="#">Gap</a></li>
+				<li><a href="#">Survey</a></li>
+				<li><a href="#">Interest</a></li>
+				<li><a href="#">Elevator</a></li>
+				<li><a href="#">End</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-10">
+			{% include "bootstrap/jumbotron.html" with header=minigame.title subheader=minigame.subtitle %}
+		</div>
+	</div>
+{% endblock %}
