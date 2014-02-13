@@ -5,9 +5,8 @@ python:
 
 # command to install dependencies
 install:
-  - "pip install -r install/requirements.txt"
-  - sudo apt-get install nodejs npm --yes
-  - sudo npm install jshint
+  - pip install -r install/requirements.txt
+  - npm install jshint
 
 # command to run tests
 script:
