@@ -52,7 +52,7 @@ for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/p
 
 for javascript please follow the [JS Hint styleguide](http://www.jshint.com/)
 
-for templates please follow [W3C new styleguide](http://validator.w3.org/nu/) and [follow django best practices](https://oncampus.oberlin.edu/webteam/2012/09/architecture-django-templates)
+for templates please follow [valid HTML 5 standards](http://validator.w3.org/nu/) and [follow django best practices](https://oncampus.oberlin.edu/webteam/2012/09/architecture-django-templates)
 
 for stylesheets please use [bootstrap](http://getbootstrap.com/) for modifying bootstrap follow [the SMACSS styleguide](http://smacss.com/)
 
