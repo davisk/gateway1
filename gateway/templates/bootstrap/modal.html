@@ -1,0 +1,34 @@
+{% comment %}
+  this is a bootstrap modal element
+  @param title        header for modal
+  @param content      content for modal
+
+  content specific
+  @param input        enable change inputs
+  @param inpid        id of input boxes
+  @param change       value of what we are changing
+{% endcomment %}
+
+<div class="modal fade" id="{{ id }}" tabindex="-1" role="dialog" aria-labelledby="{{ id }}Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                {% if input %}
+                    {% include "bootstrap/input.html" with id="cur_"|add:inpid type=change label="Current "|add:change %}
+                    {% include "bootstrap/input.html" with id="new_"|add:inpid type=change label="New "|add:change %}
+                    {% include "bootstrap/input.html" with id="cnf_"|add:inpid type=change label="Confirm new "|add:change %}
+                {% else %}
+                    {{ content }}
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

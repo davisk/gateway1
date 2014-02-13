@@ -5,9 +5,113 @@
 {% block description %}Manage and view the status of your student entrepreneurs{% endblock %}
 
 {% block main %}
+
     <div class="row">
-        <div class="col-md-4">
-            {% include "bootstrap/nav.html" with id=profileTeacher.id left_title=profileTeacher.left_title middle_title=profileTeacher.middle_title right_title=profileTeacher.right_title dd1_title=profileTeacher.dd1_title dd2_title=profileTeacher.dd2_title %}
+        <div class="col-md-2 cont-border pull-left">
+            <ul class="nav nav-pills nav-stacked" id="navi-content" data-tabs="pills">
+                {% include "bootstrap/teacher_nav.html" with items=subnav %}
+            </ul>
+        </div>
+
+        <div class="col-md-9 cont-border pull-right tab-content" id="tabi-templates" style="width: 79%">
+
+            <!-- Profile Page -->
+            <div class="tab-pane fade {% if subnav.0.active %}in active{% endif %}" id="{{ subnav.0.id }}">
+                <!-- Profile Image -->
+                <section class="col-md-8 pull-left">
+                    <div class="pull-left cont-border col-md-4 text-center" style="height: 200px">
+                        <a href="javascript:void(0);" style="text-decoration: none"><p class="add-img">Add an image...</p></a>
+                    </div>
+
+                    <div class="pull-right col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">User Information</h3>
+                            </div>
+                            <ul class="list-group">
+                                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-username">Username: <span class="line-input" style="margin-left: 20px">superuser</span></a>
+                                
+                                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-password">Password: <span class="line-input" style="margin-left: 23px">**********</span></a>
+                                
+                                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-email">Email: <span class="line-input" style="margin-left: 50px">superuser@gateway.com</span></a>
+                                
+                                <a href="#" class="list-group-item">Permissions: <span class="line-input" style="margin-left: 8px">Administrator</span></a>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                {% for key in modal %}
+                    {% include "bootstrap/modal.html" with id=key.id title=key.title input=key.input inpid=key.inpid change=key.change %}
+                {% endfor %}
+
+                <section class="col-md-4 cont-border pull-right">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Recent Student Activity</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <p>
+                                <a class="green" href="javascript:void(0);">Joseph Stratton</a> finished Mini-Game: Surveys!
+                            </p>
+                            <p class="timestamp-bl">8 minutes ago</p>
+                            
+                            <hr>
+                            <p>
+                                <a class="green" href="#">Brandon Sleater</a> finished Mini-Game: Research!
+                            </p>
+                            <p class="timestamp-bl">42 minutes ago</p>
+                            
+                            <hr>
+                            <p>
+                                <a class="green" href="#">Christmas Smurph</a> started Mini-Game: Aha!
+                            </p>
+                            <p class="timestamp-bl">2 hours ago</p>
+                            
+                            <hr>
+                            <p>
+                                <a class="green" href="#">Becca Little</a> restarted Mini-Game: Surveys!
+                            </p>
+                            <p class="timestamp-bl">8 hours ago</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Manage Page -->
+            <div class="tab-pane fade {% if subnav.1.active %}in active{% endif %}" id="{{ subnav.1.id }}">
+                <section class="col-md-6 cont-border pull-left">
+                    test
+                </section>
+                
+                <section class="col-md-5 cont-border pull-right">
+                    test
+                </section>
+            </div>
+
+            <!-- Settings Page -->
+            <div class="tab-pane fade {% if subnav.3.active %}in active{% endif %}" id="{{ subnav.3.id }}">
+                <section class="col-md-6 cont-border pull-left">
+                    test
+                </section>
+                
+                <section class="col-md-5 cont-border pull-right">
+                    test
+                </section>
+            </div>
+
+            <!-- Help Page -->
+            <div class="tab-pane fade {% if subnav.4.active %}in active{% endif %}" id="{{ subnav.4.id }}">
+                <section class="col-md-6 cont-border pull-left">
+                    test
+                </section>
+                
+                <section class="col-md-5 cont-border pull-right">
+                    test
+                </section>
+            </div>
         </div>
     </div>
+
 {% endblock %}
