@@ -11,4 +11,10 @@ urlpatterns = patterns(
     (r'^profile/?$', views.profile_view),
     (r'^ventures/?$', views.ventures_view),
     (r'^teacher/?$', views.teacher_view),
+    (r'^minigames/aha?$', views.aha_view),
+    (r'^minigames/gap?$', views.gap_view),
+    (r'^minigames/survey?$', views.survey_view),
+    (r'^minigames/interest?$', views.interest_view),
+    (r'^minigames/elevator/?$', views.elevator_view),
+    (r'^minigames/end?$', views.end_view),
 )
