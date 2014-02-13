@@ -37,10 +37,35 @@ def teacher_view(request):
         }
     ]
 
+    modal = [
+        {
+            "id": "modal-username",
+            "title": "Change Username",
+            "input": True,
+            "inpid": "inp__username",
+            "change": "username"
+        },
+        {
+            "id": "modal-password",
+            "title": "Change Password",
+            "input": True,
+            "inpid": "inp__password",
+            "change": "password"
+        },
+        {
+            "id": "modal-email",
+            "title": "Change Email",
+            "input": True,
+            "inpid": "inp__email",
+            "change": "email"
+        }
+    ]
+
     return render(
         request,
         'teacher.html',
         dict(
-            subnav=subnav
+            subnav=subnav,
+            modal=modal
         )
     )
