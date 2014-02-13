@@ -12,3 +12,4 @@ install:
 script:
   - pep8 gateway/
   - pep8 project316/
+  - jshint gateway/
