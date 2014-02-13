@@ -6,16 +6,34 @@
 
 {% block main %}
 
-    <div class="well" style="height: 400px">
-        <ul class="nav nav-tabs nav-justified" id="navi-content" data-tabs="tabs">
-            {% include "bootstrap/teacher_nav.html" with items=subnav %}
-        </ul>
+    <div class="row">
+        <div class="cont-border clearfix pull-left">
+            <ul class="nav nav-pills nav-stacked" id="navi-content" data-tabs="pills">
+                {% include "bootstrap/teacher_nav.html" with items=subnav %}
+            </ul>
+        </div>
 
-        <div class="tab-content" id="tabi-templates">
+        <div class="pull-right tab-content" id="tabi-templates">
             {% for key in subnav %}
 
-                <div class="tab-pane fade {% if key.active %}in active{% endif %}" id="{{ key.id }}">
-                    {{ key.content }}
+                <div class="well-border tab-pane fade {% if key.active %}in active{% endif %}" id="{{ key.id }}">
+                    <div class="well-border cleafix">
+                        <section class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{ key.content }}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    Learn about the stages of the entrepreneurship process, access resources to build your own business plans, and compete to be the best start up!
+                                    <br>
+                                    <aside>
+                                        Are you a teacher, group leader, or instructor?<br>
+                                        Click <button type="button" class="btn btn-default">Here</button> to request a leader page.
+                                    </aside>
+                                </div>
+                            <div>
+                        </section>
+                    </div>
                 </div>
 
             {% endfor %}

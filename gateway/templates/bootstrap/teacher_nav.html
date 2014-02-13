@@ -10,25 +10,25 @@
 {% for item in items|slice:":2" %}
 
 	<li {% if item.active %}class="active"{% endif %}>
-		<a href="#{{ item.id }}" data-toggle="tab"><span class="glyphicon {{ item.icon }}"></span>{{ item.title }}</a>
+		<a href="#{{ item.id }}" data-toggle="tab"><span class="glyphicon {{ item.icon }}"></span>&nbsp;&nbsp;{{ item.title }}</a>
 	</li>
 
 {% endfor %}
 
 <li class="dropdown">
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		<span class="glyphicon {{ items.2.icon }}"></span>
+		<span class="glyphicon {{ items.2.icon }}"></span>&nbsp;
 		{{ items.2.title }}
 		<b class="caret"></b>
 	</a>
 
-	<ul class="dropdown-menu text-center" style="width: 100%">
+	<ul class="dropdown-menu">
 
 		{% for item in items|slice:"3:" %}
 
 			<li>
-				<a href="#{{ item.id }}" data-toggle="tab">
-					<span class="glyphicon {{ item.icon }}"></span>
+				<a href="#{{ item.id }}" data-toggle="tab" style="line-height: 25px">
+					<span class="glyphicon {{ item.icon }}"></span>&nbsp;
 					{{ item.title }}
 				</a>
 			</li>
