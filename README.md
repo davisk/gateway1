@@ -1,5 +1,6 @@
 Gateway Game
 ====
+[Github Issue Scrum Board](https://huboard.com/Team-C/gateway)
 
 build status
 ====
