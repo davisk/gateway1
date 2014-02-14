@@ -1,12 +1,12 @@
 Gateway Game
 ====
-[Github Issue Scrum Board](https://huboard.com/Team-C/gateway)
+[Github Issue Scrum Board](https://huboard.com/Team-H/gateway)
 
 build status
 ====
-master [![Build Status](https://travis-ci.org/Team-C/gateway.png?branch=master)](https://travis-ci.org/Team-C/gateway)
+master [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-C/gateway)
 
-develop [![Build Status](https://travis-ci.org/Team-C/gateway.png?branch=develop)](https://travis-ci.org/Team-C/gateway)
+develop [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-C/gateway)
 
 
 
@@ -17,7 +17,7 @@ git flow
 
 ###add main repository as upstream
 ```
-git remote add upstream https://github.com/ChristianMurphy/gateway
+git remote add upstream https://github.com/Team-H/gateway
 ```
 
 ###update content with lastest from develop branch
