@@ -1,16 +1,16 @@
-
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 
 
-def survey_view(request):
+def elevator_view(request):
     minigame = {
-        "title": "Survey - Game 3",
-        "subtitle": "Coming Soon!"
+        "title": "Elevator - Minigame 5",
+        "subtitle": "Coming Soon!",
+        "is_elevator": "active"
     }
 
     return render(
         request,
-        'survey.html',
+        'minigame/elevator.html',
         dict(minigame=minigame)
     )

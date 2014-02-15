@@ -3,14 +3,15 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 
 
-def gap_view(request):
+def end_view(request):
     minigame = {
-        "title": "Gap - Minigame 2",
-        "subtitle": "Coming Soon!"
+        "title": "End - The Final Minigame",
+        "subtitle": "Coming Soon!",
+        "is_end": "active"
     }
 
     return render(
         request,
-        'gap.html',
+        'minigame/end.html',
         dict(minigame=minigame)
     )

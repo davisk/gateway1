@@ -6,11 +6,12 @@ from django.shortcuts import render
 def interest_view(request):
     minigame = {
         "title": "Interest - Minigame 4",
-        "subtitle": "Coming Soon!"
+        "subtitle": "Coming Soon!",
+        "is_interest": "active"
     }
 
     return render(
         request,
-        'interest.html',
+        'minigame/interest.html',
         dict(minigame=minigame)
     )

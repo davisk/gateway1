@@ -1,0 +1,21 @@
+{% extends "layout/base.html" %}
+
+{% block main %}
+	<div class="row">
+		<div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li><a href="/minigame">Start</a></li>
+				<li{% if minigame.is_aha %} class="active"{% endif %}><a href="/minigame/aha">Aha</a></li>
+				<li{% if minigame.is_gap %} class="active"{% endif %}><a href="/minigame/gap">Gap</a></li>
+				<li{% if minigame.is_survey %} class="active"{% endif %}><a href="/minigame/survey">Survey</a></li>
+				<li{% if minigame.is_interest %} class="active"{% endif %}><a href="/minigame/interest">Interest</a></li>
+				<li{% if minigame.is_elevator %} class="active"{% endif %}><a href="/minigame/elevator">Elevator</a></li>
+				<li{% if minigame.is_end %} class="active"{% endif %}><a href="/minigame/end">End</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-10">
+			{% block minigame %}{% endblock %}
+		</div>
+	</div>
+{% endblock %}
