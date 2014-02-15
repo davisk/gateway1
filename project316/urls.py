@@ -9,4 +9,5 @@ urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('gateway.urls')),
+    url(r'^accounts/?$', include('registration.urls')),
 )
