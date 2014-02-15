@@ -1,6 +1,6 @@
 .cont-border {
     min-height: 20px;
-    margin-bottom: 20px;
+    margin-bottom: -5px;
     padding: 19px;
     border: 1px solid #e3e3e3;
     -webkit-border-radius: 4px;
@@ -43,8 +43,9 @@
     color: #777; 
 }
 
-a, a:hover, a:active {
+a, a:hover, a:active, a:target {
     color: #1abc9c;
+    text-decoration: none;
 }
 
 .line-input {
@@ -63,4 +64,49 @@ a, a:hover, a:active {
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #1abc9c;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #1abc9c;
+}
+
+.sml {
+    height: 200px;
+}
+
+.medi {
+    height: 450px;
+}
+
+.lrg {
+    height: 700px;
+}
+
+.lrg-wdth {
+    width: 79%;
+}
+
+.of-lil {
+    margin-left: 8px;
+}
+
+.of-med {
+    margin-left: 50px;
+}
+
+.of-usr {
+    margin-left: 20px;    
+}
+
+.of-pwd {
+    margin-left: 23px;
+}
+
+.text-primary, .btn-link, .active>a>.badge {
+    color: #1abc9c;
+}
+
+.nav .open>a:focus {
+    background-color: #eee;
+    border-color: #1abc9c;
+}
+
+.of-left {
+    margin-left: -10px;
 }
