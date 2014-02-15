@@ -2,3 +2,4 @@ django
 django-registration
 pep8
 autopep8
+jsbeauitifier
