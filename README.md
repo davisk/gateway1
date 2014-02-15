@@ -4,9 +4,9 @@ Gateway Game
 
 build status
 ====
-master [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-C/gateway)
+master [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-H/gateway)
 
-develop [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-C/gateway)
+develop [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
 
 
 
