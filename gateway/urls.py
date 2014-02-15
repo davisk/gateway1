@@ -7,7 +7,8 @@ from gateway.views import minigame
 
 minigame_patterns = patterns(
     '',
-    (r'^/?$', RedirectView.as_view(url='/minigame/aha', permanent=False)),
+    (r'^$', views.minigame.start_view),
+    (r'^start?$', views.minigame.start_view),
     (r'^aha?$', views.minigame.aha_view),
     (r'^gap?$', views.minigame.gap_view),
     (r'^survey?$', views.minigame.survey_view),
