@@ -1,0 +1,8 @@
+{% extends "layout/minigame.html" %}
+
+{% block title %}Gap - Minigame 2{% endblock %}
+{% block description %}Play game 2 and get your takehome{% endblock %}
+
+{% block minigame %}
+	{% include "bootstrap/jumbotron.html" with header=minigame.title subheader=minigame.subtitle %}
+{% endblock %}

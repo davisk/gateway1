@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layout/base.html" %}
 
 {% block title %}Member's Home{% endblock %}
 {% block description %}This is the home page for members{% endblock %}
@@ -23,10 +23,10 @@
 
 		<div class="col-md-6">
 			<section class="well">
-				{% include "bootstrap/media.html" with title=currentVenture.title glyphicon=currentVenture.image description=currentVenture.description %}
+				{% include "bootstrap/media-glyphicon.html" with heading=currentVenture.title glyphicon=currentVenture.image body=currentVenture.description %}
 			</section>
 
-			 {% include "bootstrap/panel.html" with title=currentVenture.title content=currentVenture.description %}
+			 {% include "bootstrap/panel.html" with header=currentVenture.title body=currentVenture.description %}
 		</div>
 	</div>
 {% endblock %}

@@ -1,22 +1,23 @@
 Gateway Game
 ====
+[Github Issue Scrum Board](https://huboard.com/Team-H/gateway)
 
 build status
 ====
-master [![Build Status](https://travis-ci.org/ChristianMurphy/gateway.png?branch=master)](https://travis-ci.org/ChristianMurphy/gateway)
+master [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-H/gateway)
 
-develop [![Build Status](https://travis-ci.org/ChristianMurphy/gateway.png?branch=develop)](https://travis-ci.org/ChristianMurphy/gateway)
+develop [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
 
 
 
-contribute
+git flow
 ====
 ###make a fork of the repository
 [instructions](https://help.github.com/articles/fork-a-repo)
 
 ###add main repository as upstream
 ```
-git remote add upstream https://github.com/ChristianMurphy/gateway
+git remote add upstream https://github.com/Team-H/gateway
 ```
 
 ###update content with lastest from develop branch
@@ -45,3 +46,41 @@ the change what you want, if you want to commit the changes follow add changes a
 ```
 git push origin branch-name
 ``` 
+
+styleguide
+====
+for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/pep-0008/)
+We have an autoformatter, please make sure autopep8 is installed, then run the autoPython.sh in gateway to format.
+
+for javascript please follow the [JS Hint styleguide](http://www.jshint.com/) 
+We also have an autoformatter for javascript now, make sure you install jsbeautifier from pip and run the autoJS.sh from terminal
+
+for templates please follow [valid HTML 5 standards](http://validator.w3.org/nu/) and [follow django best practices](https://oncampus.oberlin.edu/webteam/2012/09/architecture-django-templates)
+
+for stylesheets please use [bootstrap](http://getbootstrap.com/) for modifying bootstrap follow [the SMACSS styleguide](http://smacss.com/)
+
+naming convensions
+====
+bootstrap mixins should use the class naming system
+
+example bootstrap panel
+``` html
+<div class="panel panel-default">
+  <div class="panel-heading">Panel heading without title</div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+```
+
+in django the variables would be
+``` django
+<section class="panel panel-default">
+  <div class="panel-heading">
+    {{ header }}
+  </div>
+  <div class="panel-body">
+    {{ body }}
+  </div>
+</section>
+```

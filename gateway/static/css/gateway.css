@@ -1,0 +1,112 @@
+.cont-border {
+    min-height: 20px;
+    margin-bottom: -5px;
+    padding: 19px;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.green {
+    color: #409f89;
+}
+
+.timestamp-bl {
+    color: #34495e;
+    font-size: 10px;
+    margin-top: -7px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #ffffff;
+    background-color: #1abc9c;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #1abc9c;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color: #eee;
+    border-color: #1abc9c;
+}
+
+.add-img {
+    margin-top: 68px; 
+    color: #777; 
+}
+
+a, a:hover, a:active, a:target {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.line-input {
+    font-size: 12px;
+    color: #555;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #1abc9c;
+    border-color: #2ed0b0;
+}
+
+.form-control:focus {
+    border-color: #2ed0b0;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #1abc9c;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #1abc9c;
+}
+
+.sml {
+    height: 200px;
+}
+
+.medi {
+    height: 450px;
+}
+
+.lrg {
+    height: 700px;
+}
+
+.lrg-wdth {
+    width: 79%;
+}
+
+.of-lil {
+    margin-left: 8px;
+}
+
+.of-med {
+    margin-left: 50px;
+}
+
+.of-usr {
+    margin-left: 20px;    
+}
+
+.of-pwd {
+    margin-left: 23px;
+}
+
+.text-primary, .btn-link, .active>a>.badge {
+    color: #1abc9c;
+}
+
+.nav .open>a:focus {
+    background-color: #eee;
+    border-color: #1abc9c;
+}
+
+.of-left {
+    margin-left: -10px;
+}

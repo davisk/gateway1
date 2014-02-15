@@ -4,9 +4,12 @@ python:
   - "2.7"
 
 # command to install dependencies
-install: "pip install -r install/requirements.txt"
+install:
+  - pip install -r install/requirements.txt
+  - npm install jshint
 
 # command to run tests
 script:
   - pep8 gateway/
   - pep8 project316/
+  - jshint gateway/

@@ -2,14 +2,15 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 
 
-def minigames_view(request):
+def interest_view(request):
     minigame = {
-        "title": "Minigames",
-        "subtitle": "Coming Soon!"
+        "title": "Interest - Minigame 4",
+        "subtitle": "Coming Soon!",
+        "is_interest": "active"
     }
 
     return render(
         request,
-        'minigames.html',
+        'minigame/interest.html',
         dict(minigame=minigame)
     )

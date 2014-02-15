@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layout/base.html" %}
 
 {# page content #}
 {% block title %}Community{% endblock %}
@@ -7,15 +7,15 @@
 {% block main %}
     <div class="row">
         <div class="col-md-4">
-            {% include "bootstrap/panel.html" with title=myVenture.title content=myVenture.content %}
+            {% include "bootstrap/panel.html" with header=myVenture.title body=myVenture.content %}
         </div>
 
         <div class="col-md-4">
-            {% include "bootstrap/panel.html" with title=groupVenture.title content=groupVenture.content %}
+            {% include "bootstrap/panel.html" with header=groupVenture.title body=groupVenture.content %}
         </div>
 
         <div class="col-md-4">
-             {% include "bootstrap/panel.html" with title=communityVenture.title content=communityVenture.content %}
+             {% include "bootstrap/panel.html" with header=communityVenture.title body=communityVenture.content %}
         </div>
     </div>
 {% endblock %}
