@@ -1,4 +1,3 @@
-aptitude.txt
 mysql-server
 python
 python-dev
