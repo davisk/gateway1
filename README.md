@@ -50,6 +50,7 @@ git push origin branch-name
 styleguide
 ====
 for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/pep-0008/)
+We have an autoformatter, please make sure autopep8 is installed, then run the autoPython.sh in gateway to format.
 
 for javascript please follow the [JS Hint styleguide](http://www.jshint.com/)
 
