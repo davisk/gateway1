@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.conf.urls import patterns, url, include
 from django.views.generic.base import RedirectView
-from gateway import views
-from gateway.views import minigame
+from views import minigame
+import views
 from django.contrib import admin
 admin.autodiscover()
 

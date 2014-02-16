@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-TEMPLATE_PATH = os.path.dirname(os.path.dirname(__file__)) + '/templates'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "gateway/templates")
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gateway',
     'registration',
 )
 
@@ -56,9 +57,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'gateway.urls'
+ROOT_URLCONF = 'urls'
 
-WSGI_APPLICATION = 'gateway.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
