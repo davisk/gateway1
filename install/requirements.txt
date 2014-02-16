@@ -1,5 +1,6 @@
+autopep8
 django
 django-registration
-pep8
-autopep8
 jsbeautifier
+pep8
+uwsgi

@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.conf.urls import patterns, url, include
 from django.views.generic.base import RedirectView
-from gateway import views
-from gateway.views import minigame
+from views import minigame
+import views
+from django.contrib import admin
+admin.autodiscover()
 
 
 minigame_patterns = patterns(
@@ -20,6 +22,8 @@ minigame_patterns = patterns(
 urlpatterns = patterns(
     '',
     (r'^/?$', views.home_view),
+    (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/', include('registration.urls')),
     (r'^community/?$', views.community_view),
     (r'^members/?$', views.members_view),
     (r'^profile/?$', views.profile_view),

@@ -10,6 +10,5 @@ install:
 
 # command to run tests
 script:
-  - pep8 gateway/
-  - pep8 project316/
-  - jshint gateway/
+  - pep8 .
+  - jshint . --exclude ./node_modules
