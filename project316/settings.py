@@ -60,6 +60,7 @@ ROOT_URLCONF = 'project316.urls'
 
 WSGI_APPLICATION = 'project316.wsgi.application'
 
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
