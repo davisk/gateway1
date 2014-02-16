@@ -7,22 +7,29 @@
 {% block main %}
 
     <div class="row">
+
+        <!-- Left Navigation -->
         <div class="col-md-2 cont-border pull-left">
             <ul class="nav nav-pills nav-stacked" id="navi-content" data-tabs="pills">
                 {% include "bootstrap/teacher_nav.html" with items=subnav %}
             </ul>
         </div>
 
-        <div class="col-md-9 cont-border pull-right tab-content lrg-wdth" id="tabi-templates">
+        <!-- Navigation Page Content -->
+        <div class="col-md-9 cont-border pull-right tab-content lrg-wdth dwn15" id="tabi-templates">
 
             <!-- Profile Page -->
             <div class="tab-pane fade {% if subnav.0.active %}in active{% endif %}" id="{{ subnav.0.id }}">
-                <!-- Profile Image -->
+                
+                <!-- Left Side - Information/Image -->
                 <section class="col-md-8 pull-left">
+                    
+                    <!-- Profile Picture -->
                     <div class="pull-left cont-border col-md-4 text-center sml of-left">
                         <a href="javascript:void(0);"><p class="add-img">Add an image...</p></a>
                     </div>
 
+                    <!-- Profile Information -->
                     <div class="pull-right col-md-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -35,8 +42,36 @@
                                 
                                 <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-email">Email: <span class="line-input of-med">superuser@gateway.com</span></a>
                                 
-                                <a href="javascript:void(0);" class="list-group-item">Permissions: <span class="line-input of-lil">Administrator</span></a>
+                                <p class="list-group-item">Permissions: <span class="line-input of-lil">Administrator</span></p>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 pull-left">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#bio" data-toggle="tab"><span class="glyphicon glyphicon-comment"></span>&nbsp;
+                                Bio</a>
+                            </li>
+                            <li>
+                                <a href="#education" data-toggle="tab"><span class="glyphicon glyphicon-book"></span>&nbsp;
+                                Education</a>
+                            </li>
+                            <li>
+                                <a href="#work" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;
+                                Work</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="bio">
+                                bio stuff
+                            </div>
+                            <div class="tab-pane fade" id="education">
+                                education stuff
+                            </div>
+                            <div class="tab-pane fade" id="work">
+                                work stuff
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -45,38 +80,38 @@
                     {% include "bootstrap/modal.html" with id=key.id title=key.title input=key.input inpid=key.inpid change=key.change %}
                 {% endfor %}
 
+                <!-- Right Side - Recent Student Mini-Game Completions -->
                 <section class="col-md-4 cont-border pull-right">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default dwn2-inv">
                         <div class="panel-heading">
                             <h3 class="panel-title">Recent Student Activity</h3>
                         </div>
                         
-                        <div class="panel-body">
-                            <p>
-                                <a class="green" href="javascript:void(0);">Josafina Strattina</a> finished Mini-Game: Surveys!
-                            </p>
-                            <p class="timestamp-bl">8 minutes ago</p>
-                            
-                            <hr>
-                            <p>
-                                <a class="green" href="javascript:void(0);">Becca Little</a> finished Mini-Game: Research!
-                            </p>
-                            <p class="timestamp-bl">42 minutes ago</p>
-                            
-                            <hr>
-                            <p>
-                                <a class="green" href="javascript:void(0);">Dobby Wing</a> finished Mini-Game: Aha!
-                            </p>
-                            <p class="timestamp-bl">2 hours ago</p>
-                            
-                            <hr>
-                            <p>
-                                <a class="green" href="javascript:void(0);">Christian Murphy/a> finished Mini-Game: Interest!
-                            </p>
-                            <p class="timestamp-bl">7 hours ago</p>
+                        <!-- Load in Student Name/Game/Time -->
+                        <div class="panel-body tab-content dwn15-inv">
 
-                            <hr>
-                            <button type="submit" class="btn btn-default btn-xs pull-right">More</button>
+                            <!-- Page 1 -->
+                            <div class="tab-pane fade {% if act_pgs.0.active %}in active{% endif %}" id="{{ act_pgs.0.id }}">
+                                {% for value in activities %}
+                                    {% include "bootstrap/sidenav-teacher.html" with name=value.name game=value.game time=value.time %}
+                                {% endfor %}
+                            </div>
+
+                            <!-- Page 2 -->
+                            <div class="tab-pane fade {% if act_pgs.1.active %}in active{% endif %}" id="{{ act_pgs.1.id }}">
+                                {% for value in activities %}
+                                    {% include "bootstrap/sidenav-teacher.html" with name=value.name game=value.game time=value.time %}
+                                {% endfor %}
+                            </div>
+
+                            <!-- Page 3 -->
+                            <div class="tab-pane fade {% if act_pgs.2.active %}in active{% endif %}" id="{{ act_pgs.2.id }}">
+                                {% for value in activities %}
+                                    {% include "bootstrap/sidenav-teacher.html" with name=value.name game=value.game time=value.time %}
+                                {% endfor %}
+                            </div>
+
+                            {% include "bootstrap/pagination.html" with pages=act_pgs %}
                         </div>
                     </div>
                 </section>
