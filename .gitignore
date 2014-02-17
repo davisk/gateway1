@@ -51,3 +51,6 @@ docs/_build/
 
 # Gedit temporary files
 *~
+
+#node js modules
+node_modules/*
