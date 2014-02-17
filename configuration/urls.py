@@ -31,10 +31,4 @@ urlpatterns = patterns(
     (r'^ventures/?$', controllers.ventures_view),
     (r'^teacher/?$', controllers.teacher_view),
     (r'^minigame/', include(minigame_patterns)),
-) + static(
-    settings.STATIC_URL,
-    document_root=settings.STATIC_ROOT
-)
-
-print(settings.STATIC_URL)
-print(settings.STATIC_ROOT)
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
