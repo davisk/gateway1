@@ -5,7 +5,7 @@ python:
 
 # command to install dependencies
 install:
-  - pip install -r install/requirements.txt
+  - pip install -r scripts/requirements.txt
   - npm install jshint
 
 # command to run tests
