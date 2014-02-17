@@ -1,0 +1,12 @@
+{% comment %}
+	this is a bootstrap side nav content element
+	@param name		name of student
+	@param game 	game that was completed
+	@param time 	time that game was completed (this will end up needing to be setup for sql time)
+{% endcomment %}
+
+<p>
+	<a class="green" href="javascript:void(0);">{{ name }}</a> finished Mini-Game: {{ game }}!
+</p>
+<p class="timestamp-bl">{{ time }} ago</p>
+<hr>
