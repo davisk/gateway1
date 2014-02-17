@@ -61,11 +61,54 @@ def teacher_view(request):
         }
     ]
 
+    activities = [
+        {
+            "name": "Brandon Sleater",
+            "game": "Elevator",
+            "time": "8 minutes"
+        },
+        {
+            "name": "Joseph Stratton",
+            "game": "Research",
+            "time": "43 minutes"
+        },
+        {
+            "name": "Christian Murphy",
+            "game": "Interest",
+            "time": "2 hours"
+        },
+        {
+            "name": "Becca Little",
+            "game": "Survey",
+            "time": "11 hours"
+        },
+        {
+            "name": "Davis Kendry",
+            "game": "Gap",
+            "time": "1 day, 2 hours"
+        }
+    ]
+
+    act_pgs = [
+        {
+            "id": "rec_std_act_1",
+            "active": "active"
+        },
+        {
+            "id": "rec_std_act_2"
+        },
+        {
+            "id": "rec_std_act_3"
+        }
+    ]
+
     return render(
         request,
         'teacher.html',
         dict(
             subnav=subnav,
-            modal=modal
+            modal=modal,
+            activities=activities,
+            act_pgs=act_pgs
         )
     )

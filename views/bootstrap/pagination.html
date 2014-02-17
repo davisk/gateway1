@@ -1,0 +1,20 @@
+{% comment %}
+	this is a bootstrap side nav content element
+	@param name		name of student
+	@param game 	game that was completed
+	@param time 	time that game was completed (this will end up needing to be setup for sql time)
+{% endcomment %}
+
+<div class="col-md-8 col-md-offset-3">
+	 <ul class="pagination pagination-sm top0">
+		<li class="active">
+			<a href="#{{ pages.0.id }}" data-toggle="tab">1</a>
+		</li>
+		<li>
+			<a href="#{{ pages.1.id }}" data-toggle="tab">2</a>
+		</li>
+		<li>
+			<a href="#{{ pages.2.id }}" data-toggle="tab">3</a>
+		</li>
+	</ul>
+</div>
