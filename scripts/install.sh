@@ -6,7 +6,7 @@ Press any key to continue..."
 
 DISTRO=$(awk '/DISTRIB_ID=/' /etc/lsb-release | sed 's/DISTRIB_ID=//' | tr '[:upper:]' '[:lower:]')
 
-echo Your distro is $DISTRO
+echo Your distro is "$DISTRO"
 
 read -p "Is the above correct? If so press any key to continue, otherwise please exit with Ctrl+c"
 
