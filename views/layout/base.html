@@ -9,7 +9,7 @@
         <meta name="author" content="">
         
         <!--security policies-->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://code.jquery.com https://netdna.bootstrapcdn.com; style-src 'self' https://netdna.bootstrapcdn.com; font-src https://netdna.bootstrapcdn.com">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://code.jquery.com https://netdna.bootstrapcdn.com; style-src https://netdna.bootstrapcdn.com; font-src https://netdna.bootstrapcdn.com">
         <meta http-equiv="X-Frame-Options" content="deny">
         <meta http-equiv="X-XSS-Protection" content="1; mode=block">
         <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -18,14 +18,14 @@
         <title>{% block title %}CST316 Entrepreneurship{% endblock %}</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
         
         {% load staticfiles %}
         <link href="{% static "css/gateway.css" %}" rel="stylesheet">
         <script src="{% static "js/gateway.js" %}" defer></script>
 
         <script src="https://code.jquery.com/jquery-2.1.0.min.js" defer></script>
-        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" defer></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" defer></script>
     </head>
 
     <body>
@@ -40,6 +40,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="/">Gateway</a>
+                        <a class="navbar-brand" href="/faqs">FAQ</a>
                     </section>
 
                     <section class="collapse navbar-collapse">
@@ -56,14 +57,9 @@
                             <li {% if community_page %}class="active"{% endif %}>
                                 <a href="/community">Community</a>
                             </li>
-                            {% if user.is_staff %}
-                                <li {% if teacher_page %}class="active"{% endif %}>
-                                    <a href="/teacher">Profile</a>
-                            {% else %}
-                                <li {% if profile_page %}class="active"{% endif %}>
-                                    <a href="/profile">Profile</a>
-                            {% endif %}
-                                </li>    
+                            <li {% if profile_page %}class="active"{% endif %}>
+                                <a href="/profile">Profile</a>
+                            </li>
                         </ul>
 
                         <form class="navbar-form navbar-right" role="logout">
@@ -71,9 +67,13 @@
                         </form>
 
                     {% else %}
-                        <a class="navbar-form navbar-right" href="/accounts/login/">
+
+                        <form class="navbar-form navbar-right" role="login">
+                            {% include "bootstrap/input.html" with id="email" type="email" placeholder="email" %}
+                            {% include "bootstrap/input.html" with id="password" type="password" placeholder="password" %}
                             <button type="submit" class="btn btn-default">Login</button>
-                        </a>
+                        </form>
+
                     {% endif %}
 
                     </section>

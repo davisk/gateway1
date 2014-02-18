@@ -5,6 +5,7 @@ from minigames import minigames_view
 from profile import profile_view
 from ventures import ventures_view
 from teacher import teacher_view
+from faqs import faqs_view
 
 __all__ = [
     "home_view",
@@ -14,4 +15,5 @@ __all__ = [
     "profile_view",
     "ventures_view",
     "teacher_view"
+    "faqs_view"
 ]
