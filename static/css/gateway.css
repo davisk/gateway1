@@ -144,6 +144,42 @@ a, a:hover, a:active, a:target {
     margin-top: 0px;
 }
 
+.top1-inv {
+    margin-top: -1px;
+}
+
+.top7-inv {
+    margin-top: -7px;
+}
+
+.left25-inv {
+    margin-left: -25px;
+}
+
+.nav {
+    width: 99%;
+}
+
+.wide5 {
+    width: 105%;
+}
+
+.btn-sbm, .btn-sbm:focus {
+    width: 18%;
+    background: #1abc9c;
+    color: #ffffff;
+}
+
+.btn-sbm:hover {
+    background: #fff;
+    color: #1abc9c;
+    border-color: #e3e3e3;
+}
+
 .tl100 {
     height: 100px;
+}
+
+textarea {
+    resize: none;
 }
