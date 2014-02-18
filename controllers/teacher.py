@@ -83,9 +83,9 @@ def teacher_view(request):
             "time": "11 hours"
         },
         {
-            "name": "Davis Kendry",
-            "game": "Gap",
-            "time": "1 day, 2 hours"
+            "name": "Justin Dobson",
+            "game": "Aha!",
+            "time": "19 hours"
         }
     ]
 
@@ -109,6 +109,7 @@ def teacher_view(request):
             subnav=subnav,
             modal=modal,
             activities=activities,
-            act_pgs=act_pgs
+            act_pgs=act_pgs,
+            n=range(0, 2)
         )
     )

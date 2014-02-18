@@ -18,7 +18,8 @@ function init() {
 
     // Scene
     scene = new THREE.Scene();
-        var WIDTH = window.innerWidth, HEIGHT = window.innerHeight;
+        var WIDTH = window.innerWidth,
+            HEIGHT = window.innerHeight;
 
         // Renderer
         renderer = new THREE.WebGLRenderer({antialias:true});
@@ -32,7 +33,8 @@ function init() {
 
         // Resize renderer with browser window
         window.addEventListener('resize', function() {
-            var WIDTH = window.innerWidth, HEIGHT = window.innerHeight;
+            var WIDTH = window.innerWidth,
+                    HEIGHT = window.innerHeight;
             renderer.setSize(WIDTH, HEIGHT);
             camera.aspect = WIDTH / HEIGHT;
             camera.updateProjectionMatrix();
