@@ -38,6 +38,11 @@
     border-color: #1abc9c;
 }
 
+.navbar-brand {
+    padding-right: 54px;
+
+}
+
 .add-img {
     margin-top: 68px; 
     color: #777; 

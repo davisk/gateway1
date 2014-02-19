@@ -6,16 +6,35 @@
 
 {% block main %}
     <div class="row">
-        <div class="col-md-4">
-            <!--{% include "bootstrap/panel.html" with header=myVenture.title body=myVenture.content %}-->
-        </div>
-
-        <div class="col-md-4">
-           <!-- {% include "bootstrap/panel.html" with header=groupVenture.title body=groupVenture.content %}-->
-        </div>
-
-        <div class="col-md-4">
-             <!--{% include "bootstrap/panel.html" with header=communityVenture.title body=communityVenture.content %}-->
-        </div>
+        <section class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Questions</h1>
+                </div>
+                <div class="panel-body">
+                    1. How do I learn?
+                    <br>
+                    2. When will I be potty trained?
+                    <br>
+                    3. When will this project be completed?
+                    <br>
+                </div>
+            <div>
+        </section>
+        <section class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class ="panel-title">Answers</h1>
+                </div>
+                <div class="panel-body">
+                    1. You study.
+                    <br>
+                    2. Get rid of those diapers SON!
+                    <br>
+                    3. Hopefully by the end of the semester.
+                    <br>
+                 </div>
+            </div>
+        </section>
     </div>
 {% endblock %}
