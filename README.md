@@ -29,6 +29,11 @@ git pull upstream develop
 ```
 git add --all
 git commit --all
+git pull upstream develop
+git status
+```
+fix any conflicts then
+```
 git push origin develop
 ```
 
