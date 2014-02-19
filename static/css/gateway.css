@@ -144,6 +144,14 @@ a, a:hover, a:active, a:target {
     margin-top: 0px;
 }
 
+.btm30 {
+    margin-bottom: 30px;
+}
+
+.top7 {
+    margin-top: 7px;
+}
+
 .top1-inv {
     margin-top: -1px;
 }
@@ -154,6 +162,18 @@ a, a:hover, a:active, a:target {
 
 .left25-inv {
     margin-left: -25px;
+}
+
+.left15-inv {
+    margin-left: -15px;
+}
+
+.left19-inv {
+    margin-left: -19px;
+}
+
+.pleft8 {
+    padding-left: 8px;
 }
 
 .nav {
