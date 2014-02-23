@@ -38,7 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'django.core.mail',
     'registration',
 )
 
@@ -100,12 +102,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-LOGIN_REDIRECT_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/community'
 
 ACCOUNT_ACTIVATION_DAYS = 4
-EMAIL_HOST='mail.gatewaygame.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS =True
-EMAIL_USE_SSL=True
-EMAIL_HOST_USER='registration@gatewaygame.com'
-EMAIL_HOST_PASSWORD='TeamHEntrepreneurship'
+EMAIL_HOST = 'mail.gatewaygame.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'registration@gatewaygame.com'
+EMAIL_HOST_PASSWORD = 'TeamHEntrepreneurship'
+DEFAULT_FROM_EMAIL = 'registration@gatewaygame.com'
