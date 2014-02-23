@@ -103,3 +103,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/accounts/login'
 
 ACCOUNT_ACTIVATION_DAYS = 4
+EMAIL_HOST='mail.gatewaygame.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS =True
+EMAIL_USE_SSL=True
+EMAIL_HOST_USER='registration@gatewaygame.com'
+EMAIL_HOST_PASSWORD='TeamHEntrepreneurship'
