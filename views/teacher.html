@@ -11,7 +11,7 @@
         <!-- Left Navigation -->
         <div class="col-md-2 cont-border pull-left">
             <ul class="nav nav-pills nav-stacked" id="navi-content" data-tabs="pills">
-                {% include "bootstrap/studentnav.html" with items=subnav %}
+                {% include "bootstrap/accountnav.html" with items=subnav %}
             </ul>
         </div>
 
@@ -20,7 +20,7 @@
 
             <!-- Profile Page -->
             <div class="tab-pane fade {% if subnav.0.active %}in active{% endif %}" id="{{ subnav.0.id }}">
-                {% include "profile.html" %}
+                {% include "profile_teacher.html" %}
             </div>
 
             <!-- Manage Page -->
