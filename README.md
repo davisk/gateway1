@@ -4,10 +4,12 @@ Gateway Game
 
 build status
 ====
-master [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-H/gateway)
+master
+[![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-H/gateway)
+[![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=master)](https://coveralls.io/r/Team-H/gateway?branch=master)
 
 develop [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
-
+[![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=develop)](https://coveralls.io/r/Team-H/gateway?branch=develop)
 
 
 git flow
