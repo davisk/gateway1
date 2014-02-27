@@ -2,5 +2,6 @@ autopep8
 django
 django-registration
 jsbeautifier
+mysql-python
 pep8
 uwsgi

@@ -5,12 +5,13 @@ from configuration.settings import *
 from controllers import minigame
 import controllers
 from django.contrib import admin
+from django.views.generic import RedirectView
 admin.autodiscover()
 
 
 minigame_patterns = patterns(
     '',
-    (r'^$', controllers.minigame.start_view),
+    (r'^$', RedirectView.as_view(url='/minigame/start')),
     (r'^start?$', controllers.minigame.start_view),
     (r'^aha?$', controllers.minigame.aha_view),
     (r'^gap?$', controllers.minigame.gap_view),
