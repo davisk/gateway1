@@ -19,3 +19,6 @@ script:
   - pep8 .
   - jshint . --exclude ./node_modules
   - python manage.py test
+
+after_script:
+  - coveralls
