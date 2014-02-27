@@ -12,3 +12,4 @@ install:
 script:
   - pep8 .
   - jshint . --exclude ./node_modules
+  - django manage.py test
