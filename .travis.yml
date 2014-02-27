@@ -18,7 +18,7 @@ before_script:
 script:
   - pep8 .
   - jshint . --exclude ./node_modules
-  - coverage run manage.py test
+  - coverage run --source gateway manage.py test
 
 after_success:
   - coveralls
