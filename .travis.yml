@@ -18,6 +18,8 @@ before_script:
 script:
   - pep8 .
   - jshint . --exclude ./node_modules
+  - radon cc manage.py test
+  - radon mi manage.py test
   - coverage run --source gateway manage.py test
 
 after_success:
