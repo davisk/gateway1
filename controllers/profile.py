@@ -11,6 +11,6 @@ def profile_view(request):
     }
     return render(
         request,
-        'profile_student.html',
+        'student.html',
         dict(user=user)
     )
