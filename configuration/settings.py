@@ -61,7 +61,9 @@ ROOT_URLCONF = 'configuration.urls'
 
 WSGI_APPLICATION = 'configuration.wsgi.application'
 
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+# change this to a proper location
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "email")
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
