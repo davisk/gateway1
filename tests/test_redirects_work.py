@@ -49,20 +49,6 @@ class TestRedirectssWork(unittest.TestCase):
         # Check that login loads OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_teacher(self):
-        # Issue a GET request.
-        response = self.client.get('/teacher', follow=True)
-
-        # Check that the response is 302 Temporary Redirect
-        # And that the next points to the correct page
-        self.assertEqual(
-            response.redirect_chain,
-            [('http://testserver/accounts/login/?next=/teacher', 302)]
-        )
-
-        # Check that login loads OK.
-        self.assertEqual(response.status_code, 200)
-
     def test_ventures(self):
         # Issue a GET request.
         response = self.client.get('/ventures', follow=True)

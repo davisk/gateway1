@@ -56,13 +56,6 @@ class TestUrlsWork(unittest.TestCase):
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_teacher(self):
-        # Issue a GET request.
-        response = self.client.get('/teacher')
-
-        # Check that the response is 200 OK.
-        self.assertEqual(response.status_code, 200)
-
     def test_ventures(self):
         # Issue a GET request.
         response = self.client.get('/ventures')
