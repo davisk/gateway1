@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -77,17 +79,11 @@
                         </ul>
 
                         <form class="navbar-form navbar-right" role="logout">
-                            <button type="submit" class="btn btn-default">Exit Venture</button>
+                            <a href="/accounts/logout" class="btn btn-default navbar-btn navbar-right">Exit Venture</a>
                         </form>
 
                     {% else %}
-
-                        <form class="navbar-form navbar-right" role="login">
-                            {% include "bootstrap/input.html" with id="email" type="email" placeholder="email" %}
-                            {% include "bootstrap/input.html" with id="password" type="password" placeholder="password" %}
-                            <button type="submit" class="btn btn-default">Login</button>
-                        </form>
-
+                       <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>
                     {% endif %}
 
                     </section>
