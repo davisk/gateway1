@@ -20,17 +20,17 @@
 
             <!-- Profile Page -->
             <div class="tab-pane fade {% if subnav.0.active %}in active{% endif %}" id="{{ subnav.0.id }}">
-                {% include "profile_student.html" %}
+                {% include "fragment/profile_student.html" %}
             </div>
 
             <!-- Settings Page -->
             <div class="tab-pane fade {% if subnav.3.active %}in active{% endif %}" id="{{ subnav.3.id }}">
-                {% include "settings.html" %}
+                {% include "fragment/settings.html" %}
             </div>
 
             <!-- Help Page -->
             <div class="tab-pane fade {% if subnav.4.active %}in active{% endif %}" id="{{ subnav.4.id }}">
-                {% include "help.html" %}
+                {% include "fragment/help.html" %}
             </div>
         </div>
     </div>

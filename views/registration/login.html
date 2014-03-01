@@ -27,7 +27,7 @@
                 <input class="btn btn-default" type="submit" value="{% trans 'Log in' %}" />
             </div>
         </div>
-        <input type="hidden" name="next" value="{{ next }}" />
+        <input type="hidden" name="next" value="{{ next | default:"/members"  }}" />
     </form>
     
     <br>
