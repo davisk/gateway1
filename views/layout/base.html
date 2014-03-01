@@ -17,30 +17,23 @@
         <!--Page title-->
         <title>{% block title %}CST316 Entrepreneurship{% endblock %}</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-        
-        {% load staticfiles %}
-        <link href="{% static "css/gateway.css" %}" rel="stylesheet">
-        <script src="{% static "js/gateway.js" %}" defer></script>
-
-        <script src="https://code.jquery.com/jquery-2.1.0.min.js" defer></script>
-        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" defer></script>
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
         <script src="https://code.jquery.com/jquery-2.1.0.min.js" defer></script>
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" defer></script>
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
+        {% load staticfiles %}
         <link href="{% static "css/gateway.css" %}" rel="stylesheet">
         <script src="{% static "js/gateway.js" %}" defer></script>
     </head>
 
     <body>
         <header class="navbar navbar-default navbar-static-top" role="navigation">
-            <nav class="container">
+            <nav class="container-fluid">
+
                 {% block navigation %}
+
                     <section class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -49,7 +42,7 @@
                         <a class="navbar-brand" href="/">Gateway</a>
                     </section>
 
-                    <section class="collapse navbar-collapse">
+                    <section class="collapse navbar-collapse" id="main-navigation">
 
                         {% if user.is_authenticated  %}
 
@@ -67,7 +60,7 @@
                                     <a href="/faqs">FAQ</a>
                                 </li>
 
-                                {% if user.staff %}
+                                {% if user.is_staff %}
 
                                     <li {% if page.is_teacher %}class="active"{% endif %}>
                                         <a href="/teacher">Teacher</a>
@@ -98,6 +91,7 @@
                     </section>
 
                 {% endblock %}
+
             </nav>
         </header>
 
