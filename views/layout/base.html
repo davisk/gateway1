@@ -46,12 +46,13 @@
 
                     <section class="collapse navbar-collapse" id="main-navigation">
 
-                        {% if user.is_authenticated %}
+                        <ul class="nav navbar-nav">
+                            <li {% if page.is_home %}class="active"{% endif %}>
+                                <a href="/">Home</a>
+                            </li>
 
-                            <ul class="nav navbar-nav">
-                                <li {% if page.is_member %}class="active"{% endif %}>
-                                    <a href="/members">Home</a>
-                                </li>
+                            {% if user.is_authenticated %}
+
                                 <li {% if page.is_venture %}class="active"{% endif %}>
                                     <a href="/ventures">Ventures</a>
                                 </li>
@@ -61,35 +62,23 @@
                                 <li {% if page.is_faq %}class="active"{% endif %}>
                                     <a href="/faqs">FAQ</a>
                                 </li>
+                                <li {% if page.is_profile %}class="active"{% endif %}>
+                                    <a href="/profile">Profile</a>
+                                </li>
 
-                                {% if user.is_staff %}
+                            {% else %}
 
-                                    <li {% if page.is_teacher %}class="active"{% endif %}>
-                                        <a href="/teacher">Teacher</a>
-                                    </li>
-
-                                {% else %}
-
-                                    <li {% if page.is_profile %}class="active"{% endif %}>
-                                        <a href="/profile">Profile</a>
-                                    </li>
-
-                                {% endif %}
-                            </ul>
-
-                            <a href="/accounts/logout" class="btn btn-default navbar-btn navbar-right">Exit Venture</a>
-
-                        {% else %}
-
-                            <ul class="nav navbar-nav">
                                 <li>
                                     <a {% if page.is_faq %}class="active"{% endif %} href="/faqs">FAQ</a>
                                 </li>
-                            </ul>
 
-                            <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>
+                            {% endif %}
 
-                        {% endif %}
+                        </ul>
+
+                        <a href="/accounts/logout" class="btn btn-default navbar-btn navbar-right">Exit Venture</a>
+
+                        <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>
 
                     </section>
 
