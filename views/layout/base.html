@@ -30,7 +30,7 @@
 
     <body>
         <header class="navbar navbar-default navbar-static-top" role="navigation">
-            <nav class="container-fluid">
+            <nav class="container">
 
                 {% block navigation %}
 
@@ -46,7 +46,7 @@
 
                     <section class="collapse navbar-collapse" id="main-navigation">
 
-                        {% if user.is_authenticated  %}
+                        {% if user.is_authenticated %}
 
                             <ul class="nav navbar-nav">
                                 <li {% if page.is_member %}class="active"{% endif %}>
@@ -86,6 +86,7 @@
                                     <a {% if page.is_faq %}class="active"{% endif %} href="/faqs">FAQ</a>
                                 </li>
                             </ul>
+
                             <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>
 
                         {% endif %}
