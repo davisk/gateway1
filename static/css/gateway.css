@@ -86,6 +86,10 @@ a, a:hover, a:active, a:target {
     width: 79%;
 }
 
+.med-wdth {
+    width: 60%;
+}
+
 .of-lil {
     margin-left: 8px;
 }

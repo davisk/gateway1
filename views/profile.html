@@ -1,8 +1,0 @@
-{% extends "layout/base.html" %}
-
-{% block title %}Profile{% endblock %}
-{% block description %}View and Edit your profile here{% endblock %}
-
-{% block main %}
-	{% include "bootstrap/jumbotron.html" with header=user.name subheader=user.email %}
-{% endblock %}

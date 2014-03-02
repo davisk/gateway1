@@ -65,9 +65,15 @@
                             <li {% if community_page %}class="active"{% endif %}>
                                 <a href="/community">Community</a>
                             </li>
-                            <li {% if profile_page %}class="active"{% endif %}>
-                                <a href="/profile">Profile</a>
-                            </li>
+                            {% if user.staff %}
+                                <li {% if teacher_page %}class="active"{% endif %}>
+                                    <a href="/teacher">Teacher</a>
+                                </li>
+                            {% else %}
+                                <li {% if profile_page %}class="active"{% endif %}>
+                                    <a href="/profile">Profile</a>
+                                </li>
+                            {% endif %}
                         </ul>
 
                         <form class="navbar-form navbar-right" role="logout">
