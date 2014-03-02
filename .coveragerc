@@ -1,0 +1,5 @@
+[run]
+source = gateway
+
+[report]
+omit = bootstrap/*
