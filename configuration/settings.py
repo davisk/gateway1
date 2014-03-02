@@ -66,6 +66,7 @@ WSGI_APPLICATION = 'configuration.wsgi.application'
 # change this to a proper location
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "email")
+ACCOUNT_ACTIVATION_DAYS = 4
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

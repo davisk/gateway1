@@ -50,19 +50,6 @@
                             <li {% if page.is_home %}class="active"{% endif %}>
                                 <a href="/">Home</a>
                             </li>
-<<<<<<< HEAD
-=======
-                            {% if user.staff %}
-                                <li {% if teacher_page %}class="active"{% endif %}>
-                                    <a href="/teacher">Teacher</a>
-                                </li>
-                            {% else %}
-                                <li {% if profile_page %}class="active"{% endif %}>
-                                    <a href="/profile">Profile</a>
-                                </li>
-                            {% endif %}
-                        </ul>
->>>>>>> 76242cd70a84a34cf93bdc9f4b473566ea8f5168
 
                             {% if user.is_authenticated %}
 
@@ -76,29 +63,7 @@
                                     <a href="/profile">Profile</a>
                                 </li>
 
-<<<<<<< HEAD
                             {% endif %}
-=======
-                    {% if form.has_errors %}
-                        <p>Your username and password didn't match.
-                        Please try again.</p>
-                    {% endif %}
-                   
-           <!--<form class="navbar-form navbar-right" method="post" action=".">
-                        {% csrf_token %}
-                           {{ form.username }}
-                           {{ form.password }}
-                            <input type="submit" class="btn btn-default" value="Login" />
-                            <input type="hidden" name="next" value="/" />
-                    </form>-->
-                        <form class="navbar-form navbar-right" role="login" method="post" action=".">
-                            {% csrf_token %}
-                            {% include "bootstrap/input.html" with id="email" type="email" placeholder="email" %}
-                            {% include "bootstrap/input.html" with id="password" type="password" placeholder="password" %}
-                            <input type="submit" class="btn btn-default" value="Login" />
-                            <input type="hidden" name="next" value="/community" />
-                        </form>
->>>>>>> 76242cd70a84a34cf93bdc9f4b473566ea8f5168
 
                             <li {% if page.is_faq %}class="active"{% endif %}>
                                 <a href="/faqs">FAQ</a>
