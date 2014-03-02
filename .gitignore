@@ -59,3 +59,7 @@ email/*
 
 #coveralls coverage report
 .coverage
+
+#bootstrap stuff
+bootstrap/dist*
+static/admin/*
