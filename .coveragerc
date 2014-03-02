@@ -2,4 +2,4 @@
 source = gateway
 
 [report]
-omit = bootstrap/*
+omit = bootstrap/*, manage.py, configuration/*
