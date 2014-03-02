@@ -1,0 +1,5 @@
+node_modules/*
+bootstrap/*
+static/admin/*
+static/js/*.min.js
+static/js/bootstrap.js
