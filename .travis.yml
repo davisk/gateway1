@@ -17,7 +17,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - jshint . --exclude node_modules, bootstrap
+  - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
   - coverage run --source gateway manage.py test
