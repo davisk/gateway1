@@ -20,7 +20,7 @@ minigame_patterns = patterns(
     (r'^elevator?$', controllers.minigame.elevator_view),
     (r'^end?$', controllers.minigame.end_view),
 )
-fff
+
 urlpatterns = patterns(
     '',
     (r'^/?$', controllers.home_view),
@@ -31,5 +31,5 @@ urlpatterns = patterns(
     (r'^profile/?$', controllers.profile_view),
     (r'^ventures/?$', controllers.ventures_view),
     (r'^minigame/', include(minigame_patterns)),
-    (r'^options/?$', controllers.options.options_view),
+    (r'^options/?$', controllers.options_view),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -3,6 +3,7 @@ from home import home_view
 from profile import profile_view
 from ventures import ventures_view
 from faqs import faqs_view
+from options import options_view
 
 __all__ = [
     "home_view",
