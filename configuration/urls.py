@@ -20,7 +20,7 @@ minigame_patterns = patterns(
     (r'^elevator?$', controllers.minigame.elevator_view),
     (r'^end?$', controllers.minigame.end_view),
 )
-
+fff
 urlpatterns = patterns(
     '',
     (r'^/?$', controllers.home_view),
