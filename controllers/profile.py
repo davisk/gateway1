@@ -129,6 +129,12 @@ def profile_view(request):
                 "active": "active"
             },
             {
+                "id": "tabi-progress",
+                "title": "Progress",
+                "icon": "glyphicon-tasks",
+                "content": "test progress"
+            },
+            {
                 "id": "tabi-account",
                 "title": "Account",
                 "icon": "glyphicon-cloud",
