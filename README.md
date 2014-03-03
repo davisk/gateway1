@@ -66,6 +66,28 @@ for templates please follow [valid HTML 5 standards](http://validator.w3.org/nu/
 
 for stylesheets please use [bootstrap](http://getbootstrap.com/) for modifying bootstrap follow [the SMACSS styleguide](http://smacss.com/)
 
+modifying bootstrap
+====
+to customize bootstap styles please visit the bootstrap folder.
+in the folder run
+```sh
+sudo npm install -g grunt-cli
+cd boostrap
+sudo npm install
+```
+
+to edit the style visit the less folder.
+please make all edits to custom-bootstrap and custom-variables.
+(if you make edits to additional modules please copy prefix with custom-modulename and update the custom-bootstrap to import the custom module)
+
+to compile the less to css, then move it to the static folder
+```sh
+cd bootstrap
+grunt dist
+cd ..
+python manage.py collectstatic
+```
+
 naming convensions
 ====
 bootstrap mixins should use the class naming system
