@@ -9,5 +9,6 @@ __all__ = [
     "community_view",
     "profile_view",
     "ventures_view",
-    "faqs_view"
+    "faqs_view",
+    "options_view"
 ]
