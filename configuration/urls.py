@@ -29,6 +29,7 @@ urlpatterns = patterns(
     (r'^community/?$', controllers.community_view),
     (r'^faqs/?$', controllers.faqs_view),
     (r'^profile/?$', controllers.profile_view),
+    (r'^teacher/?$', controllers.teacher_view),
     (r'^ventures/?$', controllers.ventures_view),
     (r'^minigame/', include(minigame_patterns)),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
