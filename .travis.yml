@@ -6,7 +6,7 @@ python:
 
 # command to install dependencies
 install:
-  - pip install -q -r scripts/requirements.txt --use-mirrors
+  - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
   - npm install jshint --silent
 
 # setup mysql
