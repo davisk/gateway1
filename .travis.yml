@@ -18,8 +18,8 @@ before_script:
 script:
   - pep8 .  --exclude bootstrap
   - jshint .
-  - radon cc manage.py test
-  - radon mi manage.py test
+  - radon cc manage.py test --min A
+  - radon mi manage.py test --min A
   - coverage run --source gateway manage.py test
 
 after_success:
