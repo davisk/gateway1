@@ -17,6 +17,7 @@ then
 
 	#install required python packages
 	sudo pip install -r requirements.txt
+	sudo pip install -r developer_requirements.txt
 
 
 elif [[ "$DISTRO" = "fedora" || "$DISTRO" = "red hat" ]]
@@ -26,6 +27,7 @@ then
 
 	#install required python packages
 	sudo pip install -r requirements.txt
+	sudo pip install -r developer_requirements.txt
 
 elif [[ "$DISTRO" = "arch linux" || "$DISTRO" = "manjaro" ]]
 then
