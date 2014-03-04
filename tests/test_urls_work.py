@@ -69,4 +69,3 @@ class TestUrlsWork(unittest.TestCase):
 
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
-
