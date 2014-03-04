@@ -1,5 +1,5 @@
 {% comment %}
-    this page is used by its parent student.html and is the content for the nav - profile tab
+    this page is used by its parent teacher/student.html and is the content for the nav - profile tab
 {% endcomment %}
 
 <!-- Left Side - Information/Image -->
@@ -19,13 +19,21 @@
 
             <!-- User is able to change these -->
             <ul class="list-group">
-                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-username">Username: <span class="line-input of-usr">superuser</span></a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-username">Username: 
+                    <span class="line-input of-usr">{{ user.username }}</span>
+                </a>
                 
-                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-password">Password: <span class="line-input of-pwd">**********</span></a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-password">Password: 
+                    <span class="line-input of-pwd">**********</span>
+                </a>
                 
-                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-email">Email: <span class="line-input of-med">superuser@gateway.com</span></a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modal-email">Email: 
+                    <span class="line-input of-med">{{ user.email }}</span>
+                </a>
                 
-                <p class="list-group-item">Permissions: <span class="line-input of-lil">Administrator</span></p>
+                <p class="list-group-item">Permissions: 
+                    <span class="line-input of-lil">{% if user.is_staff %}Admin{% else %}User{% endif %}</span>
+                </p>
             </ul>
         </div>
     </div>
@@ -106,5 +114,5 @@
 </section>
 
 {% for key in modal %}
-    {% include "bootstrap/modal.html" with id=key.id title=key.title input=key.input inpid=key.inpid change=key.change %}
+    {% include "bootstrap/profile-modal.html" with id=key.id title=key.title input=key.input inpid=key.inpid change=key.change value=key.value %}
 {% endfor %}
