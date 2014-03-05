@@ -1,32 +1,54 @@
 {% extends "layout/base.html" %}
+{% load staticfiles %}
 
-{% block title %}Member's Home{% endblock %}
+{% block title %}Gateway Members{% endblock %}
 {% block description %}This is the home page for members{% endblock %}
 
 {% block main %}
+	<link href="/static/css/member.css" rel="stylesheet">
 	<div class="row">
-		<div class="col-md-6">
-			<section class="panel panel-default">
-				<div class="panel-heading">
-					Announcements
+		<div class="col-md-8">
+			<img src="/static/images/{{currentVenture.image}}.jpg" width="100%">
+		</div>
+		<div class="col-md-4">
+			<a href="/ventures/{{ currentVenture.id }}">
+				<h2>
+					{{ currentVenture.title }}
+				</h2>
+			</a>
+
+			<div class="progress progress-striped active">
+				<div class="progress-bar" role="progressbar progress-bar-success" style="width: {{ currentVenture.progress }}%;">
+					{{ currentVenture.step }}
 				</div>
-	
-				<ul class="list-group">
-					{% for story in news%}
-						<li class="list-group-item">
-							 {{story.title}} <span class="badge">{{story.date}}</span>
-						</li>
-					{% endfor %}
-				</ul>
-			</section>
-		</div>
+			</div>
 
-		<div class="col-md-6">
-			<section class="well">
-				{% include "bootstrap/media-glyphicon.html" with heading=currentVenture.title glyphicon=currentVenture.image body=currentVenture.description %}
-			</section>
-
-			 {% include "bootstrap/panel.html" with header=currentVenture.title body=currentVenture.description %}
+			<p>
+				{{ currentVenture.hook }}
+			</p>
 		</div>
+	</div>
+
+	<div class="row">
+		{% for venture in ventures%}
+			<div class="col-md-4">
+				<a href="/ventures/{{ venture.id }}">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3>{{venture.title}}</h3>
+							<img src="/static/images/{{venture.image}}.jpg" width="100%">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: {{ venture.progress }}%;">
+									{{ venture.step }}
+								</div>
+							</div>
+							<p>
+								{{ venture.hook }}
+							</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		{% endfor %}
 	</div>
 {% endblock %}

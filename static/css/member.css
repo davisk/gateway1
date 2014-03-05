@@ -1,0 +1,9 @@
+.panel {
+	height: 400px;
+}
+
+.row a,
+.row a:hover {
+	color: #333 !important;
+	text-decoration: none;
+}
