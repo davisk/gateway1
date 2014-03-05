@@ -1,0 +1,86 @@
+{% extends "layout/base.html" %}
+
+{# page content #}
+{% block title %}Frequently Asked Questions{% endblock %}
+{% block description %}Checkout our most asked Questions{% endblock %}
+
+{% block main %}
+    <div class="row">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#collapseOne">
+                                What are the 10 steps to a start up?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p> When you have the "Aha!" moment, and wonder where you should start,
+                                these steps exist to assist in the creation of your start-up.
+                            </p>
+                            <br>
+                            1. Aha!! Moment
+                            <br>
+                            2. Research
+                            <br>
+                            3. Beta
+                            <br>
+                            4. Business Map
+                            <br>
+                            5. Capital Structure
+                            <br>
+                            6. Legal
+                            <br>
+                            7. Guerilla Marketing
+                            <br>
+                            8. Operations
+                            <br>
+                            9. Scale
+                            <br>
+                            10. Exit & Harvest
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#collapseTwo">
+                                What is the cost?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p> We are happy to provide your first venture for free.
+                                We are also happy to say that our software is completly open source,
+                                which allows the community to constantly assist us in improving content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#collapseThree">
+                                Will this really help me?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        <p> Many years of research were put into the process of developing successful start-ups.
+                            The steps we based our website on are the map, and we created this site as the vehicle 
+                            on which you can follow it. By bringing the process into a series of gammes we believe it can be 
+                            very easy to successfully create your first, second or hundreth start up!
+                        </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

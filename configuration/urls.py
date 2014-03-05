@@ -28,6 +28,7 @@ urlpatterns = patterns(
     (r'^accounts/', include('registration.backends.default.urls')),
     (r'^community/?$', controllers.community_view),
     (r'^profile/?$', controllers.profile_view),
+    (r'^faqs/?$', controllers.faqs_view),
     (r'^ventures/?$', controllers.ventures_view),
     (r'^ventures/(?P<id>\d{1})/$', controllers.venture_view),
     (r'^minigame/', include(minigame_patterns)),
