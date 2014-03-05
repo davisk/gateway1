@@ -3,11 +3,12 @@ language: python
 python:
   - "2.6"
   - "2.7"
+  - "pypy"
 
 # command to install dependencies
 install:
-  - pip install -r scripts/requirements.txt
-  - npm install jshint
+  - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
+  - npm install jshint --silent
 
 # setup mysql
 before_script:

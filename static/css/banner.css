@@ -1,0 +1,13 @@
+.item {
+	height: 500px;
+}
+
+.item > img {
+	width: 100%;
+}
+
+.carousel-caption > a,
+.carousel-caption > a:hover {
+	color: #fff !important;
+	text-decoration: none;
+}

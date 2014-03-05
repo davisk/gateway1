@@ -5,6 +5,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Swap Files
+*.swp
+*.swo
+
 # Distribution / packaging
 bin/
 build/

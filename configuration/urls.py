@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import patterns, url, include
 from django.conf.urls.static import static
 from configuration.settings import *
-from controllers import minigame
+from controllers import minigame, options
 import controllers
 from django.contrib import admin
 from django.views.generic import RedirectView
@@ -30,5 +30,7 @@ urlpatterns = patterns(
     (r'^faqs/?$', controllers.faqs_view),
     (r'^profile/?$', controllers.profile_view),
     (r'^ventures/?$', controllers.ventures_view),
+    (r'^ventures/(?P<id>\d{1})/$', controllers.venture_view),
     (r'^minigame/', include(minigame_patterns)),
+    (r'^options/?$', controllers.options_view),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
