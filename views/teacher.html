@@ -33,6 +33,11 @@
                 {% include "fragment/settings.html" %}
             </div>
 
+            <!-- FAQ Page -->
+            <div class="tab-pane fade {% if subnav.4.active %}in active{% endif %}" id="{{ subnav.4.id }}">
+                {% include "fragment/profile-faq.html" %}
+            </div>
+
             <!-- Help Page -->
             <div class="tab-pane fade {% if subnav.4.active %}in active{% endif %}" id="{{ subnav.4.id }}">
                 {% include "fragment/help.html" %}

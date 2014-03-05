@@ -47,10 +47,9 @@
                                 <a href="/">Home</a>
                             </li>
 
-                            <li {% if page.is_faq %}class="active"{% endif %}>
+                            <li {% if page.is_faqs %}class="active"{% endif %}>
                                 <a href="/faqs">FAQ</a>
                             </li>
-
                         </ul>
 
                         {% if user.is_authenticated %}

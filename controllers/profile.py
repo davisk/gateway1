@@ -34,6 +34,12 @@ def profile_view(request):
                 "content": "test settings"
             },
             {
+                "id": "tabi-faq",
+                "title": "FAQ",
+                "icon": "glyphicon-list-alt",
+                "content": "test faq"
+            },
+            {
                 "id": "tabi-help",
                 "title": "Help",
                 "icon": "glyphicon-question-sign",
@@ -145,6 +151,12 @@ def profile_view(request):
                 "title": "Settings",
                 "icon": "glyphicon-cog",
                 "content": "test settings"
+            },
+            {
+                "id": "tabi-faq",
+                "title": "FAQ",
+                "icon": "glyphicon-list-alt",
+                "content": "test faq"
             },
             {
                 "id": "tabi-help",
