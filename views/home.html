@@ -1,40 +1,79 @@
 {% extends  "layout/base.html" %}
+{% load staticfiles %}
+
+{% block banner %}
+
+<link href="{% static "css/banner.css" %}" rel="stylesheet">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static "images/coat.jpg" %}" alt="sample">
+            <div class="carousel-caption">
+                <h1>
+                    Murphee's Irish Coats
+                </h1>
+                <h3>
+                    Bringing the comfort and quality of Traditional Irish coats to an Online International Exchange
+                </h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static "images/anti-gravity.jpg" %}" alt="sample">
+            <div class="carousel-caption">
+                <h1>
+                    Three Lions Magic Show
+                </h1>
+                <h3>
+                    A crew of three globally acclaimed Magicians bend the rules of reality to make the mundane extraordinary
+                </h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static "images/film.jpg" %}" alt="sample">
+            <div class="carousel-caption">
+                <h1>
+                    Méliès Studio
+                </h1>
+                <h3>
+                    Georges Méliès makes Black and White cinematography relevant in the 21th century
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+{% endblock %}
 
 {% block main %}
-    <div class="row">
-        <section class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Welcome to Gateway</h3>
-                </div>
-                <div class="panel-body">
-                    Learn about the stages of the entrepreneurship process, access resources to build your own business plans, and compete to be the best start up!
-                    <br>
-                    <aside>
-                        Are you a teacher, group leader, or instructor?<br>
-                        Click <button type="button" class="btn btn-default">Here</button> to request a leader page.
-                    </aside>
-                </div>
-            <div>
-        </section>
-
-        <section class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Sign Up</h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        {% include "bootstrap/input.html" with id="first-name" type="text" placeholder="John" label="First Name" %}
-                        {% include "bootstrap/input.html" with id="last-name" type="text" placeholder="Smith" label="Last Name" %}
-                        {% include "bootstrap/input.html" with id="username" type="text" placeholder="jsmith12" label="Username" %}
-                        {% include "bootstrap/input.html" with id="email" type="email" placeholder="John.Smith@email.com" label="Email" %}
-                        {% include "bootstrap/input.html" with id="password" type="Password" placeholder="Password" label="Password" %}
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-
-                </div>
-            </div>
-        </section>
-    </div>
+<br>
+<div class="jumbotron">
+    <h1>
+        Make a Difference
+    </h1>
+    <p>
+        Gateway works to make the entrepreneurship process managable through Gamification.<br>
+        What is normally a stressful prolonged process becomes as easy as playing Angry Birds<sup>tm</sup>
+    </p>
+    <p>
+        <a href="/accounts/register" class="btn btn-primary btn-lg" role="button">
+            Get Started
+        </a>
+    </p>
+</div
 {% endblock %}

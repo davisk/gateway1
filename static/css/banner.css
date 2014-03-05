@@ -1,0 +1,7 @@
+.item {
+	height: 500px;
+}
+
+.item > img {
+	width: 100%;
+}
