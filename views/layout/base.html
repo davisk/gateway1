@@ -68,7 +68,28 @@
                         </ul>
 
                         {% if user.is_authenticated %}
-                            <a href="/accounts/logout" class="btn btn-default navbar-btn navbar-right">Exit Venture</a>
+                        <ul class="nav navbar-nav navbar-right">
+                            <a class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown">
+                                {{ user.username }}
+                                <span class="caret"</span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li> 
+                                    <a href="/accounts/logout"> Logout </a> 
+                                </li>
+                                
+                                <li> 
+                                    <a href="/profile"> Profile </a> 
+                                </li>
+
+                                <li> 
+                                    <a href="/ventures"> Ventures </a> 
+                                </li>
+                            </ul>
+                        </ul>
+
+
                         {% else %}
                             <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>
                         {% endif %}
