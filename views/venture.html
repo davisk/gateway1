@@ -1,0 +1,33 @@
+{% extends  "layout/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+	{{ venture.title }}
+{% endblock %}
+
+{% block main %}
+	<div class="row">
+		<div class="col-md-8">
+			<img src="/static/images/{{venture.image}}.jpg" width="100%">
+		</div>
+		<div class="col-md-4">
+			<h2>
+				{{ venture.title }}
+			</h2>
+
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" style="width: {{ venture.progress }}%;">
+					{{ venture.step }}
+				</div>
+			</div>
+
+			<p>
+				{{ venture.hook }}
+			</p>
+		</div>
+	</div>
+
+	<div class="well well-lg">
+		{{ venture.description }}
+	</div>
+{% endblock %}
