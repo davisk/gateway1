@@ -123,10 +123,6 @@
     padding-left: 8px;
 }
 
-/*.nav {
-    width: 99%;
-}*/
-
 .wide5 {
     width: 105%;
 }
@@ -141,4 +137,8 @@
 
 .big-txt {
     resize: none;
+}
+
+.tab-display {
+    z-index: 3000;
 }
