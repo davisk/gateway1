@@ -27,7 +27,6 @@ urlpatterns = patterns(
     (r'^admin/', include(admin.site.urls)),
     (r'^accounts/', include('registration.backends.default.urls')),
     (r'^community/?$', controllers.community_view),
-    (r'^faqs/?$', controllers.faqs_view),
     (r'^profile/?$', controllers.profile_view),
     (r'^ventures/?$', controllers.ventures_view),
     (r'^ventures/(?P<id>\d{1})/$', controllers.venture_view),

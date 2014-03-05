@@ -142,3 +142,8 @@
 .tab-display {
     z-index: 3000;
 }
+
+.sub-title {
+    color: #666;
+    font-size: 15px;
+}
