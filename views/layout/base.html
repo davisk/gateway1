@@ -47,10 +47,9 @@
                                 <a href="/">Home</a>
                             </li>
 
-                            <li {% if page.is_faq %}class="active"{% endif %}>
+                            <li {% if page.is_faqs %}class="active"{% endif %}>
                                 <a href="/faqs">FAQ</a>
                             </li>
-
                         </ul>
 
                         {% if user.is_authenticated %}
@@ -68,14 +67,9 @@
                                 <li> 
                                     <a href="/profile"> Profile </a> 
                                 </li>
-
-                                <li> 
-                                    <a href="/ventures"> Ventures </a> 
-                                </li>
                             </ul>
                             </li>
                         </ul>
-
 
                         {% else %}
                             <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>

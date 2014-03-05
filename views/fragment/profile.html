@@ -7,7 +7,7 @@
     
     <!-- Profile Picture -->
     <div class="pull-left cont-border col-md-4 text-center sml of-left">
-        <a href="javascript:void(0);"><p class="add-img">Add an image...</p></a>
+        <a class="no-line" href="javascript:void(0);"><p class="add-img">Add an image...</p></a>
     </div>
 
     <!-- Profile Information -->
@@ -75,7 +75,7 @@
             <div class="tab-pane fade" id="education">
                 <div class="col-md-12 cont-border top1-inv">
                     <!-- To bring back forms for adding another school/degree -->
-                    <a class="pull-right" href="javascript:void(0);"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Education</a><br>
+                    <a class="pull-right no-line" href="javascript:void(0);"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Education</a><br>
                     {% include "bootstrap/textarea.html" with id="school" rows=1 label="School Name:" placeholder="This is the name of my school..." %}
                     {% include "bootstrap/textarea.html" with id="major" rows=1 label="Field of Study:" placeholder="This is the name of my major..." %}
                     {% include "bootstrap/textarea.html" with id="degree" rows=1 label="Degree:" placeholder="This is the type of degree I have..." %}
@@ -89,7 +89,7 @@
             <div class="tab-pane fade" id="work">
                 <div class="col-md-12 cont-border top1-inv">
                     <!-- To bring back forms for adding another school/degree -->
-                    <a class="pull-right" href="javascript:void(0);"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Work Experience</a><br>
+                    <a class="pull-right no-line" href="javascript:void(0);"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Work Experience</a><br>
                     {% include "bootstrap/textarea.html" with id="company" rows=1 label="Company Name:" placeholder="This is the name of my work..." %}
                     {% include "bootstrap/textarea.html" with id="comtitle" rows=1 label="Title:" placeholder="This is the name of my work position..." %}
                     <div class="form-group">

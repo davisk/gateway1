@@ -3,3 +3,4 @@ bootstrap/*
 static/admin/*
 static/js/*.min.js
 static/js/bootstrap.js
+static/js/lib/*

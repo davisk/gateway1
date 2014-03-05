@@ -140,5 +140,14 @@
 }
 
 .tab-display {
-    z-index: 3000;
+    z-index: 500;
+}
+
+.sub-title {
+    color: #666;
+    font-size: 15px;
+}
+
+.no-line:hover {
+    text-decoration: none
 }
