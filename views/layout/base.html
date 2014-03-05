@@ -47,20 +47,6 @@
                                 <a href="/">Home</a>
                             </li>
 
-                            {% if user.is_authenticated %}
-
-                                <li {% if page.is_venture %}class="active"{% endif %}>
-                                    <a href="/ventures">Ventures</a>
-                                </li>
-                                <li {% if page.is_community %}class="active"{% endif %}>
-                                    <a href="/community">Community</a>
-                                </li>
-                                <li {% if page.is_profile %}class="active"{% endif %}>
-                                    <a href="/profile">Profile</a>
-                                </li>
-
-                            {% endif %}
-
                             <li {% if page.is_faq %}class="active"{% endif %}>
                                 <a href="/faqs">FAQ</a>
                             </li>
