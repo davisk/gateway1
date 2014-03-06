@@ -63,11 +63,6 @@ ROOT_URLCONF = 'configuration.urls'
 
 WSGI_APPLICATION = 'configuration.wsgi.application'
 
-# change this to a proper location
-#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-#EMAIL_FILE_PATH = os.path.join(BASE_DIR, "email")
-#ACCOUNT_ACTIVATION_DAYS = 4
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
@@ -108,9 +103,11 @@ STATICFILES_DIRS = (
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#Email Server Settings --can change
 SITE_ID = 'gatewaygame.com'
 ACCOUNT_ACTIVATION_DAYS = 4
+
+#Email Server Settings --dont change
 EMAIL_HOST = 'mail.gatewaygame.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
