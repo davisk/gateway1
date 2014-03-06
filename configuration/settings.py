@@ -106,6 +106,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #Email Server Settings --can change
 SITE_ID = 'gatewaygame.com'
 ACCOUNT_ACTIVATION_DAYS = 4
+LOGIN_REDIRECT_URL = '/accounts/login'
 
 #Email Server Settings --dont change
 EMAIL_HOST = 'mail.gatewaygame.com'
