@@ -3,9 +3,21 @@
 {% load widget_tweaks %}
 
 {% block main %}
+	
 	<div class="alert alert-success">
 		{% trans "Your account is now activated." %}
 	</div>
-	<a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
+
+{% block content %}
+	<p>{% trans "You may now login with your username and password." %}</p>
+
+	{% if not user.is_authenticated %}
+    	<a href="{% url "auth_login" %}">{% trans "Login now" %}</a>
+	{% else %}
+   	 	<a href="/">{% trans "Home" %}</a>
+	{% endif %}
+
+{% endblock %}
+
 {% endblock %}
 
