@@ -1,14 +1,27 @@
 language: python
+#test using these versions of python
 python:
   - "2.6"
   - "2.7"
+  - "pypy"
 
 # command to install dependencies
 install:
-  - pip install -r scripts/requirements.txt
-  - npm install jshint
+  - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
+  - npm install jshint --silent
+
+# setup mysql
+before_script:
+  - mysql -e 'create database gateway;'
+  - mysqladmin -u root password "root"
 
 # command to run tests
 script:
-  - pep8 .
-  - jshint . --exclude ./node_modules
+  - pep8 .  --exclude bootstrap
+  - jshint .
+  - radon cc manage.py test
+  - radon mi manage.py test
+  - coverage run --source gateway manage.py test
+
+after_success:
+  - coveralls

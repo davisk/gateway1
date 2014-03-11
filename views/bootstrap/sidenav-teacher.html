@@ -5,8 +5,10 @@
 	@param time 	time that game was completed (this will end up needing to be setup for sql time)
 {% endcomment %}
 
-<p>
-	<a class="green" href="javascript:void(0);">{{ name }}</a> finished Mini-Game: {{ game }}!
-</p>
-<p class="timestamp-bl">{{ time }} ago</p>
-<hr>
+{% for item in items %}
+	<p>
+		<a class="green" href="javascript:void(0);">{{ item.name }}</a> finished Mini-Game: {{ item.game }}!
+	</p>
+	<p class="timestamp-bl">{{ item.time }} ago</p>
+	<hr>
+{% endfor %}

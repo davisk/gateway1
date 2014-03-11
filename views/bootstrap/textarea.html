@@ -1,0 +1,14 @@
+{% comment %}
+	this is a bootstrap input element
+	@param id			identifies the input
+	@param placeholder	sample text to display
+	@param label		describes input to user
+	@param rows			height of text
+{% endcomment %}
+
+<div class="form-group">
+	{% if label and label.strip  %}
+		<label for="{{ id }}">{{ label }}</label>
+	{% endif %}
+	<textarea class="form-control big-txt" id="{{ id }}" placeholder="{{ placeholder }}" rows="{{ rows }}"></textarea>
+</div>

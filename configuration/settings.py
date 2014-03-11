@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.core.mail',
     'registration',
+    'widget_tweaks'
 )
 
 TEMPLATE_LOADERS = (
@@ -60,8 +62,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'configuration.urls'
 
 WSGI_APPLICATION = 'configuration.wsgi.application'
-
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -96,10 +96,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "bootstrap/dist"),
+)
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+#Email Server Settings --can change
+SITE_ID = 'gatewaygame.com'
+ACCOUNT_ACTIVATION_DAYS = 4
 LOGIN_REDIRECT_URL = '/accounts/login'
 
-ACCOUNT_ACTIVATION_DAYS = 4
+#Email Server Settings --dont change
+EMAIL_HOST = 'mail.gatewaygame.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'registration@gatewaygame.com'
+EMAIL_HOST_PASSWORD = 'TeamHEntrepreneurship'
+DEFAULT_FROM_EMAIL = 'registration@gatewaygame.com'

@@ -5,6 +5,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Swap Files
+*.swp
+*.swo
+
 # Distribution / packaging
 bin/
 build/
@@ -51,3 +55,15 @@ docs/_build/
 
 # Gedit temporary files
 *~
+
+#node js modules
+node_modules/*
+bootstrap/node_modules/*
+email/*
+
+#coveralls coverage report
+.coverage
+
+#bootstrap stuff
+bootstrap/dist*
+static/admin/*

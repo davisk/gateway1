@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="{% block description %}CST Entrepreneurship Web App{% endblock %}">
+        <meta name="description" content="{% block description %}Gateway Entrepreneurship{% endblock %}">
         <meta name="author" content="">
         
         <!--security policies-->
@@ -17,23 +17,21 @@
         <!--Page title-->
         <title>{% block title %}CST316 Entrepreneurship{% endblock %}</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-2.1.0.min.js" defer></script>
         
         {% load staticfiles %}
-        <link href="{% static "css/gateway.css" %}" rel="stylesheet">
-        <script src="{% static "js/gateway.js" %}" defer></script>
-
-        <script src="https://code.jquery.com/jquery-2.1.0.min.js" defer></script>
-        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" defer></script>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/static/js/bootstrap.min.js" defer></script>
     </head>
 
     <body>
         <header class="navbar navbar-default navbar-static-top" role="navigation">
             <nav class="container">
+
                 {% block navigation %}
+
                     <section class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -42,45 +40,51 @@
                         <a class="navbar-brand" href="/">Gateway</a>
                     </section>
 
-                    <section class="collapse navbar-collapse">
-
-                    {% if user.is_authenticated  %}
+                    <section class="collapse navbar-collapse" id="main-navigation">
 
                         <ul class="nav navbar-nav">
-                            <li {% if members_page %}class="active"{% endif %}>
-                                <a href="/members">Home</a>
+                            <li {% if page.is_home %}class="active"{% endif %}>
+                                <a href="/">Home</a>
                             </li>
-                            <li {% if ventures_page %}class="active"{% endif %}>
-                                <a href="/ventures">Ventures</a>
+
+                            <li {% if page.is_faqs %}class="active"{% endif %}>
+                                <a href="/faqs">FAQ</a>
                             </li>
-                            <li {% if community_page %}class="active"{% endif %}>
-                                <a href="/community">Community</a>
-                            </li>
-                            {% if user.is_staff %}
-                                <li {% if teacher_page %}class="active"{% endif %}>
-                                    <a href="/teacher">Profile</a>
-                            {% else %}
-                                <li {% if profile_page %}class="active"{% endif %}>
-                                    <a href="/profile">Profile</a>
-                            {% endif %}
-                                </li>    
                         </ul>
 
-                        <form class="navbar-form navbar-right" role="logout">
-                            <button type="submit" class="btn btn-default">Exit Venture</button>
-                        </form>
+                        {% if user.is_authenticated %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">
+                                {{ user.username }}
+                                <span class="caret"</span>
+                            </a>
 
-                    {% else %}
-                        <a class="navbar-form navbar-right" href="/accounts/login/">
-                            <button type="submit" class="btn btn-default">Login</button>
-                        </a>
-                    {% endif %}
+                            <ul class="dropdown-menu">
+                                <li> 
+                                    <a href="/accounts/logout"> Logout </a> 
+                                </li>
+                                
+                                <li> 
+                                    <a href="/profile"> Profile </a> 
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+
+                        {% else %}
+                            <a href="/accounts/login" class="btn btn-default navbar-btn navbar-right">Log In</a>
+                        {% endif %}
 
                     </section>
 
                 {% endblock %}
+
             </nav>
         </header>
+
+        {% block banner %}
+
+        {% endblock %}
 
         <main class="container">
             {% block main %}

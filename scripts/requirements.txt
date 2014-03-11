@@ -1,6 +1,7 @@
-autopep8
+coveralls
 django
 django-registration
-jsbeautifier
+django-widget-tweaks
+mysql-python
 pep8
-uwsgi
+radon

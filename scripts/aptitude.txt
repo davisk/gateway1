@@ -1,7 +1,6 @@
 mysql-server
 python
 python-dev
-python-mysqldb
 python-pip
 nodejs
 npm
