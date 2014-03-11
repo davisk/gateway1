@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/team-h/gateway.png?label=ready&title=Ready)](https://waffle.io/team-h/gateway)
 Gateway Game
 ====
 [Github Issue Scrum Board](https://huboard.com/Team-H/gateway)
