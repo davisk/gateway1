@@ -18,8 +18,8 @@ development flow
 * this requires designing the look of the page before designing the backend api
 * <strong>Every api that is created will first have a user interface to display it</strong>
 
-Test Driven Developement
-###test driven development
+test driven developement
+====
 * create apis to fulfill a test expectation
 * <strong>Every pull request that includes changes to the api will have unit test ensuring its validity</strong>
 * tests are written in the Django unit test framework
