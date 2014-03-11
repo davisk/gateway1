@@ -35,7 +35,7 @@ We accept no grade less than a B from radon.
 
 styleguide
 ====
-###Style guides are enforced by lint checkers configured to check <strong>complete adherence</strong> to the below styleguides
+Style guides are enforced by lint checkers configured to check <strong>complete adherence</strong> to the below styleguides
 
 for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/pep-0008/)
 We have an autoformatter, please make sure autopep8 is installed, then run the autoPython.sh in gateway to format.
