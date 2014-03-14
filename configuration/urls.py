@@ -1,14 +1,18 @@
+"""
+URLs for project.
+
+URLS connect the URI to the controller.
+"""
 from django.conf import settings
 from django.conf.urls import patterns, url, include
 from django.conf.urls.static import static
-from configuration.settings import *
 from controllers import minigame, options
 import controllers
 from django.contrib import admin
 from django.views.generic import RedirectView
 admin.autodiscover()
 
-
+# pattherns for the minigame pages
 minigame_patterns = patterns(
     '',
     (r'^$', RedirectView.as_view(url='/minigame/start')),
@@ -21,6 +25,7 @@ minigame_patterns = patterns(
     (r'^end?$', controllers.minigame.end_view),
 )
 
+# patterns for all pages off of root ("/")
 urlpatterns = patterns(
     '',
     (r'^/?$', controllers.home_view),

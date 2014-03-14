@@ -4,4 +4,5 @@ django-registration
 django-widget-tweaks
 mysql-python
 pep8
+pep257
 radon

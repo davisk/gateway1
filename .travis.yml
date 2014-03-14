@@ -18,6 +18,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
+  - pep257 .  --ignore bootstrap
   - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
