@@ -1,21 +1,35 @@
+"""
+Tests that pages load correctly when user is logged in.
+
+Creates a headless browser to load the page
+creates a test user and logs test user in
+then attempts to load pages
+"""
 import unittest
 from django.contrib.auth.models import User
 from django.test import Client
 
 
 class TestUrlsWork(unittest.TestCase):
+
+    """."""
+
     def setUp(self):
-        # Every test needs a user
+        """
+        log test user in.
+
+        creates a test user
+        creates a headless browser
+        logs the headless browser in as test user
+        """
         self.user = User.objects.create_user(
             'test',
             'test@email.com',
             'test'
         )
 
-        # Every test needs a client.
         self.client = Client()
 
-        # User is logged in
         self.client.post(
             '/accounts/login/',
             {
@@ -25,47 +39,41 @@ class TestUrlsWork(unittest.TestCase):
         )
 
     def tearDown(self):
-        # Delete user after test
+        """delete user after tests."""
         self.user.delete()
 
     def test_home(self):
-        # Issue a GET request.
+        """ensure member home page loads."""
         response = self.client.get('/')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_community(self):
-        # Issue a GET request.
+        """ensure community page loads."""
         response = self.client.get('/community')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_faqs(self):
-        # Issue a GET request.
-        response = self.client.get('/faqs')
+        """
+        ensure FAQ page loads.
 
-        # Check that the response is 200 OK.
+        FAQs should load without login
+        just testing to make sure it still works
+        with login
+        """
+        response = self.client.get('/faqs')
         self.assertEqual(response.status_code, 200)
 
     def test_profile(self):
-        # Issue a GET request.
+        """ensure profile page loads."""
         response = self.client.get('/profile')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_ventures(self):
-        # Issue a GET request.
+        """ensure ventures page loads."""
         response = self.client.get('/ventures')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_options(self):
-        # Issue a GET request.
+        """ensure next options page loads."""
         response = self.client.get('/options')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)

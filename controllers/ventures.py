@@ -1,3 +1,4 @@
+"""lists all of the ventures for the user."""
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
@@ -5,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def ventures_view(request):
+    """render all of the ventures for user."""
     ventures = [
         {
             "image": "glyphicon-book",

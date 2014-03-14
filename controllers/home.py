@@ -1,8 +1,14 @@
+"""
+This controlls the home view.
+
+handles two seperate views to members and non members
+"""
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 
 
 def home_view(request):
+    """seperate members and non members."""
     if request.user.is_authenticated():
         ventures = [
             {

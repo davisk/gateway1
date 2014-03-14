@@ -1,3 +1,9 @@
+"""
+Loads the community view.
+
+this has been deperated in current version of code and may be removed in future
+versions
+"""
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
@@ -5,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def community_view(request):
+    """pull information to display into view."""
     myVenture = {
         "title": "My Ventures",
         "content": "Start a new venture today!"

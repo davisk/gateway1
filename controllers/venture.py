@@ -1,8 +1,10 @@
+"""venture displays a single venture."""
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 
 
 def venture_view(request, id="0"):
+    """render page based on user id."""
     ventures = [
         {
             "title": "Murphee's Irish Coats",
