@@ -1,3 +1,11 @@
+"""
+User profile page.
+
+currently has both a student and teacher view
+student is the only used at the moment
+the status of teacher profile is up in the air
+more likely it will be removed
+"""
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
@@ -5,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def profile_view(request):
+    """populate profile information."""
     # If user is a teacher
     if request.user.groups.filter(name='Teacher'):
         subnav = [
