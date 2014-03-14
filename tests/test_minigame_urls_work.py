@@ -1,64 +1,58 @@
+"""
+Tests the minigame pages are loading.
+
+Creates a headless browser to load the page
+and test for a http 200 (Okay) status code
+"""
 import unittest
 from django.test import Client
 
 
 class TestMinigameUrlsWork(unittest.TestCase):
+
+    """Tests for minigames."""
+
     def setUp(self):
-        # Every test needs a client.
+        """create a headless browser."""
         self.client = Client()
 
     def test_minigame_home(self):
-        # Issue a GET request.
+        """ensure direct access to minigames results in redirect."""
         response = self.client.get('/minigame')
-
-        # Check that the response is 301 Permanent Redirect.
+        # http 301 is a Permanent Redirect.
         self.assertEqual(response.status_code, 301)
 
     def test_minigame_start(self):
-        # Issue a GET request.
+        """ensure start page loads."""
         response = self.client.get('/minigame/start')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_minigame_aha(self):
-        # Issue a GET request.
+        """ensure aha minigame loads."""
         response = self.client.get('/minigame/aha')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_minigame_elevator(self):
-        # Issue a GET request.
+        """ensure elevator pitch minigame loads."""
         response = self.client.get('/minigame/elevator')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_minigame_end(self):
-        # Issue a GET request.
+        """ensure the end screen for minigames loads."""
         response = self.client.get('/minigame/end')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_minigame_gap(self):
-        # Issue a GET request.
+        """ensure that the gap minigame loads."""
         response = self.client.get('/minigame/gap')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_minigame_interest(self):
-        # Issue a GET request.
+        """ensure the interest minigame loads."""
         response = self.client.get('/minigame/interest')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_minigame_survey(self):
-        # Issue a GET request.
+        """ensure the survey minigame loads."""
         response = self.client.get('/minigame/survey')
-
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)

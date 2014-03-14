@@ -1,64 +1,69 @@
+"""
+Tests that pages that require login redirect to login page.
+
+Creates a headless browser to load the page
+and test for a http 302 (Temporary Redirect) status code
+or http 200 (Okay) for pages that do not require login
+"""
 import unittest
 from django.test import Client
 
 
 class TestRedirectssWork(unittest.TestCase):
+
+    """Tests for basic pages and redirects."""
+
     def setUp(self):
-        # Every test needs a client.
+        """create a headless browser."""
         self.client = Client()
 
     def test_home(self):
-        # Issue a GET request.
-        response = self.client.get('/')
+        """
+        test home loads correctly.
 
-        # Check that the response is 200 OK.
+        home page has a view for when users are not logged in
+        """
+        response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
     def test_faqs(self):
-        # Issue a GET request.
-        response = self.client.get('/faqs')
+        """
+        test the FAQs view.
 
-        # Check that the response is 200 OK.
+        FAQs does not require login
+        """
+        response = self.client.get('/faqs')
         self.assertEqual(response.status_code, 200)
 
     def test_community(self):
-        # Issue a GET request.
+        """test community page redirect."""
         response = self.client.get('/community', follow=True)
 
-        # Check that the response is 302 Temporary Redirect
-        # And that the next points to the correct page
         self.assertEqual(
             response.redirect_chain,
             [('http://testserver/accounts/login/?next=/community', 302)]
         )
 
-        # Check that login loads OK.
         self.assertEqual(response.status_code, 200)
 
     def test_profile(self):
-        # Issue a GET request.
+        """test profile redirect."""
         response = self.client.get('/profile', follow=True)
 
-        # Check that the response is 302 Temporary Redirect
-        # And that the next points to the correct page
         self.assertEqual(
             response.redirect_chain,
             [('http://testserver/accounts/login/?next=/profile', 302)]
         )
 
-        # Check that login loads OK.
         self.assertEqual(response.status_code, 200)
 
     def test_ventures(self):
-        # Issue a GET request.
+        """test user ventures redirect."""
         response = self.client.get('/ventures', follow=True)
 
-       # Check that the response is 302 Temporary Redirect
-        # And that the next points to the correct page
         self.assertEqual(
             response.redirect_chain,
             [('http://testserver/accounts/login/?next=/ventures', 302)]
         )
 
-        # Check that login loads OK.
         self.assertEqual(response.status_code, 200)
