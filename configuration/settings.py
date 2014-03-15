@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, "views")
+    os.path.join(BASE_DIR, "gateway/views")
 )
 
 
@@ -41,13 +41,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.core.mail',
     'registration',
-    'widget_tweaks'
+    'widget_tweaks',
+    'gateway'
 )
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    # 'django.template.loaders.eggs.Loader',
+    'django.template.loaders.app_directories.Loader'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -101,7 +101,7 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'gateway/static')
 
 #Email Server Settings --can change
 SITE_ID = 'gatewaygame.com'

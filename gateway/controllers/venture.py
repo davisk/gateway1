@@ -1,10 +1,20 @@
 """venture displays a single venture."""
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
+from gateway.models.venture import Venture
 
 
 def venture_view(request, id="0"):
     """render page based on user id."""
+    v = Venture(
+        title="Murphee's Irish Coats",
+        image="coat",
+        progress=90,
+        step="9",
+        hook="Bringing the comfort and quality of Traditional Irish coats to\
+         an Online International Exchange"
+    )
+    v.save()
     ventures = [
         {
             "title": "Murphee's Irish Coats",
