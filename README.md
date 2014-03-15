@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/team-h/gateway.png?label=ready&title=Ready)](https://waffle.io/team-h/gateway)
 Gateway Game
 ====
 [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
