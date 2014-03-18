@@ -1,3 +1,4 @@
+from configuration import settings
 from venture import Venture
 
 __all__ = [
