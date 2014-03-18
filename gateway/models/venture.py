@@ -43,3 +43,6 @@ class Venture(models.Model):
         "tweet sized hook line for the venture",
         max_length=140
     )
+
+    class Meta:
+        app_label = 'gateway'
