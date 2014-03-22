@@ -9,8 +9,14 @@ more likely it will be removed
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from controllers.forms import bio_form, education_form, work_form
 
+def change_bio(request):
+    if request.method == 'POST':
+        #form =
+        pass
 
+   
 @login_required
 def profile_view(request):
     """populate profile information."""
@@ -199,11 +205,11 @@ def profile_view(request):
             }
         ]
 
-        return render(
-            request,
-            'student.html',
-            dict(
-                subnav=subnav,
-                modal=modal
-            )
+    return render(
+        request,
+        'student.html',
+        dict(
+            subnav=subnav,
+            modal=modal
         )
+    )
