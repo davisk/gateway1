@@ -68,10 +68,6 @@ class TestUrlsWork(unittest.TestCase):
         response = self.client.get('/profile')
         self.assertEqual(response.status_code, 200)
 
-    def test_ventures(self):
-        """ensure ventures page loads."""
-        response = self.client.get('/ventures')
-        self.assertEqual(response.status_code, 200)
 
     def test_options(self):
         """ensure next options page loads."""
