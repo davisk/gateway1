@@ -1,4 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+"""
+manages project settings.
+
+manages pulling project testings.
+and creates cli.
+"""
+
 import os
 import sys
 
