@@ -56,14 +56,3 @@ class TestRedirectssWork(unittest.TestCase):
         )
 
         self.assertEqual(response.status_code, 200)
-
-    def test_ventures(self):
-        """test user ventures redirect."""
-        response = self.client.get('/ventures', follow=True)
-
-        self.assertEqual(
-            response.redirect_chain,
-            [('http://testserver/accounts/login/?next=/ventures', 302)]
-        )
-
-        self.assertEqual(response.status_code, 200)

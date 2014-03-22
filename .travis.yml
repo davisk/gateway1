@@ -21,7 +21,11 @@ script:
   - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
-  - coverage run --source gateway manage.py test
+  - coverage run --source gateway manage.py test gateway.tests
 
 after_success:
   - coveralls
+
+matrix:
+  allow_failures:
+    - python: "pypy"
