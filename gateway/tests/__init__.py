@@ -1,2 +1,5 @@
 """manage test imports."""
-from test_minigame_urls_work import TestMinigameUrlsWork
+import unittest
+
+def suite():   
+    return unittest.TestLoader().discover("gateway.tests", pattern="*.py")
