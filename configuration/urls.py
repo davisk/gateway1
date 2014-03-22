@@ -34,7 +34,6 @@ urlpatterns = patterns(
     (r'^community/?$', gateway.controllers.community_view),
     (r'^profile/?$', gateway.controllers.profile_view),
     (r'^faqs/?$', gateway.controllers.faqs_view),
-    (r'^ventures/?$', gateway.controllers.ventures_view),
     (r'^ventures/(?P<id>\d{1})/$', gateway.controllers.venture_view),
     (r'^minigame/', include(minigame_patterns)),
     (r'^options/?$', gateway.controllers.options_view),
