@@ -1,15 +1,9 @@
 Gateway Game
 ====
-[Github Issue Scrum Board](https://huboard.com/Team-H/gateway)
-
-build status
-====
-master
-[![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=master)](https://travis-ci.org/Team-H/gateway)
-[![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=master)](https://coveralls.io/r/Team-H/gateway?branch=master)
-
-develop [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
+[![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
 [![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=develop)](https://coveralls.io/r/Team-H/gateway?branch=develop)
+[![Stories in Ready](https://badge.waffle.io/team-h/gateway.png?label=ready&title=Ready)](http://waffle.io/team-h/gateway)
+[![Gitter chat](https://badges.gitter.im/Team-H/gateway.png)](https://gitter.im/Team-H/gateway)
 
 development flow
 ====
@@ -18,14 +12,12 @@ development flow
 * this requires designing the look of the page before designing the backend api
 * <strong>Every api that is created will first have a user interface to display it</strong>
 
-test driven developement
-====
+###test driven developement
 * create apis to fulfill a test expectation
 * <strong>Every pull request that includes changes to the api will have unit test ensuring its validity</strong>
 * tests are written in the Django unit test framework
 
-additional testing
-====
+###additional testing
 In addition to unit tests this project also checks code complexity and code maintability using radon for python.
 We accept no grade less than a B from radon.
 
@@ -35,7 +27,7 @@ We accept no grade less than a B from radon.
 
 styleguide
 ====
-###Style guides are enforced by lint checkers configured to check <strong>complete adherence</strong> to the below styleguides
+Style guides are enforced by lint checkers configured to check <strong>complete adherence</strong> to the below styleguides
 
 for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/pep-0008/)
 We have an autoformatter, please make sure autopep8 is installed, then run the autoPython.sh in gateway to format.
