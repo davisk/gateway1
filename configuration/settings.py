@@ -46,8 +46,15 @@ INSTALLED_APPS = (
     'django.core.mail',
     'registration',
     'widget_tweaks',
-    'gateway'
+    'gateway',
+    'haystack'
 )
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
