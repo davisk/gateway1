@@ -1,5 +1,6 @@
 coveralls
 django
+django-haystack
 django-registration
 django-widget-tweaks
 mysql-python
