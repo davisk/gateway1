@@ -1,33 +1,61 @@
 /*
 	The script running the Aha - Minigame
 */
+
+
+// Global attrs
+var canvas, id, object, stage;
+
+// Generate our game once everything is loaded
+$(document).ready(function() {
+
+	initGame();
+	buildObject();
+
+	// Set game attributes
+	createjs.Ticker.setFPS(60);
+    createjs.Ticker.addEventListener("tick", stage);
+});
+
+// Initialize our game environment
+function initGame() {
 	
-<script>
-	var canvas, stage; // Create our environment
+	id = "ahaCanvas";
+	canvas = document.getElementById(id);
+	stage = new createjs.Stage(canvas);
 
-	var update = true; // Updating our environment
+	// Setup our function for user input (key)
+	document.onkeydown = handleKeyDown;
 
-	// Initialize the game
-	function init() {
+	// Setup our function for user mouse input ONLY in the canvas
+	document.getElementById(id).onmousedown = handleMouseDown;
+}
 
-		// Create stage and point it to the canvas:
-		canvas = document.getElementById("aha-mg");
-		stage = new createjs.Stage(canvas);
-	}
+// Build our object for the game (test circle for now)
+function buildObject() {
 
-	// Stop our stage updating
-	function stop() {
+	object = new createjs.Shape();
+	object.graphics.beginFill("blue").drawCircle(0, 0, 50);
+	object.x = 100;
+	object.y = 100;
 
-		createjs.Ticker.removeEventListener("tick", tick);
-	}
+	//Add the object to our stage
+	stage.addChild(object);
+}
 
-	function tick(event) {
+function tick() {
 
-		// When our event handler determines a change occurs, rerender our stage
-		if (update) {
+    stage.update();
+}
 
-			update = false; 	 // Ensure only one update
-			stage.update(event);
-		}
-	}
-</script>
+// Handle all user input through key events
+function handleKeyDown() {
+
+	object.x += 5;
+}
+
+// Handle all user input through mouse events
+function handleMouseDown() {
+	
+	object.x -= 10;
+}

@@ -1,8 +1,21 @@
 {% extends "layout/minigame.html" %}
+{% load staticfiles %}
 
 {% block title %}Elevator - Game 5{% endblock %}
 {% block description %}Play game 5 and get the takehome{% endblock %}
 
 {% block minigame %}
-	{% include "bootstrap/jumbotron.html" with header=minigame.title subheader=minigame.subtitle %}
+
+	<!-- EaselJS library -->
+    <script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
+	
+	<!-- The main game -->
+    <script src="/static/js/elevator.js"></script>
+    
+    <!-- Minigame specific styles -->
+    <link href="/static/css/minigames.css" rel="stylesheet">
+
+    <!-- Game container -->
+	<canvas class="canvas-main" id="elevCanvas" height="400" width="800"></canvas>
+
 {% endblock %}

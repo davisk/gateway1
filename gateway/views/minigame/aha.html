@@ -1,8 +1,21 @@
 {% extends "layout/minigame.html" %}
+{% load staticfiles %}
 
 {% block title %}Aha! - Game 1{% endblock %}
 {% block description %}Play game 1 and get your takehome{% endblock %}
 
 {% block minigame %}
-	{% include "bootstrap/jumbotron.html" with header=minigame.title subheader=minigame.subtitle %}
+
+	<!-- EaselJS library -->
+    <script src="http://code.createjs.com/easeljs-0.7.0.min.js" defer></script>
+
+	<!-- The main game -->
+    <script src="/static/js/aha.js" defer></script>
+
+    <!-- Minigame specific styles -->
+    <link href="/static/css/minigames.css" rel="stylesheet">
+
+    <!-- Game container -->
+	<canvas class="canvas-main" id="ahaCanvas" height="400" width="800"></canvas>
+
 {% endblock %}
