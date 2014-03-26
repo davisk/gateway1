@@ -86,6 +86,7 @@ function tick() {
 // Handle all user input through key events
 function handleKeyDown(e) {
 
+	// If e is defined, use it. Else use the event
     e = e || window.event;
 
 	switch (e.keyCode) {
