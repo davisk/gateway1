@@ -4,11 +4,11 @@
 
 
 // Global variables
-var canvas, 
+var canvas,
 	canvasID,
 	object,
-	spriteImg = new Image(), 
-	spriteObj, 
+	spriteImg = new Image(),
+	spriteObj,
 	stage;
 
 // Generate our game once everything is loaded
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 // Initialize our game environment
 function initGame() {
-	
+
 	canvasID = "ahaCanvas";
 	canvas = document.getElementById(canvasID);
 	stage = new createjs.Stage(canvas);
@@ -61,20 +61,20 @@ function buildObject() {
 // Not currently hooked up yet
 /*
 function buildSprite() {
-	
-	spriteSheetObj = new createjs.SpriteSheet({
-    
-	    // Sprite image
-	    images: [spriteImg], 
-	    
-	    // Dimensions/Reg point of each sprite
-	    frames: {width: 64, height: 64, regX: 32, regY: 32}, 
 
-	    // Based off the complete sequence of the sprite
-	    animations: {    
-	        walk: [0, 9, "walk"]
-    	}
-	});
+    spriteSheetObj = new createjs.SpriteSheet({
+
+        // Sprite image
+        images: [spriteImg],
+
+        // Dimensions/Reg point of each sprite
+        frames: {width: 64, height: 64, regX: 32, regY: 32},
+
+        // Based off the complete sequence of the sprite
+        animations: {
+            walk: [0, 9, "walk"]
+        }
+    });
 }
 */
 
@@ -118,7 +118,7 @@ function handleKeyDown(e) {
 
 // Handle all user input through mouse events
 function handleMouseDown() {
-	
+
 	// For right now, just reset to original position
 	object.x = 100;
 	object.y = 100;
