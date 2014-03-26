@@ -8,5 +8,5 @@ def faqs_view(request):
     return render(
         request,
         'faqs.html',
-        #dict(faq=faq)
+        # dict(faq=faq)
     )

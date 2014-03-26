@@ -5,6 +5,7 @@ from faqs import faqs_view
 from venture import venture_view
 from options import options_view
 
+
 __all__ = [
     "home_view",
     "community_view",
