@@ -10,6 +10,8 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 # from controllers.forms import bio_form, education_form, work_form
+
+
 @login_required
 def profile_view(request):
     """populate profile information."""
