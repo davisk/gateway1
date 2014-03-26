@@ -86,7 +86,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
         'OPTIONS': {
-            #'init_command' : 'SET storage_engine=MyISAM',
+            # 'init_command' : 'SET storage_engine=MyISAM',
         }
     }
 }
@@ -114,12 +114,12 @@ STATICFILES_DIRS = (
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'gateway/static')
 
-#Email Server Settings --can change
+# Email Server Settings --can change
 SITE_ID = 'gatewaygame.com'
 ACCOUNT_ACTIVATION_DAYS = 4
 LOGIN_REDIRECT_URL = '/accounts/login'
 
-#Email Server Settings --dont change
+# Email Server Settings --dont change
 EMAIL_HOST = 'mail.gatewaygame.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
