@@ -7,16 +7,11 @@ class Venture(models.Model):
     """store venture information."""
 
     STEP_IN_PROGRESS_CHOICES = (
-        ('0', 'Aha!!! moment'),
-        ('1', 'Research'),
-        ('2', 'Beta'),
-        ('3', 'Business Map'),
-        ('4', 'Capital Structure'),
-        ('5', 'Legal'),
-        ('6', 'Guerilla Marketing'),
-        ('7', 'Operations'),
-        ('8', 'Scale'),
-        ('9', 'Exit and Harvest'),
+        ('1', 'Aha!!! moment'),
+        ('2', 'Research'),
+        ('3', 'Survey'),
+        ('4', 'Feedback'),
+        ('5', 'Elevator')
     )
 
     title = models.CharField(

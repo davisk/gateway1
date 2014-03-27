@@ -10,7 +10,7 @@ def venture_view(request, id="0"):
         title="Murphee's Irish Coats",
         image="coat",
         progress=90,
-        step="9",
+        step="1",
         hook="Bringing the comfort and quality of Traditional Irish coats to\
          an Online International Exchange"
     )
