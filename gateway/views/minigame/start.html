@@ -1,10 +1,23 @@
 {% extends "layout/minigame.html" %}
+{% load staticfiles %}
 
 {% block title %}Start{% endblock %}
 {% block description %}Get Read to Play the Games!{% endblock %}
 
 {% block minigame %}
-	{% include "bootstrap/jumbotron.html" with header=minigame.title subheader=minigame.subtitle %}
+
+	<!-- EaselJS library -->
+    <script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
+	
+	<!-- The main game -->
+    <script src="/static/js/start.js"></script>
+    
+    <!-- Minigame specific styles -->
+    <link href="/static/css/minigames.css" rel="stylesheet">
+    
+    <!-- Game container -->
+	<canvas class="canvas-main" id="startCanvas" height="400" width="800"></canvas>
+
 {% endblock %}
 
 {% block minigame-questions %}
