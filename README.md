@@ -32,7 +32,7 @@ Style guides are enforced by lint checkers configured to check <strong>complete 
 for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/pep-0008/)
 We have an autoformatter, please make sure autopep8 is installed, then run the autoPython.sh in gateway to format.
 
-for javascript please follow the [JS Hint styleguide](http://www.jshint.com/) 
+for javascript please follow the [JS Hint styleguide](http://www.jshint.com/)
 We also have an autoformatter for javascript now, make sure you install jsbeautifier from pip and run the autoJS.sh from terminal
 
 for templates please follow [valid HTML 5 standards](http://validator.w3.org/nu/) and [follow django best practices](https://oncampus.oberlin.edu/webteam/2012/09/architecture-django-templates)
@@ -81,7 +81,7 @@ modifying bootstrap
 to customize bootstap styles please visit the bootstrap folder.
 in the folder run
 ```sh
-sudo npm install -g grunt-cli
+sudo npm install
 cd boostrap
 sudo npm install
 ```
