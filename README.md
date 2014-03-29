@@ -76,6 +76,30 @@ git push origin branch-name
 
 on github click on pull requests to the right, open a pull request
 
+testing code
+===
+###creating unit tests
+####django
+basic contraints
+* page is accessible
+* page is secure
+
+####javascript
+test core logic
+
+testing of events, or of dependant libraries is a non-goal
+
+###running unit tests
+####django
+```
+./manage.py test gateway.tests
+```
+
+####javascript game
+```
+karma start karma.conf.js
+```
+
 modifying bootstrap
 ====
 to customize bootstap styles please visit the bootstrap folder.
@@ -95,7 +119,7 @@ to compile the less to css, then move it to the static folder
 cd bootstrap
 grunt dist
 cd ..
-python manage.py collectstatic
+./manage.py collectstatic
 ```
 
 naming convensions
