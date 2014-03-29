@@ -1,6 +1,7 @@
 Gateway Game
 ====
 [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
+[![Code Climate](https://codeclimate.com/github/Team-H/gateway.png)](https://codeclimate.com/github/Team-H/gateway)
 [![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=develop)](https://coveralls.io/r/Team-H/gateway?branch=develop)
 [![Stories in Ready](https://badge.waffle.io/team-h/gateway.png?label=ready&title=Ready)](http://waffle.io/team-h/gateway)
 [![Gitter chat](https://badges.gitter.im/Team-H/gateway.png)](https://gitter.im/Team-H/gateway)
@@ -32,7 +33,7 @@ Style guides are enforced by lint checkers configured to check <strong>complete 
 for python please follow the [PEP 8 styleguide](http://www.python.org/dev/peps/pep-0008/)
 We have an autoformatter, please make sure autopep8 is installed, then run the autoPython.sh in gateway to format.
 
-for javascript please follow the [JS Hint styleguide](http://www.jshint.com/) 
+for javascript please follow the [JS Hint styleguide](http://www.jshint.com/)
 We also have an autoformatter for javascript now, make sure you install jsbeautifier from pip and run the autoJS.sh from terminal
 
 for templates please follow [valid HTML 5 standards](http://validator.w3.org/nu/) and [follow django best practices](https://oncampus.oberlin.edu/webteam/2012/09/architecture-django-templates)
@@ -76,12 +77,36 @@ git push origin branch-name
 
 on github click on pull requests to the right, open a pull request
 
+testing code
+===
+###creating unit tests
+####django
+basic contraints
+* page is accessible
+* page is secure
+
+####javascript
+test core logic
+
+testing of events, or of dependant libraries is a non-goal
+
+###running unit tests
+####django
+```
+./manage.py test gateway.tests
+```
+
+####javascript game
+```
+karma start karma.conf.js
+```
+
 modifying bootstrap
 ====
 to customize bootstap styles please visit the bootstrap folder.
 in the folder run
 ```sh
-sudo npm install -g grunt-cli
+sudo npm install
 cd boostrap
 sudo npm install
 ```
@@ -95,7 +120,7 @@ to compile the less to css, then move it to the static folder
 cd bootstrap
 grunt dist
 cd ..
-python manage.py collectstatic
+./manage.py collectstatic
 ```
 
 naming convensions
