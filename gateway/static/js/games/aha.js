@@ -78,48 +78,21 @@ function buildSprite() {
 }
 */
 
+// Handle all user input through key events
+function handleKeyDown(e) {
+
+    // If e is defined, use it. Else use the event
+    e = e || window.event;
+
+    move(object, e.keyCode);
+}
+
 function tick() {
 
     stage.update();
 }
 
-// Handle all user input through key events
-function handleKeyDown(e) {
-
-	// If e is defined, use it. Else use the event
-    e = e || window.event;
-
-	switch (e.keyCode) {
-
-		// Left
-		case 37:
-			object.x -= 5;
-			break;
-
-		// Up
-		case 38:
-			object.y -= 5;
-			break;
-
-		// Right
-		case 39:
-			object.x += 5;
-			break;
-
-		// Down
-		case 40:
-			object.y += 5;
-			break;
-
-		default:
-			break;
-	}
-}
-
 // Handle all user input through mouse events
 function handleMouseDown() {
-
-	// For right now, just reset to original position
-	object.x = 100;
-	object.y = 100;
+    reset(object);
 }

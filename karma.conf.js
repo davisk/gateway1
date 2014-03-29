@@ -15,10 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'gateway/static/js/jquery-2.1.0.min.js',
-      'gateway/static/js/easeljs-0.7.0.min.js',
       'gateway/static/js/test/**.js',
-      'gateway/static/js/games/**.js'
+      'gateway/static/js/games/core.js'
     ],
 
 
@@ -55,7 +53,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
@@ -65,6 +63,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };
