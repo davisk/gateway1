@@ -1,0 +1,31 @@
+{
+  "name": "gateway",
+  "version": "0.0.1",
+  "description": "Gateway works to make the entrepreneurship process managable through Gamification.",
+  "main": "index.js",
+  "dependencies": {
+    "jshint": "~2.4.4",
+    "karma": "~0.12.1",
+    "karma-jasmine": "~0.2.2",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "phantomjs": "~1.9.7-1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "karma-cli": "~0.0.4",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-chrome-launcher": "~0.1.2"
+  },
+  "scripts": {
+    "test": "karma start --single-run --browsers PhantomJS; jshint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Team-H/gateway"
+  },
+  "author": "Christian Murphy",
+  "license": "BSD",
+  "gitHead": "f5db9baf39d448b0ac6563cc7eb9453bed43be2f",
+  "readmeFilename": "README.md"
+}

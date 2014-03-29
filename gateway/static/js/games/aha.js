@@ -1,0 +1,3 @@
+function getCanvasId() {
+    return "ahaCanvas";
+}

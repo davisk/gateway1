@@ -8,7 +8,7 @@ python:
 # command to install dependencies
 install:
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
-  - npm install jshint --silent
+  - npm install --silent
 
 # setup mysql
 before_script:
@@ -18,7 +18,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - jshint .
+  - npm test
   - radon cc manage.py test
   - radon mi manage.py test
   - coverage run --source gateway manage.py test gateway.tests
