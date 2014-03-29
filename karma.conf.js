@@ -15,7 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'gateway/static/js/test/**.js'
+      'gateway/static/js/jquery-2.1.0.min.js',
+      'gateway/static/js/easeljs-0.7.0.min.js',
+      'gateway/static/js/test/**.js',
+      'gateway/static/js/games/**.js'
     ],
 
 
