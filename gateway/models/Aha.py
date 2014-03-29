@@ -1,4 +1,5 @@
-import models
+"""Aha minigame information."""
+from django.db import models
 
 """model for the Aha minigame"""
 
