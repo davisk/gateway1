@@ -1,0 +1,15 @@
+- model: gateway.Venture
+  fields:
+    title: Murphee's Irish Coats
+    image: coat
+    progress: 90
+    step: 1
+    hook: Bringing the comfort and quality of Traditional Irish coats to an Online International Exchange
+
+- model: gateway.Venture
+  fields:
+    title: Three Lions Magic Show
+    image: anti-gravity
+    progress: 60
+    step: 1
+    hook: A crew of three globally acclaimed Magicians bend the rules of reality to make the mundane extraordinary
