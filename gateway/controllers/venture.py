@@ -4,7 +4,7 @@ from django.shortcuts import render
 from gateway.models.venture import Venture
 
 
-def venture_view(request, id="0"):
+def venture_view(request, id="1"):
     """get a specific venture and render."""
     ventures = Venture.objects.all()
     return render(
