@@ -14,7 +14,7 @@ install:
 before_script:
   - mysql -e 'create database gateway;'
   - mysqladmin -u root password "root"
-  - python manage.py syncdb
+  - python manage.py syncdb --noinput
   - python manage.py loaddata fixture/venture.yaml
 
 # command to run tests
