@@ -1,5 +1,10 @@
 """model venture information."""
 from django.db import models
+from gateway.models.Aha import Aha
+from gateway.models.Elevator import Elevator
+from gateway.models.Research import Research
+from gateway.models.Survey import Survey
+from gateway.models.Feedback import Feedback
 
 
 class Venture(models.Model):
@@ -37,6 +42,31 @@ class Venture(models.Model):
     hook = models.CharField(
         "tweet sized hook line for the venture",
         max_length=140
+    )
+
+    aha = models.OneToOneField(
+        Aha,
+        primary_key=True
+    )
+
+    elevator = models.OneToOneField(
+        Elevator,
+        primary_key=True
+    )
+
+    research = models.OneToOneField(
+        Research,
+        primary_key=True
+    )
+
+    survey = models.OneToOneField(
+        Survey,
+        primary_key=True
+    )
+
+    feedback = models.OneToOneField(
+        Feedback,
+        primary_key=True
     )
 
     class Meta:
