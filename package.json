@@ -4,7 +4,6 @@
   "description": "Gateway works to make the entrepreneurship process managable through Gamification.",
   "main": "index.js",
   "dependencies": {
-    "grunt": "~0.4.4",
     "jshint": "~2.4.4",
     "karma": "~0.12.1",
     "karma-jasmine": "~0.2.2",
@@ -12,6 +11,7 @@
     "phantomjs": "~1.9.7-1"
   },
   "devDependencies": {
+    "grunt": "~0.4.4",
     "grunt-cli": "~0.1.13",
     "karma-cli": "~0.0.4",
     "karma-firefox-launcher": "~0.1.3",
