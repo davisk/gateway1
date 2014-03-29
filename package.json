@@ -18,7 +18,7 @@
     "karma-chrome-launcher": "~0.1.2"
   },
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "test": "karma start --single-run --browsers PhantomJS; jshint ."
   },
   "repository": {
     "type": "git",
