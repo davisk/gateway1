@@ -1,4 +1,4 @@
-describe("aha game", function() {
+describe("core game logic", function() {
     var object = {};
 
     beforeEach(function() {

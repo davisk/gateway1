@@ -16,7 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'gateway/static/js/test/**.js',
-      'gateway/static/js/games/core.js'
+      'gateway/static/js/core/logic.js'
     ],
 
 

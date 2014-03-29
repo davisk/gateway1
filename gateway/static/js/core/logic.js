@@ -3,6 +3,12 @@
  * DO NOT PUT EVENT LISTENERS INTO THIS FILE
  * DO NOT PUT CREATE JS OR JQUERY INTO THIS FILE
  */
+
+ /**
+  * Allows an object to be moved based on key press integers
+  * @param object to be moved
+  * @param direction the object is moving in
+  */
 function move (object, direction) {
     switch (direction) {
         // Left
@@ -30,6 +36,10 @@ function move (object, direction) {
     }
 }
 
+/**
+ * resets the postion of an object
+ * @param object being reset
+ */
 function reset(object) {
     object.x = 100;
     object.y = 100;
