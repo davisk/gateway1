@@ -35,6 +35,8 @@ var manifest;
  */
 var spriteObj;
 
+var queue;
+
 /**
  * This manages the easel js stage
  * @property
@@ -68,21 +70,79 @@ function buildObject() {
 }
 
 
-// Initialize our game sprite(s)
+var preload;
+var progressText;
+var user;
+
 function initSprite() {
 
-    var queue = new createjs.LoadQueue();
-    queue.on("complete", handleComplete, this);
-    queue.loadManifest([
-        {id: "myImage", src:"/static/sprites/scene1_init.png"}
-    ]);
+    progressText = new createjs.Text("", "20px Arial", "#000000");
+    progressText.x = 300 - progressText.getMeasuredWidth() / 2;
+    progressText.y = 20;
+    stage.addChild(progressText);
+
+    setupManifest();
+    startPreload();
 }
 
-function handleComplete() {
-    var image = queue.getResult("myImage");
-    document.body.appendChild(image);
+function setupManifest() {
+    manifest = [
+        {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},
+        {id: "user_front", src: "/static/sprites/user_front.png"},
+        ()
+        {id: "game_guide", src: "/static/sprites/Main_guy.png"}
+    ];
 }
 
+function startPreload() {
+    preload = new createjs.LoadQueue(true);
+    preload.on("fileload", handleFileLoad);
+    preload.on("progress", handleFileProgress);
+    preload.on("complete", loadComplete);
+    preload.on("error", loadError);
+    preload.loadManifest(manifest);
+}
+
+function handleFileLoad(event) {
+    console.log("A file has loaded of type: " + event.item.type);
+}
+
+
+function loadError(evt) {
+    console.log("Error!",evt.text);
+}
+
+
+function handleFileProgress(event) {
+    progressText.text = (preload.progress*100|0) + " % Loaded";
+}
+
+function loadComplete(event) {
+    console.log("Finished Loading Assets");
+
+    /*var bgImage = preload.getResult("canvas_bkgd").result;
+    var bgBitmap = new createjs.Bitmap(bgImage);
+    stage.addChild(bgBitmap);*/
+
+    var image = preload.getResult("canvas_bkgd");
+    var image2 = preload.getResult("game_user");
+    var image3 = preload.getResult("game_guide");
+
+    background = new createjs.Bitmap(image);
+    user = new createjs.Bitmap(image2);
+
+    background.scaleY = 0.4;
+    background.scaleX = 0.6;
+
+    user.y = 160;
+
+    stage.addChild(background);
+    stage.addChild(user);
+    stage.removeChild(progressText);
+}
+
+function check() {
+}
 
 
 // Not currently hooked up yet
