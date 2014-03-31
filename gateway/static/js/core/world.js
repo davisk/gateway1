@@ -63,7 +63,7 @@ function initGame() {
 
     // Create our progress bar
     initLoadProgress();
-    // Setup our game image manifest
+    // Setup our game image manifest (game specific function)
     initImages();
     // Queue & Preload our manifest
     startPreload();
@@ -77,48 +77,14 @@ function initLoadProgress() {
     stage.addChild(progressText);
 }
 
-function initImages() {
-
-    manifest = [
-        {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},
-        {id: "user_front", src: "/static/sprites/user_front.png"},
-        {id: "user_left", src: "/static/sprites/user_side_left.png"},
-        {id: "user_back", src: "/static/sprites/user_back.png"},
-        {id: "game_guide", src: "/static/sprites/Main_guy.png"},
-    ];
-}
-
 function startPreload() {
 
     preload = new createjs.LoadQueue(true);
     preload.on("progress", handleGameProgress);
-    preload.on("complete", loadGame);
+    preload.on("complete", loadGame); // Game specific function
     preload.loadManifest(manifest);
 }
 
-function handleGameProgress(event) {
+function handleGameProgress() {
     progressText.text = (preload.progress*100|0) + " % Loaded";
-}
-
-function loadGame(event) {
-
-    canvas_bkgd = new createjs.Bitmap(preload.getResult("canvas_bkgd"));
-
-    game_guide = new createjs.Bitmap(preload.getResult("game_guide"));
-
-    user_front = new createjs.Bitmap(preload.getResult("user_front"));
-
-    // Fix the background image for the canvas
-    background.scaleY = 0.4;
-    background.scaleX = 0.6;
-
-    // Set our user image and location
-    object = user_front;
-    object.x = 700;
-    object.y = 160;
-
-    // Add our images to the canvas and remove the progress bar
-    stage.addChild(background);
-    stage.addChild(object);
-    stage.removeChild(progressText);
 }
