@@ -5,14 +5,14 @@
 /**
  * This hold the dom of the canvas element
  * @property canvas
- * @type DOM
+ * @type {DOM}
  */
 var canvas;
 
 /**
  * This hold the name of the id of the canvas
  * @property canvasID
- * @type string
+ * @type {string}
  */
 var canvasID;
 
@@ -24,11 +24,11 @@ var canvasID;
 var object;
 
 /**
- * This is the sprite for the character
+ * This is the holder for the images in the game
  * @property canvas
- * @type {Image}
+ * @type {array}
  */
-var spriteImg = new Image();
+var manifest;
 
 /**
  * COMING SOON
@@ -44,6 +44,7 @@ var stage;
 
 // Initialize our game environment
 function initGame() {
+
     canvasID = getCanvasId();
     canvas = document.getElementById(canvasID);
     stage = new createjs.Stage(canvas);
@@ -68,12 +69,19 @@ function buildObject() {
 
 
 // Initialize our game sprite(s)
-/*function initSprite() {
+function initSprite() {
 
-    spriteImg.onload = handleImageLoad;
-    spriteImg.onerror = handleImageError;
-    spriteImg.src = "static/sprites/oursprite.xfc";
-}*/
+    var queue = new createjs.LoadQueue();
+    queue.on("complete", handleComplete, this);
+    queue.loadManifest([
+        {id: "myImage", src:"/static/sprites/scene1_init.png"}
+    ]);
+}
+
+function handleComplete() {
+    var image = queue.getResult("myImage");
+    document.body.appendChild(image);
+}
 
 
 

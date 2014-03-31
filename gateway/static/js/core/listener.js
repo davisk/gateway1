@@ -13,8 +13,8 @@
 $(document).ready(function() {
 
     initGame();
-    // initSprite();
-    buildObject();
+    initSprite();
+    //buildObject();
 
     // Setup our function for user input (key)
     document.onkeydown = handleKeyDown;
