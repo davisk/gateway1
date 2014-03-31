@@ -10,11 +10,9 @@
   * @param direction the object is moving in
   */
 
-function move (player, direction) {
+function move (player, direction, canvId) {
 
-    var cid = getCanvasId();
-
-    if (cid == 'ahaCanvas') {
+    if (canvId == 'ahaCanvas') {
 
         switch (direction) {
             // Left
