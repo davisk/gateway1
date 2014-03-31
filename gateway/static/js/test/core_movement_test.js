@@ -6,6 +6,7 @@ describe("core game logic", function() {
         object.y = 0;
     });
 
+    // Testing regular movement
     it("will move object left when left key is pressed", function() {
         move(object, 37, '');
         expect(object.x).toBe(-5);
@@ -30,4 +31,3 @@ describe("core game logic", function() {
         expect(object.y).toBe(5);
     });
 });
-
