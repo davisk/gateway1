@@ -1,10 +1,10 @@
 /* Testing movement SPECIFIC to the Aha minigame */
 
-describe("core game logic", function() {
+describe("aha game logic movement", function() {
     var object = {};
 
     // On the vertical sidewalk, should be able to move left
-    it("will move object left when left key is pressed", function() {
+    it("will let the user move left", function() {
         object.x = 380;
         object.y = 130;
 
@@ -14,7 +14,7 @@ describe("core game logic", function() {
     });
 
     // Off the vertical sidewalk, should NOT be able to move left
-    it("will NOT move object left when left key is pressed", function() {
+    it("will NOT let the user move left", function() {
         object.x = 350;
         object.y = 130;
 
@@ -24,7 +24,7 @@ describe("core game logic", function() {
     });
 
     // In front of vertical sidewalk, should be able to walk up it
-    it("will move object up when up key is pressed", function() {
+    it("will let the user move up", function() {
         object.x = 360;
         object.y = 130;
 
@@ -34,7 +34,7 @@ describe("core game logic", function() {
     });
 
     // First branch (not on sidewalk), should NOT be able to move upwards
-    it("will NOT move object up when up key is pressed", function() {
+    it("will NOT let the user move up", function() {
         object.x = 100;
         object.y = 130;
 
@@ -44,7 +44,7 @@ describe("core game logic", function() {
     });
 
     // On vertical sidewalk, should be able to move right within 40 px limit
-    it("will move object right when right key is pressed", function() {
+    it("will let the user move right", function() {
         object.x = 360;
         object.y = 130;
 
@@ -54,7 +54,7 @@ describe("core game logic", function() {
     });
 
     // Test you can't walk off the screen
-    it("will NOT move object right when right key is pressed", function() {
+    it("will NOT let the user move right", function() {
         object.x = 720;
         object.y = 120;
 
@@ -64,7 +64,7 @@ describe("core game logic", function() {
     });
 
     // Should be able to move down the vertical sidewalk
-    it("will move object down when down key is pressed", function() {
+    it("will let the user move right", function() {
         object.x = 370;
         object.y = 50;
 
@@ -74,7 +74,7 @@ describe("core game logic", function() {
     });
 
     // Under sidewalk, shouldn't be able to go down any further
-    it("will NOT move object down when down key is pressed", function() {
+    it("will NOT let the user move right", function() {
         object.x = 0;
         object.y = 180;
 

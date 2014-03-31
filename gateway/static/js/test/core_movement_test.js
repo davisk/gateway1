@@ -1,4 +1,4 @@
-describe("core game logic", function() {
+describe("core game logic movement", function() {
     var object = {};
 
     beforeEach(function() {
