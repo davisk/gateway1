@@ -2,7 +2,9 @@
   "name": "gateway",
   "version": "0.0.1",
   "description": "Gateway works to make the entrepreneurship process managable through Gamification.",
-  "main": "index.js",
+  "author": "CST 316 Team H",
+  "license": "BSD",
+  "readmeFilename": "README.md",
   "dependencies": {
     "jshint": "~2.4.4",
     "karma": "~0.12.1",
@@ -23,9 +25,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Team-H/gateway"
-  },
-  "author": "Christian Murphy",
-  "license": "BSD",
-  "gitHead": "f5db9baf39d448b0ac6563cc7eb9453bed43be2f",
-  "readmeFilename": "README.md"
+  }
 }
