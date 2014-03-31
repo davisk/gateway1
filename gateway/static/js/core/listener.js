@@ -13,8 +13,6 @@
 $(document).ready(function() {
 
     initGame();
-    initSprite();
-    //buildObject();
 
     // Setup our function for user input (key)
     document.onkeydown = handleKeyDown;
@@ -29,10 +27,11 @@ $(document).ready(function() {
  * @param e event that has been triggered
  */
 function handleKeyDown(e) {
+
     // If e is defined, use it. Else use the event
     e = e || window.event;
 
-    move(user, e.keyCode);
+    move(object, e.keyCode);
 }
 
 /**

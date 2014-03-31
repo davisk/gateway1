@@ -17,9 +17,16 @@ var canvas;
 var canvasID;
 
 /**
+ * This manages the easel js stage
+ * @property
+ * @type {createjs.Stage}
+ */
+var stage;
+
+/**
  * This is the character of the world
  * @property object
- * @type {createjs.Shape}
+ * @type {}
  */
 var object;
 
@@ -31,20 +38,20 @@ var object;
 var manifest;
 
 /**
- * COMING SOON
+ * This is what is loading our manifest images
+ * @property canvas
+ * @type {createjs.LoadQueue}
  */
-var spriteObj;
-
-var queue;
+var preload;
 
 /**
- * This manages the easel js stage
- * @property
- * @type {createjs.Stage}
+ * This is the progress bar for loading the game
+ * @property canvas
+ * @type {createjs.Text}
  */
-var stage;
+var progressText;
 
-// Initialize our game environment
+
 function initGame() {
 
     canvasID = getCanvasId();
@@ -53,114 +60,65 @@ function initGame() {
 
     // Set game attributes
     createjs.Ticker.setFPS(60);
+
+    // Create our progress bar
+    initLoadProgress();
+    // Setup our game image manifest
+    initImages();
+    // Queue & Preload our manifest
+    startPreload();
 }
 
-
-// Build our object for the game (test circle for now)
-function buildObject() {
-
-    object = new createjs.Shape();
-
-    object.graphics.beginFill("blue").drawCircle(0, 0, 50);
-    object.x = 100;
-    object.y = 100;
-
-    //Add the object to our stage
-    stage.addChild(object);
-}
-
-
-var preload;
-var progressText;
-var user;
-
-function initSprite() {
+function initLoadProgress() {
 
     progressText = new createjs.Text("", "20px Arial", "#000000");
     progressText.x = 300 - progressText.getMeasuredWidth() / 2;
     progressText.y = 20;
     stage.addChild(progressText);
-
-    setupManifest();
-    startPreload();
 }
 
-function setupManifest() {
+function initImages() {
+
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},
         {id: "user_front", src: "/static/sprites/user_front.png"},
-        ()
-        {id: "game_guide", src: "/static/sprites/Main_guy.png"}
+        {id: "user_left", src: "/static/sprites/user_side_left.png"},
+        {id: "user_back", src: "/static/sprites/user_back.png"},
+        {id: "game_guide", src: "/static/sprites/Main_guy.png"},
     ];
 }
 
 function startPreload() {
+
     preload = new createjs.LoadQueue(true);
-    preload.on("fileload", handleFileLoad);
-    preload.on("progress", handleFileProgress);
-    preload.on("complete", loadComplete);
-    preload.on("error", loadError);
+    preload.on("progress", handleGameProgress);
+    preload.on("complete", loadGame);
     preload.loadManifest(manifest);
 }
 
-function handleFileLoad(event) {
-    console.log("A file has loaded of type: " + event.item.type);
-}
-
-
-function loadError(evt) {
-    console.log("Error!",evt.text);
-}
-
-
-function handleFileProgress(event) {
+function handleGameProgress(event) {
     progressText.text = (preload.progress*100|0) + " % Loaded";
 }
 
-function loadComplete(event) {
-    console.log("Finished Loading Assets");
+function loadGame(event) {
 
-    /*var bgImage = preload.getResult("canvas_bkgd").result;
-    var bgBitmap = new createjs.Bitmap(bgImage);
-    stage.addChild(bgBitmap);*/
+    canvas_bkgd = new createjs.Bitmap(preload.getResult("canvas_bkgd"));
 
-    var image = preload.getResult("canvas_bkgd");
-    var image2 = preload.getResult("game_user");
-    var image3 = preload.getResult("game_guide");
+    game_guide = new createjs.Bitmap(preload.getResult("game_guide"));
 
-    background = new createjs.Bitmap(image);
-    user = new createjs.Bitmap(image2);
+    user_front = new createjs.Bitmap(preload.getResult("user_front"));
 
+    // Fix the background image for the canvas
     background.scaleY = 0.4;
     background.scaleX = 0.6;
 
-    user.y = 160;
+    // Set our user image and location
+    object = user_front;
+    object.x = 700;
+    object.y = 160;
 
+    // Add our images to the canvas and remove the progress bar
     stage.addChild(background);
-    stage.addChild(user);
+    stage.addChild(object);
     stage.removeChild(progressText);
 }
-
-function check() {
-}
-
-
-// Not currently hooked up yet
-/*
-function buildSprite() {
-
-    spriteSheetObj = new createjs.SpriteSheet({
-
-        // Sprite image
-        images: [spriteImg],
-
-        // Dimensions/Reg point of each sprite
-        frames: {width: 64, height: 64, regX: 32, regY: 32},
-
-        // Based off the complete sequence of the sprite
-        animations: {
-            walk: [0, 9, "walk"]
-        }
-    });
-}
-*/
