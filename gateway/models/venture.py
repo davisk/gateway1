@@ -44,29 +44,24 @@ class Venture(models.Model):
         max_length=140
     )
 
-    aha = models.OneToOneField(
-        Aha,
-        primary_key=True
+    aha = models.ForeignKey(
+        Aha
     )
 
-    elevator = models.OneToOneField(
-        Elevator,
-        primary_key=True
+    elevator = models.ForeignKey(
+        Elevator
     )
 
-    research = models.OneToOneField(
-        Research,
-        primary_key=True
+    research = models.ForeignKey(
+        Research
     )
 
-    survey = models.OneToOneField(
-        Survey,
-        primary_key=True
+    survey = models.ForeignKey(
+        Survey
     )
 
-    feedback = models.OneToOneField(
-        Feedback,
-        primary_key=True
+    feedback = models.ForeignKey(
+        Feedback
     )
 
     class Meta:
