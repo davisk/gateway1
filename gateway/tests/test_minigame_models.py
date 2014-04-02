@@ -1,6 +1,9 @@
 from django.test import TestCase
 from gateway.models.venture import Venture
 from gateway.tests.sample import aha, survey, elevator, feedback, research
+"""Testing that data was stored in the minigame models"""
+"""Only tests if data is stored in db and accsessable"""
+"""other functions are tested by the framework"""
 
 
 class MinigameTestCase(TestCase):

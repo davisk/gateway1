@@ -1,4 +1,5 @@
 """Aha minigame information."""
+"""Will change based on number of questions"""
 from django.db import models
 
 """model for the Aha minigame"""

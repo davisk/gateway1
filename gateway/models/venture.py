@@ -43,7 +43,8 @@ class Venture(models.Model):
         "tweet sized hook line for the venture",
         max_length=140
     )
-
+    """Foreign keys for minigame models"""
+    """ForeignKey are set to not constrained due to framework test issues"""
     aha = models.ForeignKey(
         Aha,
         db_constraint=False

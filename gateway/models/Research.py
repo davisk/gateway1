@@ -1,4 +1,5 @@
 """Research Minigame Information."""
+"""Will change based on number of questions"""
 from django.db import models
 
 

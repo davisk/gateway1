@@ -1,4 +1,5 @@
 """survey minigame model information."""
+"""Will change based on number of questions"""
 from django.db import models
 
 

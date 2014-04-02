@@ -1,4 +1,5 @@
 """minigame model information."""
+"""Will change based on number of questions"""
 from django.db import models
 
 
@@ -16,27 +17,27 @@ class Elevator(models.Model):
     )
 
     question_two = models.CharField(
-        "The first answer of the Elevator game",
+        "The second answer of the Elevator game",
         max_length=144
     )
 
     question_three = models.CharField(
-        "The first answer of the Elevator game",
+        "The third answer of the Elevator game",
         max_length=144
     )
 
     question_four = models.CharField(
-        "The first answer of the Elevator game",
+        "The fourth answer of the Elevator game",
         max_length=144
     )
 
     question_five = models.CharField(
-        "The first answer of the Elevator game",
+        "The fifth answer of the Elevator game",
         max_length=144
     )
 
     question_six = models.CharField(
-        "The first answer of the Elevator game",
+        "The sixth answer of the Elevator game",
         max_length=144
     )
 
