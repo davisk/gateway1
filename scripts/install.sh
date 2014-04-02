@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 read -p "Please remember that for ease of use, it is best to make the root password root, this will save you a lot of headache. 
 Also keep in mind that curently this script only supports Debian, Fedora and Arch based Distros. 
 Press any key to continue..."
@@ -31,6 +32,7 @@ then
 
 elif [[ "$DISTRO" = "arch linux" || "$DISTRO" = "manjaro" ]]
 then
+    #install reqs in yaourt
 	cat yaourt.txt | xargs yaourt 
 	echo 2
 	echo 4
@@ -47,5 +49,8 @@ fi
 echo "create database gateway" | mysql --user=root --password=root
 
 #set up django
+
 cd ..
-python manage.py syncdb
+python manage.py syncdb --noinput
+
+sudo npm install --dev

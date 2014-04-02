@@ -16,7 +16,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'gateway/static/js/test/**.js',
-      'gateway/static/js/core/logic.js'
+      'gateway/static/js/core/logic.js',
+      'gateway/static/js/games/end.js' // Hack to get around aha.js move changes
     ],
 
 
