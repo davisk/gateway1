@@ -7,7 +7,7 @@
   "license": "BSD",
   "readmeFilename": "README.md",
   "dependencies": {
-    "jshint": "~2.4.4",
+    "jshint": "~2.5.0",
     "karma": "~0.12.1",
     "karma-jasmine": "~0.2.2",
     "karma-phantomjs-launcher": "~0.1.2",
