@@ -13,14 +13,10 @@
 $(document).ready(function() {
 
     initGame();
-    // initSprite();
-    buildObject();
 
     // Setup our function for user input (key)
     document.onkeydown = handleKeyDown;
     createjs.Ticker.addEventListener("tick", stage);
-    // Setup our function for user mouse input ONLY in the canvas
-    document.getElementById(canvasID).onmousedown = handleMouseDown;
 });
 
 /**
@@ -29,10 +25,11 @@ $(document).ready(function() {
  * @param e event that has been triggered
  */
 function handleKeyDown(e) {
+
     // If e is defined, use it. Else use the event
     e = e || window.event;
 
-    move(object, e.keyCode);
+    move(object, e.keyCode, canvasID);
 }
 
 /**
@@ -41,12 +38,4 @@ function handleKeyDown(e) {
  */
 function tick() {
     stage.update();
-}
-
-/**
- * when the mouse moves down
- * reset the object
- */
-function handleMouseDown() {
-    reset(object);
 }

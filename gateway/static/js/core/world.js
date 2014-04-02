@@ -5,35 +5,16 @@
 /**
  * This hold the dom of the canvas element
  * @property canvas
- * @type DOM
+ * @type {DOM}
  */
 var canvas;
 
 /**
  * This hold the name of the id of the canvas
  * @property canvasID
- * @type string
+ * @type {string}
  */
 var canvasID;
-
-/**
- * This is the character of the world
- * @property object
- * @type {createjs.Shape}
- */
-var object;
-
-/**
- * This is the sprite for the character
- * @property canvas
- * @type {Image}
- */
-var spriteImg = new Image();
-
-/**
- * COMING SOON
- */
-var spriteObj;
 
 /**
  * This manages the easel js stage
@@ -42,57 +23,68 @@ var spriteObj;
  */
 var stage;
 
-// Initialize our game environment
+/**
+ * This is the character of the world
+ * @property object
+ * @type {}
+ */
+var object;
+
+/**
+ * This is the holder for the images in the game
+ * @property canvas
+ * @type {array}
+ */
+var manifest;
+
+/**
+ * This is what is loading our manifest images
+ * @property canvas
+ * @type {createjs.LoadQueue}
+ */
+var preload;
+
+/**
+ * This is the progress bar for loading the game
+ * @property canvas
+ * @type {createjs.Text}
+ */
+var progressText;
+
+
 function initGame() {
+
     canvasID = getCanvasId();
     canvas = document.getElementById(canvasID);
     stage = new createjs.Stage(canvas);
 
     // Set game attributes
     createjs.Ticker.setFPS(60);
+
+    // Create our progress bar
+    initLoadProgress();
+    // Setup our game image manifest (game specific function)
+    initImages();
+    // Queue & Preload our manifest
+    startPreload();
 }
 
+function initLoadProgress() {
 
-// Build our object for the game (test circle for now)
-function buildObject() {
-
-    object = new createjs.Shape();
-
-    object.graphics.beginFill("blue").drawCircle(0, 0, 50);
-    object.x = 100;
-    object.y = 100;
-
-    //Add the object to our stage
-    stage.addChild(object);
+    progressText = new createjs.Text("", "20px Arial", "#000000");
+    progressText.x = 300 - progressText.getMeasuredWidth() / 2;
+    progressText.y = 20;
+    stage.addChild(progressText);
 }
 
+function startPreload() {
 
-// Initialize our game sprite(s)
-/*function initSprite() {
-
-    spriteImg.onload = handleImageLoad;
-    spriteImg.onerror = handleImageError;
-    spriteImg.src = "static/sprites/oursprite.xfc";
-}*/
-
-
-
-// Not currently hooked up yet
-/*
-function buildSprite() {
-
-    spriteSheetObj = new createjs.SpriteSheet({
-
-        // Sprite image
-        images: [spriteImg],
-
-        // Dimensions/Reg point of each sprite
-        frames: {width: 64, height: 64, regX: 32, regY: 32},
-
-        // Based off the complete sequence of the sprite
-        animations: {
-            walk: [0, 9, "walk"]
-        }
-    });
+    preload = new createjs.LoadQueue(true);
+    preload.on("progress", handleGameProgress);
+    preload.on("complete", loadGame); // Game specific function
+    preload.loadManifest(manifest);
 }
-*/
+
+function handleGameProgress() {
+    progressText.text = (preload.progress*100|0) + " % Loaded";
+}

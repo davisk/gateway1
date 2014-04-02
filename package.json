@@ -1,6 +1,7 @@
 {
   "name": "gateway",
   "version": "0.0.1",
+  "private": true,
   "description": "Gateway works to make the entrepreneurship process managable through Gamification.",
   "author": "CST 316 Team H",
   "license": "BSD",
