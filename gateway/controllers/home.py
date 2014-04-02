@@ -17,8 +17,8 @@ def home_view(request):
             request,
             'members.html',
             dict(
-                ventures=ventures[2:],
-                currentVenture=ventures[1]
+                ventures=ventures[1:],
+                currentVenture=ventures[0]
             )
         )
     else:
