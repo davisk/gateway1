@@ -1,0 +1,71 @@
+- model: gateway.Venture
+  fields:
+    title: Murphee's Irish Coats
+    image: coat
+    progress: 90
+    step: 1
+    hook: Bringing the comfort and quality of Traditional Irish coats to an Online International Exchange
+
+- model: gateway.Venture
+  fields:
+    title: Three Lions Magic Show
+    image: anti-gravity
+    progress: 60
+    step: 4
+    hook: A crew of three globally acclaimed Magicians bend the rules of reality to make the mundane extraordinary
+
+- model: gateway.Venture
+  fields:
+    title: Melies Studio
+    image: film
+    progress: 70
+    step: 2
+    hook: Georges Melies makes Black and White cinematography relevant in the 21th century
+
+- model: gateway.Venture
+  fields:
+    title: Columbian Exchange
+    image: barge
+    progress: 20
+    step: 3
+    hook: The quick and enjoyable way to cross the Columbia River Gorge
+
+- model: gateway.Venture
+  fields:
+    title: Boston Express
+    image: boat
+    progress: 30
+    step: 3
+    hook: Want to captain your own ship through Boston Harbor try Boston express rent a boat!
+
+- model: gateway.Venture
+  fields:
+    title: Bricks to Buildings
+    image: bricks
+    progress: 50
+    step: 2
+    hook: We take ruble from demolitions and make low cost housing
+
+- model: gateway.Venture
+  fields:
+    title: Sands of Time
+    image: sand
+    progress: 90
+    step: 4
+    hook: Sand is ever flowing and timeless
+
+- model: gateway.Venture
+  fields:
+    title: Turtle Bay
+    image: sunglasses
+    progress: 25
+    step: 3
+    hook: Sunglasses that can be worn in the sea
+
+- model: gateway.Venture
+  fields:
+    title: Hawaiian Reef Tours
+    image: turtle
+    progress: 25
+    step: 3
+    hook: We have scouted the best reefs on Hawaii and want to give you the experiance of a lifetime
