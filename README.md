@@ -3,6 +3,7 @@ Gateway Game
 [![Build Status](https://travis-ci.org/Team-H/gateway.png?branch=develop)](https://travis-ci.org/Team-H/gateway)
 [![Code Climate](https://codeclimate.com/github/Team-H/gateway.png)](https://codeclimate.com/github/Team-H/gateway)
 [![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=develop)](https://coveralls.io/r/Team-H/gateway?branch=develop)
+[![Release Status](http://img.shields.io/badge/release-sprint%204-03fcde.svg)](http://www.scrumwise.com/)
 [![Stories in Ready](https://badge.waffle.io/team-h/gateway.png?label=ready&title=Ready)](http://waffle.io/team-h/gateway)
 [![Gitter chat](https://badges.gitter.im/Team-H/gateway.png)](https://gitter.im/Team-H/gateway)
 
