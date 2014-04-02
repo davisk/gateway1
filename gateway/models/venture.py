@@ -45,31 +45,26 @@ class Venture(models.Model):
     )
 
     aha = models.ForeignKey(
-        "the foreign key (id) of the aha model",
         Aha,
         db_constraint=False
     )
 
     elevator = models.ForeignKey(
-        "the foreign key (id) of the elevator model",
         Elevator,
         db_constraint=False
     )
 
     research = models.ForeignKey(
-        "the foreign key (id) of the research model",
         Research,
         db_constraint=False
     )
 
     survey = models.ForeignKey(
-        "the foreign key (id) of the survey model",
         Survey,
         db_constraint=False
     )
 
     feedback = models.ForeignKey(
-        "the foreign key (id) of the feedback model",
         Feedback,
         db_constraint=False
     )
