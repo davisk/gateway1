@@ -1,13 +1,9 @@
 #!/bin/bash
 
-#used for allowing multiple file
-multifile="y"
+echo "Enter the name of the file you widh to be formatted:"
 
-if [[ $multifile = "y" ]]
-then
-    echo "Enter the name of the file you widh to be formatted:"
-    read FILENAME
-    js-beautify $FILENAME
-fi
+read FILENAME
+js-beautify $FILENAME
+
 echo "Done"
 
