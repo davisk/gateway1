@@ -3,6 +3,9 @@ from gateway.models.Elevator import Elevator
 from gateway.models.Feedback import Feedback
 from gateway.models.Research import Research
 from gateway.models.Survey import Survey
+"""storing test data for the test_minigame_models
+      tests in objects of relevant models"""
+
 
 aha = Aha.objects.create(
     is_complete=False,

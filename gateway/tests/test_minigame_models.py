@@ -3,9 +3,9 @@ from gateway.models.venture import Venture
 from gateway.tests.sample import aha, survey, elevator, feedback, research
 
 
-class AhaTestCase(TestCase):
+class MinigameTestCase(TestCase):
     def setUp(self):
-        self.venture = Venture(
+        venture = Venture(
             title="Please Work",
             image="None",
             progress=0,
@@ -17,49 +17,49 @@ class AhaTestCase(TestCase):
             research=research,
             feedback=feedback
         )
+        venture.save()
 
     def test_Foreign_Key(self):
         entry = Venture.objects.get(title="Please Work")
-        self.assertequal(entry.title, "Please Work")
-        self.assertequal()
+        self.assertEqual(entry.title, "Please Work")
+        self.assertEqual(entry, Venture.objects.get(title="please Work"))
 
     def test_minigame_Aha(self):
-        entry = Venture.objects.get(title="Please Work")
-        self.assertequal(aha.is_complete, False)
-        self.assertequal(aha.question_one, 0)
-        self.assertequal(aha.question_two, 0)
-        self.assertequal(aha.question_three, 0)
-        self.assertequal(aha.question_four, 0)
-        self.assertequal(aha.question_five, 0)
-        self.sassertequal(aha.question_six, 0)
-        self.assertequal(entry.aha, aha)
+        self.assertEqual(aha.is_complete, False)
+        self.assertEqual(aha.question_one, 0)
+        self.assertEqual(aha.question_two, 0)
+        self.assertEqual(aha.question_three, 0)
+        self.assertEqual(aha.question_four, 0)
+        self.assertEqual(aha.question_five, 0)
+        self.assertEqual(aha.question_six, 0)
 
     def test_minigame_Elevator(self):
-        entry = Venture.objects.get(title="Please Work")
-        self.assertequal(elevator.question_one, 0)
-        self.assertequal(elevator.question_two, 0)
-        self.assertequal(elevator.question_three, 0)
-        self.assertequal(elevator.question_four, 0)
-        self.assertequal(elevator.question_five, 0)
-        self.assertequal(elevator.question_six, 0)
-        self.assertequal(entry.elevator, elevator)
+        self.assertEqual(elevator.question_one, 0)
+        self.assertEqual(elevator.question_two, 0)
+        self.assertEqual(elevator.question_three, 0)
+        self.assertEqual(elevator.question_four, 0)
+        self.assertEqual(elevator.question_five, 0)
 
     def test_minigame_Feedback(self):
-        entry = Venture.objects.get(title="Please Work")
-        self.assertequal(feedback.question_one, 0)
-        self.assertequal(feedback.question_two, 0)
-        self.assertequal(feedback.question_three, 0)
-        self.assertequal(feedback.question_four, 0)
-        self.assertequal(feedback.question_five, 0)
-        self.assertequal(feedback.question_six, 0)
-        self.assertequal(entry.feedback, feedback)
+        self.assertEqual(feedback.question_one, 0)
+        self.assertEqual(feedback.question_two, 0)
+        self.assertEqual(feedback.question_three, 0)
+        self.assertEqual(feedback.question_four, 0)
+        self.assertEqual(feedback.question_five, 0)
+        self.assertEqual(feedback.question_six, 0)
 
     def test_minigame_Research(self):
-        entry = Venture.objects.get(title="Please Work")
-        self.assertequal(research.question_one, 0)
-        self.assertequal(research.question_two, 0)
-        self.assertequal(research.question_three, 0)
-        self.assertequal(research.question_four, 0)
-        self.assertequal(research.question_five, 0)
-        self.assertequal(research.question_six, 0)
-        self.assertequal(entry.feedback, feedback)
+        self.assertEqual(research.question_one, 0)
+        self.assertEqual(research.question_two, 0)
+        self.assertEqual(research.question_three, 0)
+        self.assertEqual(research.question_four, 0)
+        self.assertEqual(research.question_five, 0)
+        self.assertEqual(research.question_six, 0)
+
+    def test_minigame_Survey(self):
+        self.assertEqual(survey.question_one, 0)
+        self.assertEqual(survey.question_two, 0)
+        self.assertEqual(survey.question_three, 0)
+        self.assertEqual(survey.question_four, 0)
+        self.assertEqual(survey.question_five, 0)
+        self.assertEqual(survey.question_six, 0)
