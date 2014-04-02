@@ -5,6 +5,7 @@ Gateway Game
 [![Coverage Status](https://coveralls.io/repos/Team-H/gateway/badge.png?branch=develop)](https://coveralls.io/r/Team-H/gateway?branch=develop)
 [![Release Status](http://img.shields.io/badge/release-sprint%204-03fcde.svg)](http://www.scrumwise.com/)
 [![Dependency Status](https://david-dm.org/team-h/gateway.png)](https://david-dm.org/team-h/gateway)
+[![devDependency Status](https://david-dm.org/team-h/gateway/dev-status.png)](https://david-dm.org/team-h/gateway#info=devDependencies)
 [![Stories in Ready](https://badge.waffle.io/team-h/gateway.png?label=ready&title=Ready)](http://waffle.io/team-h/gateway)
 [![License](http://img.shields.io/license/MIT.png?color=green)](http://opensource.org/licenses/MIT)
 [![Gitter chat](https://badges.gitter.im/Team-H/gateway.png)](https://gitter.im/Team-H/gateway)
