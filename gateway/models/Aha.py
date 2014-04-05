@@ -1,6 +1,7 @@
 """Aha minigame information."""
 """Will change based on number of questions"""
 from django.db import models
+from django import forms
 
 """model for the Aha minigame"""
 
@@ -37,3 +38,9 @@ class Aha(models.Model):
 
     class Meta:
         app_label = 'gateway'
+
+
+class Aha_Form(forms.ModelForm):
+
+    class Meta:
+        model = Aha
