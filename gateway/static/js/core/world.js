@@ -56,7 +56,10 @@ function initGame() {
 
     canvasID = getCanvasId();
     canvas = document.getElementById(canvasID);
+    canvas.width = 0.75*window.innerWidth;
+    canvas.height = 0.85*window.innerHeight;
     stage = new createjs.Stage(canvas);
+
 
     // Set game attributes
     createjs.Ticker.setFPS(60);
