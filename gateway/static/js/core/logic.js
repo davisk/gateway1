@@ -12,7 +12,10 @@
 
 function move (player, direction, canvId) {
 
-    if (canvId == 'ahaCanvas') {
+
+    // SCENE 1: Start
+
+    if (canvId == 'startCanvas') {
 
         switch (direction) {
             // Left
@@ -50,7 +53,161 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    } else {
+    } 
+
+    // SCENE 2: Aha!
+
+    else if (canvId == 'ahaCanvas') {
+
+        switch (direction) {
+            // Left
+            case 37:
+                player.x -= 5;
+                break;
+
+            // Up
+            case 38:
+                player.y -= 5;
+                break;
+
+            // Right
+            case 39:
+                player.x += 5;
+                break;
+
+            // Down
+            case 40:
+                player.y += 5;
+                break;
+
+            default:
+                break;
+        }
+    } 
+
+    // SCENE 3: Gap
+
+    else if (canvId == 'gapCanvas') {
+
+        switch (direction) {
+            // Left
+            case 37:
+                player.x -= 5;
+                break;
+
+            // Up
+            case 38:
+                player.y -= 5;
+                break;
+
+            // Right
+            case 39:
+                player.x += 5;
+                break;
+
+            // Down
+            case 40:
+                player.y += 5;
+                break;
+
+            default:
+                break;
+        }
+    } 
+
+    // SCENE 4: Survey
+
+    else if (canvId == 'survCanvas') {
+
+        switch (direction) {
+            // Left
+            case 37:
+                player.x -= 5;
+                break;
+
+            // Up
+            case 38:
+                player.y -= 5;
+                break;
+
+            // Right
+            case 39:
+                player.x += 5;
+                break;
+
+            // Down
+            case 40:
+                player.y += 5;
+                break;
+
+            default:
+                break;
+        }
+    } 
+
+    // SCENE 5: Interest
+
+    else if (canvId == 'interCanvas') {
+
+        switch (direction) {
+            // Left
+            case 37:
+                player.x -= 5;
+                break;
+
+            // Up
+            case 38:
+                player.y -= 5;
+                break;
+
+            // Right
+            case 39:
+                player.x += 5;
+                break;
+
+            // Down
+            case 40:
+                player.y += 5;
+                break;
+
+            default:
+                break;
+        }
+    } 
+
+    // SCENE 6: Elevator
+
+    else if (canvId == 'elevCanvas') {
+
+        switch (direction) {
+            // Left
+            case 37:
+                player.x -= 5;
+                break;
+
+            // Up
+            case 38:
+                player.y -= 5;
+                break;
+
+            // Right
+            case 39:
+                player.x += 5;
+                break;
+
+            // Down
+            case 40:
+                player.y += 5;
+                break;
+
+            default:
+                break;
+        }
+    } 
+
+    // Scene 7: End
+
+    else {
 
         switch (direction) {
             // Left
