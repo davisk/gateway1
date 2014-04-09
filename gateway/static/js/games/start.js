@@ -4,7 +4,7 @@
 
 
 function getCanvasId() {
-    return "ahaCanvas";
+    return "startCanvas";
 }
 
 function initImages() {
@@ -27,8 +27,14 @@ function loadGame() {
     }
 
     // Fix the background image for the canvas
-    imgs[0].scaleY = 0.4;
-    imgs[0].scaleX = 0.6;
+    imgs[0].scaleY = 0.55;
+    imgs[0].scaleX = 0.7;
+
+    // Scale characters
+    imgs[1].scaleY = 0.55;
+    imgs[1].scaleX = 0.7;
+    imgs[2].scaleY = 0.55;
+    imgs[2].scaleX = 0.7;
 
     // Set our main guy up by the entrance
     imgs[1].x = 120;
