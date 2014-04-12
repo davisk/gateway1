@@ -53,7 +53,7 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    } 
+    }
 
     // SCENE 2: Aha!
 
@@ -62,28 +62,35 @@ function move (player, direction, canvId) {
         switch (direction) {
             // Left
             case 37:
-                player.x -= 5;
+                player.gotoAndPlay("left");
+                player.x -= 15;
                 break;
 
             // Up
             case 38:
-                player.y -= 5;
+
+                player.gotoAndPlay("up");
+                player.y -= 15;
                 break;
 
             // Right
             case 39:
-                player.x += 5;
+
+                player.gotoAndPlay("right");
+                player.x += 15;
                 break;
 
             // Down
             case 40:
-                player.y += 5;
+
+                player.gotoAndPlay("up");
+                player.y += 15;
                 break;
 
             default:
                 break;
         }
-    } 
+    }
 
     // SCENE 3: Gap
 
@@ -113,7 +120,7 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    } 
+    }
 
     // SCENE 4: Survey
 
@@ -143,7 +150,7 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    } 
+    }
 
     // SCENE 5: Interest
 
@@ -173,7 +180,7 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    } 
+    }
 
     // SCENE 6: Elevator
 
@@ -203,7 +210,7 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    } 
+    }
 
     // Scene 7: End
 

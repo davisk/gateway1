@@ -26,6 +26,30 @@ function loadGame() {
         imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
     }
 
+    var data = {
+     images: ["/static/sprites/Sprite_Sheet.png"],
+     frames: {width:100, height:200},
+     animations: {
+        right: {
+            frames: [0,1,2],
+            speed: 5
+        },
+        left: {
+            frames: [5,4,3],
+            speed: 12
+        },
+        up: {
+            frames: [8,7,6],
+            speed: 9
+        }
+     }
+    };
+
+    var spriteSheet = new createjs.SpriteSheet(data);
+    var animation = new createjs.Sprite(spriteSheet, "up");
+    //animation.x = 120;
+    //animation.y = 80;
+
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.55;
     imgs[0].scaleX = 0.7;
@@ -41,7 +65,8 @@ function loadGame() {
     imgs[1].y = 80;
 
     // Set our user image and location to the global variable
-    object = imgs[2];
+    //object = imgs[2];
+    object = animation;
     object.x = 700;
     object.y = 160;
 
