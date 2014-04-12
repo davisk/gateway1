@@ -29,7 +29,7 @@ function handleKeyDown(e) {
     // If e is defined, use it. Else use the event
     e = e || window.event;
 
-    move(object, e.keyCode, canvasID);
+    move(userPlayer, e.keyCode, canvasID);
 }
 
 /**

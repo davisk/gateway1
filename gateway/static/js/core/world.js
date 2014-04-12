@@ -28,7 +28,7 @@ var stage;
  * @property object
  * @type {}
  */
-var object;
+var userPlayer;
 
 /**
  * This is the holder for the images in the game
@@ -90,4 +90,31 @@ function startPreload() {
 
 function handleGameProgress() {
     progressText.text = (preload.progress*100|0) + " % Loaded";
+}
+
+function createPlayer() {
+
+    var config = getStartingPlayerConfig();
+
+    // Define the specific sprite sheet data
+    var spriteData = new createjs.SpriteSheet({
+        images: ["/static/sprites/Sprite_Sheet.png"],
+        frames: {width: 100, height: 200, regX: 0, regY: 0},
+        animations: {
+            right1: {frames: [1], next: "right2", speed: 2},
+            right2: {frames: [2], next: "right1", speed: 2},
+            left1: {frames: [3], next: "left2", speed: 2},
+            left2: {frames: [4], next: "left1", speed: 2},
+            up1: {frames: [6], next: "up2", speed: 2},
+            up2: {frames: [7], next: "up1", speed: 2}
+        }
+    });
+
+    // Set our user image and location to the global variable
+    userPlayer = new createjs.Sprite(spriteData, config['pos']);
+    userPlayer.x = config['xloc'];
+    userPlayer.y = config['yloc'];
+
+    // Add our user to the canvas
+    stage.addChild(userPlayer);
 }
