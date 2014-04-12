@@ -10,6 +10,8 @@
   * @param direction the object is moving in
   */
 
+var moving = false;
+
 function move (player, direction, canvId) {
 
 
@@ -62,28 +64,56 @@ function move (player, direction, canvId) {
         switch (direction) {
             // Left
             case 37:
-                player.gotoAndPlay("left");
+                if (moving == false) {
+                    player.gotoAndPlay("right1");
+                    moving = true;
+                } else {
+                    player.gotoAndPlay("right2");
+                    moving = false;
+                }
+
                 player.x -= 15;
                 break;
 
             // Up
             case 38:
 
-                player.gotoAndPlay("up");
+                if (moving == false) {
+                    player.gotoAndPlay("right1");
+                    moving = true;
+                } else {
+                    player.gotoAndPlay("right2");
+                    moving = false;
+                }
+
                 player.y -= 15;
                 break;
 
             // Right
             case 39:
 
-                player.gotoAndPlay("right");
+                if (moving == false) {
+                    player.gotoAndPlay("right1");
+                    moving = true;
+                } else {
+                    player.gotoAndPlay("right2");
+                    moving = false;
+                }
+
                 player.x += 15;
                 break;
 
             // Down
             case 40:
 
-                player.gotoAndPlay("up");
+                if (moving == false) {
+                    player.gotoAndPlay("right1");
+                    moving = true;
+                } else {
+                    player.gotoAndPlay("right2");
+                    moving = false;
+                }
+
                 player.y += 15;
                 break;
 

@@ -28,27 +28,48 @@ function loadGame() {
 
     var data = {
      images: ["/static/sprites/Sprite_Sheet.png"],
-     frames: {width:100, height:200},
+     frames: {
+        width: 100,
+        height: 200,
+        regX: 0,
+        regY: 0
+     },
      animations: {
-        right: {
-            frames: [0,1,2],
-            speed: 5
+        right1: {
+            frames: [1],
+            next: "right2",
+            speed: 2
         },
-        left: {
-            frames: [5,4,3],
-            speed: 12
+        right2: {
+            frames: [2],
+            next: "right1",
+            speed: 2
         },
-        up: {
-            frames: [8,7,6],
-            speed: 9
+        left1: {
+            frames: [1],
+            next: "left2",
+            speed: 2
+        },
+        left2: {
+            frames: [2],
+            next: "left1",
+            speed: 2
+        },
+        up1: {
+            frames: [1],
+            next: "up2",
+            speed: 2
+        },
+        up2: {
+            frames: [2],
+            next: "up1",
+            speed: 2
         }
      }
     };
 
     var spriteSheet = new createjs.SpriteSheet(data);
     var animation = new createjs.Sprite(spriteSheet, "up");
-    //animation.x = 120;
-    //animation.y = 80;
 
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.55;
