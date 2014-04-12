@@ -12,6 +12,8 @@
 
 function move (player, direction, canvId) {
 
+    var height = 0.85*window.innerHeight;
+    var width = 0.75*window.innerWidth;
 
     // SCENE 1: Start
 
@@ -92,22 +94,46 @@ function move (player, direction, canvId) {
         switch (direction) {
             // Left
             case 37:
-                player.x -= 5;
+                if (player.x > 0.375*width && player.y < 0.07*height) 
+                    { player.x -=0.01*width; }                                                          // plant
+                else if (player.x > 0.05*width && player.y < 0.35*height && player.y > 0.07*height) 
+                    { player.x -= 0.01*width; }
+                else if (player.x > 0.42*width && player.y > 0.31*height) 
+                    { player.x -= 0.01*width; }                                                         // hallway
                 break;
 
             // Up
             case 38:
-                player.y -= 5;
+                if (player.y > 0.05*height && player.x < 0.2*width) 
+                    {player.y -=0.02*height;}               
+                else if (player.y > 0.07*height && player.x > 0.2*width && player.x < 0.375*width) 
+                    { player.y -= 0.02*height; }                                                        // plant
+                else if (player.y > 0.05*height && player.x > 0.375*width && player.x < 0.55*width) 
+                    { player.y -= 0.02*height; }  
+                else if (player.y > 0.1*height && player.x > 0.55*width) 
+                    { player.y -= 0.02*height; }                                                        // chairs
                 break;
 
             // Right
             case 39:
-                player.x += 5;
+                if (player.x < 0.2*width && player.y < 0.07*height) 
+                    { player.x +=0.01*width; }                                                          // plant                                                  
+                else if (player.x < 0.55*width && player.y < 0.1) 
+                    { player.x += 0.01*width; }
+                else if (player.x < 0.515*width && player.y > 0.31*height) 
+                    { player.x += 0.01*width; }   
+                else if (player.x < 0.9*width && player.y > 0.1*height)
+                    { player.x += 0.01*width; }                                                      
                 break;
 
             // Down
             case 40:
-                player.y += 5;
+                if (player.y < 0.31*height && player.x < 0.42*width) 
+                    { player.y += 0.02*height; }
+                else if (player.y < height && player.x > 0.42*width && player.x < 0.515*width) 
+                    { player.y += 0.02*height; }                                                        // hallway
+                else if (player.y < 0.31*height && player.x > 0.515*width) 
+                    { player.y += 0.02*height; }
                 break;
 
             default:
