@@ -46,22 +46,22 @@ function loadGame() {
             speed: 2
         },
         left1: {
-            frames: [1],
+            frames: [3],
             next: "left2",
             speed: 2
         },
         left2: {
-            frames: [2],
+            frames: [4],
             next: "left1",
             speed: 2
         },
         up1: {
-            frames: [1],
+            frames: [6],
             next: "up2",
             speed: 2
         },
         up2: {
-            frames: [2],
+            frames: [7],
             next: "up1",
             speed: 2
         }
@@ -69,7 +69,7 @@ function loadGame() {
     };
 
     var spriteSheet = new createjs.SpriteSheet(data);
-    var animation = new createjs.Sprite(spriteSheet, "up");
+    var animation = new createjs.Sprite(spriteSheet, "left1");
 
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.55;

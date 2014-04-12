@@ -65,10 +65,10 @@ function move (player, direction, canvId) {
             // Left
             case 37:
                 if (moving == false) {
-                    player.gotoAndPlay("right1");
+                    player.gotoAndPlay("left1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("right2");
+                    player.gotoAndPlay("left2");
                     moving = false;
                 }
 
@@ -79,10 +79,10 @@ function move (player, direction, canvId) {
             case 38:
 
                 if (moving == false) {
-                    player.gotoAndPlay("right1");
+                    player.gotoAndPlay("up1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("right2");
+                    player.gotoAndPlay("up2");
                     moving = false;
                 }
 
@@ -107,10 +107,10 @@ function move (player, direction, canvId) {
             case 40:
 
                 if (moving == false) {
-                    player.gotoAndPlay("right1");
+                    player.gotoAndPlay("up1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("right2");
+                    player.gotoAndPlay("up2");
                     moving = false;
                 }
 
