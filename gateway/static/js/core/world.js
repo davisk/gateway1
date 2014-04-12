@@ -114,6 +114,8 @@ function createPlayer() {
     userPlayer = new createjs.Sprite(spriteData, config['pos']);
     userPlayer.x = config['xloc'];
     userPlayer.y = config['yloc'];
+    userPlayer.scaleX = config['scaleX'];
+    userPlayer.scaleY = config['scaleY'];
 
     // Add our user to the canvas
     stage.addChild(userPlayer);
