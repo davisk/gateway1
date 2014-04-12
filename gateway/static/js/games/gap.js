@@ -21,6 +21,8 @@ function initImages() {
 function loadGame() {
 
     var imgs = [];
+    var height = 0.85*window.innerHeight;
+    var width = 0.75*window.innerWidth;
 
     for (i = 0; i < manifest.length; i++) {
         imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
@@ -36,14 +38,14 @@ function loadGame() {
     imgs[2].scaleY = 0.55;
     imgs[2].scaleX = 0.7;
 
-    // Set our main guy up by the entrance
-    imgs[1].x = 120;
-    imgs[1].y = 80;
+    // Dash by monitor
+    imgs[1].x = width*0.2;
+    imgs[1].y = height*0.05;
 
     // Set our user image and location to the global variable
     object = imgs[2];
-    object.x = 700;
-    object.y = 160;
+    object.x = width*0.47;
+    object.y = height*0.1;
 
     // Add our images to the canvas and remove the progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
