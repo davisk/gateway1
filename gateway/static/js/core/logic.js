@@ -12,106 +12,149 @@
 
 var moving = false;
 
-function move (player, direction, canvId) {
+function move (player, direction) {
 
     switch (direction) {
         // Left
         case 37:
-            switch (canvId) {
+            switch (canvasID) {
                 case 'startCanvas':
+                    //if (player.x > 360 && player.x < 400 && player.y < 140) {   // Stay within vertical sidewalk
+                        userPlayer.x -= 10;
+                    //} else if (player.x > -10 && player.y > 130) {              // Stay within horizontal sidewalk
+                      //  player.x -= 10;
+                    //}
                     break;
 
                 case 'ahaCanvas':
+
                     break;
 
                 case 'gapCanvas':
+
                     break;
 
                 case 'survCanvas':
+
                     break;
 
                 case 'interCanvas':
+
                     break;
 
                 case 'elevCanvas':
+
                     break;
 
                 case 'endCanvas':
+
                     break;
             }
             break;
-
+        // Up
         case 38:
-            switch (canvId) {
+            switch (canvasID) {
                 case 'startCanvas':
+                    console.log("up");
+                    //if (player.y > 140 || (player.x > 350 && player.x < 400 && player.y > 30)) {
+                        userPlayer.y -= 10;
+                    //}
                     break;
 
                 case 'ahaCanvas':
+
                     break;
 
                 case 'gapCanvas':
+
                     break;
 
                 case 'survCanvas':
+
                     break;
 
                 case 'interCanvas':
+
                     break;
 
                 case 'elevCanvas':
+
                     break;
 
                 case 'endCanvas':
+
                     break;
             }
             break;
-
+        // Right
         case 39:
-            switch (canvId) {
+            switch (canvasID) {
                 case 'startCanvas':
+                    console.log("right");
+                    //if (player.x > 350 && player.x < 390 && player.y < 140) {   // Stay within vertical sidewalk
+                        userPlayer.x += 10;
+                    //} else if (player.x < 710 && player.y > 130) {              // Stay within horizontal sidewalk
+                      //  player.x += 10;
+                    //}
                     break;
 
                 case 'ahaCanvas':
+
                     break;
 
                 case 'gapCanvas':
+
                     break;
 
                 case 'survCanvas':
+
                     break;
 
                 case 'interCanvas':
+
                     break;
 
                 case 'elevCanvas':
+
                     break;
 
                 case 'endCanvas':
+
                     break;
             }
             break;
-
+        // Down
         case 40:
-            switch (canvId) {
+            switch (canvasID) {
                 case 'startCanvas':
+                    console.log("down");
+                    //if (player.y < 170) {
+                        userPlayer.y += 10;
+                    //}
                     break;
 
                 case 'ahaCanvas':
+
                     break;
 
                 case 'gapCanvas':
+
                     break;
 
                 case 'survCanvas':
+
                     break;
 
                 case 'interCanvas':
+
                     break;
 
                 case 'elevCanvas':
+
                     break;
 
                 case 'endCanvas':
+
                     break;
             }
             break;
@@ -126,7 +169,7 @@ function move (player, direction, canvId) {
 
 
     // SCENE 1: Start
-    if (canvId == 'startCanvas') {
+    /*if (canvId == 'startCanvas') {
         switch (direction) {
             // Left
             case 37:
@@ -390,5 +433,5 @@ function move (player, direction, canvId) {
             default:
                 break;
         }
-    }
+    }*/
 }

@@ -18,7 +18,7 @@ function initImages() {
     ];
 }
 
-function loadGame() {
+function loadGameConfig() {
 
     var imgs = [];
 
@@ -30,23 +30,22 @@ function loadGame() {
     imgs[0].scaleY = 0.55;
     imgs[0].scaleX = 0.7;
 
-    // Scale characters
-    imgs[1].scaleY = 0.55;
-    imgs[1].scaleX = 0.7;
-    imgs[2].scaleY = 0.55;
-    imgs[2].scaleX = 0.7;
-
-    // Set our main guy up by the entrance
+    // Scale & Set our main guy up by the entrance
     imgs[1].x = 120;
     imgs[1].y = 80;
+    imgs[1].scaleY = 0.55;
+    imgs[1].scaleX = 0.7;
 
-    // Set our user image and location to the global variable
-    object = imgs[2];
-    object.x = 700;
-    object.y = 160;
-
-    // Add our images to the canvas and remove the progress bar
+    // Add our images and remove progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
-    stage.addChild(object);
-    stage.removeChild(progressText);
+}
+
+function getStartingPlayerConfig() {
+    return {
+        'pos': 'left1',
+        'xloc': 700,
+        'yloc': 160,
+        'scaleX': 0.7,
+        'scaleY': 0.55
+    };
 }
