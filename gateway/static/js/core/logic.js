@@ -10,6 +10,56 @@
   * @param direction the object is moving in
   */
 
+var gamestate = {
+    position : {
+        x: 0,
+        y: 0
+    },
+    level: 1,
+    start: {
+        question1: 0,
+        question2: 0,
+        question3: 0,
+        question4: 0,
+        question5: 0
+    },
+    aha: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    elevator: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    gap: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    interest: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    survey: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    }
+};
+
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
 
