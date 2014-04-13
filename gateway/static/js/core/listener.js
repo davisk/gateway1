@@ -41,3 +41,10 @@ function tick() {
     stage.update();
 }
 
+window.onresize = function() {
+
+    var cnv = document.getElementById(canvasID);
+
+    //cnv.height = 0.75 * window.innerHeight;
+    //cnv.width = 0.81 * window.innerWidth;
+}

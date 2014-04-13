@@ -76,15 +76,15 @@ var gameWidth;
 function initGame() {
 
     // Global config
-    gameHeight = 0.85 * window.innerHeight;
-    gameWidth = 0.75 * window.innerWidth;
+    gameHeight = $(this).innerHeight;
+    gameWidth = $(this).innerWidth;
     canvasIDList = ['startCanvas', 'ahaCanvas', 'gapCanvas', 'survCanvas', 'interCanvas', 'elevCanvas', 'endCanvas'];
 
     // Canvas config
     canvasID = getCanvasId();
     canvas = document.getElementById(canvasID);
-    canvas.width = gameWidth;
-    canvas.height = gameHeight;
+    //canvas.width = gameWidth;
+    //canvas.height = gameHeight;
     stage = new createjs.Stage(canvas);
 
     // Set game attributes

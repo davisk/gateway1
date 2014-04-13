@@ -33,7 +33,7 @@ function move (direction) {
                 case canvasIDList[0]:
                     //if (userPlayer.x > 360 && userPlayer.x < 400 && userPlayer.y < 140) {     // Stay within vertical sidewalk
                         //userPlayer.x -= 10;
-                    //} else if (userPlayer.x > -10 && userPlayer.y > 130) {                    // Stay within horizontal sidewalk
+                    //} else if (userPlayer.x > -10 && userPlayer.y > 130) {    // Stay within horizontal sidewalk
                         //userPlayer.x -= 10;
                     //}
                     userPlayer.x -= 10;
@@ -46,7 +46,7 @@ function move (direction) {
 
                 // Gap
                 case canvasIDList[2]:
-                    if ((userPlayer.x > 0.375 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {         // Plant
+                    if ((userPlayer.x > 0.375 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {     // Plant
                         userPlayer.x -= 0.01 * gameWidth;
                     } else if ((userPlayer.x > 0.05 * gameWidth) && (userPlayer.y < 0.35 * gameHeight) && (userPlayer.y > 0.07 * gameHeight)) {
                         userPlayer.x -= 0.01 * gameWidth;
@@ -107,11 +107,11 @@ function move (direction) {
                 case canvasIDList[2]:
                     if ((userPlayer.y > 0.05 * gameHeight) && (userPlayer.x < 0.2 * gameWidth)) {
                         userPlayer.y -= 0.02 * gameHeight;
-                    } else if ((userPlayer.y > 0.07 * gameHeight) && (userPlayer.x > 0.2 * gameWidth) && (userPlayer.x < 0.375 * gameWidth)) { // Plant
+                    } else if ((userPlayer.y > 0.07 * gameHeight) && (userPlayer.x > 0.2 * gameWidth) && (userPlayer.x < 0.375 * gameWidth)) {  // Plant
                         userPlayer.y -= 0.02 * gameHeight;
                     } else if ((userPlayer.y > 0.05 * gameHeight) && (userPlayer.x > 0.375 * gameWidth) && (userPlayer.x < 0.55 * gameWidth)) {
                         userPlayer.y -= 0.02 * gameHeight;
-                    } else if ((userPlayer.y > 0.1 * gameHeight) && (userPlayer.x > 0.55 * gameWidth)) {  // Chairs
+                    } else if ((userPlayer.y > 0.1 * gameHeight) && (userPlayer.x > 0.55 * gameWidth)) {    // Chairs
                         userPlayer.y -= 0.02 * gameHeight;
                     }
                     break;
@@ -154,7 +154,7 @@ function move (direction) {
                 case canvasIDList[0]:
                     //if (userPlayer.x > 350 && userPlayer.x < 390 && userPlayer.y < 140) {   // Stay within vertical sidewalk
                         //userPlayer.x += 10;
-                    //} else if (userPlayer.x < 710 && userPlayer.y > 130) {              // Stay within horizontal sidewalk
+                    //} else if (userPlayer.x < 710 && userPlayer.y > 130) {    // Stay within horizontal sidewalk
                         //userPlayer.x += 10;
                     //}
                     userPlayer.x += 10;
@@ -167,7 +167,7 @@ function move (direction) {
 
                 // Gap
                 case canvasIDList[2]:
-                    if ((userPlayer.x < 0.2 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {           // Plant
+                    if ((userPlayer.x < 0.2 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {   // Plant
                         userPlayer.x += 0.01 * gameWidth;
                     } else if ((userPlayer.x < 0.55 * gameWidth) && (userPlayer.y < 0.1)) {
                         userPlayer.x += 0.01 * gameWidth;
