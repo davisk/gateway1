@@ -144,11 +144,11 @@ function createPlayer() {
     });
 
     // Set our user image and location to the global variable
-    userPlayer = new createjs.Sprite(spriteData, config['pos']);
-    userPlayer.x = config['xloc'];
-    userPlayer.y = config['yloc'];
-    userPlayer.scaleX = config['scaleX'];
-    userPlayer.scaleY = config['scaleY'];
+    userPlayer = new createjs.Sprite(spriteData, config.pos);
+    userPlayer.x = config.xloc;
+    userPlayer.y = config.yloc;
+    userPlayer.scaleX = config.scaleX;
+    userPlayer.scaleY = config.scaleY;
 
     // Add our user to the canvas
     stage.addChild(userPlayer);

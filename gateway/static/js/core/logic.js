@@ -20,7 +20,7 @@ function move (direction) {
         // Left
         case 37:
             // Ugly way to handle sprite animation :(
-            if (moving == false) {
+            if (moving === false) {
                 userPlayer.gotoAndPlay("left1");
                 moving = true;
             } else {
@@ -81,7 +81,7 @@ function move (direction) {
         case 38:
             // Ugly way to handle sprite animation :(
             // We also don't have sprites for up animation
-            if (moving == false) {
+            if (moving === false) {
                 userPlayer.gotoAndPlay("down1");
                 moving = true;
             } else {
@@ -141,7 +141,7 @@ function move (direction) {
         // Right
         case 39:
             // Ugly way to handle sprite animation :(
-            if (moving == false) {
+            if (moving === false) {
                 userPlayer.gotoAndPlay("right1");
                 moving = true;
             } else {
@@ -203,7 +203,7 @@ function move (direction) {
         // Down
         case 40:
             // Ugly way to handle sprite animation :(
-            if (moving == false) {
+            if (moving === false) {
                 userPlayer.gotoAndPlay("down1");
                 moving = true;
             } else {
