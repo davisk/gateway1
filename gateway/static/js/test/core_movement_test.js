@@ -1,4 +1,4 @@
-describe("core game logic movement", function() {
+/*describe("core game logic movement", function() {
     var object = {};
 
     beforeEach(function() {
@@ -30,4 +30,4 @@ describe("core game logic movement", function() {
         expect(object.x).toBe(0);
         expect(object.y).toBe(5);
     });
-});
+});*/
