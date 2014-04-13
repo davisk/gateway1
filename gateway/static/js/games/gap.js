@@ -38,13 +38,13 @@ function loadGame() {
     imgs[1].y = height*0.05;
 
     // Set our user image and location to the global variable
-    object = imgs[2];
-    object.x = width*0.47;
-    object.y = height*0.1;
+    //object = imgs[2];
+    //object.x = width*0.47;
+    //object.y = height*0.1;
 
     // Add our images to the canvas and remove the progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
-    stage.addChild(object);
+    //stage.addChild(object);
     stage.removeChild(progressText);
 }
 
@@ -55,9 +55,9 @@ function getStartingPlayerConfig() {
 
     return {
         'pos': 'left1',
-        'xloc': 700,
-        'yloc': 160,
-        'scalex': 0.7,
-        'scaley': 0.55
+        'xloc': width*0.47,
+        'yloc': height*0.1,
+        'scaleX': 0.7,
+        'scaleY': 0.55
     };
 }

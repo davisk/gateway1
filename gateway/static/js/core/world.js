@@ -51,15 +51,33 @@ var preload;
  */
 var progressText;
 
+/**
+ * This is the height of the game canvas
+ * @property canvas
+ * @type {window}
+ */
+var gameHeight;
+
+/**
+ * This is the width of the game canvas
+ * @property canvas
+ * @type {window}
+ */
+var gameWidth;
+
 
 function initGame() {
 
+    // Global config
+    gameHeight = 0.85 * window.innerHeight;
+    gameWidth = 0.75 * window.innerWidth;
+
+    // Canvas config
     canvasID = getCanvasId();
     canvas = document.getElementById(canvasID);
-    canvas.width = 0.75*window.innerWidth;
-    canvas.height = 0.85*window.innerHeight;
+    canvas.width = gameWidth;
+    canvas.height = gameHeight;
     stage = new createjs.Stage(canvas);
-
 
     // Set game attributes
     createjs.Ticker.setFPS(60);
