@@ -12,6 +12,7 @@
  */
 $(document).ready(function() {
 
+    // Initialize the beginning of FUN
     initGame();
 
     // Setup our function for user input (key)
@@ -28,8 +29,8 @@ function handleKeyDown(e) {
 
     // If e is defined, use it. Else use the event
     e = e || window.event;
-
-    move(userPlayer, e.keyCode);
+    // Send the key code off to make the user move
+    move(e.keyCode);
 }
 
 /**

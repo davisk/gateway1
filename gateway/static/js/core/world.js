@@ -132,8 +132,8 @@ function createPlayer() {
             right2: {frames: [2], next: "right1", speed: 2},
             left1: {frames: [3], next: "left2", speed: 2},
             left2: {frames: [4], next: "left1", speed: 2},
-            up1: {frames: [6], next: "up2", speed: 2},
-            up2: {frames: [7], next: "up1", speed: 2}
+            down1: {frames: [6], next: "down2", speed: 2},
+            down2: {frames: [7], next: "down1", speed: 2}
         }
     });
 

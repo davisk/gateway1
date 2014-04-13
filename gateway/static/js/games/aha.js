@@ -18,9 +18,8 @@ function loadGameConfig() {
 
     var imgs = [];
 
-    for (i = 0; i < manifest.length; i++) {
-        imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
-    }
+    // Load our images as individual Bitmaps
+    for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
 
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.55;
@@ -39,8 +38,8 @@ function loadGameConfig() {
 function getStartingPlayerConfig() {
     return {
         'pos': 'left1',
-        'xloc': 700,
-        'yloc': 160,
+        'xloc': gameWidth * 0.47,
+        'yloc': gameHeight * 0.1,
         'scaleX': 0.7,
         'scaleY': 0.55
     };

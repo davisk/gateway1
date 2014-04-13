@@ -12,17 +12,27 @@
 
 var moving = false;
 
-function move (player, direction) {
+function move (direction) {
 
     switch (direction) {
+
         // Left
         case 37:
+            // Ugly way to handle sprite animation :(
+            if (moving == false) {
+                userPlayer.gotoAndPlay("left1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("left2");
+                moving = false;
+            }
+
             switch (canvasID) {
                 case 'startCanvas':
-                    //if (player.x > 360 && player.x < 400 && player.y < 140) {   // Stay within vertical sidewalk
+                    //if (userPlayer.x > 360 && userPlayer.x < 400 && userPlayer.y < 140) {   // Stay within vertical sidewalk
                         userPlayer.x -= 10;
-                    //} else if (player.x > -10 && player.y > 130) {              // Stay within horizontal sidewalk
-                      //  player.x -= 10;
+                    //} else if (userPlayer.x > -10 && userPlayer.y > 130) {              // Stay within horizontal sidewalk
+                      //  userPlayer.x -= 10;
                     //}
                     break;
 
@@ -51,12 +61,22 @@ function move (player, direction) {
                     break;
             }
             break;
+
         // Up
         case 38:
+            // Ugly way to handle sprite animation :(
+            // We also don't have sprites for up animation
+            if (moving == false) {
+                userPlayer.gotoAndPlay("down1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("down2");
+                moving = false;
+            }
+
             switch (canvasID) {
                 case 'startCanvas':
-                    console.log("up");
-                    //if (player.y > 140 || (player.x > 350 && player.x < 400 && player.y > 30)) {
+                    //if (userPlayer.y > 140 || (userPlayer.x > 350 && userPlayer.x < 400 && userPlayer.y > 30)) {
                         userPlayer.y -= 10;
                     //}
                     break;
@@ -86,15 +106,24 @@ function move (player, direction) {
                     break;
             }
             break;
+
         // Right
         case 39:
+            // Ugly way to handle sprite animation :(
+            if (moving == false) {
+                userPlayer.gotoAndPlay("right1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("right2");
+                moving = false;
+            }
+
             switch (canvasID) {
                 case 'startCanvas':
-                    console.log("right");
-                    //if (player.x > 350 && player.x < 390 && player.y < 140) {   // Stay within vertical sidewalk
+                    //if (userPlayer.x > 350 && userPlayer.x < 390 && userPlayer.y < 140) {   // Stay within vertical sidewalk
                         userPlayer.x += 10;
-                    //} else if (player.x < 710 && player.y > 130) {              // Stay within horizontal sidewalk
-                      //  player.x += 10;
+                    //} else if (userPlayer.x < 710 && userPlayer.y > 130) {              // Stay within horizontal sidewalk
+                      //  userPlayer.x += 10;
                     //}
                     break;
 
@@ -123,12 +152,21 @@ function move (player, direction) {
                     break;
             }
             break;
+
         // Down
         case 40:
+            // Ugly way to handle sprite animation :(
+            if (moving == false) {
+                userPlayer.gotoAndPlay("down1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("down2");
+                moving = false;
+            }
+
             switch (canvasID) {
                 case 'startCanvas':
-                    console.log("down");
-                    //if (player.y < 170) {
+                    //if (userPlayer.y < 170) {
                         userPlayer.y += 10;
                     //}
                     break;
@@ -173,33 +211,33 @@ function move (player, direction) {
         switch (direction) {
             // Left
             case 37:
-                if (player.x > 360 && player.x < 400 && player.y < 140) { // Stay within vertical sidewalk
-                    player.x -= 10;
-                } else if (player.x > -10 && player.y > 130) { // Stay within horizontal sidewalk
-                    player.x -= 10;
+                if (userPlayer.x > 360 && userPlayer.x < 400 && userPlayer.y < 140) { // Stay within vertical sidewalk
+                    userPlayer.x -= 10;
+                } else if (userPlayer.x > -10 && userPlayer.y > 130) { // Stay within horizontal sidewalk
+                    userPlayer.x -= 10;
                 }
                 break;
 
             // Up
             case 38:
-                if (player.y > 140 || (player.x > 350 && player.x < 400 && player.y > 30)) {
-                    player.y -= 10;
+                if (userPlayer.y > 140 || (userPlayer.x > 350 && userPlayer.x < 400 && userPlayer.y > 30)) {
+                    userPlayer.y -= 10;
                 }
                 break;
 
             // Right
             case 39:
-                if (player.x > 350 && player.x < 390 && player.y < 140) { // Stay within vertical sidewalk
-                    player.x += 10;
-                } else if (player.x < 710 && player.y > 130) { // Stay within horizontal sidewalk
-                    player.x += 10;
+                if (userPlayer.x > 350 && userPlayer.x < 390 && userPlayer.y < 140) { // Stay within vertical sidewalk
+                    userPlayer.x += 10;
+                } else if (userPlayer.x < 710 && userPlayer.y > 130) { // Stay within horizontal sidewalk
+                    userPlayer.x += 10;
                 }
                 break;
 
             // Down
             case 40:
-                if (player.y < 170) {
-                    player.y += 10;
+                if (userPlayer.y < 170) {
+                    userPlayer.y += 10;
                 }
                 break;
 
@@ -214,56 +252,56 @@ function move (player, direction) {
             // Left
             case 37:
                 if (moving == false) {
-                    player.gotoAndPlay("left1");
+                    userPlayer.gotoAndPlay("left1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("left2");
+                    userPlayer.gotoAndPlay("left2");
                     moving = false;
                 }
 
-                player.x -= 15;
+                userPlayer.x -= 15;
                 break;
 
             // Up
             case 38:
 
                 if (moving == false) {
-                    player.gotoAndPlay("up1");
+                    userPlayer.gotoAndPlay("up1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("up2");
+                    userPlayer.gotoAndPlay("up2");
                     moving = false;
                 }
 
-                player.y -= 15;
+                userPlayer.y -= 15;
                 break;
 
             // Right
             case 39:
 
                 if (moving == false) {
-                    player.gotoAndPlay("right1");
+                    userPlayer.gotoAndPlay("right1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("right2");
+                    userPlayer.gotoAndPlay("right2");
                     moving = false;
                 }
 
-                player.x += 15;
+                userPlayer.x += 15;
                 break;
 
             // Down
             case 40:
 
                 if (moving == false) {
-                    player.gotoAndPlay("up1");
+                    userPlayer.gotoAndPlay("up1");
                     moving = true;
                 } else {
-                    player.gotoAndPlay("up2");
+                    userPlayer.gotoAndPlay("up2");
                     moving = false;
                 }
 
-                player.y += 15;
+                userPlayer.y += 15;
                 break;
 
             default:
@@ -276,46 +314,46 @@ function move (player, direction) {
         switch (direction) {
             // Left
             case 37:
-                if (player.x > 0.375*width && player.y < 0.07*height)
-                    { player.x -=0.01*width; }                                                          // plant
-                else if (player.x > 0.05*width && player.y < 0.35*height && player.y > 0.07*height)
-                    { player.x -= 0.01*width; }
-                else if (player.x > 0.42*width && player.y > 0.31*height)
-                    { player.x -= 0.01*width; }                                                         // hallway
+                if (userPlayer.x > 0.375*width && userPlayer.y < 0.07*height)
+                    { userPlayer.x -=0.01*width; }                                                          // plant
+                else if (userPlayer.x > 0.05*width && userPlayer.y < 0.35*height && userPlayer.y > 0.07*height)
+                    { userPlayer.x -= 0.01*width; }
+                else if (userPlayer.x > 0.42*width && userPlayer.y > 0.31*height)
+                    { userPlayer.x -= 0.01*width; }                                                         // hallway
                 break;
 
             // Up
             case 38:
-                if (player.y > 0.05*height && player.x < 0.2*width)
-                    {player.y -=0.02*height;}
-                else if (player.y > 0.07*height && player.x > 0.2*width && player.x < 0.375*width)
-                    { player.y -= 0.02*height; }                                                        // plant
-                else if (player.y > 0.05*height && player.x > 0.375*width && player.x < 0.55*width)
-                    { player.y -= 0.02*height; }
-                else if (player.y > 0.1*height && player.x > 0.55*width)
-                    { player.y -= 0.02*height; }                                                        // chairs
+                if (userPlayer.y > 0.05*height && userPlayer.x < 0.2*width)
+                    {userPlayer.y -=0.02*height;}
+                else if (userPlayer.y > 0.07*height && userPlayer.x > 0.2*width && userPlayer.x < 0.375*width)
+                    { userPlayer.y -= 0.02*height; }                                                        // plant
+                else if (userPlayer.y > 0.05*height && userPlayer.x > 0.375*width && userPlayer.x < 0.55*width)
+                    { userPlayer.y -= 0.02*height; }
+                else if (userPlayer.y > 0.1*height && userPlayer.x > 0.55*width)
+                    { userPlayer.y -= 0.02*height; }                                                        // chairs
                 break;
 
             // Right
             case 39:
-                if (player.x < 0.2*width && player.y < 0.07*height)
-                    { player.x +=0.01*width; }                                                          // plant
-                else if (player.x < 0.55*width && player.y < 0.1)
-                    { player.x += 0.01*width; }
-                else if (player.x < 0.515*width && player.y > 0.31*height)
-                    { player.x += 0.01*width; }
-                else if (player.x < 0.9*width && player.y > 0.1*height)
-                    { player.x += 0.01*width; }
+                if (userPlayer.x < 0.2*width && userPlayer.y < 0.07*height)
+                    { userPlayer.x +=0.01*width; }                                                          // plant
+                else if (userPlayer.x < 0.55*width && userPlayer.y < 0.1)
+                    { userPlayer.x += 0.01*width; }
+                else if (userPlayer.x < 0.515*width && userPlayer.y > 0.31*height)
+                    { userPlayer.x += 0.01*width; }
+                else if (userPlayer.x < 0.9*width && userPlayer.y > 0.1*height)
+                    { userPlayer.x += 0.01*width; }
                 break;
 
             // Down
             case 40:
-                if (player.y < 0.31*height && player.x < 0.42*width)
-                    { player.y += 0.02*height; }
-                else if (player.y < height && player.x > 0.42*width && player.x < 0.515*width)
-                    { player.y += 0.02*height; }                                                        // hallway
-                else if (player.y < 0.31*height && player.x > 0.515*width)
-                    { player.y += 0.02*height; }
+                if (userPlayer.y < 0.31*height && userPlayer.x < 0.42*width)
+                    { userPlayer.y += 0.02*height; }
+                else if (userPlayer.y < height && userPlayer.x > 0.42*width && userPlayer.x < 0.515*width)
+                    { userPlayer.y += 0.02*height; }                                                        // hallway
+                else if (userPlayer.y < 0.31*height && userPlayer.x > 0.515*width)
+                    { userPlayer.y += 0.02*height; }
                 break;
 
             default:
@@ -328,22 +366,22 @@ function move (player, direction) {
         switch (direction) {
             // Left
             case 37:
-                player.x -= 5;
+                userPlayer.x -= 5;
                 break;
 
             // Up
             case 38:
-                player.y -= 5;
+                userPlayer.y -= 5;
                 break;
 
             // Right
             case 39:
-                player.x += 5;
+                userPlayer.x += 5;
                 break;
 
             // Down
             case 40:
-                player.y += 5;
+                userPlayer.y += 5;
                 break;
 
             default:
@@ -356,22 +394,22 @@ function move (player, direction) {
         switch (direction) {
             // Left
             case 37:
-                player.x -= 5;
+                userPlayer.x -= 5;
                 break;
 
             // Up
             case 38:
-                player.y -= 5;
+                userPlayer.y -= 5;
                 break;
 
             // Right
             case 39:
-                player.x += 5;
+                userPlayer.x += 5;
                 break;
 
             // Down
             case 40:
-                player.y += 5;
+                userPlayer.y += 5;
                 break;
 
             default:
@@ -384,22 +422,22 @@ function move (player, direction) {
         switch (direction) {
             // Left
             case 37:
-                player.x -= 5;
+                userPlayer.x -= 5;
                 break;
 
             // Up
             case 38:
-                player.y -= 5;
+                userPlayer.y -= 5;
                 break;
 
             // Right
             case 39:
-                player.x += 5;
+                userPlayer.x += 5;
                 break;
 
             // Down
             case 40:
-                player.y += 5;
+                userPlayer.y += 5;
                 break;
 
             default:
@@ -412,22 +450,22 @@ function move (player, direction) {
         switch (direction) {
             // Left
             case 37:
-                player.x -= 5;
+                userPlayer.x -= 5;
                 break;
 
             // Up
             case 38:
-                player.y -= 5;
+                userPlayer.y -= 5;
                 break;
 
             // Right
             case 39:
-                player.x += 5;
+                userPlayer.x += 5;
                 break;
 
             // Down
             case 40:
-                player.y += 5;
+                userPlayer.y += 5;
                 break;
 
             default:
