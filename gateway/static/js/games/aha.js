@@ -8,14 +8,13 @@ function getCanvasId() {
 }
 
 function initImages() {
-
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene2_init.png"},
         {id: "game_guide", src: "/static/sprites/Main_guy.png"}
     ];
 }
 
-function loadGame() {
+function loadGameConfig() {
 
     var imgs = [];
 
@@ -35,16 +34,14 @@ function loadGame() {
 
     // Add our images and remove progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
-    stage.removeChild(progressText);
-
-    // Create our spritesheet player (For some reason, only works if function call is placed here)
-    createPlayer();
 }
 
 function getStartingPlayerConfig() {
     return {
         'pos': 'left1',
         'xloc': 700,
-        'yloc': 160
+        'yloc': 160,
+        'scaleX': 0.7,
+        'scaleY': 0.55
     };
 }

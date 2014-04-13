@@ -81,7 +81,6 @@ function initGame() {
 
     // Set game attributes
     createjs.Ticker.setFPS(60);
-
     // Create our progress bar
     initLoadProgress();
     // Setup our game image manifest (game specific function)
@@ -108,6 +107,16 @@ function startPreload() {
 
 function handleGameProgress() {
     progressText.text = (preload.progress*100|0) + " % Loaded";
+}
+
+function loadGame() {
+
+    // Load our game specific config
+    loadGameConfig();
+    // Remove the progress bar
+    stage.removeChild(progressText);
+    // Create our spritesheet player (For some reason, only works if function call is placed here)
+    createPlayer();
 }
 
 function createPlayer() {
