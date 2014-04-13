@@ -25,10 +25,10 @@ function loadGameConfig() {
     imgs[0].scaleY = 0.6;
 
     // Setup and scale dash by the monitor
-    imgs[1].x = gameWidth * 0.2;
-    imgs[1].y = gameHeight * 0.05;
-    imgs[1].scaleY = 0.55;
-    imgs[1].scaleX = 0.7;
+    imgs[1].x = 750;
+    imgs[1].y = 180;
+    imgs[1].scaleY = 0.8;
+    imgs[1].scaleX = 0.8;
 
     // Add our images to the canvas. This is specific to the number of images loaded
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
@@ -37,9 +37,9 @@ function loadGameConfig() {
 function getStartingPlayerConfig() {
     return {
         'pos': 'left1',
-        'xloc': 100,
-        'yloc': 100,
-        'scaleX': 0.7,
-        'scaleY': 0.55
+        'xloc': 1200,
+        'yloc': 340,
+        'scaleX': 1,
+        'scaleY': 1
     };
 }

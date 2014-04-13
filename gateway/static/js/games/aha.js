@@ -25,8 +25,8 @@ function loadGameConfig() {
     imgs[0].scaleY = 0.6;
 
     // Scale & Set our main guy up by the entrance
-    imgs[1].x = 120;
-    imgs[1].y = 80;
+    imgs[1].x = 500;
+    imgs[1].y = 100;
     imgs[1].scaleY = 0.55;
     imgs[1].scaleX = 0.7;
 
@@ -37,8 +37,8 @@ function loadGameConfig() {
 function getStartingPlayerConfig() {
     return {
         'pos': 'left1',
-        'xloc': 100,
-        'yloc': 100,
+        'xloc': 300,
+        'yloc': 700,
         'scaleX': 0.7,
         'scaleY': 0.55
     };

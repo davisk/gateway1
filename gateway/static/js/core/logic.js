@@ -15,6 +15,9 @@ var moving = false;
 
 function move (direction) {
 
+    console.log("X Pos:" + userPlayer.x);
+    console.log("Y Pos:" + userPlayer.y);
+
     switch (direction) {
 
         // Left
@@ -31,12 +34,11 @@ function move (direction) {
             switch (canvasID) {
                 // Start
                 case canvasIDList[0]:
-                    //if (userPlayer.x > 360 && userPlayer.x < 400 && userPlayer.y < 140) {     // Stay within vertical sidewalk
-                        //userPlayer.x -= 10;
-                    //} else if (userPlayer.x > -10 && userPlayer.y > 130) {    // Stay within horizontal sidewalk
-                        //userPlayer.x -= 10;
-                    //}
-                    userPlayer.x -= 10;
+                    if (userPlayer.x > 600 && userPlayer.x < 710 && userPlayer.y > 70) {     // Stay within vertical sidewalk
+                        userPlayer.x -= 10;
+                    } else if (userPlayer.x > -10 && userPlayer.y > 290) {    // Stay within horizontal sidewalk
+                        userPlayer.x -= 10;
+                    }
                     break;
 
                 // Aha
@@ -92,10 +94,9 @@ function move (direction) {
             switch (canvasID) {
                 // Start
                 case canvasIDList[0]:
-                    //if (userPlayer.y > 140 || (userPlayer.x > 350 && userPlayer.x < 400 && userPlayer.y > 30)) {
-                        //userPlayer.y -= 10;
-                    //}
-                    userPlayer.y -= 10;
+                    if (userPlayer.y > 300 || (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 80)) {
+                        userPlayer.y -= 10;
+                    }
                     break;
 
                 // Aha
@@ -152,12 +153,11 @@ function move (direction) {
             switch (canvasID) {
                 // Start
                 case canvasIDList[0]:
-                    //if (userPlayer.x > 350 && userPlayer.x < 390 && userPlayer.y < 140) {   // Stay within vertical sidewalk
-                        //userPlayer.x += 10;
-                    //} else if (userPlayer.x < 710 && userPlayer.y > 130) {    // Stay within horizontal sidewalk
-                        //userPlayer.x += 10;
-                    //}
-                    userPlayer.x += 10;
+                    if (userPlayer.x > 580 && userPlayer.x < 700 && userPlayer.y > 70) {   // Stay within vertical sidewalk
+                        userPlayer.x += 10;
+                    } else if (userPlayer.x < 1310 && userPlayer.y > 290) {    // Stay within horizontal sidewalk
+                        userPlayer.x += 10;
+                    }
                     break;
 
                 // Aha
@@ -214,10 +214,9 @@ function move (direction) {
             switch (canvasID) {
                 // Start
                 case canvasIDList[0]:
-                    //if (userPlayer.y < 170) {
-                        //userPlayer.y += 10;
-                    //}
-                    userPlayer.y += 10;
+                    if (userPlayer.y < 370) {
+                        userPlayer.y += 10;
+                    }
                     break;
 
                 // Aha
