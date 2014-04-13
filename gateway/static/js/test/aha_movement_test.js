@@ -1,6 +1,6 @@
 /* Testing movement SPECIFIC to the Aha minigame */
 
-describe("aha game logic movement", function() {
+/*describe("aha game logic movement", function() {
     var object = {};
 
     // On the vertical sidewalk, should be able to move left
@@ -82,4 +82,4 @@ describe("aha game logic movement", function() {
         expect(object.x).toBe(0);
         expect(object.y).toBe(180);
     });
-});
+});*/
