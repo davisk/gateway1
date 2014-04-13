@@ -17,6 +17,13 @@ var canvas;
 var canvasID;
 
 /**
+ * This hold the names of all possible canvas ID's
+ * @property canvasIDs
+ * @type {array}
+ */
+var canvasIDList;
+
+/**
  * This manages the easel js stage
  * @property
  * @type {createjs.Stage}
@@ -71,6 +78,7 @@ function initGame() {
     // Global config
     gameHeight = 0.85 * window.innerHeight;
     gameWidth = 0.75 * window.innerWidth;
+    canvasIDList = ['startCanvas', 'ahaCanvas', 'gapCanvas', 'survCanvas', 'interCanvas', 'elevCanvas', 'endCanvas'];
 
     // Canvas config
     canvasID = getCanvasId();

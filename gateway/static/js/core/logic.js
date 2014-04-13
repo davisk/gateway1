@@ -10,6 +10,7 @@
   * @param direction the object is moving in
   */
 
+// For switching between the two animation sprites, ugly method!!!
 var moving = false;
 
 function move (direction) {
@@ -28,7 +29,8 @@ function move (direction) {
             }
 
             switch (canvasID) {
-                case 'startCanvas':
+                // Start
+                case canvasIDList[0]:
                     //if (userPlayer.x > 360 && userPlayer.x < 400 && userPlayer.y < 140) {     // Stay within vertical sidewalk
                         //userPlayer.x -= 10;
                     //} else if (userPlayer.x > -10 && userPlayer.y > 130) {                    // Stay within horizontal sidewalk
@@ -37,11 +39,13 @@ function move (direction) {
                     userPlayer.x -= 10;
                     break;
 
-                case 'ahaCanvas':
+                // Aha
+                case canvasIDList[1]:
                     userPlayer.x -= 10;
                     break;
 
-                case 'gapCanvas':
+                // Gap
+                case canvasIDList[2]:
                     if ((userPlayer.x > 0.375 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {         // Plant
                         userPlayer.x -= 0.01 * gameWidth;
                     } else if ((userPlayer.x > 0.05 * gameWidth) && (userPlayer.y < 0.35 * gameHeight) && (userPlayer.y > 0.07 * gameHeight)) {
@@ -51,19 +55,23 @@ function move (direction) {
                     }
                     break;
 
-                case 'survCanvas':
+                // Surv
+                case canvasIDList[3]:
                     userPlayer.x -= 10;
                     break;
 
-                case 'interCanvas':
+                // Inter
+                case canvasIDList[4]:
                     userPlayer.x -= 10;
                     break;
 
-                case 'elevCanvas':
+                // Elev
+                case canvasIDList[5]:
                     userPlayer.x -= 10;
                     break;
 
-                case 'endCanvas':
+                // End
+                case canvasIDList[6]:
                     userPlayer.x -= 10;
                     break;
             }
@@ -82,18 +90,21 @@ function move (direction) {
             }
 
             switch (canvasID) {
-                case 'startCanvas':
+                // Start
+                case canvasIDList[0]:
                     //if (userPlayer.y > 140 || (userPlayer.x > 350 && userPlayer.x < 400 && userPlayer.y > 30)) {
                         //userPlayer.y -= 10;
                     //}
                     userPlayer.y -= 10;
                     break;
 
-                case 'ahaCanvas':
+                // Aha
+                case canvasIDList[1]:
                     userPlayer.y -= 10;
                     break;
 
-                case 'gapCanvas':
+                // Gap
+                case canvasIDList[2]:
                     if ((userPlayer.y > 0.05 * gameHeight) && (userPlayer.x < 0.2 * gameWidth)) {
                         userPlayer.y -= 0.02 * gameHeight;
                     } else if ((userPlayer.y > 0.07 * gameHeight) && (userPlayer.x > 0.2 * gameWidth) && (userPlayer.x < 0.375 * gameWidth)) { // Plant
@@ -105,19 +116,23 @@ function move (direction) {
                     }
                     break;
 
-                case 'survCanvas':
+                // Surv
+                case canvasIDList[3]:
                     userPlayer.y -= 10;
                     break;
 
-                case 'interCanvas':
+                // Inter
+                case canvasIDList[4]:
                     userPlayer.y -= 10;
                     break;
 
-                case 'elevCanvas':
+                // Elev
+                case canvasIDList[5]:
                     userPlayer.y -= 10;
                     break;
 
-                case 'endCanvas':
+                // End
+                case canvasIDList[6]:
                     userPlayer.y -= 10;
                     break;
             }
@@ -135,7 +150,8 @@ function move (direction) {
             }
 
             switch (canvasID) {
-                case 'startCanvas':
+                // Start
+                case canvasIDList[0]:
                     //if (userPlayer.x > 350 && userPlayer.x < 390 && userPlayer.y < 140) {   // Stay within vertical sidewalk
                         //userPlayer.x += 10;
                     //} else if (userPlayer.x < 710 && userPlayer.y > 130) {              // Stay within horizontal sidewalk
@@ -144,11 +160,13 @@ function move (direction) {
                     userPlayer.x += 10;
                     break;
 
-                case 'ahaCanvas':
+                // Aha
+                case canvasIDList[1]:
                     userPlayer.x += 10;
                     break;
 
-                case 'gapCanvas':
+                // Gap
+                case canvasIDList[2]:
                     if ((userPlayer.x < 0.2 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {           // Plant
                         userPlayer.x += 0.01 * gameWidth;
                     } else if ((userPlayer.x < 0.55 * gameWidth) && (userPlayer.y < 0.1)) {
@@ -160,19 +178,23 @@ function move (direction) {
                     }
                     break;
 
-                case 'survCanvas':
+                // Surv
+                case canvasIDList[3]:
                     userPlayer.x += 10;
                     break;
 
-                case 'interCanvas':
+                // Inter
+                case canvasIDList[4]:
                     userPlayer.x += 10;
                     break;
 
-                case 'elevCanvas':
+                // Elev
+                case canvasIDList[5]:
                     userPlayer.x += 10;
                     break;
 
-                case 'endCanvas':
+                // End
+                case canvasIDList[6]:
                     userPlayer.x += 10;
                     break;
             }
@@ -190,18 +212,21 @@ function move (direction) {
             }
 
             switch (canvasID) {
-                case 'startCanvas':
+                // Start
+                case canvasIDList[0]:
                     //if (userPlayer.y < 170) {
                         //userPlayer.y += 10;
                     //}
                     userPlayer.y += 10;
                     break;
 
-                case 'ahaCanvas':
+                // Aha
+                case canvasIDList[1]:
                     userPlayer.y += 10;
                     break;
 
-                case 'gapCanvas':
+                // Gap
+                case canvasIDList[2]:
                     if ((userPlayer.y < 0.31 * gameHeight) && (userPlayer.x < 0.42 * gameWidth)) {
                         userPlayer.y += 0.02 * gameHeight;
                     } else if ((userPlayer.y < gameHeight) && (userPlayer.x > 0.42 * gameWidth) && (userPlayer.x < 0.515 * gameWidth)) {  // Hallway
@@ -211,19 +236,23 @@ function move (direction) {
                     }
                     break;
 
-                case 'survCanvas':
+                // Surv
+                case canvasIDList[3]:
                     userPlayer.y += 10;
                     break;
 
-                case 'interCanvas':
+                // Inter
+                case canvasIDList[4]:
                     userPlayer.y += 10;
                     break;
 
-                case 'elevCanvas':
+                // Elev
+                case canvasIDList[5]:
                     userPlayer.y += 10;
                     break;
 
-                case 'endCanvas':
+                // End
+                case canvasIDList[6]:
                     userPlayer.y += 10;
                     break;
             }
