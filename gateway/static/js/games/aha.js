@@ -22,8 +22,8 @@ function loadGameConfig() {
     for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
 
     // Fix the background image for the canvas
-    imgs[0].scaleY = 0.55;
-    imgs[0].scaleX = 0.7;
+    imgs[0].scaleX = 0.22;
+    imgs[0].scaleY = 0.15;
 
     // Scale & Set our main guy up by the entrance
     imgs[1].x = 120;
@@ -38,8 +38,8 @@ function loadGameConfig() {
 function getStartingPlayerConfig() {
     return {
         'pos': 'left1',
-        'xloc': gameWidth * 0.47,
-        'yloc': gameHeight * 0.1,
+        'xloc': 100,
+        'yloc': 100,
         'scaleX': 0.7,
         'scaleY': 0.55
     };
