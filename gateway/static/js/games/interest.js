@@ -27,8 +27,7 @@ function loadGame() {
     }
 
     // Fix the background image for the canvas
-    imgs[0].scaleY = 0.55;
-    imgs[0].scaleX = 0.7;
+    imgs[0].scaleY = 0.6;
 
     // Scale characters
     imgs[1].scaleY = 0.55;

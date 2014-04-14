@@ -22,8 +22,7 @@ function loadGameConfig() {
     for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
 
     // Fix the background image for the canvas
-    imgs[0].scaleX = 0.25;
-    imgs[0].scaleY = 0.25;
+    imgs[0].scaleY = 0.6;
 
     // Setup and scale dash by the monitor
     imgs[1].x = gameWidth * 0.2;
