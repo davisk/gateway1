@@ -60,6 +60,7 @@ var gamestate = {
     }
 };
 
+
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
 
@@ -93,7 +94,9 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    userPlayer.x -= 10;
+                    //if ((userPlayer.x > 490 && userPlayer.y > 190) || (userPlayer.y < 200)) {
+                        userPlayer.x -= 10;
+                    //}
                     break;
 
                 // Gap
@@ -212,7 +215,9 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    userPlayer.x += 10;
+                    //if ((userPlayer.x < 810 && userPlayer.y > 190) || (userPlayer.y < 200 & userPlayer.x < 1250) || (userPlayer.y < 120 && userPlayer.x < 800)) {
+                        userPlayer.x += 10;
+                    //}
                     break;
 
                 // Gap
