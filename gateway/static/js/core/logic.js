@@ -339,7 +339,6 @@ function beginGame () {
 
         // Start
         case canvasIDList[0]:
-            //if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
             if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 50 && userPlayer.y < 200 && noText) {
                 beginText(790,330);
                 noText = false;
@@ -350,11 +349,15 @@ function beginGame () {
             }
 
             break;
-/*
+
         // Aha
         case canvasIDList[1]:
+            if (userPlayer.x > 410 && userPlayer.x < 650 && userPlayer.y < 140 && noText) {
+                beginText(155,35);
+                noText = false;
+            }
             break;
-*/
+
         // Gap
         case canvasIDList[2]:
             if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {

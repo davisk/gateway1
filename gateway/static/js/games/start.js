@@ -6,6 +6,7 @@ var txtbox, txtbox_words;
 
 var goToNextGame = false;
 
+
 function getCanvasId() {
     return "startCanvas";
 }
@@ -53,9 +54,6 @@ function getStartingPlayerConfig() {
 }
 
 function initInteraction() {
-
-    //alert(window.location.pathname);
-    //window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/aha";
 
     txtbox.x = 200;
     txtbox.y = 475;
