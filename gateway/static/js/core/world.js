@@ -157,10 +157,9 @@ function createPlayer() {
 function beginText(xpos,ypos) {
 
     var startText = new createjs.Text("Click to Start", "20px Arial", "#ffffff");
-    startText.addEventListener("click", function(event) { gameBegin(); })
+    startText.addEventListener("click", function(event) { initInteraction(); });
     startText.x = xpos;
     startText.y = ypos;
     console.log("word");
     stage.addChild(startText);
-    stage.update();
 }
