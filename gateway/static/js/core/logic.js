@@ -63,6 +63,7 @@ var gamestate = {
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
+var noText = true;
 
 function move (direction) {
 
@@ -330,8 +331,9 @@ function beginGame () {
         // Start
         case canvasIDList[0]:
             //if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
-            if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 50 && userPlayer.y < 200) {
+            if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 50 && userPlayer.y < 200 && noText) {
                 beginText(790,330);
+                noText = false;
             }
 
             if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y < 120 && goToNextGame) {
@@ -346,15 +348,17 @@ function beginGame () {
 */
         // Gap
         case canvasIDList[2]:
-            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {
                 beginText(150,35);
+                noText = false;
             }
             break;
 
         // Survey
         case canvasIDList[3]:
-            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {
                 beginText(1130,35);
+                noText = false;
             }
             break;
 /*
