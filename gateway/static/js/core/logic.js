@@ -326,11 +326,15 @@ function move (direction) {
 function beginGame () {
 
     switch (canvasID) {
-/*
+
         // Start
         case canvasIDList[0]:
+            //if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+            if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 50 && userPlayer.y < 200) {
+                beginText(790,330);
+            }
             break;
-
+/*
         // Aha
         case canvasIDList[1]:
             break;
@@ -361,7 +365,7 @@ function beginGame () {
         case canvasIDList[6]:
             break;
 */
-        default: 
+        default:
             break;
     }
 }

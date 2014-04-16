@@ -43,3 +43,9 @@ function getStartingPlayerConfig() {
         'scaleY': 1
     };
 }
+
+function gameBegin() {
+
+    //alert(window.location.pathname);
+    window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/aha";
+}
