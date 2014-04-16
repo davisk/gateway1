@@ -151,7 +151,7 @@ function move (direction) {
             switch (canvasID) {
                 // Start
                 case canvasIDList[0]:
-                    if (userPlayer.y > 300 || (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 80)) {
+                    if (userPlayer.y > 300 || (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 130 || goToNextGame)) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -333,6 +333,11 @@ function beginGame () {
             if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 50 && userPlayer.y < 200) {
                 beginText(790,330);
             }
+
+            if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y < 120 && goToNextGame) {
+                switchGame();
+            }
+
             break;
 /*
         // Aha
@@ -350,7 +355,7 @@ function beginGame () {
         case canvasIDList[3]:
             if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20) {
                 beginText(1130,35);
-            } 
+            }
             break;
 /*
         // Interest

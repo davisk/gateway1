@@ -36,6 +36,5 @@ function loadGame() {
 
     // Add our images to the canvas and remove the progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
-    stage.addChild(object);
     stage.removeChild(progressText);
 }

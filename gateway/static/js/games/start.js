@@ -2,7 +2,9 @@
     These are specific functions that DIFFER between games
 */
 
-var txtbox, txt1, txt2;
+var txtbox, txtbox_words;
+
+var goToNextGame = false;
 
 function getCanvasId() {
     return "startCanvas";
@@ -12,9 +14,8 @@ function initImages() {
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},
         {id: "game_guide", src: "/static/sprites/Main_guy.png"},
-        {id: "textbx", src: "/static/sprites/Textbox.png"},
-        {id: "textbx1", src: "/static/sprites/Textbox.png"},
-        {id: "textbx2", src: "/static/sprites/Textbox.png"}
+        {id: "welcome_txtbox", src: "/static/sprites/Textbox.png"},
+        {id: "welcome_txt", src: "/static/sprites/s1_text/s1_1.png"}
     ];
 }
 
@@ -35,8 +36,7 @@ function loadGameConfig() {
     imgs[1].scaleX = 0.8;
 
     txtbox = imgs[2];
-    txt1 = imgs[3];
-    txt2 = imgs[4];
+    txtbox_words = imgs[3];
 
     // Add our images to the canvas. This is specific to the number of images loaded
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
@@ -57,35 +57,22 @@ function initInteraction() {
     //alert(window.location.pathname);
     //window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/aha";
 
-    txtbox.x = 500;
-    txtbox.y = 200;
-    txtbox.scaleY = 0.4;
-    txtbox.scaleX = 0.4;
+    txtbox.x = 200;
+    txtbox.y = 475;
+    txtbox.scaleY = 0.5;
+    txtbox.scaleX = 1;
 
-    txtbox.addEventListener("click", function(event) {
-        stage.removeChild(txtbox);
-        alert("you clicked parent");
-    });
+    txtbox_words.x = 215;
+    txtbox_words.y = 475;
+    txtbox_words.scaleY = 0.7;
+    txtbox_words.scaleX = 1;
 
-    txt1.x = 400;
-    txt1.y = 400;
-    txt1.scaleY = 0.3;
-    txt1.scaleX = 0.2;
+    goToNextGame = true;
 
-    txt1.addEventListener("click", function(event) {
-        stage.removeChild(txt1);
-        alert("you clicked child1");
-    });
+    stage.addChild(txtbox, txtbox_words);
+    stage.update();
+}
 
-    txt2.x = 700;
-    txt2.y = 400;
-    txt2.scaleY = 0.3;
-    txt2.scaleX = 0.2;
-
-    txt2.addEventListener("click", function(event) {
-        stage.removeChild(txt2);
-        alert("you clicked child2");
-    });
-
-    stage.addChild(txtbox, txt1, txt2);
+function switchGame() {
+    window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/aha";
 }
