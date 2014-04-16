@@ -66,6 +66,8 @@ var moving = false;
 
 function move (direction) {
 
+    beginGame();
+
     console.log("X Pos:" + userPlayer.x);
     console.log("Y Pos:" + userPlayer.y);
 
@@ -101,18 +103,20 @@ function move (direction) {
 
                 // Gap
                 case canvasIDList[2]:
-                    if ((userPlayer.x > 0.375 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {     // Plant
-                        userPlayer.x -= 0.01 * gameWidth;
-                    } else if ((userPlayer.x > 0.05 * gameWidth) && (userPlayer.y < 0.35 * gameHeight) && (userPlayer.y > 0.07 * gameHeight)) {
-                        userPlayer.x -= 0.01 * gameWidth;
-                    } else if ((userPlayer.x > 0.42 * gameWidth) && (userPlayer.y > 0.31 * gameHeight)) {   // Hallway
-                        userPlayer.x -= 0.01 * gameWidth;
+                    if (userPlayer.x > 70 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x -= 10;
+                    } else if (userPlayer.x > 600 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x -= 10;
                     }
                     break;
 
                 // Surv
                 case canvasIDList[3]:
-                    userPlayer.x -= 10;
+                    if (userPlayer.x > 70 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x -= 10;
+                    } else if (userPlayer.x > 600 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x -= 10;
+                    }
                     break;
 
                 // Inter
@@ -159,20 +163,20 @@ function move (direction) {
 
                 // Gap
                 case canvasIDList[2]:
-                    if ((userPlayer.y > 0.05 * gameHeight) && (userPlayer.x < 0.2 * gameWidth)) {
-                        userPlayer.y -= 0.02 * gameHeight;
-                    } else if ((userPlayer.y > 0.07 * gameHeight) && (userPlayer.x > 0.2 * gameWidth) && (userPlayer.x < 0.375 * gameWidth)) {  // Plant
-                        userPlayer.y -= 0.02 * gameHeight;
-                    } else if ((userPlayer.y > 0.05 * gameHeight) && (userPlayer.x > 0.375 * gameWidth) && (userPlayer.x < 0.55 * gameWidth)) {
-                        userPlayer.y -= 0.02 * gameHeight;
-                    } else if ((userPlayer.y > 0.1 * gameHeight) && (userPlayer.x > 0.55 * gameWidth)) {    // Chairs
-                        userPlayer.y -= 0.02 * gameHeight;
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
                     }
                     break;
 
                 // Surv
                 case canvasIDList[3]:
-                    userPlayer.y -= 10;
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
+                    }
                     break;
 
                 // Inter
@@ -222,20 +226,20 @@ function move (direction) {
 
                 // Gap
                 case canvasIDList[2]:
-                    if ((userPlayer.x < 0.2 * gameWidth) && (userPlayer.y < 0.07 * gameHeight)) {   // Plant
-                        userPlayer.x += 0.01 * gameWidth;
-                    } else if ((userPlayer.x < 0.55 * gameWidth) && (userPlayer.y < 0.1)) {
-                        userPlayer.x += 0.01 * gameWidth;
-                    } else if ((userPlayer.x < 0.515 * gameWidth) && (userPlayer.y > 0.31 * gameHeight)) {
-                        userPlayer.x += 0.01 * gameWidth;
-                    } else if ((userPlayer.x < 0.9 * gameWidth) && (userPlayer.y > 0.1 * gameHeight)) {
-                        userPlayer.x += 0.01 * gameWidth;
+                    if (userPlayer.x >= 60 && userPlayer.x < 1230 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x < 700 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x += 10;
                     }
                     break;
 
                 // Surv
                 case canvasIDList[3]:
-                    userPlayer.x += 10;
+                    if (userPlayer.x >= 60 && userPlayer.x < 1230 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x < 700 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x += 10;
+                    }
                     break;
 
                 // Inter
@@ -281,18 +285,20 @@ function move (direction) {
 
                 // Gap
                 case canvasIDList[2]:
-                    if ((userPlayer.y < 0.31 * gameHeight) && (userPlayer.x < 0.42 * gameWidth)) {
-                        userPlayer.y += 0.02 * gameHeight;
-                    } else if ((userPlayer.y < gameHeight) && (userPlayer.x > 0.42 * gameWidth) && (userPlayer.x < 0.515 * gameWidth)) {  // Hallway
-                        userPlayer.y += 0.02 * gameHeight;
-                    } else if ((userPlayer.y < 0.31 * gameHeight) && (userPlayer.x > 0.515 * gameWidth)) {
-                        userPlayer.y += 0.02 * gameHeight;
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y < 100) {
+                        userPlayer.y += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y < 400) {
+                        userPlayer.y += 10;
                     }
                     break;
 
                 // Surv
                 case canvasIDList[3]:
-                    userPlayer.y += 10;
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y < 100) {
+                        userPlayer.y += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y < 400) {
+                        userPlayer.y += 10;
+                    }
                     break;
 
                 // Inter
@@ -313,6 +319,49 @@ function move (direction) {
             break;
 
         default:
+            break;
+    }
+}
+
+function beginGame () {
+
+    switch (canvasID) {
+/*
+        // Start
+        case canvasIDList[0]:
+            break;
+
+        // Aha
+        case canvasIDList[1]:
+            break;
+*/
+        // Gap
+        case canvasIDList[2]:
+            if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+                beginText(200,10);
+            }
+            break;
+
+        // Survey
+        case canvasIDList[3]:
+            if (player.x >= 640 && player.x <= 660 && player.y >= 0 && player.y <= 20) {
+                beginText(200,10);
+            }
+            break;
+/*
+        // Interest
+        case canvasIDList[4]:
+            break;
+
+        // Elevator
+        case canvasIDList[5]:
+            break;
+
+        // End
+        case canvasIDList[6]:
+            break;
+*/
+        default: 
             break;
     }
 }
