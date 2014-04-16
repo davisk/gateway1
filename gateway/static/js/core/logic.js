@@ -97,9 +97,9 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    //if ((userPlayer.x > 490 && userPlayer.y > 190) || (userPlayer.y < 200)) {
+                    if ((userPlayer.x > 490 && userPlayer.y > 190) || (userPlayer.y < 200 && userPlayer.x > 60)) {
                         userPlayer.x -= 10;
-                    //}
+                    }
                     break;
 
                 // Gap
@@ -159,7 +159,9 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    userPlayer.y -= 10;
+                    if (userPlayer.y > -20 && userPlayer.x < 810 || userPlayer.y > 140 && userPlayer.x > 810) {
+                        userPlayer.y -= 10;
+                    }
                     break;
 
                 // Gap
@@ -220,9 +222,11 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    //if ((userPlayer.x < 810 && userPlayer.y > 190) || (userPlayer.y < 200 & userPlayer.x < 1250) || (userPlayer.y < 120 && userPlayer.x < 800)) {
+                    if ((userPlayer.x < 810 && userPlayer.y > 190) || (userPlayer.y > 130 && userPlayer.y < 200 & userPlayer.x < 1250) || (userPlayer.y < 120 && userPlayer.x < 800)) {
                         userPlayer.x += 10;
-                    //}
+                    } else if (userPlayer.x < 800 && userPlayer.y < 120) {
+                        userPlayer.x += 10;
+                    }
                     break;
 
                 // Gap
@@ -281,7 +285,12 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    userPlayer.y += 10;
+                    // First branch does the desk, second does
+                    if (userPlayer.y > 130 && userPlayer.y < 190 && userPlayer.x > 810 || userPlayer.x > 480 && userPlayer.x < 820 && userPlayer.y < 400) {
+                        userPlayer.y += 10;
+                    } else if (userPlayer.x < 490 && userPlayer.y < 190) {
+                        userPlayer.y += 10;
+                    }
                     break;
 
                 // Gap
