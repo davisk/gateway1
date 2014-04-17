@@ -117,6 +117,22 @@ function initInteraction() {
         }, false);
     }
 
+    for (i = 3; i < 6; i++) {
+        answers[i].addEventListener("click", function(event) {
+            stage.removeChild(answers[3], answers[4], answers[5]);
+            stage.addChild(answers[6], answers[7], answers[8]);
+        }, false);
+    }
+
+    for (i = 6; i < 9; i++) {
+        answers[i].addEventListener("click", function(event) {
+            stage.removeChild(answers[6], answers[7], answers[8], answer_txtbx);
+            for (i = 0; i < dialog.length; i++) {
+                stage.removeChild(dialog[i]);
+            }
+        }, false);
+    }
+
     dialog[0].addEventListener("click", function(event) {
         stage.removeChild(dialog[0]);
         stage.addChild(dialog[1]);
