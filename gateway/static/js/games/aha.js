@@ -59,11 +59,11 @@ function loadGameConfig() {
         dialog.push(imgs[i]);
     }
 
-    for (i = 7; i < 10; i++) {
+    for (i = 7; i < manifest.length - 1; i++) {
         answers.push(imgs[i]);
     }
 
-    answer_txtbx = imgs[10];
+    answer_txtbx = imgs[16];
 
     // Add our images and remove progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
@@ -97,17 +97,11 @@ function initInteraction() {
         dialog[i].y = 50;
         dialog[i].scaleY = 0.6;
         dialog[i].scaleX = 0.8;
-
-        // TODO: Find out why this isn't working..
-        /*dialog[i].addEventListener("click", function(event) {
-            stage.removeChild(dialog[i]);
-            stage.addChild(dialog[i+1]);
-        });*/
     }
 
-    answers[0].x = 180;
-    answers[1].x = 300;
-    answers[2].x = 425;
+    answers[0].x = answers[3].x = answers[6].x = 180;
+    answers[1].x = answers[4].x = answers[7].x = 300;
+    answers[2].x = answers[5].x = answers[8].x = 425;
 
     for (i = 0; i < answers.length; i++) {
         answers[i].y = 440;
@@ -115,7 +109,13 @@ function initInteraction() {
         answers[i].scaleX = 0.8;
     }
 
-    answers[0].
+
+    for (i = 0; i < 3; i++) {
+        answers[i].addEventListener("click", function(event) {
+            stage.removeChild(answers[0], answers[1], answers[2]);
+            stage.addChild(answers[3], answers[4], answers[5]);
+        }, false);
+    }
 
     dialog[0].addEventListener("click", function(event) {
         stage.removeChild(dialog[0]);
@@ -133,7 +133,7 @@ function initInteraction() {
 
         stage.addChild(answer_txtbx);
 
-        for (i = 0; i < answers.length; i++) {
+        for (i = 0; i < 3; i++) {
             stage.addChild(answers[i]);
         }
     });
