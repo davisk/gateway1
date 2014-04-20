@@ -153,3 +153,12 @@ function createPlayer() {
     // Add our user to the canvas
     stage.addChild(userPlayer);
 }
+
+function beginText(xpos,ypos) {
+    var startText = new createjs.Text("Click to Start", "10px Arial", "#ffffff");
+    startText.x = 300;
+    startText.y = 20;
+    console.log("word");
+    stage.addChild(startText);
+    stage.update();
+}
