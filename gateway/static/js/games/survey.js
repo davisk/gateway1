@@ -10,7 +10,7 @@ function getCanvasId() {
 function initImages() {
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene4_init.png"},
-        {id: "game_guide", src: "/static/sprites/Main_guy.png"}
+        {id: "game_guide", src: "/static/sprites/Dash_2.png"}
     ];
 }
 

@@ -65,6 +65,8 @@ var moving = false;
 
 function move (direction) {
 
+    beginGame();
+
     console.log("X Pos:" + userPlayer.x);
     console.log("Y Pos:" + userPlayer.y);
 
@@ -319,7 +321,7 @@ function move (direction) {
 function beginGame () {
 
     switch (canvasID) {
-
+/*
         // Start
         case canvasIDList[0]:
             break;
@@ -327,18 +329,21 @@ function beginGame () {
         // Aha
         case canvasIDList[1]:
             break;
-
+*/
         // Gap
         case canvasIDList[2]:
-            if (player.x >= 640 && player.x <= 660 && player.y >= 0 && player.y <= 20) {
-                beginText(110,-50);
+            if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+                beginText(200,10);
             }
             break;
 
         // Survey
         case canvasIDList[3]:
+            if (player.x >= 640 && player.x <= 660 && player.y >= 0 && player.y <= 20) {
+                beginText(200,10);
+            }
             break;
-
+/*
         // Interest
         case canvasIDList[4]:
             break;
@@ -350,7 +355,7 @@ function beginGame () {
         // End
         case canvasIDList[6]:
             break;
-
+*/
         default: 
             break;
     }
