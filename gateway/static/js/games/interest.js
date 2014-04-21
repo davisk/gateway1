@@ -10,19 +10,27 @@ function getCanvasId() {
 function initImages() {
 
     manifest = [
-        {id: "canvas_bkgd", src: "/static/sprites/scene5_init.png"}
+        {id: "canvas_bkgd", src: "/static/sprites/scene5_init.png"},
+        {id: "game_npc", src: "/static/sprites/Dash_2.png"}
     ];
 }
 
 function loadGameConfig() {
 
     var imgs = [];
+    var catch = 0;
 
     for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
     
 
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.6;
+    imgs[1].scaleX = 0.8;
+    imgs[1].scaleY = 0.8;
+    //Setup scale the bro
+    while( catch == 0 ) {
+    imgs[1].x = 450;
+    imgs[1].y = 200;
 
     // Add our images to the canvas and remove the progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
