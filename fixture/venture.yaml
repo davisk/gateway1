@@ -5,12 +5,12 @@
     progress: 90
     step: 1
     hook: Bringing the comfort and quality of Traditional Irish coats to an Online International Exchange
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -19,12 +19,12 @@
     progress: 60
     step: 4
     hook: A crew of three globally acclaimed Magicians bend the rules of reality to make the mundane extraordinary
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -33,12 +33,12 @@
     progress: 70
     step: 2
     hook: Georges Melies makes Black and White cinematography relevant in the 21th century
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -47,12 +47,12 @@
     progress: 20
     step: 3
     hook: The quick and enjoyable way to cross the Columbia River Gorge
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -61,12 +61,12 @@
     progress: 30
     step: 3
     hook: Want to captain your own ship through Boston Harbor try Boston express rent a boat!
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -75,12 +75,12 @@
     progress: 50
     step: 2
     hook: We take ruble from demolitions and make low cost housing
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -89,12 +89,12 @@
     progress: 90
     step: 4
     hook: Sand is ever flowing and timeless
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -103,12 +103,12 @@
     progress: 25
     step: 3
     hook: Sunglasses that can be worn in the sea
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
 
 - model: gateway.Venture
   fields:
@@ -117,9 +117,10 @@
     progress: 25
     step: 3
     hook: We have scouted the best reefs on Hawaii and want to give you the experiance of a lifetime
-    aha: aha
-    survey: survey
-    gap: gap
-    interest: interest
-    start: start
-    end: end
+    aha: 1
+    survey: 1
+    gap: 1
+    interest: 1
+    start: 1
+    end: 1
+
