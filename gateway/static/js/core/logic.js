@@ -72,7 +72,7 @@ var db = new PouchDB('dbname');
 
   var venturename = 'test';
 
-  db.replicate.to('localhost/couchdb/' + venturename);
+  db.replicate.to('localhost:9000/database/' + venturename);
 
 
 // For switching between the two animation sprites, ugly method!!!
