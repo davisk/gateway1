@@ -2,9 +2,9 @@
 from django.db import models
 from gateway.models.Aha import Aha
 from gateway.models.Elevator import Elevator
-from gateway.models.Research import Research
+from gateway.models.Gap import Gap
 from gateway.models.Survey import Survey
-from gateway.models.Feedback import Feedback
+from gateway.models.Interest import Interest
 
 
 class Venture(models.Model):
@@ -55,8 +55,8 @@ class Venture(models.Model):
         db_constraint=False
     )
 
-    research = models.ForeignKey(
-        Research,
+    Gap = models.ForeignKey(
+        Gap,
         db_constraint=False
     )
 
@@ -65,8 +65,8 @@ class Venture(models.Model):
         db_constraint=False
     )
 
-    feedback = models.ForeignKey(
-        Feedback,
+    interest = models.ForeignKey(
+        Interest,
         db_constraint=False
     )
 
