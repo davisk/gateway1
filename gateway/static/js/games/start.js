@@ -18,10 +18,10 @@ function getCanvasId() {
  */
 function initImages() {
     manifest = [
-        {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},
-        {id: "game_guide", src: "/static/sprites/Main_guy.png"},
-        {id: "welcome_txtbox", src: "/static/sprites/Textbox.png"},
-        {id: "welcome_txt", src: "/static/sprites/s1_text/s1_1.png"}
+        {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},    // Background Image
+        {id: "game_guide", src: "/static/sprites/Main_guy.png"},        // Robot
+        {id: "welcome_txtbox", src: "/static/sprites/Textbox.png"},     // Textbox 4 Welcome Dialogue
+        {id: "welcome_txt", src: "/static/sprites/s1_text/s1_1.png"}    // Welcome Dialogue
     ];
 }
 
@@ -31,6 +31,7 @@ function initImages() {
  */
 function loadGameConfig() {
 
+    // Container for manifest images
     var imgs = [];
 
     // Load our images as individual Bitmaps
