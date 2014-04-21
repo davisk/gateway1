@@ -3,7 +3,7 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
 from gateway.models.venture import Venture
 
-<<<<<<< HEAD
+
 def venture_view(request, id="0"):
     """render page based on user id."""
     v = Venture(
@@ -106,12 +106,10 @@ def venture_view(request, id="0"):
         }
     ]
 
-=======
 
 def venture_view(request, id="1"):
     """get a specific venture and render."""
     ventures = Venture.objects.all()
->>>>>>> 9908e66c321ee3378fa2fb72d6bcf363b695f9cc
     return render(
         request,
         'venture.html',
