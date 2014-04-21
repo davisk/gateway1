@@ -14,7 +14,7 @@ function initImages() {
     ];
 }
 
-function loadGame() {
+function loadGameConfig() {
 
     var imgs = [];
 
