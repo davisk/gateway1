@@ -345,7 +345,7 @@ function beginGame () {
             }
 
             if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y < 120 && goToNextGame) {
-                switchGame();
+                switchGame("aha");
             }
 
             break;
@@ -358,7 +358,7 @@ function beginGame () {
             }
 
             if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) {
-                switchGame();
+                switchGame("gap");
             }
 
             break;
