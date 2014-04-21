@@ -73,6 +73,9 @@ var gameHeight;
 var gameWidth;
 
 
+var startText;
+
+
 function initGame() {
 
     // Global config
@@ -154,10 +157,17 @@ function createPlayer() {
     stage.addChild(userPlayer);
 }
 
+
 function beginText(xpos,ypos,state) {
-    var startText = new createjs.Text("Click to Start", "20px Arial", "#ffffff");
+
+    startText = new createjs.Text("Click to Start", "20px Arial", "#ffffff");
+
+    startText.addEventListener("click", function(event) {
+        initInteraction();
+        stage.removeChild(startText);
+    });
+
     startText.x = xpos;
     startText.y = ypos;
     stage.addChild(startText);
-    stage.update();
 }
