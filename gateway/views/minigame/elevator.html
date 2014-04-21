@@ -1,25 +1,26 @@
 {% extends "layout/minigame.html" %}
 {% load staticfiles %}
 
-{% block title %}Elevator - Game 5{% endblock %}
-{% block description %}Play game 5 and get the takehome{% endblock %}
+{% block title %}Elevator{% endblock %}
+{% block description %}Develop an elevator pitch!{% endblock %}
 
 {% block minigame %}
 
 	<!-- EaselJS library -->
-    <script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
+    <script src="http://code.createjs.com/easeljs-0.7.0.min.js" defer></script>
+    <script src="http://code.createjs.com/preloadjs-0.4.0.min.js" defer></script>
 	
 	<!-- The main game -->
-    <script src="/static/js/elevator.js"></script>
+    <script src="/static/js/core/logic.js" defer></script>
+    <script src="/static/js/core/world.js" defer></script>
+    <script src="/static/js/games/elevator.js" defer></script>
+    <script src="/static/js/core/listener.js" defer></script>
     
     <!-- Minigame specific styles -->
     <link href="/static/css/minigames.css" rel="stylesheet">
 
     <!-- Game container -->
-	<canvas class="canvas-main" id="elevCanvas" height="400" width="800"></canvas>
+	<canvas class="canvas-main" id="elevCanvas"></canvas>
 
 {% endblock %}
 
-{% block minigame-questions %}
-	{% include "bootstrap/questions.html" %}
-{% endblock %}

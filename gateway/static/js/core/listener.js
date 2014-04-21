@@ -1,7 +1,7 @@
 /**
  * Listener handles browser events
- * This file should only contain,
- * event listener registration,
+ * This file should only contain
+ * event listener registration
  * and event handlers that calls game logic.
  */
 
@@ -39,3 +39,4 @@ function handleKeyDown(e) {
 function tick() {
     stage.update();
 }
+

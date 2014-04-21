@@ -7,6 +7,7 @@ then attempts to load pages
 """
 import unittest
 from django.contrib.auth.models import User
+from gateway.models.venture import Venture
 from django.test import Client
 
 
@@ -44,6 +45,15 @@ class TestUrlsWork(unittest.TestCase):
 
     def test_home(self):
         """ensure member home page loads."""
+        v = Venture(
+            title="Murphee's Irish Coats",
+            image="coat",
+            progress=90,
+            step="1",
+            hook="Bringing the comfort and quality of Traditional\
+                Irish coats to an Online International Exchange"
+        )
+        v.save()
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 

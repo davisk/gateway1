@@ -10,7 +10,7 @@ function getCanvasId() {
 function initImages() {
 
     manifest = [
-        {id: "canvas_bkgd", src: "/static/sprites/scene1_init.png"},
+        {id: "canvas_bkgd", src: "/static/sprites/scene2_init.png"},
         {id: "game_guide", src: "/static/sprites/Main_guy.png"},
         {id: "user_front", src: "/static/sprites/user_front.png"},
         {id: "user_left", src: "/static/sprites/user_side_left.png"},
@@ -27,8 +27,14 @@ function loadGame() {
     }
 
     // Fix the background image for the canvas
-    imgs[0].scaleY = 0.4;
-    imgs[0].scaleX = 0.6;
+    imgs[0].scaleY = 0.55;
+    imgs[0].scaleX = 0.7;
+
+    // Scale characters
+    imgs[1].scaleY = 0.55;
+    imgs[1].scaleX = 0.7;
+    imgs[2].scaleY = 0.55;
+    imgs[2].scaleX = 0.7;
 
     // Set our main guy up by the entrance
     imgs[1].x = 120;

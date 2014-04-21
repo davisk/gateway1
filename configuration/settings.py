@@ -19,6 +19,10 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "gateway/views")
 )
 
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, "gateway/fixture")
+)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
