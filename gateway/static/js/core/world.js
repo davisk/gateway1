@@ -119,7 +119,6 @@ function handleGameProgress() {
 }
 
 function loadGame() {
-
     // Load our game specific config
     loadGameConfig();
     // Remove the progress bar
