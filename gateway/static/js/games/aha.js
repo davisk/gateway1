@@ -24,6 +24,9 @@ function initImages() {
         {id: "welcome_txt2", src: "/static/sprites/s2_text/s2_2.png"},
         {id: "welcome_txt3", src: "/static/sprites/s2_text/s2_3.png"},
         {id: "welcome_txt4", src: "/static/sprites/s2_text/s2_4.png"},
+        {id: "welcome_txt5", src: "/static/sprites/s2_text/s2_5.png"},
+        {id: "welcome_txt6", src: "/static/sprites/s2_text/s2_6.png"},
+        {id: "welcome_txt7", src: "/static/sprites/s2_text/s2_7.png"},
         {id: "welcome_ans1", src: "/static/sprites/s2_text/s2_a1.png"},
         {id: "welcome_ans2", src: "/static/sprites/s2_text/s2_a2.png"},
         {id: "welcome_ans3", src: "/static/sprites/s2_text/s2_a3.png"},
@@ -55,15 +58,15 @@ function loadGameConfig() {
 
     txtbox = imgs[2];
 
-    for (i = 3; i < 7; i++) {
+    for (i = 3; i < 10; i++) {
         dialog.push(imgs[i]);
     }
 
-    for (i = 7; i < manifest.length - 1; i++) {
+    for (i = 10; i < manifest.length - 1; i++) {
         answers.push(imgs[i]);
     }
 
-    answer_txtbx = imgs[16];
+    answer_txtbx = imgs[19];
 
     // Add our images and remove progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
@@ -126,10 +129,8 @@ function initInteraction() {
 
     for (i = 6; i < 9; i++) {
         answers[i].addEventListener("click", function(event) {
-            stage.removeChild(answers[6], answers[7], answers[8], answer_txtbx);
-            for (i = 0; i < dialog.length; i++) {
-                stage.removeChild(dialog[i]);
-            }
+            stage.removeChild(answers[6], answers[7], answers[8], answer_txtbx, dialog[3]);
+            stage.addChild(dialog[4]);
         }, false);
     }
 
@@ -154,12 +155,28 @@ function initInteraction() {
         }
     });
 
-    goToNextGame = true;
+    /*for (i = 4; i < 6; i++) {
+        dialog[i].addEventListener("click", function(event) {
+            stage.removeChild(dialog[i]);
+            stage.addChild(dialog[i+1]);
+        }, false);
+    }*/
+
+    dialog[4].addEventListener("click", function(event) {
+        stage.removeChild(dialog[4]);
+        stage.addChild(dialog[5]);
+    });
+
+    dialog[5].addEventListener("click", function(event) {
+        stage.removeChild(dialog[5]);
+        stage.addChild(dialog[6]);
+        goToNextGame = true;
+    });
 
     stage.addChild(txtbox, dialog[0]);
     stage.update();
 }
 
 function switchGame() {
-    window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/aha";
+    window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/gap";
 }

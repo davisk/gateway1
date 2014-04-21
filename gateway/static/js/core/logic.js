@@ -159,7 +159,7 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    if (userPlayer.y > -20 && userPlayer.x < 810 || userPlayer.y > 140 && userPlayer.x > 810) {
+                    if (userPlayer.y > -20 && userPlayer.x < 810 || userPlayer.y > 140 && userPlayer.x > 810 || userPlayer.x > 570 && userPlayer.x < 730 && goToNextGame) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -356,6 +356,11 @@ function beginGame () {
                 beginText(155,35);
                 noText = false;
             }
+
+            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) {
+                switchGame();
+            }
+
             break;
 
         // Gap
