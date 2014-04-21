@@ -60,8 +60,10 @@ var gamestate = {
     }
 };
 
+
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
+var noText = true;
 
 function move (direction) {
 
@@ -95,7 +97,9 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    userPlayer.x -= 10;
+                    //if ((userPlayer.x > 490 && userPlayer.y > 190) || (userPlayer.y < 200)) {
+                        userPlayer.x -= 10;
+                    //}
                     break;
 
                 // Gap
@@ -148,7 +152,7 @@ function move (direction) {
             switch (canvasID) {
                 // Start
                 case canvasIDList[0]:
-                    if (userPlayer.y > 300 || (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 80)) {
+                    if (userPlayer.y > 300 || (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 130 || goToNextGame)) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -216,7 +220,9 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    userPlayer.x += 10;
+                    //if ((userPlayer.x < 810 && userPlayer.y > 190) || (userPlayer.y < 200 & userPlayer.x < 1250) || (userPlayer.y < 120 && userPlayer.x < 800)) {
+                        userPlayer.x += 10;
+                    //}
                     break;
 
                 // Gap
@@ -321,27 +327,39 @@ function move (direction) {
 function beginGame () {
 
     switch (canvasID) {
-/*
+
         // Start
         case canvasIDList[0]:
-            break;
+            //if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+            if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 50 && userPlayer.y < 200 && noText) {
+                beginText(790,330);
+                noText = false;
+            }
 
+            if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y < 120 && goToNextGame) {
+                switchGame();
+            }
+
+            break;
+/*
         // Aha
         case canvasIDList[1]:
             break;
 */
         // Gap
         case canvasIDList[2]:
-            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {
                 beginText(150,35);
+                noText = false;
             }
             break;
 
         // Survey
         case canvasIDList[3]:
-            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {
                 beginText(1130,35);
-            } 
+                noText = false;
+            }
             break;
 /*
         // Interest
@@ -356,7 +374,7 @@ function beginGame () {
         case canvasIDList[6]:
             break;
 */
-        default: 
+        default:
             break;
     }
 }
