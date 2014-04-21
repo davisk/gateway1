@@ -332,16 +332,16 @@ function beginGame () {
 */
         // Gap
         case canvasIDList[2]:
-            if (userPlayer.x >= 640 && userPlayer.x <= 660 && userPlayer.y >= 0 && userPlayer.y <= 20) {
-                beginText(200,10);
+            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+                beginText(150,35);
             }
             break;
 
         // Survey
         case canvasIDList[3]:
-            if (player.x >= 640 && player.x <= 660 && player.y >= 0 && player.y <= 20) {
-                beginText(200,10);
-            }
+            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+                beginText(1130,35);
+            } 
             break;
 /*
         // Interest
