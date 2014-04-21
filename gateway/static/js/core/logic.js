@@ -10,228 +10,353 @@
   * @param direction the object is moving in
   */
 
-function move (player, direction, canvId) {
+var gamestate = {
+    position : {
+        x: 0,
+        y: 0
+    },
+    level: 1,
+    start: {
+        question1: 0,
+        question2: 0,
+        question3: 0,
+        question4: 0,
+        question5: 0
+    },
+    aha: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    elevator: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    gap: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    interest: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    survey: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    }
+};
 
+// For switching between the two animation sprites, ugly method!!!
+var moving = false;
 
-    // SCENE 1: Start
+function move (direction) {
 
-    if (canvId == 'startCanvas') {
+    beginGame();
 
-        switch (direction) {
-            // Left
-            case 37:
-                if (player.x > 360 && player.x < 400 && player.y < 140) { // Stay within vertical sidewalk
-                    player.x -= 10;
-                } else if (player.x > -10 && player.y > 130) { // Stay within horizontal sidewalk
-                    player.x -= 10;
-                }
-                break;
+    console.log("X Pos:" + userPlayer.x);
+    console.log("Y Pos:" + userPlayer.y);
 
-            // Up
-            case 38:
-                if (player.y > 140 || (player.x > 350 && player.x < 400 && player.y > 30)) {
-                    player.y -= 10;
-                }
-                break;
+    switch (direction) {
 
-            // Right
-            case 39:
-                if (player.x > 350 && player.x < 390 && player.y < 140) { // Stay within vertical sidewalk
-                    player.x += 10;
-                } else if (player.x < 710 && player.y > 130) { // Stay within horizontal sidewalk
-                    player.x += 10;
-                }
-                break;
+        // Left
+        case 37:
+            // Ugly way to handle sprite animation :(
+            if (moving === false) {
+                userPlayer.gotoAndPlay("left1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("left2");
+                moving = false;
+            }
 
-            // Down
-            case 40:
-                if (player.y < 170) {
-                    player.y += 10;
-                }
-                break;
+            switch (canvasID) {
+                // Start
+                case canvasIDList[0]:
+                    if (userPlayer.x > 600 && userPlayer.x < 710 && userPlayer.y > 70) {     // Stay within vertical sidewalk
+                        userPlayer.x -= 10;
+                    } else if (userPlayer.x > -10 && userPlayer.y > 290) {    // Stay within horizontal sidewalk
+                        userPlayer.x -= 10;
+                    }
+                    break;
 
-            default:
-                break;
-        }
-    } 
+                // Aha
+                case canvasIDList[1]:
+                    userPlayer.x -= 10;
+                    break;
 
-    // SCENE 2: Aha!
+                // Gap
+                case canvasIDList[2]:
+                    if (userPlayer.x > 70 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x -= 10;
+                    } else if (userPlayer.x > 600 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x -= 10;
+                    }
+                    break;
 
-    else if (canvId == 'ahaCanvas') {
+                // Surv
+                case canvasIDList[3]:
+                    if (userPlayer.x > 70 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x -= 10;
+                    } else if (userPlayer.x > 600 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x -= 10;
+                    }
+                    break;
 
-        switch (direction) {
-            // Left
-            case 37:
-                player.x -= 5;
-                break;
+                // Inter
+                case canvasIDList[4]:
+                    userPlayer.x -= 10;
+                    break;
 
-            // Up
-            case 38:
-                player.y -= 5;
-                break;
+                // Elev
+                case canvasIDList[5]:
+                    userPlayer.x -= 10;
+                    break;
 
-            // Right
-            case 39:
-                player.x += 5;
-                break;
+                // End
+                case canvasIDList[6]:
+                    userPlayer.x -= 10;
+                    break;
+            }
+            break;
 
-            // Down
-            case 40:
-                player.y += 5;
-                break;
+        // Up
+        case 38:
+            // Ugly way to handle sprite animation :(
+            // We also don't have sprites for up animation
+            if (moving === false) {
+                userPlayer.gotoAndPlay("down1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("down2");
+                moving = false;
+            }
 
-            default:
-                break;
-        }
-    } 
+            switch (canvasID) {
+                // Start
+                case canvasIDList[0]:
+                    if (userPlayer.y > 300 || (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 80)) {
+                        userPlayer.y -= 10;
+                    }
+                    break;
 
-    // SCENE 3: Gap
+                // Aha
+                case canvasIDList[1]:
+                    userPlayer.y -= 10;
+                    break;
 
-    else if (canvId == 'gapCanvas') {
+                // Gap
+                case canvasIDList[2]:
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
+                    }
+                    break;
 
-        switch (direction) {
-            // Left
-            case 37:
-                player.x -= 5;
-                break;
+                // Surv
+                case canvasIDList[3]:
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
+                    }
+                    break;
 
-            // Up
-            case 38:
-                player.y -= 5;
-                break;
+                // Inter
+                case canvasIDList[4]:
+                    userPlayer.y -= 10;
+                    break;
 
-            // Right
-            case 39:
-                player.x += 5;
-                break;
+                // Elev
+                case canvasIDList[5]:
+                    userPlayer.y -= 10;
+                    break;
 
-            // Down
-            case 40:
-                player.y += 5;
-                break;
+                // End
+                case canvasIDList[6]:
+                    userPlayer.y -= 10;
+                    break;
+            }
+            break;
 
-            default:
-                break;
-        }
-    } 
+        // Right
+        case 39:
+            // Ugly way to handle sprite animation :(
+            if (moving === false) {
+                userPlayer.gotoAndPlay("right1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("right2");
+                moving = false;
+            }
 
-    // SCENE 4: Survey
+            switch (canvasID) {
+                // Start
+                case canvasIDList[0]:
+                    if (userPlayer.x > 580 && userPlayer.x < 700 && userPlayer.y > 70) {   // Stay within vertical sidewalk
+                        userPlayer.x += 10;
+                    } else if (userPlayer.x < 1310 && userPlayer.y > 290) {    // Stay within horizontal sidewalk
+                        userPlayer.x += 10;
+                    }
+                    break;
 
-    else if (canvId == 'survCanvas') {
+                // Aha
+                case canvasIDList[1]:
+                    userPlayer.x += 10;
+                    break;
 
-        switch (direction) {
-            // Left
-            case 37:
-                player.x -= 5;
-                break;
+                // Gap
+                case canvasIDList[2]:
+                    if (userPlayer.x >= 60 && userPlayer.x < 1230 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x < 700 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x += 10;
+                    }
+                    break;
 
-            // Up
-            case 38:
-                player.y -= 5;
-                break;
+                // Surv
+                case canvasIDList[3]:
+                    if (userPlayer.x >= 60 && userPlayer.x < 1230 && userPlayer.y >= 0 && userPlayer.y <= 110) {
+                        userPlayer.x += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x < 700 && userPlayer.y >= 100 && userPlayer.y <= 410) {
+                        userPlayer.x += 10;
+                    }
+                    break;
 
-            // Right
-            case 39:
-                player.x += 5;
-                break;
+                // Inter
+                case canvasIDList[4]:
+                    userPlayer.x += 10;
+                    break;
 
-            // Down
-            case 40:
-                player.y += 5;
-                break;
+                // Elev
+                case canvasIDList[5]:
+                    userPlayer.x += 10;
+                    break;
 
-            default:
-                break;
-        }
-    } 
+                // End
+                case canvasIDList[6]:
+                    userPlayer.x += 10;
+                    break;
+            }
+            break;
 
-    // SCENE 5: Interest
+        // Down
+        case 40:
+            // Ugly way to handle sprite animation :(
+            if (moving === false) {
+                userPlayer.gotoAndPlay("down1");
+                moving = true;
+            } else {
+                userPlayer.gotoAndPlay("down2");
+                moving = false;
+            }
 
-    else if (canvId == 'interCanvas') {
+            switch (canvasID) {
+                // Start
+                case canvasIDList[0]:
+                    if (userPlayer.y < 370) {
+                        userPlayer.y += 10;
+                    }
+                    break;
 
-        switch (direction) {
-            // Left
-            case 37:
-                player.x -= 5;
-                break;
+                // Aha
+                case canvasIDList[1]:
+                    userPlayer.y += 10;
+                    break;
 
-            // Up
-            case 38:
-                player.y -= 5;
-                break;
+                // Gap
+                case canvasIDList[2]:
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y < 100) {
+                        userPlayer.y += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y < 400) {
+                        userPlayer.y += 10;
+                    }
+                    break;
 
-            // Right
-            case 39:
-                player.x += 5;
-                break;
+                // Surv
+                case canvasIDList[3]:
+                    if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y >= 0 && userPlayer.y < 100) {
+                        userPlayer.y += 10;
+                    } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y >= 100 && userPlayer.y < 400) {
+                        userPlayer.y += 10;
+                    }
+                    break;
 
-            // Down
-            case 40:
-                player.y += 5;
-                break;
+                // Inter
+                case canvasIDList[4]:
+                    userPlayer.y += 10;
+                    break;
 
-            default:
-                break;
-        }
-    } 
+                // Elev
+                case canvasIDList[5]:
+                    userPlayer.y += 10;
+                    break;
 
-    // SCENE 6: Elevator
+                // End
+                case canvasIDList[6]:
+                    userPlayer.y += 10;
+                    break;
+            }
+            break;
 
-    else if (canvId == 'elevCanvas') {
+        default:
+            break;
+    }
+}
 
-        switch (direction) {
-            // Left
-            case 37:
-                player.x -= 5;
-                break;
+function beginGame () {
 
-            // Up
-            case 38:
-                player.y -= 5;
-                break;
+    switch (canvasID) {
+/*
+        // Start
+        case canvasIDList[0]:
+            break;
 
-            // Right
-            case 39:
-                player.x += 5;
-                break;
+        // Aha
+        case canvasIDList[1]:
+            break;
+*/
+        // Gap
+        case canvasIDList[2]:
+            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+                beginText(150,35);
+            }
+            break;
 
-            // Down
-            case 40:
-                player.y += 5;
-                break;
+        // Survey
+        case canvasIDList[3]:
+            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20) {
+                beginText(1130,35);
+            } 
+            break;
+/*
+        // Interest
+        case canvasIDList[4]:
+            break;
 
-            default:
-                break;
-        }
-    } 
+        // Elevator
+        case canvasIDList[5]:
+            break;
 
-    // Scene 7: End
-
-    else {
-
-        switch (direction) {
-            // Left
-            case 37:
-                player.x -= 5;
-                break;
-
-            // Up
-            case 38:
-                player.y -= 5;
-                break;
-
-            // Right
-            case 39:
-                player.x += 5;
-                break;
-
-            // Down
-            case 40:
-                player.y += 5;
-                break;
-
-            default:
-                break;
-        }
+        // End
+        case canvasIDList[6]:
+            break;
+*/
+        default: 
+            break;
     }
 }

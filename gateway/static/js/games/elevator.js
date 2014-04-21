@@ -32,6 +32,15 @@ function loadGame() {
 
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.6;
+<<<<<<< HEAD
+=======
+
+    // Scale characters
+    imgs[1].scaleY = 0.55;
+    imgs[1].scaleX = 0.7;
+    imgs[2].scaleY = 0.55;
+    imgs[2].scaleX = 0.7;
+>>>>>>> eac11b480366f0c7c7f4206a774868cc7e8e736c
 
     // Set our main guy up by the entrance
     imgs[1].x = canvas.width / 3;

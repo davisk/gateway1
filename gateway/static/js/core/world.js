@@ -17,6 +17,13 @@ var canvas;
 var canvasID;
 
 /**
+ * This hold the names of all possible canvas ID's
+ * @property canvasIDs
+ * @type {array}
+ */
+var canvasIDList;
+
+/**
  * This manages the easel js stage
  * @property
  * @type {createjs.Stage}
@@ -28,7 +35,7 @@ var stage;
  * @property object
  * @type {}
  */
-var object;
+var userPlayer;
 
 /**
  * This is the holder for the images in the game
@@ -51,19 +58,35 @@ var preload;
  */
 var progressText;
 
+/**
+ * This is the height of the game canvas
+ * @property canvas
+ * @type {window}
+ */
+var gameHeight;
+
+/**
+ * This is the width of the game canvas
+ * @property canvas
+ * @type {window}
+ */
+var gameWidth;
+
 
 function initGame() {
 
+    // Global config
+    canvasIDList = ['startCanvas', 'ahaCanvas', 'gapCanvas', 'survCanvas', 'interCanvas', 'elevCanvas', 'endCanvas'];
+
+    // Canvas config
     canvasID = getCanvasId();
     canvas = document.getElementById(canvasID);
-    canvas.width = 0.75*window.innerWidth;
-    canvas.height = 0.85*window.innerHeight;
+    canvas.width = 1400;
+    canvas.height = 650;
     stage = new createjs.Stage(canvas);
-
 
     // Set game attributes
     createjs.Ticker.setFPS(60);
-
     // Create our progress bar
     initLoadProgress();
     // Setup our game image manifest (game specific function)
@@ -90,4 +113,51 @@ function startPreload() {
 
 function handleGameProgress() {
     progressText.text = (preload.progress*100|0) + " % Loaded";
+}
+
+function loadGame() {
+
+    // Load our game specific config
+    loadGameConfig();
+    // Remove the progress bar
+    stage.removeChild(progressText);
+    // Create our spritesheet player (For some reason, only works if function call is placed here)
+    createPlayer();
+}
+
+function createPlayer() {
+
+    var config = getStartingPlayerConfig();
+
+    // Define the specific sprite sheet data
+    var spriteData = new createjs.SpriteSheet({
+        images: ["/static/sprites/Sprite_Sheet.png"],
+        frames: {width: 100, height: 200, regX: 0, regY: 0},
+        animations: {
+            right1: {frames: [1], next: "right2", speed: 2},
+            right2: {frames: [2], next: "right1", speed: 2},
+            left1: {frames: [3], next: "left2", speed: 2},
+            left2: {frames: [4], next: "left1", speed: 2},
+            down1: {frames: [6], next: "down2", speed: 2},
+            down2: {frames: [7], next: "down1", speed: 2}
+        }
+    });
+
+    // Set our user image and location to the global variable
+    userPlayer = new createjs.Sprite(spriteData, config.pos);
+    userPlayer.x = config.xloc;
+    userPlayer.y = config.yloc;
+    userPlayer.scaleX = config.scaleX;
+    userPlayer.scaleY = config.scaleY;
+
+    // Add our user to the canvas
+    stage.addChild(userPlayer);
+}
+
+function beginText(xpos,ypos,state) {
+    var startText = new createjs.Text("Click to Start", "20px Arial", "#ffffff");
+    startText.x = xpos;
+    startText.y = ypos;
+    stage.addChild(startText);
+    stage.update();
 }
