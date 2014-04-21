@@ -154,11 +154,10 @@ function createPlayer() {
     stage.addChild(userPlayer);
 }
 
-function beginText(xpos,ypos) {
-    var startText = new createjs.Text("Click to Start", "10px Arial", "#ffffff");
-    startText.x = 300;
-    startText.y = 20;
-    console.log("word");
+function beginText(xpos,ypos,state) {
+    var startText = new createjs.Text("Click to Start", "20px Arial", "#ffffff");
+    startText.x = xpos;
+    startText.y = ypos;
     stage.addChild(startText);
     stage.update();
 }
