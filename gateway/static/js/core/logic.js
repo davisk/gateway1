@@ -60,6 +60,20 @@ var gamestate = {
     }
 };
 
+var db = new PouchDB('dbname');
+
+  db.put(gamestate);
+
+  db.changes({
+    onChange: function() {
+      console.log('Ch-Ch-Changes');
+    }
+  });
+
+  var venturename = 'test';
+
+  db.replicate.to('localhost:9000/database/' + venturename);
+
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
