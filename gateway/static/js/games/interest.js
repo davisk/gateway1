@@ -19,6 +19,7 @@ function loadGameConfig() {
 
     var imgs = [];
     var catch = 0;
+    var timeoutID;
 
     for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
     
@@ -28,12 +29,12 @@ function loadGameConfig() {
     imgs[1].scaleX = 0.8;
     imgs[1].scaleY = 0.8;
     //Setup scale the bro
-    while( catch == 0 ) {
-    imgs[1].x = 450;
-    imgs[1].y = 200;
 
     // Add our images to the canvas and remove the progress bar
     for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
+
+    imgs[1].
+
 }
 
 function getStartingPlayerConfig() {
@@ -45,3 +46,5 @@ function getStartingPlayerConfig() {
         'scaleY': 1
     };
 }
+
+
