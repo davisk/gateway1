@@ -7,7 +7,7 @@ from gateway.models.Survey import Survey
       tests in objects of relevant models"""
 
 
-aha = Aha(
+aha = Aha.objects.create(
     is_complete=False,
     question_one=0,
     question_two=0,
@@ -16,7 +16,7 @@ aha = Aha(
     question_five=0,
     question_six=0
 )
-elevator = Elevator(
+elevator = Elevator.objects.create(
     is_complete=False,
     question_one=0,
     question_two=0,
@@ -25,7 +25,7 @@ elevator = Elevator(
     question_five=0,
     question_six=0
 )
-survey = Survey(
+survey = Survey.objects.create(
     is_complete=False,
     question_one=0,
     question_two=0,
@@ -34,7 +34,7 @@ survey = Survey(
     question_five=0,
     question_six=0
 )
-feedback = Feedback(
+feedback = Feedback.objects.create(
     is_complete=False,
     question_one=0,
     question_two=0,
@@ -43,7 +43,7 @@ feedback = Feedback(
     question_five=0,
     question_six=0
 )
-research = Research(
+research = Research.objects.create(
     is_complete=False,
     question_one=0,
     question_two=0,
