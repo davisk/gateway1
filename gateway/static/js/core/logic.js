@@ -421,6 +421,7 @@ function beginGame () {
                 beginText(600,10);
                 noText = false;
             }
+            if (userPlayer.x > 570 && userPlayer.x <730 && userPlayer.y < -10 && goToNextGame) switchGame("elevator");
             break;
 /*
         // Elevator

@@ -4,7 +4,10 @@
 
 
 var box_dialogue;
+var score;
+var timeout;
 var dialogue = [];
+var imgs = [];
 
 ///var goToNextGame = false;
 
@@ -26,7 +29,7 @@ function initImages() {
 
 function loadGameConfig() {
 
-    var imgs = [];
+    //var imgs = [];
 
     for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
     
@@ -47,8 +50,8 @@ function loadGameConfig() {
 
 
     // Add our images to the canvas and remove the progress bar
-    for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
-
+    //for (i = 0; i < 2; i++) stage.addChild(imgs[i]);
+    stage.addChild(imgs[0]);
 
 }
 
@@ -82,7 +85,7 @@ function initDialogueConfig() {
 
     dialogue[0].addEventListener("click", function(event) {
         stage.removeChild(dialogue[0]);
-        stage.addChild(dialogue[1]);
+        theGame();
     });
 
     dialogue[1].addEventListener("click", function(event) {
@@ -99,4 +102,15 @@ function initInteraction() {
     initDialogueConfig();
 
     stage.addChild(box_dialogue, dialogue[0]);
+}
+
+function theGame() {
+
+    while(true) {
+        timeout = window.setTimeout(function(){return}, 60000);
+        stage.addChild(imgs[1]);
+        if (userPlayer.x >= 450 && userPlayer.x <= 650 && userPlayer.y >= 10 && userPlayer.y <= 20) {
+            stage.RemoveChild(imgs[1]);
+        }
+    }
 }
