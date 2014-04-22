@@ -1,6 +1,6 @@
 from django.test import TestCase
 from gateway.models.venture import Venture
-from gateway.tests.sample import aha, survey, elevator, feedback, research
+from gateway.tests.sample import aha, survey, elevator, interest, gap
 """Testing that data was stored in the minigame models"""
 """Only tests if data is stored in db and accsessable"""
 """other functions are tested by the framework"""
@@ -17,8 +17,8 @@ class MinigameTestCase(TestCase):
             aha=aha,
             survey=survey,
             elevator=elevator,
-            research=research,
-            feedback=feedback
+            gap=gap,
+            interest=interest
         )
         venture.save()
 
@@ -43,21 +43,21 @@ class MinigameTestCase(TestCase):
         self.assertEqual(elevator.question_four, 0)
         self.assertEqual(elevator.question_five, 0)
 
-    def test_minigame_Feedback(self):
-        self.assertEqual(feedback.question_one, 0)
-        self.assertEqual(feedback.question_two, 0)
-        self.assertEqual(feedback.question_three, 0)
-        self.assertEqual(feedback.question_four, 0)
-        self.assertEqual(feedback.question_five, 0)
-        self.assertEqual(feedback.question_six, 0)
+    def test_minigame_Interest(self):
+        self.assertEqual(interest.question_one, 0)
+        self.assertEqual(interest.question_two, 0)
+        self.assertEqual(interest.question_three, 0)
+        self.assertEqual(interest.question_four, 0)
+        self.assertEqual(interest.question_five, 0)
+        self.assertEqual(interest.question_six, 0)
 
-    def test_minigame_Research(self):
-        self.assertEqual(research.question_one, 0)
-        self.assertEqual(research.question_two, 0)
-        self.assertEqual(research.question_three, 0)
-        self.assertEqual(research.question_four, 0)
-        self.assertEqual(research.question_five, 0)
-        self.assertEqual(research.question_six, 0)
+    def test_minigame_Gap(self):
+        self.assertEqual(gap.question_one, 0)
+        self.assertEqual(gap.question_two, 0)
+        self.assertEqual(gap.question_three, 0)
+        self.assertEqual(gap.question_four, 0)
+        self.assertEqual(gap.question_five, 0)
+        self.assertEqual(gap.question_six, 0)
 
     def test_minigame_Survey(self):
         self.assertEqual(survey.question_one, 0)

@@ -5,13 +5,13 @@ walks the user through how to drum up interest in product
 """
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
-from gateway.models.interest import Interest_Form
+from gateway.models.Interest import Interest_Form
 from gateway.models.venture import Venture
 from django.db import transaction
 
 
 def interest_view(request):
-    """render aha minigame."""
+    """render interest minigame."""
     form = Interest_Form
     minigame = {
         "title": "Interest- Minigame",

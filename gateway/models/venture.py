@@ -55,7 +55,7 @@ class Venture(models.Model):
         db_constraint=False
     )
 
-    Gap = models.ForeignKey(
+    gap = models.ForeignKey(
         Gap,
         db_constraint=False
     )
