@@ -9,7 +9,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -22,7 +22,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -35,7 +35,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -48,7 +48,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -61,7 +61,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -74,7 +74,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -87,7 +87,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -100,7 +100,7 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
 - model: gateway.Venture
   fields:
@@ -113,5 +113,5 @@
     survey: 1
     interest: 1
     elevator: 1
-    Gap: 1
+    gap: 1
 
