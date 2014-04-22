@@ -165,12 +165,14 @@ function initDialogueConfig() {
     dialogue[4].addEventListener("click", function(event) {
         stage.removeChild(dialogue[4]);
         stage.addChild(dialogue[5]);
+        box_dialogue.scaleY = 0.6;  // Text is too big for box at this state
     });
 
     dialogue[5].addEventListener("click", function(event) {
         stage.removeChild(dialogue[5]);
         stage.addChild(dialogue[6]);
-        goToNextGame = true;    // Unlock access to walking to the elevator
+        box_dialogue.scaleY = 0.4;  // Reset it back down
+        goToNextGame = true;        // Unlock access to walking to the elevator
     });
 }
 

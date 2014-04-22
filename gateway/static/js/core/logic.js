@@ -227,7 +227,7 @@ function move (direction) {
 
                 // Aha
                 case canvasIDList[1]:
-                    if (userPlayer.x < 810 && userPlayer.y > 190) {
+                    if (userPlayer.x < 800 && userPlayer.y > 190) {
                         userPlayer.x += 10;
                     } else if (userPlayer.x < 800 && userPlayer.y < 120) {
                         userPlayer.x += 10;
