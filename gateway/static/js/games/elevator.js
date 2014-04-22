@@ -151,8 +151,8 @@ function loadGame() {
             answer_imgs.addEventListener("mouseover", handleMouse);
             answer_imgs.addEventListener("mouseout", handleMouseOut);
             answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
-            answer_imgs[((game_index *2) + i)].y +10, 450 * answer_imgs[((game_index *2) + i)].scaleX -20,
-            500 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            answer_imgs[((game_index *2) + i)].y +10, 500 * answer_imgs[((game_index *2) + i)].scaleX -20,
+            200 * answer_imgs[((game_index *2) + i)].scaleY -20);
             answer_hit[i].cursor = "pointer";
             answer_hit[i].addEventListener("click", handleAnswer);
             answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
@@ -170,8 +170,8 @@ function loadGame() {
             answer_imgs.addEventListener("mouseover", handleMouse);
             answer_imgs.addEventListener("mouseout", handleMouseOut);
             answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
-            answer_imgs[((game_index *2) + i)].y +10, 450 * answer_imgs[((game_index *2) + i)].scaleX -20,
-            500 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            answer_imgs[((game_index *2) + i)].y +10, 500 * answer_imgs[((game_index *2) + i)].scaleX -20,
+            200 * answer_imgs[((game_index *2) + i)].scaleY -20);
             answer_hit[i].cursor = "pointer";
             answer_hit[i].addEventListener("click", handleAnswer);
             answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
