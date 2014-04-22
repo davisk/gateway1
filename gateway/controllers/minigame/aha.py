@@ -13,6 +13,7 @@ from django.db import transaction
 
 def aha_view(request):
     """render aha minigame."""
+    form = Aha_Form
     minigame = {
         "title": "Aha!- Minigame 1",
         "subtitle": "Coming Soon!",
@@ -24,10 +25,19 @@ def aha_view(request):
         'minigame/aha.html',
         dict(minigame=minigame)
     )
-
-
+    """contains temp data for venture currently"""
     with transaction.atomic():
+        venture = Venture(
+            title="Murphee's Irish Coats",
+            image="coat",
+            progress=90,
+            step="1",
+            hook="Bringing the comfort and quality of Traditional Irish coats\
+             to an Online International Exchange"
+        )
         if request.method == 'POST':
-        formset = AuthorFormSet(request.POST, request.FILES)
-        if formset.is_valid():
-            formset.save()
+            form = Aha_Form(request.POST)
+            if form.is_valid():
+                aha = form.save()
+                venture.aha = aha
+                venture.save()
