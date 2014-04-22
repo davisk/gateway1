@@ -85,7 +85,7 @@ function loadGame() {
     imgs[2].x = 800;
     imgs[2].y = 150;
 
-    txt = new createjs.Text("notClicked", "20px Arial", "#000000");
+    txt = new createjs.Text("not Clicked", "32px Arial", "#000000");
     txt.y = 50;
     txt.x = 600;
 

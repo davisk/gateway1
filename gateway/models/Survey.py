@@ -1,6 +1,7 @@
 """survey minigame model information."""
 """Will change based on number of questions"""
 from django.db import models
+from django import forms
 
 
 class Survey(models.Model):
@@ -41,3 +42,10 @@ class Survey(models.Model):
 
     class Meta:
         app_label = 'gateway'
+
+
+class Survey_Form(forms.ModelForm):
+
+    class Meta:
+        model = Survey
+        fields = '__all__'

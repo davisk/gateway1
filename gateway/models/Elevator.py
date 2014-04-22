@@ -1,6 +1,7 @@
 """minigame model information."""
 """Will change based on number of questions"""
 from django.db import models
+from django import forms
 
 
 class Elevator(models.Model):
@@ -43,3 +44,10 @@ class Elevator(models.Model):
 
     class Meta:
         app_label = 'gateway'
+
+
+class Elevator_Form(forms.ModelForm):
+
+    class Meta:
+        model = Elevator
+        fields = '__all__'

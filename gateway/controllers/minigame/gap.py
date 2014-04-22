@@ -5,7 +5,7 @@ assists users in shopping at on of Americas most undervalued retailers
 """
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
-from gateway.models.gap import Gap, Gap_Form
+from gateway.models.Gap import Gap, Gap_Form
 from gateway.models.venture import Venture
 from django.db import transaction
 

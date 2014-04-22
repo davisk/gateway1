@@ -44,3 +44,4 @@ class Aha_Form(forms.ModelForm):
 
     class Meta:
         model = Aha
+        fields = '__all__'

@@ -1,6 +1,7 @@
 """Gap Minigame Information."""
 """Will change based on number of questions"""
 from django.db import models
+from django import forms
 
 
 class Gap(models.Model):
@@ -41,3 +42,10 @@ class Gap(models.Model):
 
     class Meta:
         app_label = 'gateway'
+
+
+class Gap_Form(forms.ModelForm):
+
+    class Meta:
+        model = Gap
+        fields = '__all__'

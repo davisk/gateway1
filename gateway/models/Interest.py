@@ -1,6 +1,7 @@
 """Start minigame information."""
 """Will change based on number of questions"""
 from django.db import models
+from django import forms
 
 
 class Interest(models.Model):
@@ -37,3 +38,10 @@ class Interest(models.Model):
 
     class Meta:
         app_label = 'gateway'
+
+
+class Interest_Form(forms.ModelForm):
+
+    class Meta:
+        model = Interest
+        fields = '__all__'
