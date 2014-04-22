@@ -91,7 +91,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
         'OPTIONS': {
-            #"init_command" : "SET storage_engine=INNODB",
+            
         }
     }
 }
