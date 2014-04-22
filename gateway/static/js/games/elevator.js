@@ -106,6 +106,11 @@ function loadGame() {
     imgs[2].x = 800;
     imgs[2].y = 150;
 
+    var monologue_hit = new createjs.Shape();
+    var answer_hit = [];
+    answer_hit[0] = new createjs.Shape();
+    answer_hit[1] = new createjs.Shape();
+
     txt = new createjs.Text("not Clicked", "32px Arial", "#000000");
     txt.y = 50;
     txt.x = 600;
@@ -129,10 +134,10 @@ function loadGame() {
     }
 
     function handleMouse(event) {
-        event.target.alpha = 0.75;
+        event.target.alpha = 0.5;
     }
     function handleMouseOut(event) {
-        event.target.alpha = 1;
+        event.target.alpha = 0;
     }
 
 
@@ -143,10 +148,16 @@ function loadGame() {
             answer_imgs[((game_index *2) + i)].scaleX = imgs[3].scaleX;
             answer_imgs[((game_index *2) + i)].x =imgs[3].x + 75 + (i * 100);
             answer_imgs[((game_index *2) + i)].y =imgs[3].y;
-            answer_imgs[((game_index *2) + i)].addEventListener("mouseover", handleMouse);
-            answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer);
-            answer_imgs[((game_index *2) + i)].addEventListener("mouseout", handleMouseOut);
-            stage.addChild(answer_imgs[(((game_index) *2) + i)]);
+            answer_imgs.addEventListener("mouseover", handleMouse);
+            answer_imgs.addEventListener("mouseout", handleMouseOut);
+            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
+            answer_imgs[((game_index *2) + i)].y +10, 450 * answer_imgs[((game_index *2) + i)].scaleX -20,
+            500 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            answer_hit[i].cursor = "pointer";
+            answer_hit[i].addEventListener("click", handleAnswer);
+            answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
+            stage.addChild(answer_hit[i]);
+            stage.addChild(answer_imgs[((game_index *2) + i)]);
         }
     }
 
@@ -156,10 +167,16 @@ function loadGame() {
             answer_imgs[i].scaleX = imgs[3].scaleX;
             answer_imgs[i].x =imgs[3].x + 75 +(i * 100);
             answer_imgs[i].y =imgs[3].y;
-            answer_imgs[i].addEventListener("mouseover", handleMouse);
-            answer_imgs[i].addEventListener("click", handleAnswer);
-            answer_imgs[i].addEventListener("mouseout", handleMouseOut);
-            stage.addChild(answer_imgs[(((game_index) *2) + i)]);
+            answer_imgs.addEventListener("mouseover", handleMouse);
+            answer_imgs.addEventListener("mouseout", handleMouseOut);
+            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
+            answer_imgs[((game_index *2) + i)].y +10, 450 * answer_imgs[((game_index *2) + i)].scaleX -20,
+            500 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            answer_hit[i].cursor = "pointer";
+            answer_hit[i].addEventListener("click", handleAnswer);
+            answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
+            stage.addChild(answer_hit[i]);
+            stage.addChild(answer_imgs[((game_index *2) + i)]);
         }
     }
 
@@ -168,20 +185,30 @@ function loadGame() {
         initial_monologue[0].scaleX = imgs[4].scaleX;
         initial_monologue[0].x =imgs[4].x;
         initial_monologue[0].y =imgs[4].y;
-        initial_monologue[0].cursor = "pointer";
-        initial_monologue[0].on("click", handleMonologue);
-        stage.addChild(initial_monologue[monologue_index]);
+        monologue_hit.graphics.beginFill("#FFFFFF").drawRect(initial_monologue[0].x +10, initial_monologue[0].y +10,
+        450 * initial_monologue[0].scaleX -20, 500 * initial_monologue[0].scaleY -20);
+        monologue_hit.cursor = "pointer";
+        monologue_hit.addEventListener("click", handleMonologue);
+        initial_monologue[0].addEventListener("click", handleMonologue);
+        stage.addChild(monologue_hit);
+        stage.addChild(initial_monologue[0]);
+        
     }
 
     function updateMonologue() {
         if(initial_monologue <= monologue_index) {
             initial_monologue[monologue_index -1].clear();
+            hit.clear();
             initial_monologue[monologue_index].scaleY = imgs[4].scaleY;
             initial_monologue[monologue_index].scaleX = imgs[4].scaleX;
             initial_monologue[monologue_index].x =imgs[4].x;
             initial_monologue[monologue_index].y =imgs[4].y;
-            initial_monologue[monologue_index].cursor = "pointer";
-            initial_monologue[monologue_index].on("click", handleMonologue);
+            monologue_hit.graphics.beginFill("#FFFFFF").drawRect(initial_monologue[monologue_index].x +10, initial_monologue[monologue_index].y +10,
+            450 * initial_monologue[monologue_index].scaleX -20, 500 * initial_monologue[monologue_index].scaleY -20);
+            monologue_hit.cursor = "pointer";
+            monologue_hit.addEventListener("click", handleMonologue);
+            initial_monologue[monologue_index].addEventListener("click", handleMonologue);
+            stage.addChild(monologue_hit);
             stage.addChild(initial_monologue[monologue_index]);
         }
         else {
