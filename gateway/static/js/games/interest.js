@@ -3,7 +3,7 @@
 */
 
 
-var txtbox;
+var box_dialogue;
 var dialogue = [];
 
 ///var goToNextGame = false;
@@ -17,10 +17,10 @@ function initImages() {
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene5_init.png"},
         {id: "game_npc", src: "/static/sprites/Dash_2.png"},
-        {id: "thebox", src: "/static/sprites/Textbox2.png"},
-        {id: "int_txtbox", src: "/static/sprites/s5_text/s5_1.png"},
-        {id: "sec_txtbox", src: "/static/sprites/s5_text/s5_2.png"},
-        {id: "lst_txtbox", src: "/static/sprites/s5_text/s5_3.png"}
+        {id: "box_dialogue", src: "/static/sprites/Textbox2.png"},
+        {id: "dialogue1", src: "/static/sprites/s5_text/s5_1.png"},
+        {id: "dialogue2", src: "/static/sprites/s5_text/s5_2.png"},
+        {id: "dialogue3", src: "/static/sprites/s5_text/s5_3.png"}
     ];
 }
 
@@ -41,8 +41,9 @@ function loadGameConfig() {
     imgs[1].scaleX = 0.8;
     imgs[1].scaleY = 0.8;
 
-    txtbox = imgs[2];
-    for (i = 4; i < 11; i++) dialogue.push(imgs[i]);
+    box_dialogue = imgs[2];
+
+    for (i = 3; i < 6; i++) dialogue.push(imgs[i]);
 
 
     // Add our images to the canvas and remove the progress bar
@@ -63,10 +64,10 @@ function getStartingPlayerConfig() {
 
 function initTextBoxConfig() {
 
-    txtbox.x = 950;
-    txtbox.y = 50;
-    txtbox.scaleX = 1.06;
-    txtbox.scaleY = 0.55;
+    box_dialogue.x = 950;
+    box_dialogue.y = 50;
+    box_dialogue.scaleX = 1.06;
+    box_dialogue.scaleY = 0.55;
 }
 
 function initDialogueConfig() {
@@ -97,5 +98,5 @@ function initInteraction() {
 
     initDialogueConfig();
 
-    stage.addChild(txtbox, dialogue[0]);
+    stage.addChild(box_dialogue, dialogue[0]);
 }

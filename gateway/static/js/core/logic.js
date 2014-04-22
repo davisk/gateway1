@@ -137,9 +137,9 @@ function move (direction) {
                 // Inter
                 case canvasIDList[4]:
 
-                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                    //if (userPlayer.x >= 70 && userPlayer.x <=1340 && userPlayer.y >= 0 && userPlayer.yy <100) {
                         userPlayer.x -= 10;
-                    }
+                    //}
                     break;
 
                 // Elev
@@ -207,11 +207,11 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    if (userPlayer.y > 300) {
+                   // if (userPlayer.y > 300) {
                         userPlayer.y -= 10;
-                    } else if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 130 || goToNextGame) {
-                        userPlayer.y -= 10;
-                    }
+                   // } else if (userPlayer.x > 590 && userPlayer.x < 1340 && userPlayer.y > 200 || goToNextGame) {
+                   //     userPlayer.y -= 10;
+                   // }
                         
                     break;
 
@@ -283,9 +283,9 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                    //if (userPlayer.x >= 70 && userPlayer.x <=1340 && userPlayer.y >= 0 && userPlayer.y <700) {
                         userPlayer.x += 10;
-                    }
+                   // }
                     break;
 
                 // Elev
@@ -351,9 +351,9 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                   // if (userPlayer.x >= 70 && userPlayer.x <=1340 && userPlayer.y >= 0 && userPlayer.yy <100) {
                     userPlayer.y += 10;
-                    }
+                   // }
                     break;
 
                 // Elev
