@@ -11,12 +11,12 @@ from django.db import transaction
 
 
 def elevator_view(request):
-    """render aha minigame."""
+    """render elevator_view(request) minigame."""
     form = Elevator_Form
     minigame = {
-        "title": "Aha!- Minigame 1",
+        "title": "Elevator- Minigame",
         "subtitle": "Coming Soon!",
-        "is_aha": "active"
+        "is_elevator": "active"
     }
 
     return render(
@@ -38,5 +38,5 @@ def elevator_view(request):
             form = Elevator_Form(request.POST)
             if form.is_valid():
                 elevator = form.save()
-                venture.aha = elevator
+                venture.elevator = elevator
                 venture.save()

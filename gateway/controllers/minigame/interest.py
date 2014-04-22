@@ -5,23 +5,23 @@ walks the user through how to drum up interest in product
 """
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
-from gateway.models.interest import interest, Interest_Form
+from gateway.models.interest import Interest_Form
 from gateway.models.venture import Venture
 from django.db import transaction
 
 
-def elevator_view(request):
+def interest_view(request):
     """render aha minigame."""
     form = Interest_Form
     minigame = {
-        "title": "Aha!- Minigame 1",
+        "title": "Interest- Minigame",
         "subtitle": "Coming Soon!",
-        "is_aha": "active"
+        "is_interest": "active"
     }
 
     return render(
         request,
-        'minigame/elevator.html',
+        'minigame/interest.html',
         dict(minigame=minigame)
     )
     """contains temp data for venture currently"""
@@ -37,6 +37,6 @@ def elevator_view(request):
         if request.method == 'POST':
             form = Interest_Form(request.POST)
             if form.is_valid():
-                elevator = form.save()
-                venture.aha = elevator
+                interest = form.save()
+                venture.interest = interest
                 venture.save()

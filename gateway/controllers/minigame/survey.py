@@ -5,16 +5,16 @@ this minigame shows user how to survey potential customers
 """
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render
-from gateway.models.Survey import survey, Survey_Form
+from gateway.models.Survey import Survey_Form
 from gateway.models.venture import Venture
 from django.db import transaction
 
 
-def elevator_view(request):
-    """render aha minigame."""
+def survey_view(request):
+    """render survey minigame."""
     form = Survey_Form
     minigame = {
-        "title": "Aha!- Minigame 1",
+        "title": "survey - Minigame ",
         "subtitle": "Coming Soon!",
         "is_aha": "active"
     }
@@ -37,6 +37,6 @@ def elevator_view(request):
         if request.method == 'POST':
             form = Survey_Form(request.POST)
             if form.is_valid():
-                elevator = form.save()
-                venture.aha = elevator
+                survey = form.save()
+                venture.survey = survey
                 venture.save()

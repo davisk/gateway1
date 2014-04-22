@@ -14,16 +14,10 @@ from django.db import transaction
 def aha_view(request):
     """render aha minigame."""
     form = Aha_Form
-    minigame = {
-        "title": "Aha!- Minigame 1",
-        "subtitle": "Coming Soon!",
-        "is_aha": "active"
-    }
 
     return render(
         request,
-        'minigame/aha.html',
-        dict(minigame=minigame)
+        'minigame/aha.html'
     )
     """contains temp data for venture currently"""
     with transaction.atomic():
