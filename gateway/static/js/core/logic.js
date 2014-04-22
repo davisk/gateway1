@@ -60,7 +60,7 @@ var gamestate = {
     }
 };
 
-var db = new PouchDB('dbname');
+/*var db = new PouchDB('dbname');
 
 db.put(gamestate);
 
@@ -70,10 +70,11 @@ db.changes({
     }
 });
 
+
 var venturename = 'test';
 
 db.replicate.to('localhost:9000/database/' + venturename);
-
+*/
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
@@ -135,7 +136,10 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    userPlayer.x -= 10;
+
+                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                        userPlayer.x -= 10;
+                    }
                     break;
 
                 // Elev
@@ -203,12 +207,19 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    userPlayer.y -= 10;
+                    if (userPlayer.y > 300) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x > 590 && userPlayer.x < 710 && userPlayer.y > 130 || goToNextGame) {
+                        userPlayer.y -= 10;
+                    }
+                        
                     break;
 
                 // Elev
                 case canvasIDList[5]:
-                    userPlayer.y -= 10;
+                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                        userPlayer.y -= 10;
+                    }
                     break;
 
                 // End
@@ -272,7 +283,9 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    userPlayer.x += 10;
+                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                        userPlayer.x += 10;
+                    }
                     break;
 
                 // Elev
@@ -338,7 +351,9 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
+                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
                     userPlayer.y += 10;
+                    }
                     break;
 
                 // Elev
@@ -399,11 +414,15 @@ function beginGame () {
                 noText = false;
             }
             break;
-/*
+
         // Interest
         case canvasIDList[4]:
+            if (userPlayer.x >= 640 && userPlayer.x <= 960 && userPlayer.y >=0 && userPlayer.y <= 20 && noText) {
+                beginText(600,10);
+                noText = false;
+            }
             break;
-
+/*
         // Elevator
         case canvasIDList[5]:
             break;

@@ -4,7 +4,9 @@
 
 
 var txtbox;
-var goToNextGame = false;
+var dialogue = [];
+
+///var goToNextGame = false;
 
 function getCanvasId() {
     return "interCanvas";
@@ -15,7 +17,10 @@ function initImages() {
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene5_init.png"},
         {id: "game_npc", src: "/static/sprites/Dash_2.png"},
-        {id: "int_txtbox", src: "/static/sprites/Textbox.png"}
+        {id: "thebox", src: "/static/sprites/Textbox2.png"},
+        {id: "int_txtbox", src: "/static/sprites/s5_text/s5_1.png"},
+        {id: "sec_txtbox", src: "/static/sprites/s5_text/s5_2.png"},
+        {id: "lst_txtbox", src: "/static/sprites/s5_text/s5_3.png"}
     ];
 }
 
@@ -37,7 +42,7 @@ function loadGameConfig() {
     imgs[1].scaleY = 0.8;
 
     txtbox = imgs[2];
-    //txtbox = imgs[3];
+    for (i = 4; i < 11; i++) dialogue.push(imgs[i]);
 
 
     // Add our images to the canvas and remove the progress bar
@@ -56,21 +61,41 @@ function getStartingPlayerConfig() {
     };
 }
 
+function initTextBoxConfig() {
+
+    txtbox.x = 950;
+    txtbox.y = 50;
+    txtbox.scaleX = 1.06;
+    txtbox.scaleY = 0.55;
+}
+
+function initDialogueConfig() {
+
+    for (i = 0; i < dialogue.length; i++) {
+        dialogue[i].x = 950;
+        dialogue[i].y = 50;
+        dialogue[i].scaleY = 0.6;
+        dialogue[i].scaleX = 0.8;
+
+    }
+
+    dialogue[0].addEventListener("click", function(event) {
+        stage.removeChild(dialogue[0]);
+        stage.addChild(dialogue[1]);
+    });
+
+    dialogue[1].addEventListener("click", function(event) {
+        stage.removeChild(dialogue[1]);
+        stage.addChild(dialogue[2]);
+        goToNextGame = true;
+    });
+}
+
 function initInteraction() {
 
-    txtbox.x = 200;
-    txtbox.y = 475;
-    txtbox.scaleX = 1;
-    txtbox.scaleY = 0.5;
+    initTextBoxConfig();
 
-    goToNextGame = true;
+    initDialogueConfig();
 
-    stage.addChild(txtbox);
-    stage.update();
-
+    stage.addChild(txtbox, dialogue[0]);
 }
-
-function switchGame() {
-    window.location = window.location.protocol + "//" + window.location.host + "/" + "minigame/elevator";
-}
-
