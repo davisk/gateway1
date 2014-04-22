@@ -21,7 +21,7 @@ def gap_view(request):
 
     return render(
         request,
-        'minigame/elevator.html',
+        'minigame/gap.html',
         dict(minigame=minigame)
     )
     """contains temp data for venture currently"""

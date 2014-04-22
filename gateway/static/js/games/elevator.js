@@ -15,30 +15,46 @@ function initImages() {
         {id: "user_back", src: "/static/sprites/user_back3.png"}, //2
         {id: "answer_text", src: "/static/sprites/Textbox.png"},//3
         {id: "question_text", src: "/static/sprites/Textbox2.png"},//4
-        {id: "question_one", src: "/static/sprites/s2_text/s2_1.png"},
-        {id: "answer_one", src: "/static/sprites/s2_text/s2_a1.png"},
-        {id: "answer_two", src: "/static/sprites/s2_text/s2_a2.png"}
-        
+        {id: "monologue_one", src: "/static/sprites/s6_text/s6_1.png"},//5
+        {id: "monologue_two", src: "/static/sprites/s6_text/s6_2.png"},//6
+        {id: "monologue_three", src: "/static/sprites/s6_text/s6_3.png"},//7
+        {id: "monologue_four", src: "/static/sprites/s6_text/s6_4.png"},//8
+        {id: "monologue_five", src: "/static/sprites/s6_text/s6_5.png"},//9
+        {id: "monologue_six", src: "/static/sprites/s6_text/s6_6.png"},//10
+        {id: "monologue_seven", src: "/static/sprites/s6_text/s6_7.png"},//11
+        {id: "monologue_eight", src: "/static/sprites/s6_text/s6_8.png"},//12
+        {id: "monologue_nine", src: "/static/sprites/s6_text/s6_9.png"},//13
+        {id: "monologue_ten", src: "/static/sprites/s6_text/s6_10.png"},//14
+        {id: "question_one", src: "/static/sprites/s6_text/s6_q1.png"},//15
+        {id: "question_two", src: "/static/sprites/s6_text/s6_q2.png"},//16
+        {id: "question_three", src: "/static/sprites/s6_text/s6_q3.png"},//17
+        {id: "question_one_a1", src: "/static/sprites/s6_text/s6_q1_1.png"},//18
+        {id: "question_one_a2", src: "/static/sprites/s6_text/s6_q1_2.png"},//19
+        {id: "question_two_a1", src: "/static/sprites/s6_text/s6_q2_1.png"},//20
+        {id: "question_two_a2", src: "/static/sprites/s6_text/s6_q2_2.png"},//21
+        {id: "question_three_a1", src: "/static/sprites/s6_text/s6_q3_1.png"},//22
+        {id: "question_three_a2", src: "/static/sprites/s6_text/s6_q3_2.png"}//23
     ];
 }
 
 function loadGame() {
 
-    stage.enableMouseOver(20);
+    stage.enableMouseOver(60);
 
     game_index = 0;
+    monologue_index = 0;
+
     answer_text_y = canvas.height - (canvas.height * 0.40);
     answer_text_x = canvas.width / 4.5;
     answer_text_width =  100;
-  
 
     question_text_y = canvas.height - (canvas.height * 0.40);
     question_text_x = canvas.width / 5;
     question_text_width =  100;
 
-
     var question_number = 0;
     var answers = [];
+    var initial_monologue = [];
     var answer_imgs = [];
     var question_imgs = [];
     var imgs = [];
@@ -48,12 +64,17 @@ function loadGame() {
         imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
     }
     n = 0;
-    for (i = 5; i < 6; i++) {
+    for (i = 5; i < 14; i++) {
+        initial_monologue[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
+        n++;
+    }
+    n = 0;
+    for (i = 14; i < 17; i++) {
         question_imgs[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
         n++;
     }
     n = 0;
-    for (i = 6; i < 8; i++) {
+    for (i = 17; i < 22; i++) {
         answer_imgs[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
         n++;
     }
@@ -85,13 +106,18 @@ function loadGame() {
     imgs[2].x = 800;
     imgs[2].y = 150;
 
+    var monologue_hit = new createjs.Shape();
+    var answer_hit = [];
+    answer_hit[0] = new createjs.Shape();
+    answer_hit[1] = new createjs.Shape();
+
     txt = new createjs.Text("not Clicked", "32px Arial", "#000000");
     txt.y = 50;
     txt.x = 600;
 
     stage.addChild(txt);
 
-    function handleAnswer(event) {
+    function handleAnswer() {
        // answers[game_index] = event.target.index;
        // game_index++;
         txt.Text = "clicked";
@@ -100,12 +126,20 @@ function loadGame() {
         stage.update();
     }
 
+    function handleMonologue(){
+        monologue_index++;
+        txt.Text = "clicked";
+//        updateMonologue();
+        stage.update();
+    }
+
     function handleMouse(event) {
-        event.target.alpha = 0.75;
+        event.target.alpha = 0.5;
     }
     function handleMouseOut(event) {
-        event.target.alpha = 1;
+        event.target.alpha = 0;
     }
+
 
     function updateAnswer(){
         for(i = 0; i < 2; i++) {
@@ -114,10 +148,16 @@ function loadGame() {
             answer_imgs[((game_index *2) + i)].scaleX = imgs[3].scaleX;
             answer_imgs[((game_index *2) + i)].x =imgs[3].x + 75 + (i * 100);
             answer_imgs[((game_index *2) + i)].y =imgs[3].y;
-            answer_imgs[((game_index *2) + i)].addEventListener("mouseover", handleMouse);
-            answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer);
-            answer_imgs[((game_index *2) + i)].addEventListener("mouseout", handleMouseOut);
-            stage.addChild(answer_imgs[(((game_index) *2) + i)]);
+            answer_imgs.addEventListener("mouseover", handleMouse);
+            answer_imgs.addEventListener("mouseout", handleMouseOut);
+            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
+            answer_imgs[((game_index *2) + i)].y +10, 450 * answer_imgs[((game_index *2) + i)].scaleX -20,
+            500 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            answer_hit[i].cursor = "pointer";
+            answer_hit[i].addEventListener("click", handleAnswer);
+            answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
+            stage.addChild(answer_hit[i]);
+            stage.addChild(answer_imgs[((game_index *2) + i)]);
         }
     }
 
@@ -127,10 +167,54 @@ function loadGame() {
             answer_imgs[i].scaleX = imgs[3].scaleX;
             answer_imgs[i].x =imgs[3].x + 75 +(i * 100);
             answer_imgs[i].y =imgs[3].y;
-            answer_imgs[i].addEventListener("mouseover", handleMouse);
-            answer_imgs[i].addEventListener("click", handleAnswer);
-            answer_imgs[i].addEventListener("mouseout", handleMouseOut);
-            stage.addChild(answer_imgs[(((game_index) *2) + i)]);
+            answer_imgs.addEventListener("mouseover", handleMouse);
+            answer_imgs.addEventListener("mouseout", handleMouseOut);
+            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
+            answer_imgs[((game_index *2) + i)].y +10, 450 * answer_imgs[((game_index *2) + i)].scaleX -20,
+            500 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            answer_hit[i].cursor = "pointer";
+            answer_hit[i].addEventListener("click", handleAnswer);
+            answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
+            stage.addChild(answer_hit[i]);
+            stage.addChild(answer_imgs[((game_index *2) + i)]);
+        }
+    }
+
+    function setMonoloque(){
+        initial_monologue[0].scaleY = imgs[4].scaleY;
+        initial_monologue[0].scaleX = imgs[4].scaleX;
+        initial_monologue[0].x =imgs[4].x;
+        initial_monologue[0].y =imgs[4].y;
+        monologue_hit.graphics.beginFill("#FFFFFF").drawRect(initial_monologue[0].x +10, initial_monologue[0].y +10,
+        450 * initial_monologue[0].scaleX -20, 500 * initial_monologue[0].scaleY -20);
+        monologue_hit.cursor = "pointer";
+        monologue_hit.addEventListener("click", handleMonologue);
+        initial_monologue[0].addEventListener("click", handleMonologue);
+        stage.addChild(monologue_hit);
+        stage.addChild(initial_monologue[0]);
+        
+    }
+
+    function updateMonologue() {
+        if(initial_monologue <= monologue_index) {
+            initial_monologue[monologue_index -1].clear();
+            hit.clear();
+            initial_monologue[monologue_index].scaleY = imgs[4].scaleY;
+            initial_monologue[monologue_index].scaleX = imgs[4].scaleX;
+            initial_monologue[monologue_index].x =imgs[4].x;
+            initial_monologue[monologue_index].y =imgs[4].y;
+            monologue_hit.graphics.beginFill("#FFFFFF").drawRect(initial_monologue[monologue_index].x +10, initial_monologue[monologue_index].y +10,
+            450 * initial_monologue[monologue_index].scaleX -20, 500 * initial_monologue[monologue_index].scaleY -20);
+            monologue_hit.cursor = "pointer";
+            monologue_hit.addEventListener("click", handleMonologue);
+            initial_monologue[monologue_index].addEventListener("click", handleMonologue);
+            stage.addChild(monologue_hit);
+            stage.addChild(initial_monologue[monologue_index]);
+        }
+        else {
+            initial_monologue[monologue_index].clear();
+            setQuestion();
+            setAnswer();
         }
     }
 
@@ -164,10 +248,7 @@ function loadGame() {
     */
     //make external text array as global variable call on that and make questions from that?
     //make event handler in reference to main
-
-    setAnswer();
-    setQuestion();
-
+    setMonoloque();
     stage.update();
 }
    // Set our user image and location to the global variable

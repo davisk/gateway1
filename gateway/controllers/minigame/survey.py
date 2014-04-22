@@ -21,7 +21,7 @@ def survey_view(request):
 
     return render(
         request,
-        'minigame/elevator.html',
+        'minigame/survey.html',
         dict(minigame=minigame)
     )
     """contains temp data for venture currently"""
