@@ -7,6 +7,7 @@ from gateway.tests.sample import aha, survey, elevator, interest, gap
 
 
 class MinigameTestCase(TestCase):
+
     def setUp(self):
         venture = Venture(
             title="Please Work",
