@@ -197,8 +197,12 @@ function initAnswersConfig() {
         answers[i].scaleX = 0.8;
     }
 
+    /**
+     * So Travis said I can't make these in a loop. F*** off
+     */
+
     // Questions 1-3 (Currently not saving which is chosen, so can give them each the same functionality)
-    for (i = 0; i < 3; i++) {
+    /*for (i = 0; i < 3; i++) {
         answers[i].addEventListener("click", function(event) {
             stage.removeChild(answers[0], answers[1], answers[2]);
             stage.addChild(answers[3], answers[4], answers[5]);
@@ -219,7 +223,55 @@ function initAnswersConfig() {
             stage.removeChild(answers[6], answers[7], answers[8], box_answers, dialogue[3]);
             stage.addChild(dialogue[4]);
         }, false);
-    }
+    }*/
+
+    // Questions 1-3 (Currently not saving which is chosen, so can give them each the same functionality)
+    answers[0].addEventListener("click", function(event) {
+        stage.removeChild(answers[0], answers[1], answers[2]);
+        stage.addChild(answers[3], answers[4], answers[5]);
+    }, false);
+
+    answers[1].addEventListener("click", function(event) {
+        stage.removeChild(answers[0], answers[1], answers[2]);
+        stage.addChild(answers[3], answers[4], answers[5]);
+    }, false);
+
+    answers[2].addEventListener("click", function(event) {
+        stage.removeChild(answers[0], answers[1], answers[2]);
+        stage.addChild(answers[3], answers[4], answers[5]);
+    }, false);
+
+    // Questions 4-6
+    answers[3].addEventListener("click", function(event) {
+        stage.removeChild(answers[3], answers[4], answers[5]);
+        stage.addChild(answers[6], answers[7], answers[8]);
+    }, false);
+
+    answers[4].addEventListener("click", function(event) {
+        stage.removeChild(answers[3], answers[4], answers[5]);
+        stage.addChild(answers[6], answers[7], answers[8]);
+    }, false);
+
+    answers[5].addEventListener("click", function(event) {
+        stage.removeChild(answers[3], answers[4], answers[5]);
+        stage.addChild(answers[6], answers[7], answers[8]);
+    }, false);
+
+    // Questions 7-9
+    answers[6].addEventListener("click", function(event) {
+        stage.removeChild(answers[6], answers[7], answers[8], box_answers, dialogue[3]);
+        stage.addChild(dialogue[4]);
+    }, false);
+
+    answers[7].addEventListener("click", function(event) {
+        stage.removeChild(answers[6], answers[7], answers[8], box_answers, dialogue[3]);
+        stage.addChild(dialogue[4]);
+    }, false);
+
+    answers[8].addEventListener("click", function(event) {
+        stage.removeChild(answers[6], answers[7], answers[8], box_answers, dialogue[3]);
+        stage.addChild(dialogue[4]);
+    }, false);
 }
 
 /**
