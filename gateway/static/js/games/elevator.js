@@ -112,7 +112,7 @@ function loadGame() {
 
     stage.addChild(txt);
 
-    function handleAnswer(event) {
+    function handleAnswer() {
        // answers[game_index] = event.target.index;
        // game_index++;
         txt.Text = "clicked";
@@ -121,10 +121,10 @@ function loadGame() {
         stage.update();
     }
 
-    function handleMonologue(event){
+    function handleMonologue(){
         monologue_index++;
         txt.Text = "clicked";
-        updateMonologue();
+//        updateMonologue();
         stage.update();
     }
 
