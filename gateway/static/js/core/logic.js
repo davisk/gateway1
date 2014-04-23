@@ -425,12 +425,12 @@ function beginGame () {
 
         // Survey
         case canvasIDList[3]:
-            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {
+            if (userPlayer.x >= 940 && userPlayer.x <= 960 && userPlayer.y >= -10 && userPlayer.y <= 30 && noText) {
                 beginText(1130,35);
                 noText = false;
             }
 
-            if (userPlayer.x > 690 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("interest");
+            if (userPlayer.x > 590 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("interest");
             break;
 
         // Interest
