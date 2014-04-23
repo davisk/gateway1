@@ -21,6 +21,8 @@ install:
 
 # setup mysql
 before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - mysql -e 'create database gateway;'
   - mysqladmin -u root password "root"
   - python manage.py syncdb --noinput
