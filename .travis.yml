@@ -16,7 +16,7 @@ node_js:
 # command to install dependencies
 install:
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
-  - npm install production
+  - npm install
 
 addons:
   firefox: "31.1"
