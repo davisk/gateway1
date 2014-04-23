@@ -144,15 +144,35 @@ function createPlayer() {
 
     // Define the specific sprite sheet data
     var spriteData = new createjs.SpriteSheet({
+
+        //framerate: 2,
+
         images: ["/static/sprites/Sprite_Sheet.png"],
         frames: {width: 100, height: 200, regX: 0, regY: 0},
+        
+
+
         animations: {
             right1: {frames: [1], next: "right2", speed: 2},
             right2: {frames: [2], next: "right1", speed: 2},
+            //right3: {frames: [2], next: "right1", speed: 2},
+            //right2: {frames: [1], next: "right3", speed: 2},
+            //right3: {frames: [2], next: "right1", speed: 2},
             left1: {frames: [3], next: "left2", speed: 2},
             left2: {frames: [4], next: "left1", speed: 2},
+            //left3: {frames: [3], next: "left1", speed: 2},
+            //left2: {frames: [4], next: "left3", speed: 2},
+            //left3: {frames: [5], next: "left1", speed: 2},
             down1: {frames: [6], next: "down2", speed: 2},
-            down2: {frames: [7], next: "down1", speed: 2}
+            down2: {frames: [7], next: "dow1", speed: 2},
+            //down3: {frames: [6], next: "down1", speed: 2},
+            //down2: {frames: [7], next: "down3", speed: 2},
+            //down3: {frames: [8], next: "down1", speed: 2},
+            up1: {frames: [9], next: "up2", speed: 2},
+            up2: {frames: [10], next: "up1", speed: 2},
+            //up3: {frames: [9], next: "up1", speed:2}
+            //up2:   {frames: [10], next: "up3", speed: 2},
+            //up3:   {frames: [11], next: "up1", speed: 2}
         }
     });
 

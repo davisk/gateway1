@@ -166,10 +166,10 @@ function move (direction) {
             // Ugly way to handle sprite animation :(
             // We also don't have sprites for up animation
             if (moving === false) {
-                userPlayer.gotoAndPlay("down1");
+                userPlayer.gotoAndPlay("up1");
                 moving = true;
             } else {
-                userPlayer.gotoAndPlay("down2");
+                userPlayer.gotoAndPlay("up2");
                 moving = false;
             }
 
