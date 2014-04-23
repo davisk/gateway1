@@ -100,7 +100,7 @@ function getStartingPlayerConfig() {
 function initTextBoxConfig() {
 
     // Text box sizes and positions
-    box_dialogue.x = 950;
+    box_dialogue.x = 200;
     box_dialogue.y = 50;
     box_dialogue.scaleY = 0.6;
     box_dialogue.scaleX = 0.8;
@@ -115,7 +115,7 @@ function initDialogueConfig() {
 
     // Dialogue text sizes and positions
     for (i = 0; i < dialogue.length; i++) {
-        dialogue[i].x = 950;
+        dialogue[i].x = 200;
         dialogue[i].y = 50;
         dialogue[i].scaleY = 0.6;
         dialogue[i].scaleX = 0.8;
