@@ -180,6 +180,7 @@ function loadGame() {
        answers[game_index] = 2;
 //       event.target.mouseEnabled = false;
        game_index++;
+       stage.removeChild(imgs[3]);
        showInterlude();
        stage.update();
     }
