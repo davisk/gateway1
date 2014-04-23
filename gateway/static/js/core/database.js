@@ -23,11 +23,7 @@ var gamestate = {
         question5: null
     },
     elevator: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
+        final_answers: [0,0,0]
     },
     gap: {
         question1: null,
@@ -48,7 +44,13 @@ var gamestate = {
     }
 };
 
-score.watch();
+score.watch(score, function() {
+    gamestate.interest.score = score;
+});
+
+final_answers.watch(final_answers, function(){
+    gamestate.elevator.final_answers = final_answers;
+});
 
 var db = new PouchDB(ventureName);
 
