@@ -1,7 +1,8 @@
 /*
     These are specific functions that DIFFER between games
 */
-
+/* storing answer values */
+var final_answers;
 
 function getCanvasId() {
     return "elevCanvas";
@@ -25,15 +26,16 @@ function initImages() {
         {id: "monologue_eight", src: "/static/sprites/s6_text/s6_8.png"},//12
         {id: "monologue_nine", src: "/static/sprites/s6_text/s6_9.png"},//13
         {id: "monologue_ten", src: "/static/sprites/s6_text/s6_10.png"},//14
-        {id: "question_one", src: "/static/sprites/s6_text/s6_q1.png"},//15
-        {id: "question_two", src: "/static/sprites/s6_text/s6_q2.png"},//16
-        {id: "question_three", src: "/static/sprites/s6_text/s6_q3.png"},//17
-        {id: "question_one_a1", src: "/static/sprites/s6_text/s6_q1_1.png"},//18
-        {id: "question_one_a2", src: "/static/sprites/s6_text/s6_q1_2.png"},//19
-        {id: "question_two_a1", src: "/static/sprites/s6_text/s6_q2_1.png"},//20
-        {id: "question_two_a2", src: "/static/sprites/s6_text/s6_q2_2.png"},//21
-        {id: "question_three_a1", src: "/static/sprites/s6_text/s6_q3_1.png"},//22
-        {id: "question_three_a2", src: "/static/sprites/s6_text/s6_q3_2.png"}//23
+        {id: "monologue_eleven", src: "/static/sprites/s6_text/s6_11.png"},//15
+        {id: "question_one", src: "/static/sprites/s6_text/s6_q1.png"},//16
+        {id: "question_two", src: "/static/sprites/s6_text/s6_q2.png"},//17
+        {id: "question_three", src: "/static/sprites/s6_text/s6_q3.png"},//18
+        {id: "question_one_a1", src: "/static/sprites/s6_text/s6_q1_1.png"},//19
+        {id: "question_one_a2", src: "/static/sprites/s6_text/s6_q1_2.png"},//20
+        {id: "question_two_a1", src: "/static/sprites/s6_text/s6_q2_1.png"},//21
+        {id: "question_two_a2", src: "/static/sprites/s6_text/s6_q2_2.png"},//22
+        {id: "question_three_a1", src: "/static/sprites/s6_text/s6_q3_1.png"},//23
+        {id: "question_three_a2", src: "/static/sprites/s6_text/s6_q3_2.png"}//24
     ];
 }
 
@@ -52,6 +54,8 @@ function loadGame() {
     question_text_x = canvas.width / 5;
     question_text_width =  100;
 
+    var final_slides = [];
+    var interlude = [];
     var question_number = 0;
     var answers = [];
     var initial_monologue = [];
@@ -64,17 +68,27 @@ function loadGame() {
         imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
     }
     n = 0;
-    for (i = 5; i < 14; i++) {
+    for (i = 5; i < 11; i++) {
         initial_monologue[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
         n++;
     }
     n = 0;
-    for (i = 14; i < 17; i++) {
+    for (i = 11; i < 14; i++) {
+        interlude[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
+        n++;
+    }
+    n = 0;
+    for (i = 14; i < 16; i++) {
+        final_slides[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
+        n++;
+    }
+    n = 0;
+    for (i = 16; i < 19; i++) {
         question_imgs[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
         n++;
     }
     n = 0;
-    for (i = 17; i < 22; i++) {
+    for (i = 19; i < 25; i++) {
         answer_imgs[n] = new createjs.Bitmap(preload.getResult(manifest[i].id));
         n++;
     }
@@ -106,6 +120,7 @@ function loadGame() {
     imgs[2].x = 800;
     imgs[2].y = 150;
 
+    var interlude_hit = new createjs.Shape();
     var monologue_hit = new createjs.Shape();
     var answer_hit = [];
     answer_hit[0] = new createjs.Shape();
@@ -117,47 +132,155 @@ function loadGame() {
 
     stage.addChild(txt);
 
-    function handleAnswer() {
-       // answers[game_index] = event.target.index;
-       // game_index++;
-        txt.Text = "clicked";
-       // updateQuestion();
-       // updateAnswer();
-        stage.update();
+    function exitInterlude(event) {
+        removeInterlude();
+        updateQuestion();
+        updateAnswer();
+      }
+
+    function handleAnswer_one(event) {
+       txt.text = "one handled " + game_index;
+       answers[game_index] = 1;
+ //      event.target.mouseEnabled = false;  
+       game_index++;
+       showInterlude();
+       stage.update();
     }
 
-    function handleMonologue(){
+    function handleAnswer_two(event) {
+       txt.text = "two handled " + game_index;
+       answers[game_index] = 2;
+//       event.target.mouseEnabled = false;
+       game_index++;
+       showInterlude();
+       stage.update();
+    }
+
+    function handleMonologue(event){
         monologue_index++;
-        txt.Text = "clicked";
-//        updateMonologue();
+        txt.text = monologue_index;
+        updateMonologue();
         stage.update();
     }
 
     function handleMouse(event) {
-        event.target.alpha = 0.5;
+        event.target.alpha = 0.75;
     }
     function handleMouseOut(event) {
-        event.target.alpha = 0;
+        event.target.alpha = 1;
+    }
+    function handleBoxMouse_one(event) {
+        answer_imgs[game_index].alpha = 0.75;
+    }
+    function handleBoxMouseOut_one(event) {
+        answer_imgs[game_index].alpha = 1;
+    }
+    function handleBoxMouse_two(event) {
+        answer_imgs[game_index + 1].alpha = 0.75;
+    }
+    function handleBoxMouseOut_two(event) {
+        answer_imgs[game_index +1].alpha = 1;
+    }
+    function handleFinal(event) {
+        showFinal(1);
     }
 
+
+    function showFinal(index) {
+        final_slides[index].scaleY = imgs[4].scaleY;
+        final_slides[index].scaleX = imgs[4].scaleX;
+        final_slides[index].x =imgs[4].x;
+        final_slides[index].y =imgs[4].y;
+            
+        final_slides[index].cursor = "pointer";
+
+        final_slides[index].addEventListener("click", handleFinal);
+
+        addChild(final_slides[index]);
+    }
+
+
+    function showInterlude() {
+
+        
+        stage.removeChild(answer_imgs[((game_index - 1) * 2)]);
+        stage.removeChild(answer_imgs[(((game_index - 1) * 2) + 1)]);
+        stage.removeChild(answer_hit[0]);
+        stage.removeChild(answer_hit[1]);
+        stage.removeChild(question_imgs[game_index -1]);
+
+        if(game_index < answer_imgs.length ) {
+
+            interlude_hit.graphics.clear();
+            interlude[game_index -1].scaleY = imgs[4].scaleY;
+            interlude[game_index -1].scaleX = imgs[4].scaleX;
+            interlude[game_index -1].x =imgs[4].x;
+            interlude[game_index -1].y =imgs[4].y;
+                
+
+            interlude_hit.graphics.beginFill("#FFFFFF").drawRect(interlude[game_index -1].x +10, interlude[game_index -1].y +10,
+            450 * interlude[game_index -1].scaleX -20, 500 * interlude[game_index -1].scaleY -20);
+                
+            interlude[game_index -1].cursor = "pointer";
+            interlude_hit.cursor = "pointer";
+                
+            interlude_hit.addEventListener("click", exitInterlude);
+            interlude[game_index].addEventListener("click", exitInterlude);
+            stage.addChild(interlude_hit);
+            stage.addChild(interlude[game_index -1]);
+        }
+
+        else {
+            final_answers = answers;
+            showFinal(0);
+        }
+
+    }
+
+    function removeInterlude() {
+        stage.removeChild(interlude[game_index -1]);
+        stage.removeChild(interlude_hit);
+    }
 
     function updateAnswer(){
         for(i = 0; i < 2; i++) {
-            answer_imgs[(((game_index -1) *2) + i)].clear();
+
             answer_imgs[((game_index *2) + i)].scaleY = imgs[3].scaleY;
             answer_imgs[((game_index *2) + i)].scaleX = imgs[3].scaleX;
-            answer_imgs[((game_index *2) + i)].x =imgs[3].x + 75 + (i * 100);
+            answer_imgs[((game_index *2) + i)].x =imgs[3].x;
             answer_imgs[((game_index *2) + i)].y =imgs[3].y;
-            answer_imgs.addEventListener("mouseover", handleMouse);
-            answer_imgs.addEventListener("mouseout", handleMouseOut);
-            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
+            
+            answer_imgs[((game_index *2) + i)].addEventListener("mouseover", handleMouse);
+            answer_imgs[((game_index *2) + i)].addEventListener("mouseout", handleMouseOut);
+            answer_imgs[((game_index *2) + i)].name = i;
+            answer_hit[i].mouseEnabled = true;
+            answer_hit[i].name = game_index + i;
+            if(i === 0) {
+                answer_hit[i].addEventListener("mouseover", handleBoxMouse_one);
+                answer_hit[i].addEventListener("mouseout", handleBoxMouseOut_one);
+            }
+            else {
+                answer_hit[i].addEventListener("mouseover", handleBoxMouse_two);
+                answer_hit[i].addEventListener("mouseout", handleBoxMouseOut_two);
+            }
+            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10 + (500 * i),
             answer_imgs[((game_index *2) + i)].y +10, 500 * answer_imgs[((game_index *2) + i)].scaleX -20,
             200 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            
+            answer_imgs[i].cursor = "pointer";
             answer_hit[i].cursor = "pointer";
-            answer_hit[i].addEventListener("click", handleAnswer);
-            answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
+           
+            if(i === 0){
+                answer_hit[i].addEventListener("click", handleAnswer_one);
+                answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer_one);
+            }
+            else{
+                answer_hit[i].addEventListener("click", handleAnswer_two);
+                answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer_two);
+            }
             stage.addChild(answer_hit[i]);
             stage.addChild(answer_imgs[((game_index *2) + i)]);
+            
         }
     }
 
@@ -165,18 +288,38 @@ function loadGame() {
         for(i = 0; i < 2; i++) {
             answer_imgs[i].scaleY = imgs[3].scaleY;
             answer_imgs[i].scaleX = imgs[3].scaleX;
-            answer_imgs[i].x =imgs[3].x + 75 +(i * 100);
+            answer_imgs[i].x =imgs[3].x;
             answer_imgs[i].y =imgs[3].y;
-            answer_imgs.addEventListener("mouseover", handleMouse);
-            answer_imgs.addEventListener("mouseout", handleMouseOut);
-            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10,
+            answer_imgs[((game_index *2) + i)].name = i;
+            answer_imgs[((game_index *2) + i)].addEventListener("mouseover", handleMouse);
+            answer_imgs[((game_index *2) + i)].addEventListener("mouseout", handleMouseOut);
+            
+            answer_hit[i].name = game_index + i;
+            if(i === 0) {
+                answer_hit[i].addEventListener("mouseover", handleBoxMouse_one);
+                answer_hit[i].addEventListener("mouseout", handleBoxMouseOut_one);
+            }
+            else {
+                answer_hit[i].addEventListener("mouseover", handleBoxMouse_two);
+                answer_hit[i].addEventListener("mouseout", handleBoxMouseOut_two);
+            }
+            answer_hit[i].graphics.beginFill("#FFFFFF").drawRect(answer_imgs[((game_index *2) + i)].x +10 + (500 * i),
             answer_imgs[((game_index *2) + i)].y +10, 500 * answer_imgs[((game_index *2) + i)].scaleX -20,
             200 * answer_imgs[((game_index *2) + i)].scaleY -20);
+            
+            answer_imgs[i].cursor = "pointer";
             answer_hit[i].cursor = "pointer";
-            answer_hit[i].addEventListener("click", handleAnswer);
-            answer_imgs[(((game_index -1) *2) + i)].addEventListener("click", handleAnswer);
+            
+            if(i === 0){
+                answer_hit[i].addEventListener("click", handleAnswer_one);
+                answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer_one);
+            }
+            else{
+                answer_hit[i].addEventListener("click", handleAnswer_two);
+                answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer_two);
+            }
             stage.addChild(answer_hit[i]);
-            stage.addChild(answer_imgs[((game_index *2) + i)]);
+            stage.addChild(answer_imgs[i]);
         }
     }
 
@@ -196,15 +339,20 @@ function loadGame() {
     }
 
     function updateMonologue() {
-        if(initial_monologue <= monologue_index) {
-            initial_monologue[monologue_index -1].clear();
-            hit.clear();
+        if(initial_monologue.length -1 >= monologue_index) {
+            
+            stage.removeChild(initial_monologue[monologue_index -1]);
+            stage.removeChild(monologue_hit);
+            monologue_hit.graphics.clear();
             initial_monologue[monologue_index].scaleY = imgs[4].scaleY;
             initial_monologue[monologue_index].scaleX = imgs[4].scaleX;
             initial_monologue[monologue_index].x =imgs[4].x;
             initial_monologue[monologue_index].y =imgs[4].y;
-            monologue_hit.graphics.beginFill("#FFFFFF").drawRect(initial_monologue[monologue_index].x +10, initial_monologue[monologue_index].y +10,
-            450 * initial_monologue[monologue_index].scaleX -20, 500 * initial_monologue[monologue_index].scaleY -20);
+            
+            monologue_hit.graphics.beginFill("#FFFFFF").drawRect(initial_monologue[monologue_index].x +10,
+            initial_monologue[monologue_index].y +10, 450 * initial_monologue[monologue_index].scaleX -20,
+            500 * initial_monologue[monologue_index].scaleY -20);
+
             monologue_hit.cursor = "pointer";
             monologue_hit.addEventListener("click", handleMonologue);
             initial_monologue[monologue_index].addEventListener("click", handleMonologue);
@@ -212,15 +360,16 @@ function loadGame() {
             stage.addChild(initial_monologue[monologue_index]);
         }
         else {
-            initial_monologue[monologue_index].clear();
-            setQuestion();
+            stage.removeChild(initial_monologue[monologue_index -1]);
+            stage.removeChild(monologue_hit);
             setAnswer();
+            setQuestion();
+            
         }
     }
 
 
     function updateQuestion() {
-        question_imgs[game_index -1].clear();
         question_imgs[game_index].scaleY = imgs[4].scaleY;
         question_imgs[game_index].scaleX = imgs[4].scaleX;
         question_imgs[game_index].x =imgs[4].x;
