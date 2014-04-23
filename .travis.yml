@@ -17,7 +17,6 @@ node_js:
 install:
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
   - npm install
-  - which firefox
 
 # setup mysql
 before_script:
@@ -31,7 +30,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - karma start --single-run --browsers Firefox
+ # - karma start --single-run --browsers Firefox
   - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
