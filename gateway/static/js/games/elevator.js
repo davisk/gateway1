@@ -93,8 +93,11 @@ function loadGame() {
         n++;
     }
        // Add our images and remove progress bar
-    for (i = 0; i < imgs.length; i++) stage.addChild(imgs[i]);
-
+    for (i = 0; i < imgs.length; i++) {
+        if(i !== 3){
+            stage.addChild(imgs[i]);
+        }
+    }
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.6;
 
@@ -111,16 +114,17 @@ function loadGame() {
     imgs[1].scaleY = 2;
     imgs[1].scaleX = 2;
     imgs[1].x = 400;
-    imgs[1].y = 150;
+    imgs[1].y = 160;
     imgs[3].scaleY = 1;
     imgs[3].scaleX = 1;
     imgs[4].scaleY = 0.8;
     imgs[4].scaleX = 1;
+    imgs[2].rotation = -3;
 
     imgs[2].scaleX = 2;
     imgs[2].scaleY = 2;
     imgs[2].x = 800;
-    imgs[2].y = 150;
+    imgs[2].y = 210;
 
     var interlude_hit = new createjs.Shape();
     var monologue_hit = new createjs.Shape();
@@ -147,6 +151,7 @@ function loadGame() {
             final_answers = answers;
            // txt.text = final_answers;
             showFinal(0);
+            stage.removeChild(imgs[3]);
         }
         else {
             updateQuestion();
@@ -165,6 +170,7 @@ function loadGame() {
        answers[game_index] = 1;
  //      event.target.mouseEnabled = false;  
        game_index++;
+       stage.removeChild(imgs[3]);
        showInterlude();
        stage.update();
     }
@@ -186,29 +192,29 @@ function loadGame() {
     }
 
     function handleMouse(event) {
-        event.target.alpha = 0.75;
+    //    event.target.alpha = 0.75;
     }
     function handleMouseOut(event) {
-        event.target.alpha = 1;
+    //    event.target.alpha = 1;
     }
     function handleBoxMouse_one(event) {
-        answer_imgs[game_index].alpha = 0.75;
+    //    answer_imgs[game_index *2].alpha = 0.75;
     }
     function handleBoxMouseOut_one(event) {
-        answer_imgs[game_index].alpha = 1;
+     //   answer_imgs[game_index *2].alpha = 1;
     }
     function handleBoxMouse_two(event) {
-        answer_imgs[game_index + 1].alpha = 0.75;
+     //   answer_imgs[(game_index * 2) + 1].alpha = 0.75;
     }
     function handleBoxMouseOut_two(event) {
-        answer_imgs[game_index +1].alpha = 1;
+     //  answer_imgs[(game_index * 2) +1].alpha = 1;
     }
     function handleFinal(event) {
         stage.removeChild(final_slides[0]);
         showFinal(1);
     }
     function exit(event) {
-        switchGame("end");
+       // switchGame("end");
     }
 
 
@@ -267,6 +273,7 @@ function loadGame() {
     function removeInterlude() {
         stage.removeChild(interlude[game_index -1]);
         stage.removeChild(interlude_hit);
+        stage.addChild(imgs[3]);
     }
 
     function updateAnswer(){
@@ -282,6 +289,7 @@ function loadGame() {
             answer_imgs[((game_index *2) + i)].name = i;
             answer_hit[i].mouseEnabled = true;
             answer_hit[i].name = game_index + i;
+            
             if(i === 0) {
                 answer_hit[i].addEventListener("mouseover", handleBoxMouse_one);
                 answer_hit[i].addEventListener("mouseout", handleBoxMouseOut_one);
@@ -294,9 +302,9 @@ function loadGame() {
             answer_imgs[((game_index *2) + i)].y +10, 500 * answer_imgs[((game_index *2) + i)].scaleX -20,
             200 * answer_imgs[((game_index *2) + i)].scaleY -20);
             
-            answer_imgs[i].cursor = "pointer";
+            answer_imgs[((game_index *2) + i)].cursor = "pointer";
             answer_hit[i].cursor = "pointer";
-           
+            
             if(i === 0){
                 answer_hit[i].addEventListener("click", handleAnswer_one);
                 answer_imgs[((game_index *2) + i)].addEventListener("click", handleAnswer_one);
@@ -312,6 +320,7 @@ function loadGame() {
     }
 
     function setAnswer(){
+         stage.addChild(imgs[3]);
         for(i = 0; i < 2; i++) {
             answer_imgs[i].scaleY = imgs[3].scaleY;
             answer_imgs[i].scaleX = imgs[3].scaleX;
@@ -348,6 +357,7 @@ function loadGame() {
             stage.addChild(answer_hit[i]);
             stage.addChild(answer_imgs[i]);
         }
+
     }
 
     function setMonoloque(){
