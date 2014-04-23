@@ -23,6 +23,7 @@ addons:
 
 # setup mysql
 before_script:
+  - FIREFOX_BIN=/usr/bin/firefox
   - mysql -e 'create database gateway;'
   - mysqladmin -u root password "root"
   - python manage.py syncdb --noinput
