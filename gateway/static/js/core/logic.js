@@ -151,6 +151,8 @@ function move (direction) {
                         userPlayer.y -= 10;
                     } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
                         userPlayer.y -= 10;
+                    } else if (userPlayer.x > 590 && userPlayer.x < 730 && userPlayer.y >= 0 && goToNextGame) {
+                        userPlayer.y -= 10;
                     }
                     break;
 
@@ -344,7 +346,7 @@ function beginGame () {
                 noText = false;
             }
 
-            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("survey");
+            if (userPlayer.x > 590 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("survey");
             break;
 
         // Survey
@@ -354,7 +356,7 @@ function beginGame () {
                 noText = false;
             }
 
-            if (userPlayer.x > 690 && userPlayer.x < 730 && userPlayer.y < 0 && goToNextGame) switchGame("interest");
+            if (userPlayer.x > 690 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("interest");
             break;
 /*
         // Interest
