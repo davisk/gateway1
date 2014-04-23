@@ -10,70 +10,19 @@
   * @param direction the object is moving in
   */
 
-var gamestate = {
-    position : {
-        x: 0,
-        y: 0
-    },
-    level: 1,
-    start: {
-        question1: 0,
-        question2: 0,
-        question3: 0,
-        question4: 0,
-        question5: 0
-    },
-    aha: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    elevator: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    gap: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    interest: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    survey: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    }
-};
+/**
+ * This hold the name of the id of the canvas
+ * @property canvasID
+ * @type {string}
+ */
+var canvasID;
 
-var db = new PouchDB('dbname');
-
-db.put(gamestate);
-
-db.changes({
-    onChange: function() {
-        console.log('Ch-Ch-Changes');
-    }
-});
-
-var venturename = 'test';
-
-db.replicate.to('localhost:9000/database/' + venturename);
-
+/**
+ * This hold the names of all possible canvas ID's
+ * @property canvasIDs
+ * @type {array}
+ */
+var canvasIDList;
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
@@ -188,6 +137,8 @@ function move (direction) {
                     if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
                         userPlayer.y -= 10;
                     } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x > 570 && userPlayer.x < 730 && goToNextGame) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -390,6 +341,8 @@ function beginGame () {
                 beginText(150,35);
                 noText = false;
             }
+
+            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("survey");
             break;
 
         // Survey
@@ -398,6 +351,8 @@ function beginGame () {
                 beginText(1130,35);
                 noText = false;
             }
+
+            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("interest");
             break;
 /*
         // Interest

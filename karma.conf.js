@@ -15,9 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'gateway/static/js/test/**.js',
-      'gateway/static/js/core/logic.js',
-      'gateway/static/js/games/end.js' // Hack to get around aha.js move changes
+      'gateway/static/js/lib/jquery-2.1.0.min.js',
+      'gateway/static/js/lib/**.js',
+      'gateway/static/js/games/**.js',
+      'gateway/static/js/**/**.js'
     ],
 
 
@@ -54,16 +55,16 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', "Firefox", "Chrome"],
+    browsers: ["Firefox", "Chrome"],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
   });
 };
