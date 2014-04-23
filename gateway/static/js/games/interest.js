@@ -117,7 +117,7 @@ function initInteraction() {
 
 function theGame() {
 
-    timeout = window.setTimeout(afterGame, 50000);
+    timeout = window.setTimeout(afterGame, 30000);
 
      stage.addChild(imgs[1], imgs[6], imgs[7], imgs[8]);
      imgs[1].addEventListener("click", function(event) {
