@@ -20,7 +20,7 @@ var dialogue = [];
  */
 var answers = [];
 
-
+var tokens = 7;
 
 function getCanvasId() {
     return "gapCanvas";
@@ -43,11 +43,11 @@ function initImages() {
         {id: "q1browse",        src: "/static/sprites/s3_text/s3_q1_browse.png"},
         {id: "q1learn",         src: "/static/sprites/s3_text/s3_q1_learn.png"},
         {id: "q1research",      src: "/static/sprites/s3_text/s3_q1_research.png"},
-        {id: "q2",              src: "/static/sprites/s3_text/s3_q2.png"},
+        {id: "q2",              src: "/static/sprites/s3_text/s3_q3.png"},
         {id: "q2browse",        src: "/static/sprites/s3_text/s3_q2_browse.png"},
         {id: "q2learn",         src: "/static/sprites/s3_text/s3_q2_learn.png"},
         {id: "q2research",      src: "/static/sprites/s3_text/s3_q2_research.png"},
-        {id: "q3",              src: "/static/sprites/s3_text/s3_q3.png"},
+        {id: "q3",              src: "/static/sprites/s3_text/s3_q2.png"},
         {id: "q3browse",        src: "/static/sprites/s3_text/s3_q3_browse.png"},
         {id: "q3learn",         src: "/static/sprites/s3_text/s3_q3_learn.png"},
         {id: "q3research",      src: "/static/sprites/s3_text/s3_q3_research.png"},
@@ -60,6 +60,10 @@ function initImages() {
         {id: "token7",          src: "/static/sprites/s3_text/s3_a1.png"},
         {id: "token8",          src: "/static/sprites/s3_text/s3_a2.png"},
         {id: "token9",          src: "/static/sprites/s3_text/s3_a3.png"},
+        {id: "first",           src: "/static/sprites/s3_text/s3_a4.png"},
+        {id: "second",          src: "/static/sprites/s3_text/s3_a5.png"},
+        {id: "third",           src: "/static/sprites/s3_text/s3_a6.png"},        
+        {id: "dialogue8",       src: "/static/sprites/s3_text/s3_8.png"}
     ];
 }
 
@@ -88,9 +92,10 @@ function loadGameConfig() {
 
     // Push all the dialogue images into an array
     for (i = 4; i < 23; i++) dialogue.push(imgs[i]);
+    dialogue.push(imgs[35]);
 
     // Push all the answer images into an array
-    for (i = 23; i < 32; i++) answers.push(imgs[i]);
+    for (i = 23; i < 35; i++) answers.push(imgs[i]);
 }
 
 function getStartingPlayerConfig() {
@@ -193,34 +198,43 @@ function initDialogueConfig() {
     dialogue[12].addEventListener("click", function(event) {
         stage.removeChild(dialogue[12]);
         stage.addChild(dialogue[15], box_answers);
-        for (i = 6; i < 9; i++) stage.addChild(answers[i]);
+        if (tokens >= 3) for (i = 6; i < 9; i++) stage.addChild(answers[i]);
+        else if (tokens = 2) for (i = 6; i < 8; i++) stage.addChild(answers[i]);
+        else if (tokens = 1) for (i = 6; i < 7; i++) stage.addChild(answers[i]);
     });
 
     dialogue[13].addEventListener("click", function(event) {
         stage.removeChild(dialogue[13]);
         stage.addChild(dialogue[15], box_answers);
-        for (i = 6; i < 9; i++) stage.addChild(answers[i]);
+        if (tokens >= 3) for (i = 6; i < 9; i++) stage.addChild(answers[i]);
+        else if (tokens = 2) for (i = 6; i < 8; i++) stage.addChild(answers[i]);
+        else if (tokens = 1) for (i = 6; i < 7; i++) stage.addChild(answers[i]);
     });
 
     dialogue[14].addEventListener("click", function(event) {
         stage.removeChild(dialogue[14]);
         stage.addChild(dialogue[15], box_answers);
-        for (i = 6; i < 9; i++) stage.addChild(answers[i]);
+        if (tokens >= 3) for (i = 6; i < 9; i++) stage.addChild(answers[i]);
+        else if (tokens == 2) for (i = 6; i < 8; i++) stage.addChild(answers[i]);
+        else if (tokens == 1) for (i = 6; i < 7; i++) stage.addChild(answers[i]);
     });
 
     dialogue[16].addEventListener("click", function(event) {
         stage.removeChild(dialogue[16]);
-        stage.addChild(dialogue[5]);
+        stage.addChild(dialogue[19], box_answers);
+        for (i = 9; i < 12; i++) stage.addChild(answers[i]);
     });
 
     dialogue[17].addEventListener("click", function(event) {
         stage.removeChild(dialogue[17]);
-        stage.addChild(dialogue[5]);
+        stage.addChild(dialogue[19], box_answers);
+        for (i = 9; i < 12; i++) stage.addChild(answers[i]);
     });
 
     dialogue[18].addEventListener("click", function(event) {
         stage.removeChild(dialogue[18]);
-        stage.addChild(dialogue[5]);
+        stage.addChild(dialogue[19], box_answers);
+        for (i = 9; i < 12; i++) stage.addChild(answers[i]);
     });
 
     // Final Discussion
@@ -241,9 +255,9 @@ function initAnswersConfig() {
     */
 
     // Answers are broken into 3 at a time. Which means that 0,3,6 (etc) will have the same x locations
-    answers[0].x = answers[3].x = answers[6].x = 180;
-    answers[1].x = answers[4].x = answers[7].x = 300;
-    answers[2].x = answers[5].x = answers[8].x = 425;
+    answers[0].x = answers[3].x = answers[6].x = answers[9].x = 180;
+    answers[1].x = answers[4].x = answers[7].x = answers[10].x = 300;
+    answers[2].x = answers[5].x = answers[8].x = answers[11].x = 425;
 
     // These are locations/sizings that apply to all answers
     for (i = 0; i < answers.length; i++) {
@@ -252,52 +266,80 @@ function initAnswersConfig() {
         answers[i].scaleX = 0.8;
     }
 
-    // Questions 1-3 
+    // Question 1
     answers[0].addEventListener("click", function(event) {
         stage.removeChild(answers[0], answers[1], answers[2],box_answers,dialogue[7]);
         stage.addChild(dialogue[8]);
+        tokens -= 1;
     }, false);
 
     answers[1].addEventListener("click", function(event) {
         stage.removeChild(answers[0], answers[1], answers[2],box_answers,dialogue[7]);
         stage.addChild(dialogue[9]);
+        tokens -= 2;
     }, false);
 
     answers[2].addEventListener("click", function(event) {
         stage.removeChild(answers[0], answers[1], answers[2],box_answers,dialogue[7]);
         stage.addChild(dialogue[10]);
+        tokens -= 3;
     }, false);
 
-    // Questions 4-6
+    // Question 2
     answers[3].addEventListener("click", function(event) {
         stage.removeChild(answers[3], answers[4], answers[5],box_answers,dialogue[11]);
         stage.addChild(dialogue[12]);
+        tokens -= 1;
     }, false);
 
     answers[4].addEventListener("click", function(event) {
         stage.removeChild(answers[3], answers[4], answers[5],box_answers,dialogue[11]);
         stage.addChild(dialogue[13]);
+        tokens -= 2;
     }, false);
 
     answers[5].addEventListener("click", function(event) {
         stage.removeChild(answers[3], answers[4], answers[5],box_answers,dialogue[11]);
         stage.addChild(dialogue[14]);
+        tokens -= 3;
     }, false);
 
-    // Questions 7-9
+    // Question 3
     answers[6].addEventListener("click", function(event) {
-        stage.removeChild(answers[6], answers[7], answers[8],box_answers,dialogue[15]);
+        if (tokens >=3) stage.removeChild(answers[6], answers[7], answers[8],box_answers,dialogue[15]);
+        else if (tokens == 2) stage.removeChild(answers[6], answers[7],box_answers,dialogue[15]);
+        else if (tokens == 1) stage.removeChild(answers[6], box_answers,dialogue[15]);
         stage.addChild(dialogue[16]);
     }, false);
 
     answers[7].addEventListener("click", function(event) {
-        stage.removeChild(answers[6], answers[7], answers[8],box_answers,dialogue[15]);
+        if (tokens >=3) stage.removeChild(answers[6], answers[7], answers[8],box_answers,dialogue[15]);
+        else if (tokens == 2) stage.removeChild(answers[6], answers[7],box_answers,dialogue[15]);
+        else if (tokens == 1) stage.removeChild(answers[6], box_answers,dialogue[15]);
         stage.addChild(dialogue[17]);
     }, false);
 
     answers[8].addEventListener("click", function(event) {
-        stage.removeChild(answers[6], answers[7], answers[8],box_answers,dialogue[15]);
+        if (tokens >=3) stage.removeChild(answers[6], answers[7], answers[8],box_answers,dialogue[15]);
+        else if (tokens == 2) stage.removeChild(answers[6], answers[7],box_answers,dialogue[15]);
+        else if (tokens == 1) stage.removeChild(answers[6], box_answers,dialogue[15]);
         stage.addChild(dialogue[18]);
+    }, false);
+
+    // Question 4
+    answers[9].addEventListener("click", function(event) {
+        stage.removeChild(answers[9], answers[10], answers[11],box_answers,dialogue[15]);
+        stage.addChild(dialogue[5]);
+    }, false);
+
+    answers[10].addEventListener("click", function(event) {
+        stage.removeChild(answers[9], answers[10], answers[11],box_answers,dialogue[15]);
+        stage.addChild(dialogue[5]);
+    }, false);
+
+    answers[11].addEventListener("click", function(event) {
+        stage.removeChild(answers[9], answers[10], answers[11],box_answers,dialogue[15]);
+        stage.addChild(dialogue[5]);
     }, false);
 }
 

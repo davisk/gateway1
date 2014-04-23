@@ -16,12 +16,12 @@ def survey_view(request):
     minigame = {
         "title": "survey - Minigame ",
         "subtitle": "Coming Soon!",
-        "is_aha": "active"
+        "is_survey": "active"
     }
 
     return render(
         request,
-        'minigame/elevator.html',
+        'minigame/survey.html',
         dict(minigame=minigame)
     )
     """contains temp data for venture currently"""
