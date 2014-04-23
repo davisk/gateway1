@@ -19,14 +19,14 @@ function initImages() {
 
     manifest = [
         {id: "canvas_bkgd", src: "/static/sprites/scene5_init.png"},
-        {id: "game_npc", src: "/static/sprites/Dash_2.png"},
+        {id: "game_npc", src: "/static/sprites/bro.png"},
         {id: "box_dialogue", src: "/static/sprites/Textbox2.png"},
         {id: "dialogue1", src: "/static/sprites/s5_text/s5_1.png"},
         {id: "dialogue2", src: "/static/sprites/s5_text/s5_2.png"},
         {id: "dialogue3", src: "/static/sprites/s5_text/s5_3.png"},
-        {id: "npc_2", src: "/static/sprites/Dash_2.png"},
-        {id: "npc_3", src: "/static/sprites/Dash_2.png"},
-        {id: "npc_4", src: "/static/sprites/Dash_2.png"}
+        {id: "npc_2", src: "/static/sprites/bro.png"},
+        {id: "npc_3", src: "/static/sprites/bro.png"},
+        {id: "npc_4", src: "/static/sprites/bro.png"}
     ];
 }
 

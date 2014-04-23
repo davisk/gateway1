@@ -9,7 +9,7 @@
   * @param object to be moved
   * @param direction the object is moving in
   */
-
+/*
 var gamestate = {
     position : {
         x: 0,
@@ -59,9 +59,9 @@ var gamestate = {
         question5: null
     }
 };
+*/
 
-
-
+/*
 var db = new PouchDB('dbname');
 db.put(gamestate);
 
@@ -75,7 +75,7 @@ db.changes({
 var venturename = 'test';
 
 db.replicate.to('localhost:9000/database/' + venturename);
-
+*/
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
@@ -83,6 +83,7 @@ var noText = true;
 var insert1 = true;
 var insert2 = true;
 var insert3 = true;
+var insert4 = true;
 
 function move (direction) {
 
@@ -448,7 +449,7 @@ function beginGame () {
             }
             if (userPlayer.x > 1050 && userPlayer.x < 1270 && userPlayer.y >= 290 && userPlayer.y <= 410 && insert4) {
                 interestText(1150, 280);
-                insert3 = false;
+                insert4 = false;
             }
             if (userPlayer.x > 570 && userPlayer.x <730 && userPlayer.y < -10 && goToNextGame) switchGame("elevator");
             break;

@@ -1,4 +1,4 @@
-var ventureName = window.location.hash;
+/*var ventureName = window.location.hash;
 console.log(ventureName);
 var ventureUrl = 'localhost:9000/database/' + ventureName;
 
@@ -68,4 +68,4 @@ function sync() {
     db.replicate.from(ventureUrl, gamestate);
 }
 
-sync();
+sync();*/
