@@ -125,13 +125,13 @@ function loadGame() {
     var answer_hit = [];
     answer_hit[0] = new createjs.Shape();
     answer_hit[1] = new createjs.Shape();
-
+/*
     txt = new createjs.Text("not Clicked", "32px Arial", "#000000");
     txt.y = 50;
     txt.x = 600;
 
     stage.addChild(txt);
-
+*/
     function exitInterlude(event) {
         removeInterlude();
 
@@ -143,7 +143,7 @@ function loadGame() {
         */
         if(game_index === 3) {
             final_answers = answers;
-            txt.text = final_answers;
+           // txt.text = final_answers;
             showFinal(0);
         }
         else {
@@ -155,7 +155,7 @@ function loadGame() {
     }
 
     function handleAnswer_one(event) {
-       txt.text = "one handled " + game_index;
+   //    txt.text = "one handled " + game_index;
        answers[game_index] = 1;
  //      event.target.mouseEnabled = false;  
        game_index++;
@@ -164,7 +164,7 @@ function loadGame() {
     }
 
     function handleAnswer_two(event) {
-       txt.text = "two handled " + game_index;
+  //     txt.text = "two handled " + game_index;
        answers[game_index] = 2;
 //       event.target.mouseEnabled = false;
        game_index++;
@@ -174,7 +174,7 @@ function loadGame() {
 
     function handleMonologue(event){
         monologue_index++;
-        txt.text = monologue_index;
+ //       txt.text = monologue_index;
         updateMonologue();
         stage.update();
     }
@@ -202,7 +202,7 @@ function loadGame() {
         showFinal(1);
     }
     function exit(event) {
-        goToNextGame = true;
+        switchGame("end")
     }
 
 
