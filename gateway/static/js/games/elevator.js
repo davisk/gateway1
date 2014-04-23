@@ -151,6 +151,7 @@ function loadGame() {
             final_answers = answers;
            // txt.text = final_answers;
             showFinal(0);
+            stage.removeChild(imgs[3]);
         }
         else {
             updateQuestion();
@@ -169,6 +170,7 @@ function loadGame() {
        answers[game_index] = 1;
  //      event.target.mouseEnabled = false;  
        game_index++;
+       stage.removeChild(imgs[3]);
        showInterlude();
        stage.update();
     }
@@ -271,6 +273,7 @@ function loadGame() {
     function removeInterlude() {
         stage.removeChild(interlude[game_index -1]);
         stage.removeChild(interlude_hit);
+        stage.addChild(imgs[3]);
     }
 
     function updateAnswer(){
