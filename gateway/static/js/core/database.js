@@ -2,8 +2,13 @@ var ventureName = window.location.hash;
 console.log(ventureName);
 var ventureUrl = 'localhost:9000/database/' + ventureName;
 
-var score = 0;
-var final_answers = [0,0,0];
+var interest = {
+    score : 0
+};
+
+var elevator = {
+    final_answers: [0,0,0]
+};
 
 var gamestate = {
     position : {
@@ -47,11 +52,13 @@ var gamestate = {
     }
 };
 
-score.watch(score, function() {
-    gamestate.interest.score = score;
+interest.watch('score', function() {
+    console.log(interest.score);
+    gamestate.interest.score = interest.score;
 });
 
-final_answers.watch(final_answers, function(){
+elevator.watch('final_answers', function(){
+    console.log(final_answers);
     gamestate.elevator.final_answers = final_answers;
 });
 
