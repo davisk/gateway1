@@ -37,8 +37,8 @@ function initImages() {
         {id: "question6",       src: "/static/sprites/s4_text/s4_q6o.png"},
         {id: "question7",       src: "/static/sprites/s4_text/s4_q7s.png"},
         {id: "question8",       src: "/static/sprites/s4_text/s4_q8s.png"},
-        {id: "answer1_1",       src: "/static/sprites/s4_text/s4_a1_1.png"},
-        {id: "answer1_2",       src: "/static/sprites/s4_text/s4_a1_2.png"},
+        {id: "answer1_1",       src: "/static/sprites/s4_text/s4_q1_1.png"},
+        {id: "answer1_2",       src: "/static/sprites/s4_text/s4_q1_2.png"},
         {id: "answer2_1",       src: "/static/sprites/s4_text/s4_a2_1.png"},
         {id: "answer2_2",       src: "/static/sprites/s4_text/s4_a2_2.png"},
         {id: "answer3_1",       src: "/static/sprites/s4_text/s4_a3_1.png"},
@@ -150,9 +150,10 @@ function initDialogueConfig() {
 function initAnswersConfig() {
 
     // Answers text sizes and positions
-    answers[0].x = answers[3].x = answers[6].x = answers[9].x = 180;
-    answers[1].x = answers[4].x = answers[7].x = answers[10].x = 300;
-    answers[2].x = answers[5].x = answers[8].x = answers[11].x = 425;
+    answers[0].x = answers[4].x = answers[8].x = answers[12].x = 180;
+    answers[1].x = answers[5].x = answers[9].x = answers[13].x = 300;
+    answers[2].x = answers[6].x = answers[10].x = answers[14].x = 180;
+    answers[3].x = answers[7].x = answers[11].x = answers[15].x = 300;
 
     for (i = 0; i < answers.length; i++) {
         answers[i].y = 440;
@@ -164,7 +165,7 @@ function initAnswersConfig() {
     // Question 1: survey format
     answers[0].addEventListener("click", function(event) {
         stage.removeChild(dialogue[6]);
-        stage.removeChild(answers[1], answers[1]);
+        stage.removeChild(answers[0], answers[1]);
         stage.addChild(dialogue[7]);
         stage.addChild(answers[2], answers[3]);
         format = 1;
@@ -172,7 +173,7 @@ function initAnswersConfig() {
 
     answers[1].addEventListener("click", function(event) {
         stage.removeChild(dialogue[6]);
-        stage.removeChild(answers[1], answers[1]);
+        stage.removeChild(answers[0], answers[1]);
         stage.addChild(dialogue[7]);
         stage.addChild(answers[2], answers[3]);
         format = 2;
