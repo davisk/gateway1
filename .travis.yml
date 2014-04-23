@@ -17,7 +17,9 @@ node_js:
 install:
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
   - npm install
-  - which firefox
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+  - rm google-chrome-stable_current_amd64.deb
 
 # setup mysql
 before_script:
@@ -31,7 +33,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - karma start --single-run --browsers Firefox
+  - karma start --single-run
   - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
