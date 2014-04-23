@@ -23,7 +23,9 @@ function initImages() {
         {id: "box_dialogue", src: "/static/sprites/Textbox2.png"},
         {id: "dialogue1", src: "/static/sprites/s5_text/s5_1.png"},
         {id: "dialogue2", src: "/static/sprites/s5_text/s5_2.png"},
-        {id: "dialogue3", src: "/static/sprites/s5_text/s5_3.png"}
+        {id: "dialogue3", src: "/static/sprites/s5_text/s5_3.png"},
+        {id: "npc_2", src: "/static/sprites/Dash_2.png"},
+        {id: "npc_3", src: "/static/sprites/Dash_2.png"}
     ];
 }
 
@@ -43,6 +45,14 @@ function loadGameConfig() {
     imgs[1].y = 200;
     imgs[1].scaleX = 0.8;
     imgs[1].scaleY = 0.8;
+    imgs[6].x = 220;
+    imgs[6].y = 30;
+    imgs[6].scaleX = 0.8;
+    imgs[6].scaleY = 0.8;
+    imgs[7].x = 600;
+    imgs[7].y = 300;
+    imgs[7].scaleX = 0.8;
+    imgs[7].scaleY = 0.8;
 
     box_dialogue = imgs[2];
 
@@ -69,8 +79,8 @@ function initTextBoxConfig() {
 
     box_dialogue.x = 950;
     box_dialogue.y = 50;
-    box_dialogue.scaleX = 1.06;
-    box_dialogue.scaleY = 0.55;
+    box_dialogue.scaleX = 1;
+    box_dialogue.scaleY = 0.65;
 }
 
 function initDialogueConfig() {
@@ -88,11 +98,6 @@ function initDialogueConfig() {
         theGame();
     });
 
-    dialogue[1].addEventListener("click", function(event) {
-        stage.removeChild(dialogue[1]);
-        stage.addChild(dialogue[2]);
-        goToNextGame = true;
-    });
 }
 
 function initInteraction() {
@@ -106,11 +111,32 @@ function initInteraction() {
 
 function theGame() {
 
-    while(true) {
-        timeout = window.setTimeout(function(){return}, 60000);
-        stage.addChild(imgs[1]);
-        if (userPlayer.x >= 450 && userPlayer.x <= 650 && userPlayer.y >= 10 && userPlayer.y <= 20) {
-            stage.RemoveChild(imgs[1]);
-        }
-    }
+    timeout = window.setTimeout(afterGame, 60000);
+
+     stage.addChild(imgs[1]);
+     imgs[1].addEventListener("click", function(event) {
+         stage.removeChild(imgs[1]);
+         score += 1;
+         stage.addChild(imgs[6]);
+        });
+     imgs[6].addEventListener("click", function(event) {
+         stage.removeChild(imgs[6]);
+         score += 1;
+         stage.addChild(imgs[7]);
+     });
+     imgs[7].addEventListener("click", function(event) {
+         stage.removeChild(imgs[7]);
+         score += 1;
+     });
+
+}
+
+function afterGame() {
+
+    stage.addChild(dialogue[1]);
+    dialogue[1].addEventListener("click", function(event) {
+        stage.removeChild(dialogue[1]);
+        stage.addChild(dialogue[2]);
+        goToNextGame = true;
+    });
 }

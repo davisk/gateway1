@@ -83,6 +83,9 @@ var noText = true;
 function move (direction) {
 
     beginGame();
+    
+    console.log("X Pos:" + userPlayer.x);
+    console.log("Y Pos:" + userPlayer.y);
 
     switch (direction) {
 
