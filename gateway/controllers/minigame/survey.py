@@ -16,7 +16,7 @@ def survey_view(request):
     minigame = {
         "title": "survey - Minigame ",
         "subtitle": "Coming Soon!",
-        "is_aha": "active"
+        "is_survey": "active"
     }
 
     return render(

@@ -92,6 +92,8 @@ function move (direction) {
     console.log("X Pos:" + userPlayer.x);
     console.log("Y Pos:" + userPlayer.y);
 
+    console.log(userPlayer.x, userPlayer.y)
+
     switch (direction) {
 
         // Left
@@ -201,7 +203,7 @@ function move (direction) {
                         userPlayer.y -= 10;
                     } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
                         userPlayer.y -= 10;
-                    } else if (userPlayer.x > 570 && userPlayer.x < 730 && goToNextGame) {
+                    } else if (userPlayer.x > 590 && userPlayer.x < 730 && userPlayer.y >= 0 && goToNextGame) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -211,6 +213,8 @@ function move (direction) {
                     if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
                         userPlayer.y -= 10;
                     } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x > 590 && userPlayer.x < 730 && userPlayer.y >= 0 && goToNextGame) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -411,12 +415,12 @@ function beginGame () {
 
         // Gap
         case canvasIDList[2]:
-            if (userPlayer.x >= 340 && userPlayer.x <= 360 && userPlayer.y >= 0 && userPlayer.y <= 20 && noText) {
+            if (userPlayer.x >= 320 && userPlayer.x <= 380 && userPlayer.y >= -10 && userPlayer.y <= 30 && noText) {
                 beginText(150,35);
                 noText = false;
             }
 
-            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("survey");
+            if (userPlayer.x > 590 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("survey");
             break;
 
         // Survey
@@ -426,7 +430,7 @@ function beginGame () {
                 noText = false;
             }
 
-            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("interest");
+            if (userPlayer.x > 690 && userPlayer.x < 730 && userPlayer.y < 10 && goToNextGame) switchGame("interest");
             break;
 
         // Interest

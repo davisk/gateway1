@@ -171,7 +171,6 @@ function initDialogueConfig() {
     dialogue[5].addEventListener("click", function(event) {
         stage.removeChild(dialogue[5]);
         stage.addChild(dialogue[6]);
-        box_dialogue.scaleY = 0.4;  // Reset it back down
         goToNextGame = true;        // Unlock access to walking to the elevator
     });
 }
