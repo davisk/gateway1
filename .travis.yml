@@ -18,12 +18,8 @@ install:
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
   - npm install
 
-addons:
-  firefox: "31.1"
-
 # setup mysql
 before_script:
-  - FIREFOX_BIN=/usr/bin/firefox
   - mysql -e 'create database gateway;'
   - mysqladmin -u root password "root"
   - python manage.py syncdb --noinput
