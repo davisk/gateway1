@@ -104,7 +104,9 @@ function loadGame() {
 
     imgs[3].x = answer_text_x;
     imgs[3].y = answer_text_y;
-
+    /*
+        setting textbox scales
+    */
     
     imgs[1].scaleY = 2;
     imgs[1].scaleX = 2;
@@ -154,6 +156,10 @@ function loadGame() {
 
     }
 
+
+    /*
+        event handling functions
+    */
     function handleAnswer_one(event) {
    //    txt.text = "one handled " + game_index;
        answers[game_index] = 1;
@@ -202,11 +208,13 @@ function loadGame() {
         showFinal(1);
     }
     function exit(event) {
-        switchGame("end")
+        switchGame("end");
     }
 
 
-
+    /*
+        functions for text display
+    */
     function showFinal(index) {
         final_slides[index].scaleY = imgs[4].scaleY;
         final_slides[index].scaleX = imgs[4].scaleX;
