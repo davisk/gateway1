@@ -30,7 +30,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - karma start --single-run --browsers Firefox
+ # - karma start --single-run --browsers Firefox
   - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
