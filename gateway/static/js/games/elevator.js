@@ -190,22 +190,22 @@ function loadGame() {
     }
 
     function handleMouse(event) {
-        event.target.alpha = 0.75;
+    //    event.target.alpha = 0.75;
     }
     function handleMouseOut(event) {
-        event.target.alpha = 1;
+    //    event.target.alpha = 1;
     }
     function handleBoxMouse_one(event) {
-        answer_imgs[game_index *2].alpha = 0.75;
+    //    answer_imgs[game_index *2].alpha = 0.75;
     }
     function handleBoxMouseOut_one(event) {
-        answer_imgs[game_index *2].alpha = 1;
+     //   answer_imgs[game_index *2].alpha = 1;
     }
     function handleBoxMouse_two(event) {
-        answer_imgs[(game_index * 2) + 1].alpha = 0.75;
+     //   answer_imgs[(game_index * 2) + 1].alpha = 0.75;
     }
     function handleBoxMouseOut_two(event) {
-        answer_imgs[(game_index * 2) +1].alpha = 1;
+     //  answer_imgs[(game_index * 2) +1].alpha = 1;
     }
     function handleFinal(event) {
         stage.removeChild(final_slides[0]);
