@@ -59,14 +59,10 @@ var gamestate = {
         question5: null
     }
 };
-<<<<<<< HEAD
 
-/*var db = new PouchDB('dbname');
-=======
-/*
+
+
 var db = new PouchDB('dbname');
->>>>>>> 0911918f124df8342cbc32b842fa3a83ef259794
-
 db.put(gamestate);
 
 db.changes({
@@ -79,7 +75,7 @@ db.changes({
 var venturename = 'test';
 
 db.replicate.to('localhost:9000/database/' + venturename);
-*/
+
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
