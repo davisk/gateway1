@@ -15,16 +15,13 @@ node_js:
 
 # command to install dependencies
 install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
   - npm install
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome-stable_current_amd64.deb
-  - rm google-chrome-stable_current_amd64.deb
 
 # setup mysql
 before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - mysql -e 'create database gateway;'
   - mysqladmin -u root password "root"
   - python manage.py syncdb --noinput
@@ -33,7 +30,7 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - karma start --single-run
+  - karma start --single-run --browsers Firefox
   - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
