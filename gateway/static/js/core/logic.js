@@ -9,28 +9,88 @@
   * @param object to be moved
   * @param direction the object is moving in
   */
+/*
+var gamestate = {
+    position : {
+        x: 0,
+        y: 0
+    },
+    level: 1,
+    start: {
+        question1: 0,
+        question2: 0,
+        question3: 0,
+        question4: 0,
+        question5: 0
+    },
+    aha: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    elevator: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    gap: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    interest: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    },
+    survey: {
+        question1: null,
+        question2: null,
+        question3: null,
+        question4: null,
+        question5: null
+    }
+};
+*/
 
-/**
- * This hold the name of the id of the canvas
- * @property canvasID
- * @type {string}
- */
-var canvasID;
+/*
+var db = new PouchDB('dbname');
+db.put(gamestate);
 
-/**
- * This hold the names of all possible canvas ID's
- * @property canvasIDs
- * @type {array}
- */
-var canvasIDList;
+db.changes({
+    onChange: function() {
+        console.log('Ch-Ch-Changes');
+    }
+});
+
+
+var venturename = 'test';
+
+db.replicate.to('localhost:9000/database/' + venturename);
+*/
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
 var noText = true;
+var insert1 = true;
+var insert2 = true;
+var insert3 = true;
+var insert4 = true;
 
 function move (direction) {
 
     beginGame();
+    
+    console.log("X Pos:" + userPlayer.x);
+    console.log("Y Pos:" + userPlayer.y);
 
     switch (direction) {
 
@@ -84,7 +144,10 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    userPlayer.x -= 10;
+
+                    //if (userPlayer.x >= 70 && userPlayer.x <=1340 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                        userPlayer.x -= 10;
+                    //}
                     break;
 
                 // Elev
@@ -104,10 +167,10 @@ function move (direction) {
             // Ugly way to handle sprite animation :(
             // We also don't have sprites for up animation
             if (moving === false) {
-                userPlayer.gotoAndPlay("down1");
+                userPlayer.gotoAndPlay("up1");
                 moving = true;
             } else {
-                userPlayer.gotoAndPlay("down2");
+                userPlayer.gotoAndPlay("up2");
                 moving = false;
             }
 
@@ -154,12 +217,19 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    userPlayer.y -= 10;
+                   // if (userPlayer.y > 300) {
+                        userPlayer.y -= 10;
+                   // } else if (userPlayer.x > 590 && userPlayer.x < 1340 && userPlayer.y > 200 || goToNextGame) {
+                   //     userPlayer.y -= 10;
+                   // }
+                        
                     break;
 
                 // Elev
                 case canvasIDList[5]:
-                    userPlayer.y -= 10;
+                    if (userPlayer.x >= 70 && userPlayer.x <=1240 && userPlayer.y >= 0 && userPlayer.yy <100) {
+                        userPlayer.y -= 10;
+                    }
                     break;
 
                 // End
@@ -223,7 +293,9 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
-                    userPlayer.x += 10;
+                    //if (userPlayer.x >= 70 && userPlayer.x <=1340 && userPlayer.y >= 0 && userPlayer.y <700) {
+                        userPlayer.x += 10;
+                   // }
                     break;
 
                 // Elev
@@ -289,7 +361,9 @@ function move (direction) {
 
                 // Inter
                 case canvasIDList[4]:
+                   // if (userPlayer.x >= 70 && userPlayer.x <=1340 && userPlayer.y >= 0 && userPlayer.yy <100) {
                     userPlayer.y += 10;
+                   // }
                     break;
 
                 // Elev
@@ -354,11 +428,32 @@ function beginGame () {
 
             if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("interest");
             break;
-/*
+
         // Interest
         case canvasIDList[4]:
+            if (userPlayer.x >= 640 && userPlayer.x <= 960 && userPlayer.y >=0 && userPlayer.y <= 20 && noText) {
+                beginText(630,10);
+                noText = false;
+            }
+            if (userPlayer.x > 350 && userPlayer.x < 590 && userPlayer.y >= 160 && userPlayer.y <= 230 && insert1) {
+                interestText(465,180);
+                insert1 = false;
+            }
+            if (userPlayer.x > 160 && userPlayer.x < 370 && userPlayer.y >= 0 && userPlayer.y <= 50 && insert2) {
+                interestText(235,10);
+                insert2 = false;
+            }
+            if (userPlayer.x > 490 && userPlayer.x < 750 && userPlayer.y >= 250 && userPlayer.y <= 330 && insert3) {
+                interestText(590,280);
+                insert3 = false;
+            }
+            if (userPlayer.x > 1020 && userPlayer.x < 1270 && userPlayer.y >= 290 && userPlayer.y <= 410 && insert4) {
+                interestText(1150, 360);
+                insert4 = false;
+            }
+            if (userPlayer.x > 570 && userPlayer.x <730 && userPlayer.y < -10 && goToNextGame) switchGame("elevator");
             break;
-
+/*
         // Elevator
         case canvasIDList[5]:
             break;
