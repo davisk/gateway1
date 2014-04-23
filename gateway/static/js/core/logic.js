@@ -10,6 +10,20 @@
   * @param direction the object is moving in
   */
 
+/**
+ * This hold the name of the id of the canvas
+ * @property canvasID
+ * @type {string}
+ */
+var canvasID;
+
+/**
+ * This hold the names of all possible canvas ID's
+ * @property canvasIDs
+ * @type {array}
+ */
+var canvasIDList;
+
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
 var noText = true;
