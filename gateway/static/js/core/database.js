@@ -2,6 +2,9 @@ var ventureName = window.location.hash;
 console.log(ventureName);
 var ventureUrl = 'localhost:9000/database/' + ventureName;
 
+var score = 0;
+var final_answers = [0,0,0];
+
 var gamestate = {
     position : {
         x: 0,
