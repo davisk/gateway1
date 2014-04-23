@@ -182,6 +182,15 @@ function beginText(xpos,ypos,state) {
     stage.addChild(startText);
 }
 
+function interestText(xpos,ypos) {
+
+    sText = new createjs.Text("Click to Survey", "20px Arial", "#ffffff");
+    
+    sText.x = xpos;
+    sText.y = ypos;
+    stage.addChild(sText);
+}
+
 /**
  * Handles what happens once the game is started
  * (The user clicking start game)

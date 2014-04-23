@@ -4,7 +4,7 @@
 
 
 var box_dialogue;
-var score;
+var score = 0;
 var timeout;
 var dialogue = [];
 var imgs = [];
@@ -25,7 +25,8 @@ function initImages() {
         {id: "dialogue2", src: "/static/sprites/s5_text/s5_2.png"},
         {id: "dialogue3", src: "/static/sprites/s5_text/s5_3.png"},
         {id: "npc_2", src: "/static/sprites/Dash_2.png"},
-        {id: "npc_3", src: "/static/sprites/Dash_2.png"}
+        {id: "npc_3", src: "/static/sprites/Dash_2.png"},
+        {id: "npc_4", src: "/static/sprites/Dash_2.png"}
     ];
 }
 
@@ -53,6 +54,10 @@ function loadGameConfig() {
     imgs[7].y = 300;
     imgs[7].scaleX = 0.8;
     imgs[7].scaleY = 0.8;
+    imgs[8].x = 1130;
+    imgs[8].y = 390;
+    imgs[8].scaleX = 0.8;
+    imgs[8].scaleY = 0.8;
 
     box_dialogue = imgs[2];
 
@@ -94,7 +99,7 @@ function initDialogueConfig() {
     }
 
     dialogue[0].addEventListener("click", function(event) {
-        stage.removeChild(dialogue[0]);
+        stage.removeChild(dialogue[0], box_dialogue);
         theGame();
     });
 
@@ -113,27 +118,38 @@ function theGame() {
 
     timeout = window.setTimeout(afterGame, 60000);
 
-     stage.addChild(imgs[1]);
+     stage.addChild(imgs[1], imgs[6], imgs[7], imgs[8]);
      imgs[1].addEventListener("click", function(event) {
          stage.removeChild(imgs[1]);
-         score += 1;
-         stage.addChild(imgs[6]);
+         score += 10;
+         stage.removeChild(sText);
         });
      imgs[6].addEventListener("click", function(event) {
          stage.removeChild(imgs[6]);
-         score += 1;
-         stage.addChild(imgs[7]);
+         score += 5;
+         stage.removeChild(sText);
      });
      imgs[7].addEventListener("click", function(event) {
          stage.removeChild(imgs[7]);
-         score += 1;
+         score += 20;
+         stage.removeChild(sText);
+     });
+     imgs[8].addEventListener("click", function(event) {
+         stage.removeChild(imgs[8]);
+         score += 35;
+         stage.removeChild(sText);
      });
 
 }
 
 function afterGame() {
 
-    stage.addChild(dialogue[1]);
+    stage.removeChild(imgs[1]); 
+    stage.removeChild(imgs[6]); 
+    stage.removeChild(imgs[7]); 
+    stage.removeChild(imgs[8]);
+    stage.removeChild(sText);
+    stage.addChild(box_dialogue, dialogue[1]);
     dialogue[1].addEventListener("click", function(event) {
         stage.removeChild(dialogue[1]);
         stage.addChild(dialogue[2]);

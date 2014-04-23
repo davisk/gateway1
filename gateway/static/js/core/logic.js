@@ -79,6 +79,9 @@ db.replicate.to('localhost:9000/database/' + venturename);
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
 var noText = true;
+var insert1 = true;
+var insert2 = true;
+var insert3 = true;
 
 function move (direction) {
 
@@ -421,8 +424,24 @@ function beginGame () {
         // Interest
         case canvasIDList[4]:
             if (userPlayer.x >= 640 && userPlayer.x <= 960 && userPlayer.y >=0 && userPlayer.y <= 20 && noText) {
-                beginText(600,10);
+                beginText(610,10);
                 noText = false;
+            }
+            if (userPlayer.x > 350 && userPlayer.x < 590 && userPlayer.y >= 160 && userPlayer.y <= 230 && insert1) {
+                interestText(465,180);
+                insert1 = false;
+            }
+            if (userPlayer.x > 160 && userPlayer.x < 370 && userPlayer.y >= 0 && userPlayer.y <= 50 && insert2) {
+                interestText(235,10);
+                insert2 = false;
+            }
+            if (userPlayer.x > 490 && userPlayer.x < 730 && userPlayer.y >= 270 && userPlayer.y <= 330 && insert3) {
+                interestText(590,280);
+                insert3 = false;
+            }
+            if (userPlayer.x > 1050 && userPlayer.x < 1270 && userPlayer.y >= 290 && userPlayer.y <= 410 && insert4) {
+                interestText(1150, 280);
+                insert3 = false;
             }
             if (userPlayer.x > 570 && userPlayer.x <730 && userPlayer.y < -10 && goToNextGame) switchGame("elevator");
             break;
