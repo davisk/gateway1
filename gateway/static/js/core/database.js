@@ -1,4 +1,4 @@
-/*var ventureName = window.location.hash;
+var ventureName = window.location.hash;
 console.log(ventureName);
 var ventureUrl = 'localhost:9000/database/' + ventureName;
 
@@ -37,11 +37,7 @@ var gamestate = {
         question5: null
     },
     interest: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
+        score: 0
     },
     survey: {
         question1: null,
@@ -51,6 +47,8 @@ var gamestate = {
         question5: null
     }
 };
+
+score.watch();
 
 var db = new PouchDB(ventureName);
 
@@ -68,4 +66,4 @@ function sync() {
     db.replicate.from(ventureUrl, gamestate);
 }
 
-sync();*/
+sync();
