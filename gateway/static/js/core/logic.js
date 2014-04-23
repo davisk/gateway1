@@ -59,8 +59,13 @@ var gamestate = {
         question5: null
     }
 };
+<<<<<<< HEAD
 
 /*var db = new PouchDB('dbname');
+=======
+/*
+var db = new PouchDB('dbname');
+>>>>>>> 0911918f124df8342cbc32b842fa3a83ef259794
 
 db.put(gamestate);
 
@@ -198,6 +203,8 @@ function move (direction) {
                     if (userPlayer.x >= 60 && userPlayer.x <= 1240 && userPlayer.y > 10 && userPlayer.y <= 110) {
                         userPlayer.y -= 10;
                     } else if (userPlayer.x >= 590 && userPlayer.x <= 710 && userPlayer.y > 100 && userPlayer.y <= 410) {
+                        userPlayer.y -= 10;
+                    } else if (userPlayer.x > 570 && userPlayer.x < 730 && goToNextGame) {
                         userPlayer.y -= 10;
                     }
                     break;
@@ -411,6 +418,8 @@ function beginGame () {
                 beginText(150,35);
                 noText = false;
             }
+
+            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("survey");
             break;
 
         // Survey
@@ -419,6 +428,8 @@ function beginGame () {
                 beginText(1130,35);
                 noText = false;
             }
+
+            if (userPlayer.x > 570 && userPlayer.x < 730 && userPlayer.y < -10 && goToNextGame) switchGame("interest");
             break;
 
         // Interest
