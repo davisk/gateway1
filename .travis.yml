@@ -20,7 +20,8 @@ before_script:
 # command to run tests
 script:
   - pep8 .  --exclude bootstrap
-  - npm test
+  - karma start --single-run --browsers PhantomJS
+  - jshint .
   - radon cc manage.py test
   - radon mi manage.py test
   - coverage run --source gateway manage.py test gateway.tests
