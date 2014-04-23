@@ -1,5 +1,6 @@
-var venturename = prompt("name your venture", "enter name here");
-console.log(venturename);
+var ventureName = prompt("name your venture", "enter name here");
+console.log(ventureName);
+var ventureUrl = 'localhost:9000/database/' + ventureName;
 
 var gamestate = {
     position : {
@@ -51,7 +52,7 @@ var gamestate = {
     }
 };
 
-var db = new PouchDB('dbname');
+var db = new PouchDB(ventureName);
 
 db.put(gamestate);
 
@@ -62,8 +63,9 @@ db.changes({
 });
 
 function sync() {
-  db.replicate.to('localhost:9000/database/' + venturename, gamestate);
-  db.replicate.from('localhost:9000/database/' + venturename, gamestate);
+    console.log('syncing now');
+    db.replicate.to(ventureUrl, gamestate);
+    db.replicate.from(ventureUrl, gamestate);
 }
 
-db.replicate.to('localhost:9000/database/' + venturename, gamestate);
+sync();
