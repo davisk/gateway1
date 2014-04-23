@@ -1,4 +1,5 @@
 var venturename = prompt("name your venture", "enter name here");
+console.log(venturename);
 
 var gamestate = {
     position : {
@@ -60,6 +61,9 @@ db.changes({
     }
 });
 
-var venturename = 'test';
+function sync() {
+  db.replicate.to('localhost:9000/database/' + venturename, gamestate);
+  db.replicate.from('localhost:9000/database/' + venturename, gamestate);
+}
 
-db.replicate.to('localhost:9000/database/' + venturename);
+db.replicate.to('localhost:9000/database/' + venturename, gamestate);
