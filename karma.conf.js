@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [
       'gateway/static/js/test/**.js',
       'gateway/static/js/core/logic.js',
-      'gateway/static/js/games/end.js' // Hack to get around aha.js move changes
+      'gateway/static/js/games/**.js'
     ],
 
 
@@ -54,7 +54,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
@@ -64,6 +64,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
   });
 };
