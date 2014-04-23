@@ -17,7 +17,7 @@ node_js:
 install:
   - pip install -q -r scripts/requirements.txt --extra-index-url https://pypi.crate.io/simple/
   - npm install
-  - node --version
+  - which firefox
 
 # setup mysql
 before_script:
