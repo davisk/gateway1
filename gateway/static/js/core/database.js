@@ -1,4 +1,4 @@
-var ventureName = prompt("name your venture", "enter name here");
+var ventureName = window.location.hash;
 console.log(ventureName);
 var ventureUrl = 'localhost:9000/database/' + ventureName;
 
