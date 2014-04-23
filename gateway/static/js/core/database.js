@@ -1,6 +1,14 @@
-/*var ventureName = window.location.hash;
+var ventureName = window.location.hash;
 console.log(ventureName);
 var ventureUrl = 'localhost:9000/database/' + ventureName;
+
+var interest = {
+    score : 0
+};
+
+var elevator = {
+    final_answers: [0,0,0]
+};
 
 var gamestate = {
     position : {
@@ -23,11 +31,7 @@ var gamestate = {
         question5: null
     },
     elevator: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
+        final_answers: [0,0,0]
     },
     gap: {
         question1: null,
@@ -37,11 +41,7 @@ var gamestate = {
         question5: null
     },
     interest: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
+        score: 0
     },
     survey: {
         question1: null,
@@ -51,6 +51,16 @@ var gamestate = {
         question5: null
     }
 };
+
+interest.watch('score', function() {
+    console.log(interest.score);
+    gamestate.interest.score = interest.score;
+});
+
+elevator.watch('final_answers', function(){
+    console.log(final_answers);
+    gamestate.elevator.final_answers = final_answers;
+});
 
 var db = new PouchDB(ventureName);
 
@@ -68,4 +78,4 @@ function sync() {
     db.replicate.from(ventureUrl, gamestate);
 }
 
-sync();*/
+sync();

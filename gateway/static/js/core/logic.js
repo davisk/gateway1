@@ -9,73 +9,6 @@
   * @param object to be moved
   * @param direction the object is moving in
   */
-/*
-var gamestate = {
-    position : {
-        x: 0,
-        y: 0
-    },
-    level: 1,
-    start: {
-        question1: 0,
-        question2: 0,
-        question3: 0,
-        question4: 0,
-        question5: 0
-    },
-    aha: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    elevator: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    gap: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    interest: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    },
-    survey: {
-        question1: null,
-        question2: null,
-        question3: null,
-        question4: null,
-        question5: null
-    }
-};
-*/
-
-/*
-var db = new PouchDB('dbname');
-db.put(gamestate);
-
-db.changes({
-    onChange: function() {
-        console.log('Ch-Ch-Changes');
-    }
-});
-
-
-var venturename = 'test';
-
-db.replicate.to('localhost:9000/database/' + venturename);
-*/
 
 // For switching between the two animation sprites, ugly method!!!
 var moving = false;
@@ -88,7 +21,7 @@ var insert4 = true;
 function move (direction) {
 
     beginGame();
-    
+
     console.log("X Pos:" + userPlayer.x);
     console.log("Y Pos:" + userPlayer.y);
 
@@ -226,7 +159,7 @@ function move (direction) {
                    // } else if (userPlayer.x > 590 && userPlayer.x < 1340 && userPlayer.y > 200 || goToNextGame) {
                    //     userPlayer.y -= 10;
                    // }
-                        
+
                     break;
 
                 // Elev

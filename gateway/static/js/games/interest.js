@@ -5,7 +5,6 @@
 
 var box_dialogue;
 //var for db stuff
-var score = 0;
 var timeout;
 var dialogue = [];
 var imgs = [];
@@ -36,13 +35,13 @@ function loadGameConfig() {
     //var imgs = [];
 
     for (i = 0; i < manifest.length; i++) imgs[i] = new createjs.Bitmap(preload.getResult(manifest[i].id));
-    
+
 
     // Fix the background image for the canvas
     imgs[0].scaleY = 0.6;
-    
+
     //Setup scale the bro
-    
+
     imgs[1].x = 450;
     imgs[1].y = 200;
     imgs[1].scaleX = 0.8;
@@ -122,22 +121,22 @@ function theGame() {
      stage.addChild(imgs[1], imgs[6], imgs[7], imgs[8]);
      imgs[1].addEventListener("click", function(event) {
          stage.removeChild(imgs[1]);
-         score += 10;
+         interest.score += 10;
          stage.removeChild(sText);
         });
      imgs[6].addEventListener("click", function(event) {
          stage.removeChild(imgs[6]);
-         score += 5;
+         interest.score += 5;
          stage.removeChild(sText);
      });
      imgs[7].addEventListener("click", function(event) {
          stage.removeChild(imgs[7]);
-         score += 20;
+         interest.score += 20;
          stage.removeChild(sText);
      });
      imgs[8].addEventListener("click", function(event) {
          stage.removeChild(imgs[8]);
-         score += 35;
+         interest.score += 35;
          stage.removeChild(sText);
      });
 
@@ -145,9 +144,9 @@ function theGame() {
 
 function afterGame() {
 
-    stage.removeChild(imgs[1]); 
-    stage.removeChild(imgs[6]); 
-    stage.removeChild(imgs[7]); 
+    stage.removeChild(imgs[1]);
+    stage.removeChild(imgs[6]);
+    stage.removeChild(imgs[7]);
     stage.removeChild(imgs[8]);
     stage.removeChild(sText);
     stage.addChild(box_dialogue, dialogue[1]);
