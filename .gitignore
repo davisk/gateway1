@@ -15,7 +15,6 @@ build/
 develop-eggs/
 dist/
 eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -63,7 +62,3 @@ email/*
 
 #coveralls coverage report
 .coverage
-
-#bootstrap stuff
-bootstrap/dist*
-gateway/static/admin/*
