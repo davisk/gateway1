@@ -134,9 +134,25 @@ function loadGame() {
 
     function exitInterlude(event) {
         removeInterlude();
-        updateQuestion();
-        updateAnswer();
-      }
+
+        /*
+
+        final answers recorded here
+
+
+        */
+        if(game_index === 3) {
+            final_answers = answers;
+            txt.text = final_answers;
+            showFinal(0);
+        }
+        else {
+            updateQuestion();
+            updateAnswer();
+        }
+
+
+    }
 
     function handleAnswer_one(event) {
        txt.text = "one handled " + game_index;
@@ -182,8 +198,13 @@ function loadGame() {
         answer_imgs[game_index +1].alpha = 1;
     }
     function handleFinal(event) {
+        stage.removeChild(final_slides[0]);
         showFinal(1);
     }
+    function exit(event) {
+        goToNextGame = true;
+    }
+
 
 
     function showFinal(index) {
@@ -193,10 +214,13 @@ function loadGame() {
         final_slides[index].y =imgs[4].y;
             
         final_slides[index].cursor = "pointer";
-
-        final_slides[index].addEventListener("click", handleFinal);
-
-        addChild(final_slides[index]);
+        if(index === 0) {
+            final_slides[index].addEventListener("click", handleFinal);
+        }
+        else{
+            final_slides[index].addEventListener("click", exit);
+        }
+        stage.addChild(final_slides[index]);
     }
 
 
@@ -209,31 +233,26 @@ function loadGame() {
         stage.removeChild(answer_hit[1]);
         stage.removeChild(question_imgs[game_index -1]);
 
-        if(game_index < answer_imgs.length ) {
-
-            interlude_hit.graphics.clear();
-            interlude[game_index -1].scaleY = imgs[4].scaleY;
-            interlude[game_index -1].scaleX = imgs[4].scaleX;
-            interlude[game_index -1].x =imgs[4].x;
-            interlude[game_index -1].y =imgs[4].y;
+        
+        interlude_hit.graphics.clear();
+        interlude[game_index -1].scaleY = imgs[4].scaleY;
+        interlude[game_index -1].scaleX = imgs[4].scaleX;
+        interlude[game_index -1].x =imgs[4].x;
+        interlude[game_index -1].y =imgs[4].y;
                 
 
-            interlude_hit.graphics.beginFill("#FFFFFF").drawRect(interlude[game_index -1].x +10, interlude[game_index -1].y +10,
-            450 * interlude[game_index -1].scaleX -20, 500 * interlude[game_index -1].scaleY -20);
+        interlude_hit.graphics.beginFill("#FFFFFF").drawRect(interlude[game_index -1].x +10, interlude[game_index -1].y +10,
+        450 * interlude[game_index -1].scaleX -20, 500 * interlude[game_index -1].scaleY -20);
                 
-            interlude[game_index -1].cursor = "pointer";
-            interlude_hit.cursor = "pointer";
-                
-            interlude_hit.addEventListener("click", exitInterlude);
-            interlude[game_index].addEventListener("click", exitInterlude);
-            stage.addChild(interlude_hit);
-            stage.addChild(interlude[game_index -1]);
-        }
+        interlude[game_index -1].cursor = "pointer";
+        interlude_hit.cursor = "pointer";
+        
+        
+        interlude_hit.addEventListener("click", exitInterlude);
+        interlude[game_index-1].addEventListener("click", exitInterlude);
 
-        else {
-            final_answers = answers;
-            showFinal(0);
-        }
+        stage.addChild(interlude_hit);
+        stage.addChild(interlude[game_index -1]);
 
     }
 
