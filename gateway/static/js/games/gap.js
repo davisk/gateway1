@@ -12,6 +12,9 @@ var answers = [];
 
 // Start game with seven tokens
 var tokens = 7;
+var gap = {
+    choices: 0
+};
 
 function getCanvasId() {
     return "gapCanvas";
@@ -334,16 +337,19 @@ function initAnswersConfig() {
     // Question 4
     answers[9].addEventListener("click", function(event) {
         stage.removeChild(answers[9], answers[10], answers[11],box_answers,dialogue[15]);
+        gap.choices = 0;
         stage.addChild(dialogue[5]);
     }, false);
 
     answers[10].addEventListener("click", function(event) {
         stage.removeChild(answers[9], answers[10], answers[11],box_answers,dialogue[15]);
+        gap.choices = 1;
         stage.addChild(dialogue[5]);
     }, false);
 
     answers[11].addEventListener("click", function(event) {
         stage.removeChild(answers[9], answers[10], answers[11],box_answers,dialogue[15]);
+        gap.choices = 2;
         stage.addChild(dialogue[5]);
     }, false);
 }

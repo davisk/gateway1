@@ -12,6 +12,9 @@ var answers = [];
 
 // Survey format chosen
 var format;
+var gap = {
+    choices: [0,0,0,0,0,0,0,0]
+};
 
 function getCanvasId() {
     return "survCanvas";
@@ -166,6 +169,7 @@ function initAnswersConfig() {
     answers[0].addEventListener("click", function(event) {
         stage.removeChild(dialogue[6]);
         stage.removeChild(answers[0], answers[1]);
+        gap.choices[0] = 0;
         stage.addChild(dialogue[7]);
         stage.addChild(answers[2], answers[3]);
         format = 1;
@@ -174,6 +178,7 @@ function initAnswersConfig() {
     answers[1].addEventListener("click", function(event) {
         stage.removeChild(dialogue[6]);
         stage.removeChild(answers[0], answers[1]);
+        gap.choices[0] = 1;
         stage.addChild(dialogue[7]);
         stage.addChild(answers[2], answers[3]);
         format = 2;
@@ -184,6 +189,7 @@ function initAnswersConfig() {
     answers[2].addEventListener("click", function(event) {
         stage.removeChild(dialogue[7]);
         stage.removeChild(answers[2], answers[3]);
+        gap.choices[1] = 0;
         if (format == 1) {
             stage.addChild(dialogue[8]);
             stage.addChild(answers[4], answers[5]);
@@ -196,6 +202,7 @@ function initAnswersConfig() {
     answers[3].addEventListener("click", function(event) {
         stage.removeChild(dialogue[7]);
         stage.removeChild(answers[2], answers[3]);
+        gap.choices[1] = 1;
         if (format == 1) {
             stage.addChild(dialogue[8]);
             stage.addChild(answers[4], answers[5]);
@@ -210,6 +217,7 @@ function initAnswersConfig() {
     answers[4].addEventListener("click", function(event) {
         stage.removeChild(dialogue[8]);
         stage.removeChild(answers[4], answers[5]);
+        gap.choices[2] = 0;
         stage.addChild(dialogue[9]);
         stage.addChild(answers[6], answers[7]);
     });
@@ -217,6 +225,7 @@ function initAnswersConfig() {
     answers[5].addEventListener("click", function(event) {
         stage.removeChild(dialogue[8]);
         stage.removeChild(answers[4], answers[5]);
+        gap.choices[2] = 1;
         stage.addChild(dialogue[9]);
         stage.addChild(answers[6], answers[7]);
     });
@@ -226,6 +235,7 @@ function initAnswersConfig() {
     answers[6].addEventListener("click", function(event) {
         stage.removeChild(dialogue[9]);
         stage.removeChild(answers[6], answers[7]);
+        gap.choices[3] = 0;
         stage.addChild(dialogue[10]);
         stage.addChild(answers[8], answers[9]);
     });
@@ -233,6 +243,7 @@ function initAnswersConfig() {
     answers[7].addEventListener("click", function(event) {
         stage.removeChild(dialogue[9]);
         stage.removeChild(answers[6], answers[7]);
+        gap.choices[3] = 1;
         stage.addChild(dialogue[10]);
         stage.addChild(answers[8], answers[9]);
     });
@@ -242,6 +253,7 @@ function initAnswersConfig() {
     answers[8].addEventListener("click", function(event) {
         stage.removeChild(dialogue[10]);
         stage.removeChild(answers[8], answers[9]);
+        gap.choices[4] = 0;
         if (format == 1) {
             stage.addChild(dialogue[12]);
             stage.addChild(answers[12], answers[13]);
@@ -254,6 +266,7 @@ function initAnswersConfig() {
     answers[9].addEventListener("click", function(event) {
         stage.removeChild(dialogue[10]);
         stage.removeChild(answers[8], answers[9]);
+        gap.choices[4] = 1;
         if (format == 1) {
             stage.addChild(dialogue[12]);
             stage.addChild(answers[12], answers[13]);
@@ -267,6 +280,7 @@ function initAnswersConfig() {
     answers[10].addEventListener("click", function(event) {
         stage.removeChild(dialogue[11]);
         stage.removeChild(answers[10], answers[11]);
+        gap.choices[5] = 0;
         stage.addChild(dialogue[12]);
         stage.addChild(answers[12], answers[13]);
     });
@@ -274,6 +288,7 @@ function initAnswersConfig() {
     answers[11].addEventListener("click", function(event) {
         stage.removeChild(dialogue[11]);
         stage.removeChild(answers[10], answers[11]);
+        gap.choices[5] = 1;
         stage.addChild(dialogue[12]);
         stage.addChild(answers[12], answers[13]);
     });
@@ -283,6 +298,7 @@ function initAnswersConfig() {
     answers[12].addEventListener("click", function(event) {
         stage.removeChild(dialogue[12]);
         stage.removeChild(answers[12], answers[13]);
+        gap.choices[6] = 0;
         stage.addChild(dialogue[13]);
         stage.addChild(answers[14], answers[15]);
     });
@@ -290,6 +306,7 @@ function initAnswersConfig() {
     answers[13].addEventListener("click", function(event) {
         stage.removeChild(dialogue[12]);
         stage.removeChild(answers[12], answers[13]);
+        gap.choices[6] = 1;
         stage.addChild(dialogue[13]);
         stage.addChild(answers[14], answers[15]);
     });
@@ -299,6 +316,7 @@ function initAnswersConfig() {
     answers[14].addEventListener("click", function(event) {
         stage.removeChild(dialogue[13]);
         stage.removeChild(answers[14], answers[15], box_answers);
+        gap.choices[7] = 0;
         stage.addChild(dialogue[5]);
         goToNextGame = true;            // Elevator Access
     });
@@ -306,6 +324,7 @@ function initAnswersConfig() {
     answers[15].addEventListener("click", function(event) {
         stage.removeChild(dialogue[13]);
         stage.removeChild(answers[14], answers[15], box_answers);
+        gap.choices[7] = 1;
         stage.addChild(dialogue[5]);
         goToNextGame = true;            // Elevator Access
     });
