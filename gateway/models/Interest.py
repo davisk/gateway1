@@ -12,28 +12,8 @@ class Interest(models.Model):
         "The model Completion status of the Interest game"
     )
 
-    question_one = models.IntegerField(
-        "The first question of the Interest game"
-    )
-
-    question_two = models.IntegerField(
-        "The second question of teh Interest game"
-    )
-
-    question_three = models.IntegerField(
-        "The third question of the Interest game"
-    )
-
-    question_four = models.IntegerField(
-        "The fourth question of the Interest game"
-    )
-
-    question_five = models.IntegerField(
-        "the fifth question of the Interest game"
-    )
-
-    question_six = models.IntegerField(
-        "the sixth question of the Interest game"
+    score = models.IntegerField(
+        "The score of the Interest game"
     )
 
     class Meta:

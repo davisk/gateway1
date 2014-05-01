@@ -32,10 +32,6 @@ class Aha(models.Model):
         "the fifth question of the Aha game"
     )
 
-    question_six = models.IntegerField(
-        "the sixth question of the Aha game"
-    )
-
     class Meta:
         app_label = 'gateway'
 

@@ -35,22 +35,14 @@ class MinigameTestCase(TestCase):
         self.assertEqual(aha.question_three, 0)
         self.assertEqual(aha.question_four, 0)
         self.assertEqual(aha.question_five, 0)
-        self.assertEqual(aha.question_six, 0)
 
     def test_minigame_Elevator(self):
         self.assertEqual(elevator.question_one, 0)
         self.assertEqual(elevator.question_two, 0)
         self.assertEqual(elevator.question_three, 0)
-        self.assertEqual(elevator.question_four, 0)
-        self.assertEqual(elevator.question_five, 0)
 
     def test_minigame_Interest(self):
-        self.assertEqual(interest.question_one, 0)
-        self.assertEqual(interest.question_two, 0)
-        self.assertEqual(interest.question_three, 0)
-        self.assertEqual(interest.question_four, 0)
-        self.assertEqual(interest.question_five, 0)
-        self.assertEqual(interest.question_six, 0)
+        self.assertEqual(interest.score, 0)
 
     def test_minigame_Gap(self):
         self.assertEqual(gap.question_one, 0)
@@ -58,7 +50,6 @@ class MinigameTestCase(TestCase):
         self.assertEqual(gap.question_three, 0)
         self.assertEqual(gap.question_four, 0)
         self.assertEqual(gap.question_five, 0)
-        self.assertEqual(gap.question_six, 0)
 
     def test_minigame_Survey(self):
         self.assertEqual(survey.question_one, 0)
@@ -66,4 +57,3 @@ class MinigameTestCase(TestCase):
         self.assertEqual(survey.question_three, 0)
         self.assertEqual(survey.question_four, 0)
         self.assertEqual(survey.question_five, 0)
-        self.assertEqual(survey.question_six, 0)

@@ -10,34 +10,28 @@ class Gap(models.Model):
 
     is_complete = models.BooleanField()
 
-    question_one = models.CharField(
-        "The first answer of the Gap game",
-        max_length=144
+    is_complete = models.BooleanField(
+        "The model Completion status of the Gap game"
     )
 
-    question_two = models.CharField(
-        "The second answer of the Gap game",
-        max_length=144
+    question_one = models.IntegerField(
+        "The first question of the Gap game"
     )
 
-    question_three = models.CharField(
-        "The third answer of the Gap game",
-        max_length=144
+    question_two = models.IntegerField(
+        "The second question of the Gap game"
     )
 
-    question_four = models.CharField(
-        "The fourth answer of the Gap game",
-        max_length=144
+    question_three = models.IntegerField(
+        "The third question of the Gap game"
     )
 
-    question_five = models.CharField(
-        "The fifth answer of the Gap game",
-        max_length=144
+    question_four = models.IntegerField(
+        "The fourth question of the Gap game"
     )
 
-    question_six = models.CharField(
-        "The sixth answer of the Gap game",
-        max_length=144
+    question_five = models.IntegerField(
+        "the fifth question of the Gap game"
     )
 
     class Meta:

@@ -27,21 +27,6 @@ class Elevator(models.Model):
         max_length=144
     )
 
-    question_four = models.CharField(
-        "The fourth answer of the Elevator game",
-        max_length=144
-    )
-
-    question_five = models.CharField(
-        "The fifth answer of the Elevator game",
-        max_length=144
-    )
-
-    question_six = models.CharField(
-        "The sixth answer of the Elevator game",
-        max_length=144
-    )
-
     class Meta:
         app_label = 'gateway'
 

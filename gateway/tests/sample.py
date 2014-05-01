@@ -14,16 +14,12 @@ aha = Aha.objects.create(
     question_three=0,
     question_four=0,
     question_five=0,
-    question_six=0
 )
 elevator = Elevator.objects.create(
     is_complete=False,
     question_one=0,
     question_two=0,
     question_three=0,
-    question_four=0,
-    question_five=0,
-    question_six=0
 )
 survey = Survey.objects.create(
     is_complete=False,
@@ -32,7 +28,6 @@ survey = Survey.objects.create(
     question_three=0,
     question_four=0,
     question_five=0,
-    question_six=0
 )
 interest = Interest.objects.create(
     is_complete=False,
@@ -41,7 +36,6 @@ interest = Interest.objects.create(
     question_three=0,
     question_four=0,
     question_five=0,
-    question_six=0
 )
 gap = Gap.objects.create(
     is_complete=False,
@@ -50,5 +44,4 @@ gap = Gap.objects.create(
     question_three=0,
     question_four=0,
     question_five=0,
-    question_six=0
 )
